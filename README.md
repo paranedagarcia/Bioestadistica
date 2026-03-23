@@ -40,3 +40,8 @@ GIT_USER=<tu-usuario-github> npm run deploy
 ```
 
 Si usas GitHub Pages, este comando construye el sitio y lo publica en la rama `gh-pages`.
+
+
+**Patricio Araneda García**
+Magister en Informática Médica
+Universidad de Chile
