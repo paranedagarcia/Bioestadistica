@@ -15,7 +15,7 @@ Existen 3 medidas para cuantificar la correlación:
 3. **Coeficiente de correlación de Kendall**: Mide la concordancia entre dos variables, evaluando la relación ordinal.
 
 
-#### Coeficiente de correlación de Pearson
+### Coeficiente de correlación de Pearson
 El coeficiente de correlación de Pearson es una medida estadística que evalúa la fuerza y la dirección de la relación lineal entre dos variables cuantitativas. Su valor oscila entre -1 y 1, donde:
 - 1 indica una correlación positiva perfecta: a medida que una variable aumenta, la otra también lo hace.
 - -1 indica una correlación negativa perfecta: a medida que una variable aumenta, la otra disminuye.
@@ -23,9 +23,9 @@ El coeficiente de correlación de Pearson es una medida estadística que evalúa
 
 La fórmula para calcular el coeficiente de correlación de Pearson $( r )$ es:
 
-$$
+```math
 r = \frac{n(\sum xy) - (\sum x)(\sum y)}{\sqrt{[n\sum x^2 - (\sum x)^2][n\sum y^2 - (\sum y)^2]}}
-$$
+```
 
 Donde:
 - $ n $ es el número de pares de datos.
@@ -45,7 +45,7 @@ Las condiciones que se deben de cumplir para que el coeficiente de correlación 
 
 A continuación, se muestra una tabla con la interpretación de los valores del coeficiente de correlación de Pearson:
 
-| Valor de r de Pearson | Interpretación de la correlación entre x e y                  |
+| Valor de r de Pearson | Interpretación de la correlación entre x e y                 |
 |----------------------|---------------------------------------------------------------|
 | igual a 1            | relación lineal positiva perfecta                             |
 | mayor que 0          | correlación positiva                                          |
@@ -54,14 +54,14 @@ A continuación, se muestra una tabla con la interpretación de los valores del 
 | igual a -1           | relación lineal negativa perfecta                             |
 
 
-#### Coeficiente de correlación de Spearman
+### Coeficiente de correlación de Spearman
 El coeficiente de correlación de Spearman es una medida no paramétrica que evalúa la relación monótona entre dos variables. A diferencia del coeficiente de Pearson, que asume que la relación es lineal, Spearman se basa en los rangos de los datos en lugar de los valores brutos. Esto lo hace más robusto frente a valores atípicos y adecuado para datos ordinales.
 
 La fórmula para calcular el coeficiente de correlación de Spearman $( \rho )$ es:
 
-$$
+```math
 \rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
-$$
+```
 
 Donde:
 - $ d_i $ es la diferencia entre los rangos de cada par de datos.
@@ -69,14 +69,14 @@ Donde:
 
 El coeficiente de Spearman también oscila entre -1 y 1, con interpretaciones similares a las del coeficiente de Pearson. Un valor de 1 indica una correlación monótona positiva perfecta, -1 indica una correlación monótona negativa perfecta y 0 indica que no hay correlación monótona.
 
-#### Coeficiente de correlación de Kendall
+### Coeficiente de correlación de Kendall
 El coeficiente de correlación de Kendall es una medida no paramétrica que evalúa la concordancia entre dos variables ordinales. A diferencia de Pearson y Spearman, que se centran en las relaciones lineales y monótonas, respectivamente, Kendall se basa en la comparación de pares de observaciones para determinar la dirección y la fuerza de la relación.
 
 La fórmula para calcular el coeficiente de correlación de Kendall $( \tau )$ es:
 
-$$
+```math
 \tau = \frac{(n_c - n_d)}{\frac{1}{2}n(n-1)}
-$$
+```
 
 Donde:
 - $ n_c $ es el número de pares concordantes.
@@ -108,7 +108,7 @@ La correlación solo cuantifica la fuerza y la dirección de la relación entre 
 
 
 ***
-### Datasets clásicos con alta correlación
+## Datasets clásicos con alta correlación
 Existen conjuntos de datos muy conocidos en el mundo del machine learning y la estadística que naturalmente tienen variables altamente correlacionadas, un fenómeno conocido como multicolinealidad. 
 
 **Dataset de cáncer de mama (Breast Cancer Wisconsin):** Un análisis de las características de las células mamarias muestra una alta correlación entre variables como el radio, el perímetro y el área, tanto en su media como en su peor caso (radius_mean y radius_worst, por ejemplo, tienen una correlación muy alta). Puedes encontrarlo en la librería scikit-learn.
@@ -117,10 +117,12 @@ Existen conjuntos de datos muy conocidos en el mundo del machine learning y la e
 
 **Dataset de precios de casas (California Housing, Boston Housing):** En estos conjuntos de datos, variables como el número de habitaciones, la superficie habitable y el valor de la propiedad suelen estar altamente correlacionadas.
 
-#### Cancer de mama
+### Cancer de mama
 Desde el dataset **Breast Cancer Wisconsin (Diagnostic) (WBCD)**, se pueden observar altas correlaciones entre varias características. Por ejemplo, las características relacionadas con el tamaño y la forma de las células tienden a estar altamente correlacionadas entre sí. Algunas de las correlaciones más notables incluyen:
 - **Radio (radius_mean)** y **Perímetro (perimeter_mean)**: Estas dos características están altamente correlacionadas, ya que ambas miden aspectos relacionados con el tamaño de las células.
+
 - **Área (area_mean)** y **Radio (radius_mean)**: También muestran una fuerte correlación, ya que el área es una función del radio.
+
 - **Suavidad (smoothness_mean)** y **Textura (texture_mean)**: Estas características, que describen la textura de las células, también tienden a estar correlacionadas.
 
 **Referencia:**
