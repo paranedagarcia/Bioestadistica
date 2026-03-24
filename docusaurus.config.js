@@ -22,10 +22,10 @@ const config = {
   // },
 
   // Set the production url of your site here
-  url: 'https://paranedagarcia.github.io',
+  url: 'https://paranedagarcia.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Bioestadistica/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -85,7 +85,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Bioestadística Médica',
+        title: 'Bioestadística',
         logo: {
           alt: 'Bioestadística Médica Logo',
           src: 'img/logo.svg',
@@ -147,6 +147,15 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
 };
 
 export default config;
