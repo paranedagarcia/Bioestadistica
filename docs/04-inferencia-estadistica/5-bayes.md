@@ -2,7 +2,7 @@
 id: bayes
 title: Teorema de Bayes
 sidebar_label: Teorema de Bayes
-sidebar_position: 2
+sidebar_position: 5
 ---
 
 # Razonamiento Estadístico

@@ -2,7 +2,7 @@
 id: analisis-predictivo
 title: Análisis Predictivo
 sidebar_label: Análisis Predictivo
-sidebar_position: 6
+sidebar_position: 4
 ---
 
 # El Análisis Predictivo: Regresión Lineal y Covarianza

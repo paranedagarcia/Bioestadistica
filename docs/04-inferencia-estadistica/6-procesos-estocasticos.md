@@ -2,7 +2,7 @@
 id: procesos-estocasticos
 title: Procesos Estocásticos
 sidebar_label: Procesos Estocásticos
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ## Procesos Estocásticos

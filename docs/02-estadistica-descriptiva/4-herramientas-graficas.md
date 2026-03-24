@@ -2,7 +2,7 @@
 id: herramientas-graficas
 title: Herramientas gráficas
 sidebar_label: Herramientas gráficas
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Herramientas gráficas
@@ -11,6 +11,27 @@ Además de estas medidas, la estadística descriptiva utiliza diversas herramien
 ### Histogramas
 Un histograma es una representación gráfica que organiza un conjunto de datos numéricos en intervalos (o "bins") y muestra la frecuencia de datos dentro de cada intervalo mediante barras. A diferencia de un gráfico de barras tradicional, que se utiliza para datos categóricos, un histograma es ideal para datos continuos y ayuda a visualizar la distribución de los datos.
 
+```r
+# R
+hist(datos, 
+     main = "Distribución de los datos",
+     xlab = "Valores",
+     ylab = "Frecuencia",
+     col = "steelblue",
+     border = "white")
+```
+
+```python
+# Python con matplotlib
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(8, 5))
+plt.hist(datos, bins=6, color='steelblue', edgecolor='white')
+plt.title('Distribución de los datos')
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+plt.show()
+```
 
 ### Diagramas de Caja (Box Plots)
 Un diagrama de caja, o box plot, es una herramienta gráfica que resume la distribución de un conjunto de datos a través de sus cinco números resumen: 
@@ -28,6 +49,25 @@ El box plot muestra la mediana como una línea dentro de la caja, que representa
 ![Box Plot](https://upload.wikimedia.org/wikipedia/commons/1/1a/Boxplot_vs_PDF.svg)
 * *Box plot comparado con una función de densidad de probabilidad (PDF)*
 * *Fuente: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Boxplot_vs_PDF.svg)*
+
+El boxplot muestra visualmente la mediana, cuartiles y valores atípicos:
+
+```r
+# R
+boxplot(datos,
+        main = "Diagrama de Caja",
+        ylab = "Valores",
+        col = "lightblue")
+```
+
+```python
+# Python
+plt.figure(figsize=(6, 6))
+plt.boxplot(datos)
+plt.title('Diagrama de Caja')
+plt.ylabel('Valores')
+plt.show()
+```
 
 ## Diagramas de dispersión
 Un diagrama de dispersión, o scatter plot, es una representación gráfica que utiliza puntos para mostrar la relación entre dos variables numéricas. Cada punto en el gráfico representa un par de valores correspondientes a las dos variables, con una variable representada en el eje X (horizontal) y la otra en el eje Y (vertical).
@@ -49,3 +89,4 @@ El conjunto de datos Iris es un conjunto de datos clásico en el campo del apren
 # crea un ejemplo de diagrama de dispersión utilizando el dataset iris
 
 ```
+

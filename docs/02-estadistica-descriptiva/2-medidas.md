@@ -1,20 +1,12 @@
 ---
-id: estadistica-descriptiva
-title: Estadística Descriptiva
-sidebar_label: Estadística Descriptiva
-sidebar_position: 1
+id: medidas
+title: Medidas Descriptivas
+sidebar_label: Medidas Descriptivas
+sidebar_position: 2
 ---
 
-# Principios Estadísticos Fundamentales
-
-Este módulo está diseñado para guiar a los principiantes a través de los pilares estadísticos que sustentan la ciencia de datos, partiendo desde conceptos extremadamente básicos hasta ideas más avanzadas. El objetivo es ofrecer una visión clara y orientada a la aplicación práctica, evitando la complejidad innecesaria del formalismo matemático para priorizar la intuición y la interpretación. A lo largo de estas páginas, exploraremos cómo la estadística descriptiva nos permite conocer nuestros datos, cómo la inferencia estadística nos permite generalizar hallazgos, y cómo la teoría de la probabilidad y las distribuciones de probabilidad son herramientas indispensables para modelar incertidumbre y construir predicciones robustas.
-
-## La Estadística Descriptiva
-*Conociendo tus datos*
-
-Antes de poder realizar análisis complejos o construir modelos sofisticados, un científico de datos debe comenzar por comprender y describir las características de los datos con los que trabaja. Esta tarea inicial es abordada por la **estadística descriptiva**, una rama de la estadística enfocada en la recopilación, organización, resumen y presentación de datos numéricos para identificar sus rasgos principales. Su propósito fundamental es simplificar grandes volúmenes de información en un conjunto de métricas y representaciones gráficas manejables que revelen patrones, tendencias y anomalías. En el contexto de la ciencia de datos, este primer paso es crucial porque un modelo entrenado sobre datos mal comprendidos producirá resultados erróneos, independientemente de su complejidad. La estadística descriptiva no busca hacer inferencias sobre una población más grande; simplemente describe los datos disponibles.
-
 ## Medidas de Tendencia Central
+
 El núcleo de la estadística descriptiva reside en dos tipos de medidas: las de **tendencia central** y las de **dispersión**. Las medidas de tendencia central buscan identificar un valor "típico" o central alrededor del cual se agrupan los datos. Las tres más importantes son la media, la mediana y la moda.
 
 ![](https://aprendiendoadministracion.com/wp-content/uploads/2016/02/graf21.png)
@@ -51,9 +43,9 @@ La **Varianza ($\sigma^2$)** Mide el promedio de las diferencias al cuadrado de 
 
 La **varianza poblacional** mide el promedio de las desviaciones al cuadrado de cada observación respecto a la media de toda la población. Su fórmula es:
 
-$$
+```math
 \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
-$$
+```
 
 **Donde:**
 
@@ -68,9 +60,10 @@ $$
 
 #### Varianza Muestral
 La **varianza muestral** estima la varianza de una población a partir de una muestra. Su fórmula es:
-$$
+
+```math
 S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
-$$
+```
 
 **Donde:**
 
@@ -87,9 +80,9 @@ $$
 **Desviación Estándar ($\sigma$):** Es la raíz cuadrada de la varianza. Es la medida de dispersión más utilizada porque vuelve a las unidades a las originales de los datos, facilitando su interpretación. Una desviación estándar baja indica que los datos están agrupados cerca de la media, mientras que una alta indica que los datos están más dispersos.
 
 La formula de la desviacion estandar es:
-$$
+```math
 \sigma = \sqrt{\sigma^2}
-$$  
+``` 
 **Donde:**
 - $\sigma$ (sigma): **Desviación estándar poblacional**. Es la medida de dispersión que queremos calcular.
 - $\sigma^2$ (sigma cuadrada): **Varianza poblacional**. Es la medida de dispersión que queremos calcular.
@@ -101,6 +94,7 @@ Consideremos el conjunto de datos: [4, 8, 6, 5, 3, 7]
    - Valor máximo = 8
    - Valor mínimo = 3
    - Rango = 8 - 3 = 5  
+
 2. **Varianza:**
    - Media ($\bar{x}$) = (4 + 8 + 6 + 5 + 3 + 7) / 6 = 5.5
    - Desviaciones al cuadrado:
@@ -111,6 +105,7 @@ Consideremos el conjunto de datos: [4, 8, 6, 5, 3, 7]
      - (3 - 5.5)² = 6.25
      - (7 - 5.5)² = 2.25
    - Varianza ($S^2$) = (2.25 + 6.25 + 0.25 + 0.25 + 6.25 + 2.25) / (6 - 1) = 17.5 / 5 = 3.5
+   
 3. **Desviación Estándar:** $S = \sqrt{S^2} = \sqrt{3.5} \approx 1.87$     
 La desviación estándar de aproximadamente 1.87 indica que, en promedio, los datos se desvían de la media en esa cantidad.
 

@@ -31,4 +31,4 @@ En la medicina contemporánea, la bioestadística es el núcleo del método cien
 
 *   **Modelado de Supervivencia:** Análisis de datos **censurados** (pérdidas de seguimiento), donde se estudia la función de riesgo o "hazard rate" mediante modelos como la regresión de Cox para estimar la eficacia de intervenciones a lo largo del tiempo.
 
-En conclusión, la Bioestadística no es solo una herramienta de cálculo, sino un marco de pensamiento crítico que permite validar si los hallazgos en un grupo de pacientes son generalizables a la población objetivo, garantizando la **validez interna y externa** de las intervenciones clínicas.
+La Bioestadística no es solo una herramienta de cálculo, sino un marco de pensamiento crítico que permite validar si los hallazgos en un grupo de pacientes son generalizables a la población objetivo, garantizando la **validez interna y externa** de las intervenciones clínicas.

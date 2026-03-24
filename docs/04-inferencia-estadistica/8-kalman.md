@@ -2,7 +2,7 @@
 id: kalman
 title: Filtro de Kalman
 sidebar_label: Filtro de Kalman
-sidebar_position: 3
+sidebar_position: 8
 ---
 
 El **Filtro de Kalman** es un tema fascinante y la aplicación más común del pensamiento bayesiano en ingeniería.

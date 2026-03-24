@@ -2,7 +2,7 @@
 id: r-controles
 title: Control de flujo
 sidebar_label: Controles
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Sentencias de control en R

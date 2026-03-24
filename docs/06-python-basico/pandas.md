@@ -2,7 +2,7 @@
 id: pandas
 title: Pandas
 sidebar_label: Pandas
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Pandas
