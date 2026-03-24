@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Bioestadística con R y Python
 
-Sitio educativo para aprender **Bioestadística** con R y Python, construido con [Docusaurus](https://docusaurus.io/).
+Sitio educativo para aprender **Bioestadística** con R / Python, construido con [Docusaurus](https://docusaurus.io/).
 
 ## Contenido del Curso
 
