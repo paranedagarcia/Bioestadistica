@@ -7,6 +7,19 @@ sidebar_position: 3
 
 
 # Análisis de Cuantiles 
+
+Los **cuantiles** son valores que dividen una distribución de datos en partes iguales. Un cuantil de orden *q* (donde 0 ≤ q ≤ 1) es el valor por debajo del cual se encuentra el *q*×100% de los datos.
+
+**Ejemplos comunes:**
+- **Q1 (cuantil 0.25)**: el 25% de los datos está por debajo de este valor.
+- **Q2 (cuantil 0.50)**: la mediana; el 50% de los datos está por debajo.
+- **Q3 (cuantil 0.75)**: el 75% de los datos está por debajo de este valor.
+
+**Características principales:**
+- Son medidas **no paramétricas** que no asumen normalidad de los datos.
+- Ideales para entender la **dispersión y posición** de los datos sin verse afectadas por valores extremos.
+- Fundamentales en análisis exploratorio y en la construcción de visualizaciones como boxplots.
+
 ## (Q1/Q2/Q3), IQR, Outliers y Boxplots
 
 **Objetivos:**  
@@ -22,7 +35,7 @@ sidebar_position: 3
 
 🔹 Concepto estadístico: cuartil y cuantiles
 
-En resumen, la función quantile(q=0.25) devuelve el primer cuartil (Q1) de los datos en cada columna (o fila) del DataFrame, usando por defecto el método de interpolación lineal.
+La función quantile(q=0.25) devuelve el primer cuartil (Q1) de los datos en cada columna (o fila) del DataFrame, usando por defecto el método de interpolación lineal.
 
 Significado: Q1 es el valor por debajo del cual se encuentra el 25% de los datos. Es una medida de posición que nos ayuda a entender la dispersión y la tendencia central de los datos, y es ampliamente usado en estadística para resumir datos y en boxplots para definir el bigote inferior.
 
