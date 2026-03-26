@@ -14,7 +14,8 @@ Las medidas de dispersión, por otro lado, cuantifican la variabilidad o esparci
 
 ### Varianza
 La **Varianza ($\sigma^2$)** Mide el promedio de las diferencias al cuadrado de cada dato respecto a la media. Al elevar al cuadrado las diferencias, se asegura que los valores positivos y negativos no se cancelen, y se da más peso a las observaciones más alejadas de la media. Sin embargo, sus unidades son las de los datos originales al cuadrado, lo que puede dificultar su interpretación directa.
-#### Varianza Poblacional
+
+### Varianza Poblacional
 
 La **varianza poblacional** mide el promedio de las desviaciones al cuadrado de cada observación respecto a la media de toda la población. Su fórmula es:
 
@@ -29,11 +30,13 @@ La **varianza poblacional** mide el promedio de las desviaciones al cuadrado de 
 - $x_i$: **Valor de la $i$-ésima observación** en la población.
 - $\mu$ (mu): **Media poblacional**, calculada como $\mu = \frac{1}{N} \sum_{i=1}^{N} x_i$.
 - $\sum_{i=1}^{N}$: **Sumatoria** que indica que se deben sumar las desviaciones al cuadrado para todas las observaciones desde $i = 1$ hasta $i = N$.
+<br>
+<br>
+:::note
+Se eleva al cuadrado la diferencia $(x_i - \mu)$ para evitar que las desviaciones positivas y negativas se cancelen entre sí, y para dar mayor peso a los valores que están más alejados de la media.
+:::
 
-
-> **Nota:** Se eleva al cuadrado la diferencia $(x_i - \mu)$ para evitar que las desviaciones positivas y negativas se cancelen entre sí, y para dar mayor peso a los valores que están más alejados de la media.
-
-#### Varianza Muestral
+### Varianza Muestral
 La **varianza muestral** estima la varianza de una población a partir de una muestra. Su fórmula es:
 
 ```math
@@ -48,8 +51,12 @@ S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
 - $\bar{x}$ (x barra): **Media muestral**, calculada como $\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$.
 - $\sum_{i=1}^{n}$: **Sumatoria** que indica que se deben sumar las desviaciones al cuadrado para todas las observaciones desde $i = 1$ hasta $i = n$.
 
+<br>
+<br>
 
-> **Nota:** Se eleva al cuadrado la diferencia $(x_i - \bar{x})$ para evitar que las desviaciones positivas y negativas se cancelen entre sí, y para dar mayor peso a los valores que están más alejados de la media.
+:::note
+Se eleva al cuadrado la diferencia $(x_i - \bar{x})$ para evitar que las desviaciones positivas y negativas se cancelen entre sí, y para dar mayor peso a los valores que están más alejados de la media.
+:::
 
 ### Desviación Estándar
 **Desviación Estándar ($\sigma$):** Es la raíz cuadrada de la varianza. Es la medida de dispersión más utilizada porque vuelve a las unidades a las originales de los datos, facilitando su interpretación. Una desviación estándar baja indica que los datos están agrupados cerca de la media, mientras que una alta indica que los datos están más dispersos.

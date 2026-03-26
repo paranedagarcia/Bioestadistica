@@ -15,7 +15,7 @@ Sitio educativo para aprender **Bioestadística** con R / Python, construido con
 - **R para Bioestadística**: Introducción al lenguaje R con ejemplos biomédicos
 - **Python para Bioestadística**: Introducción a Python con numpy, pandas, scipy y matplotlib
 
-# Introducción a la Bioestadística
+## Introducción a la Bioestadística
 
 La **bioestadística** es la aplicación de métodos estadísticos a problemas biológicos y de salud. Es una herramienta fundamental en investigación biomédica, epidemiología, salud pública y ciencias de la vida.
 
@@ -41,13 +41,17 @@ En el siglo XXI, la capacidad de analizar datos es esencial en cualquier área d
 
 En este curso utilizaremos dos lenguajes de programación ampliamente usados en análisis de datos:
 
-### R
+### R (Software estadístico)
 
 [R](https://www.r-project.org/) es un lenguaje de programación y entorno de software libre diseñado especialmente para análisis estadístico y gráficos. Es el estándar de facto en estadística académica y ciencias de la salud.
 
-### Python
+![](./img/r-estadistica.png)
+
+### Python (Lenguaje de programación)
 
 [Python](https://www.python.org/) es un lenguaje de propósito general muy popular en ciencia de datos, con potentes bibliotecas como `pandas`, `scipy`, `statsmodels` y `matplotlib` que lo hacen excelente para bioestadística.
+
+![](./img/python-estadistica.png)
 
 ## Estructura del Curso
 
@@ -74,6 +78,8 @@ Antes de comenzar el análisis estadístico, es esencial identificar el **tipo d
 
 - **Nominales**: Sin orden natural (sexo, grupo sanguíneo, diagnóstico)
 - **Ordinales**: Con orden natural (estadio de enfermedad: I, II, III, IV)
+<br>
+<br>
 
 :::tip Buena práctica
 Siempre identifica el tipo de variable antes de elegir el método estadístico a aplicar. La elección incorrecta del método puede llevar a conclusiones erróneas.
