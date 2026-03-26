@@ -12,7 +12,7 @@ import remarkMath from 'remark-math';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Bioestadística Médica',
+  title: 'Bioestadística',
   tagline: 'Estadística para la investigación médica',
   favicon: 'img/favicon.ico',
 
@@ -22,10 +22,10 @@ const config = {
   // },
 
   // Set the production url of your site here
-  url: 'https://paranedagarcia.github.io/',
+  url: 'https://patricioaraneda.cl/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Bioestadistica/',
+  baseUrl: '/bioestadistica/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -95,7 +95,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Curso',
           },
           //{to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -112,13 +112,13 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Curso',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Comunidad',
             items: [
               {
                 label: 'LinkedIn',
@@ -126,16 +126,20 @@ const config = {
               },
               {
                 label: 'X',
-                href: 'https://x.com/docusaurus',
+                href: 'https://twitter.com/paranedagarcia',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Más',
             items: [
               {
                 label: 'GitHub',
                 href: 'https://github.com/paranedagarcia/Bioestadistica',
+              },
+              {
+                label: 'Rpubs',
+                href: 'https://rpubs.com/paraneda',
               },
             ],
           },

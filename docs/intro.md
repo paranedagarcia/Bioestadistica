@@ -79,7 +79,7 @@ Antes de comenzar el análisis estadístico, es esencial identificar el **tipo d
 - **Nominales**: Sin orden natural (sexo, grupo sanguíneo, diagnóstico)
 - **Ordinales**: Con orden natural (estadio de enfermedad: I, II, III, IV)
 <br>
-<br>
+</br>
 
 :::tip Buena práctica
 Siempre identifica el tipo de variable antes de elegir el método estadístico a aplicar. La elección incorrecta del método puede llevar a conclusiones erróneas.
@@ -106,8 +106,3 @@ Los niveles de medición (escala de Stevens) determinan qué operaciones matemá
 - **Parámetro**: Valor numérico que describe una característica de la **población** (ej: media poblacional μ)
 - **Estadístico**: Valor calculado a partir de los datos de la **muestra** (ej: media muestral x̄)
 
-## Referencias Recomendadas
-
-- Rosner, B. (2015). *Fundamentals of Biostatistics*. Cengage Learning.
-- Pagano, M., & Gauvreau, K. (2018). *Principles of Biostatistics*. CRC Press.
-- Field, A. (2013). *Discovering Statistics Using IBM SPSS Statistics*. SAGE Publications.

@@ -31,7 +31,8 @@ La **varianza poblacional** mide el promedio de las desviaciones al cuadrado de 
 - $\mu$ (mu): **Media poblacional**, calculada como $\mu = \frac{1}{N} \sum_{i=1}^{N} x_i$.
 - $\sum_{i=1}^{N}$: **Sumatoria** que indica que se deben sumar las desviaciones al cuadrado para todas las observaciones desde $i = 1$ hasta $i = N$.
 <br>
-<br>
+</br>
+
 :::note
 Se eleva al cuadrado la diferencia $(x_i - \mu)$ para evitar que las desviaciones positivas y negativas se cancelen entre sí, y para dar mayor peso a los valores que están más alejados de la media.
 :::
@@ -50,9 +51,8 @@ S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
 - $x_i$: **Valor de la $i$-ésima observación** en la muestra.
 - $\bar{x}$ (x barra): **Media muestral**, calculada como $\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$.
 - $\sum_{i=1}^{n}$: **Sumatoria** que indica que se deben sumar las desviaciones al cuadrado para todas las observaciones desde $i = 1$ hasta $i = n$.
-
 <br>
-<br>
+</br>
 
 :::note
 Se eleva al cuadrado la diferencia $(x_i - \bar{x})$ para evitar que las desviaciones positivas y negativas se cancelen entre sí, y para dar mayor peso a los valores que están más alejados de la media.

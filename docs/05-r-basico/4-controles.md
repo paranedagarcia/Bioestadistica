@@ -1,7 +1,7 @@
 ---
 id: r-controles
 title: Control de flujo
-sidebar_label: Controles
+sidebar_label: Controles de flujo
 sidebar_position: 4
 ---
 
