@@ -1,11 +1,11 @@
 ---
 id: estadistica-descriptiva
 title: Estadística Descriptiva
-sidebar_label: Estadística Descriptiva
+sidebar_label: Principios estadísticos
 sidebar_position: 1
 ---
 
-# Principios Estadísticos Fundamentales
+## Principios Estadísticos 
 
 Este módulo está diseñado para guiar a los principiantes a través de los pilares estadísticos que sustentan la ciencia de datos, partiendo desde conceptos extremadamente básicos hasta ideas más avanzadas. El objetivo es ofrecer una visión clara y orientada a la aplicación práctica, evitando la complejidad innecesaria del formalismo matemático para priorizar la intuición y la interpretación. A lo largo de estas páginas, exploraremos cómo la estadística descriptiva nos permite conocer nuestros datos, cómo la inferencia estadística nos permite generalizar hallazgos, y cómo la teoría de la probabilidad y las distribuciones de probabilidad son herramientas indispensables para modelar incertidumbre y construir predicciones robustas.
 

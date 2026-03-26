@@ -2,11 +2,11 @@
 id: quantiles
 title: Quantiles
 sidebar_label: Quantiles
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 
-# Análisis de Cuantiles 
+## Análisis de Cuantiles 
 
 Los **cuantiles** son valores que dividen una distribución de datos en partes iguales. Un cuantil de orden *q* (donde 0 ≤ q ≤ 1) es el valor por debajo del cual se encuentra el *q*×100% de los datos.
 
@@ -20,7 +20,7 @@ Los **cuantiles** son valores que dividen una distribución de datos en partes i
 - Ideales para entender la **dispersión y posición** de los datos sin verse afectadas por valores extremos.
 - Fundamentales en análisis exploratorio y en la construcción de visualizaciones como boxplots.
 
-## (Q1/Q2/Q3), IQR, Outliers y Boxplots
+### (Q1/Q2/Q3), IQR, Outliers y Boxplots
 
 **Objetivos:**  
 1) Calcular **Q1, Q2 (mediana)** y **Q3**.  
@@ -29,17 +29,22 @@ Los **cuantiles** son valores que dividen una distribución de datos en partes i
 4) Visualizar con **boxplots**.  
 5) (Opcional) Repetir con **Polars** para datasets grandes.
 
-> El notebook intenta leer `ventas_100.csv` del directorio de trabajo.  
-> Si no lo encuentra, genera un **dataset sintético** reproducible para que todo se ejecute igual.
+
+:::note 
+El notebook intenta leer `ventas_100.csv` del directorio de trabajo.  
+Si no lo encuentra, genera un **dataset sintético** reproducible para que todo se ejecute igual.
+:::
 
 
-🔹 Concepto estadístico: cuartil y cuantiles
+### 🔹 Concepto estadístico: cuartil y cuantiles
 
 La función quantile(q=0.25) devuelve el primer cuartil (Q1) de los datos en cada columna (o fila) del DataFrame, usando por defecto el método de interpolación lineal.
 
 Significado: Q1 es el valor por debajo del cual se encuentra el 25% de los datos. Es una medida de posición que nos ayuda a entender la dispersión y la tendencia central de los datos, y es ampliamente usado en estadística para resumir datos y en boxplots para definir el bigote inferior.
 
-Nota: Si el DataFrame tiene valores faltantes (NaN), por defecto los omitirá en el cálculo, a menos que se especifique lo contrario.
+:::tip
+Si el DataFrame tiene valores faltantes (NaN), por defecto los omitirá en el cálculo, a menos que se especifique lo contrario.
+:::
 
 Formalmente:
 
@@ -48,7 +53,7 @@ Q(q)=el valor tal que P(X≤Q(q))=q
 Esto significa que el 25% de los valores de la variable son menores o iguales a ese valor, y el 75% son mayores.
 Es una medida no paramétrica de tendencia y dispersión, que no depende de supuestos de normalidad.
 
-🔹 En términos prácticos
+**En términos prácticos**
 
 Si tienes una serie de datos numéricos, por ejemplo:
 
@@ -61,7 +66,7 @@ s.quantile(q=0.25)
 
 El resultado será 20.0, porque el 25% de los valores se encuentran por debajo de 20 (en este caso, entre 10 y 20, interpolando si es necesario).
 
-🔹 Métodos de interpolación
+### 🔹 Métodos de interpolación
 
 La función permite especificar cómo se interpola cuando el cuantil no coincide exactamente con un índice de la muestra.
 
@@ -79,7 +84,7 @@ Opciones comunes para interpolación:
 
 Esto es importante cuando trabajas con muestras pequeñas o datos discretos.
 
-🔹 En el contexto de análisis estadístico
+### 🔹 En el contexto de análisis estadístico
 
 El cuantil del 25% (Q1) es una medida clave:
 
