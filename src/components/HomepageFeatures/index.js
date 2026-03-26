@@ -9,8 +9,7 @@ const FeatureList = [
     description: (
       <>
         Este curso fue diseñado desde cero para ser fácilmente asequible y
-        comprensible para todos. No requiere conocimientos previos de estadística o programación, 
-        y se enfoca en explicar los conceptos de manera clara y sencilla, utilizando ejemplos prácticos y visuales.
+        comprensible para todos. No requiere conocimientos previos de estadística o programación.
       </>
     ),
   },
@@ -20,9 +19,7 @@ const FeatureList = [
     description: (
       <>
         Se enfoca en la aplicación de la estadística en la investigación médica, 
-        y cubre los conceptos y técnicas estadísticas más relevantes para el análisis de datos en este campo. 
-        Se incluyen ejemplos prácticos y casos de estudio basados en datos reales de investigación médica, 
-        para que los estudiantes puedan aplicar lo aprendido a sus propios proyectos de investigación.
+        y cubre los conceptos y técnicas estadísticas más relevantes para el análisis de datos en este campo.
       </>
     ),
   },
@@ -32,8 +29,7 @@ const FeatureList = [
     description: (
       <>
         Esta en constante desarrollo, y se irán agregando nuevos contenidos y recursos a medida que se avance en el curso.
-        Se anima a los estudiantes a participar activamente en el curso, compartiendo sus experiencias y sugerencias, 
-        y colaborando con otros estudiantes para mejorar el curso y esta comunidad de aprendizaje.
+        Se anima a los estudiantes a participar activamente en el curso, compartiendo sus experiencias y sugerencias.
       </>
     ),
   },

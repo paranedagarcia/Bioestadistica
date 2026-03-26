@@ -78,8 +78,8 @@ Antes de comenzar el análisis estadístico, es esencial identificar el **tipo d
 
 - **Nominales**: Sin orden natural (sexo, grupo sanguíneo, diagnóstico)
 - **Ordinales**: Con orden natural (estadio de enfermedad: I, II, III, IV)
-<br>
-</br>
+<br />
+<br />
 
 :::tip Buena práctica
 Siempre identifica el tipo de variable antes de elegir el método estadístico a aplicar. La elección incorrecta del método puede llevar a conclusiones erróneas.
