@@ -11,7 +11,7 @@ sidebar_position: 3
 
 **Planteamiento Matemático:** Se utiliza la función *logit* para vincular la probabilidad $\pi$ con un predictor lineal:
 
-``math
+```math
 logit(\pi) = \ln\left(\frac{\pi}{1-\pi}\right) = \beta_0 + \beta_1X_1
 ```
 
