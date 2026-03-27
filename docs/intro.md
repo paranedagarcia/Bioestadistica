@@ -45,13 +45,13 @@ En este curso utilizaremos dos lenguajes de programación ampliamente usados en 
 
 [R](https://www.r-project.org/) es un lenguaje de programación y entorno de software libre diseñado especialmente para análisis estadístico y gráficos. Es el estándar de facto en estadística académica y ciencias de la salud.
 
-![](./img/r-estadistica.png)
+![](./img/r-estadistica.webp)
 
 ### Python (Lenguaje de programación)
 
 [Python](https://www.python.org/) es un lenguaje de propósito general muy popular en ciencia de datos, con potentes bibliotecas como `pandas`, `scipy`, `statsmodels` y `matplotlib` que lo hacen excelente para bioestadística.
 
-![](./img/python-estadistica.png)
+![](./img/python-estadistica.webp)
 
 ## Estructura del Curso
 

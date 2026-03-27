@@ -9,7 +9,7 @@ Una **variable** se define como cualquier característica, rasgo o propiedad de 
 
 La taxonomía de las variables es crítica, ya que determina el tipo de análisis estadístico y los modelos matemáticos que pueden aplicarse a los datos recolectados. 
 
-![](img/variables.png)
+![](img/variables.webp)
 
 ## 1. Variables Cualitativas (Categóricas)
 Miden una cualidad o atributo no numérico en cada unidad experimental. Los datos resultantes se clasifican según similitudes o diferencias de clase.
