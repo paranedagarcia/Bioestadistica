@@ -45,9 +45,9 @@ A continuación, se describen las bibliotecas esenciales para la bioestadística
 Aunque R incluye funciones nativas potentes, la base de la estadística inferencial se apoya en paquetes que estandarizan el ajuste de modelos.
 
 *   **`stats`**: Es parte del núcleo de R y proporciona las funciones fundamentales para modelos lineales (`lm()`) y modelos lineales generalizados (`glm()`), esenciales para variables de respuesta no normales.
-*   
+  
 *   **`rms` (Regression Modeling Strategies)**: Desarrollada por Frank Harrell, es indispensable en la investigación médica para el ajuste de modelos multivariados, validación de modelos mediante *bootstrapping*, y la creación de nomogramas para la predicción de riesgos clínicos.
-*   
+ 
 *   **`VGAM` (Vector Generalized Linear and Additive Models)**: Implementa más de 50 distribuciones y 20 funciones de enlace, permitiendo modelar respuestas múltiples y categóricas ordenadas o multinomiales con un rigor matemático superior al `glm()` estándar.
 
 La estructura matemática fundamental que comparten estas bibliotecas para un modelo lineal generalizado (GLM) se define por la función de enlace $g(\cdot)$:
@@ -75,9 +75,9 @@ Donde $\lambda(t|Z)$ es la función de riesgo condicionado a las covariables $Z$
 ### 3. El Ecosistema `tidyverse` para Ciencia de Datos Médicos
 La informática médica moderna requiere herramientas eficientes para la limpieza y organización de grandes bases de datos hospitalarias.
 *   **`dplyr` y `tidyr`**: Esenciales para la manipulación de datos y la transformación de formatos "anchos" a "largos", garantizando que los datos sean "tidy" (ordenados) antes del análisis.
-*   
+
 *   **`ggplot2`**: Implementación de la "Gramática de Gráficos", permite generar visualizaciones de alta calidad para publicaciones, desde curvas ROC hasta diagramas de cajas complejos.
-*   
+
 *   **`lubridate`**: Crítica para manejar la complejidad de fechas y tiempos en registros de salud electrónicos.
 
 ### 4. Epidemiología y Bioinformática
@@ -111,7 +111,6 @@ Python es un lenguaje de programación de uso general, lo que significa que su a
 
 *   **Menor Enfoque en la Inferencia:** Mientras R se centra en la **inferencia** (entender la relación entre variables y su significancia), Python a menudo prioriza la **predicción** (precisión del resultado final), lo que puede ser un inconveniente en la investigación clínica tradicional.
 
-<br />
 
 ## Bibliotecas de Python esenciales
 
@@ -165,16 +164,20 @@ Aunque no es estrictamente una biblioteca estadística, `pandas` proporciona la 
 ### 1. Modelado Estadístico: R vs. `statsmodels` (Python)
 En la bioestadística clínica, el rigor en la inferencia es prioritario sobre la mera predicción.
 
-*   **R (Base y `rms`):** R utiliza funciones nativas como `glm()` para Modelos Lineales Generalizados, permitiendo especificar distribuciones de error y funciones de enlace con precisión matemática. La biblioteca `rms` de Frank Harrell es el estándar de oro para el modelado multivariado en medicina.
+**R (Base y `rms`):** R utiliza funciones nativas como `glm()` para Modelos Lineales Generalizados, permitiendo especificar distribuciones de error y funciones de enlace con precisión matemática. La biblioteca `rms` de Frank Harrell es el estándar de oro para el modelado multivariado en medicina.
 
-*   **Python (`statsmodels`):** *Información externa a las fuentes:* `statsmodels` es la biblioteca de Python que más se aproxima al flujo de trabajo de R. Permite realizar estimaciones por Máxima Verosimilitud (MLE) y análisis de varianza (ANOVA).
+**Python (`statsmodels`):** *Información externa a las fuentes:* `statsmodels` es la biblioteca de Python que más se aproxima al flujo de trabajo de R. Permite realizar estimaciones por Máxima Verosimilitud (MLE) y análisis de varianza (ANOVA).
 
-*   **Fundamentación Matemática:** Ambos implementan el modelo lineal generalizado bajo la estructura:
-    $$g(E[Y]) = \beta_0 + \sum_{j=1}^{k} \beta_j X_j$$
-    *Donde:*
-    *   $g$: Es la función de enlace (ej. *logit* para regresión logística o *log* para Poisson).
-    *   $E[Y]$: Es la esperanza matemática o valor esperado de la variable respuesta biológica.
-    *   $\beta_0, \beta_j$: Representan los parámetros o coeficientes a estimar.
+**Fundamentación Matemática:** Ambos implementan el modelo lineal generalizado bajo la estructura:
+
+```math
+g(E[Y]) = \beta_0 + \sum_{j=1}^{k} \beta_j X_j
+```
+
+*Donde:*
+*   $g$: Es la función de enlace (ej. *logit* para regresión logística o *log* para Poisson).
+*   $E[Y]$: Es la esperanza matemática o valor esperado de la variable respuesta biológica.
+*   $\beta_0, \beta_j$: Representan los parámetros o coeficientes a estimar.
 
 ### 2. Bioinformática y Genética: `Bioconductor` (R) vs. `Biopython` (Python)
 El manejo de datos ómicos (genómica, transcriptómica) requiere estructuras de datos capaces de gestionar alta dimensionalidad.

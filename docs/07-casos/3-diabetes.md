@@ -10,7 +10,11 @@ sidebar_position: 3
 **Problema:** En epidemiología clínica, es vital predecir la probabilidad de presencia de una enfermedad (ej. diabetes) basada en factores de riesgo continuos como el Índice de Masa Corporal (IMC).
 
 **Planteamiento Matemático:** Se utiliza la función *logit* para vincular la probabilidad $\pi$ con un predictor lineal:
-$$logit(\pi) = \ln\left(\frac{\pi}{1-\pi}\right) = \beta_0 + \beta_1X_1$$
+
+``math
+logit(\pi) = \ln\left(\frac{\pi}{1-\pi}\right) = \beta_0 + \beta_1X_1
+```
+
 Donde $\pi$ es el valor esperado del desenlace binario y $\beta_1$ representa el efecto del IMC sobre el logaritmo de la *odds* de padecer la enfermedad,.
 
 **Ejemplo en R:**

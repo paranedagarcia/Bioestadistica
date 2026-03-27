@@ -9,7 +9,11 @@ sidebar_position: 2
 **Problema:** Determinar la eficacia de un tratamiento de mantenimiento en pacientes con leucemia mielógena aguda (LMA) midiendo el tiempo hasta la recaída.
 
 **Planteamiento Matemático:** El estimador de Kaplan-Meier se define como:
-$$\hat{S}(t) = \prod_{t_i \le t} \left(1 - \frac{d_i}{n_i}\right)$$
+
+```math
+\hat{S}(t) = \prod_{t_i \le t} \left(1 - \frac{d_i}{n_i}\right)
+```
+
 Donde $d_i$ es el número de eventos (muertes/recaídas) en el tiempo $t_i$, y $n_i$ es el número de sujetos en riesgo justo antes de $t_i$,.
 
 **Ejemplo en R:**
