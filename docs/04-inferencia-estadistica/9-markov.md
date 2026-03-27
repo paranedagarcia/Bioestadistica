@@ -9,9 +9,9 @@ sidebar_position: 9
 
 Este documento proporciona una descripción científica y técnica del **modelo de Markov** y las **cadenas de Markov**, integrando los fundamentos matemáticos necesarios y ejemplos prácticos en Python utilizando conjuntos de datos reales.
 
----
+<br />
 
-# El Modelo de Markov y las Cadenas de Markov
+## El Modelo de Markov y las Cadenas de Markov
 
 ### 1. Definición y Propiedad de Markov
 Una **cadena de Markov** es un proceso estocástico (una secuencia de variables aleatorias) en el que la probabilidad de que el sistema se mueva a un estado futuro depende exclusivamente del estado actual y no de la serie de eventos que le precedieron. En otras palabras, el estado futuro depende únicamente del estado presente, no de la historia completa del sistema Esta característica fundamental se conoce como la **propiedad de Markov** o la "falta de memoria" del sistema.
@@ -31,8 +31,6 @@ P\bigl(X_{t+1}=j\mid X_t=i, X_{t-1}=i_{t-1},\dots\bigr)=P\bigl(X_{t+1}=j\mid X_t
 ```
 
 donde $p_{ij}$ son las probabilidades de transición que forman la matriz de transición $P$:
-
-
 
 
 #### Matriz de Transición Estocástica
@@ -66,12 +64,12 @@ A continuación, se presentan dos ejemplos prácticos de análisis secuencial.
 
 #### Ejemplo: Predicción meteorológica (dataset NOAA)
 
-```r
-#r
+```python
+#
 
 ```
 
----
+<br />
 
 ### 4. Clasificación de Estados y Ergodicidad
 *   **Recurrencia:** Un estado es recurrente si la probabilidad de regresar a él en un tiempo finito es 1.
