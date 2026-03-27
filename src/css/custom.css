@@ -33,3 +33,8 @@
     font: normal 1.3em KaTeX_Main, Times New Roman, serif !important;
 }
 
+@media screen and (max-width: 996px) {
+    .heroBanner_qdFl {
+        padding: 1rem !important;
+    }
+}

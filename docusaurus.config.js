@@ -122,7 +122,7 @@ const config = {
             items: [
               {
                 label: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/paranedagarcia',
+                href: 'https://www.linkedin.com/in/patricioaraneda/',
               },
               {
                 label: 'X',
