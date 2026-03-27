@@ -13,7 +13,7 @@ import remarkMath from 'remark-math';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Bioestadística',
-  tagline: 'Estadística para la investigación médica',
+  tagline: 'Estadística para la investigación biomédica',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -80,7 +80,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/bioestadistica-card.png',
       colorMode: {
         respectPrefersColorScheme: true,
       },
