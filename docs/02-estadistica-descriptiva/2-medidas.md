@@ -9,9 +9,10 @@ sidebar_position: 2
 
 El núcleo de la estadística descriptiva reside en dos tipos de medidas: las de **tendencia central** y las de **dispersión**. Las medidas de tendencia central buscan identificar un valor "típico" o central alrededor del cual se agrupan los datos. Las tres más importantes son la media, la mediana y la moda.
 
+<figure>
 ![](https://aprendiendoadministracion.com/wp-content/uploads/2016/02/graf21.png)
-* *Medidas de tendencia central*
-* Fuente: https://aprendiendoadministracion.com/medidas-de-tendencia-central-media-mediana-moda-rango-y-eje-medio/
+<small>Fuente: https://aprendiendoadministracion.com/medidas-de-tendencia-central-media-mediana-moda-rango-y-eje-medio/</small>
+</figure>
 
 ### Media
 **Media** Es el promedio aritmético, calculado sumando todos los valores y dividiendo por la cantidad total de ellos. 
@@ -38,3 +39,27 @@ Una característica clave de la mediana es su resistencia al sesgo causado por v
 | **Ejemplo** | (2+4+6+8)/4 = 5 | Lista impar: [1,3,5] → 3; <br/>Par: [1,2,3,4] → 2.5 | [1,1,2,2,2,3] → Moda = 2 |
 
 
+<details>
+    <summary>Código R</summary>
+
+    ```r
+
+    ```
+
+</details>
+
+<details>
+    <summary>Código Python</summary>
+    npm 
+    ```r
+
+    ```
+
+</details>
+
+<br />
+
+<object data="/bioestadistica/files/data_medidas.pdf" type="application/pdf" width="100%" height="600px">
+    <p>Parece que no tienes un visor de PDF integrado. 
+    Puedes <a href="/files/data_medidas.pdf">descargar el archivo</a> aquí.</p>
+</object>

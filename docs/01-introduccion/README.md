@@ -7,9 +7,20 @@ sidebar_position: 1
 
 # Introducción a la Bioestadística
 
+La **bioestadística** es la aplicación de métodos estadísticos a problemas biológicos y de salud. Es una herramienta fundamental en investigación biomédica, epidemiología, salud pública y ciencias de la vida.
+
 La Bioestadística se define formalmente como la rama especializada de la estadística que se ocupa de la aplicación de métodos, principios y reglas estadísticas a la recolección, organización, análisis e interpretación de datos procedentes de las ciencias biológicas, médicas y de la salud. Es una ciencia interdisciplinaria que actúa como puente entre la teoría estadística y la realidad empírica de la biología y la medicina, permitiendo transformar la variabilidad intrínseca de los organismos vivos en información científica útil para la toma de decisiones.
 
+## ¿Qué es la Bioestadística?
+
 Desde una perspectiva académica, la Bioestadística es el conjunto de procedimientos lógicos y matemáticos utilizados para discernir el **"señal"** (el fenómeno biológico de interés) del **"ruido"** (la variabilidad aleatoria e imprecisión experimental) en sistemas vivos. Su objetivo primordial no es solo la descripción numérica de fenómenos biológicos, sino el desarrollo de **inferencias válidas** sobre poblaciones a partir de muestras, cuantificando la incertidumbre inherente a los procesos de salud-enfermedad.
+
+La bioestadística combina los principios de la estadística con el conocimiento de las ciencias biológicas para:
+
+- Diseñar experimentos y estudios de investigación
+- Recolectar, organizar y resumir datos
+- Analizar e interpretar resultados
+- Extraer conclusiones válidas y tomar decisiones fundamentadas
 
 ### Diferencia Fundamental con la Estadística "General"
 Aunque ambas comparten la base matemática, la Bioestadística se distingue de la estadística aplicada a otras áreas (como la industria o los negocios) por tres pilares fundamentales:

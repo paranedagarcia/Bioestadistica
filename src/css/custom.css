@@ -46,3 +46,7 @@ figure {
   margin-inline-start: 0px !important;
   margin-inline-end: 0px !important;
 }
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.6rem !important;
+}

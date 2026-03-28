@@ -6,6 +6,10 @@ sidebar_position: 1
 
 Sitio educativo para aprender **Bioestadística** con R / Python, construido con [Docusaurus](https://docusaurus.io/).
 
+Este sitio de estudio está diseñado para guiar a los principiantes a través de los pilares estadísticos que sustentan la ciencia de datos, partiendo desde conceptos extremadamente básicos hasta ideas más avanzadas. El objetivo es ofrecer una visión clara y orientada a la aplicación práctica, evitando la complejidad innecesaria del formalismo matemático (pero si perder la rigurosidad de los conceptos), para priorizar la intuición y la interpretación. 
+
+Exploraremos cómo la estadística descriptiva nos permite conocer nuestros datos, cómo la inferencia estadística nos permite generalizar hallazgos, y cómo la teoría de la probabilidad y las distribuciones de probabilidad son herramientas indispensables para modelar incertidumbre y construir predicciones robustas.
+
 ## Contenido del Curso
 
 - **Introducción a la Bioestadística**: Variables, niveles de medición, conceptos fundamentales
@@ -14,19 +18,9 @@ Sitio educativo para aprender **Bioestadística** con R / Python, construido con
 - **Inferencia Estadística**: Pruebas de hipótesis, intervalos de confianza, correlación, ANOVA
 - **R para Bioestadística**: Introducción al lenguaje R con ejemplos biomédicos
 - **Python para Bioestadística**: Introducción a Python con numpy, pandas, scipy y matplotlib
+- **Casos de uso en salud**: Basados en el entorno de programación R y además en Python
 
-## Introducción a la Bioestadística
 
-La **bioestadística** es la aplicación de métodos estadísticos a problemas biológicos y de salud. Es una herramienta fundamental en investigación biomédica, epidemiología, salud pública y ciencias de la vida.
-
-## ¿Qué es la Bioestadística?
-
-La bioestadística combina los principios de la estadística con el conocimiento de las ciencias biológicas para:
-
-- Diseñar experimentos y estudios de investigación
-- Recolectar, organizar y resumir datos
-- Analizar e interpretar resultados
-- Extraer conclusiones válidas y tomar decisiones fundamentadas
 
 ## ¿Por qué aprender Bioestadística?
 

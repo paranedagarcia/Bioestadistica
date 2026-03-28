@@ -22,7 +22,7 @@ La génesis de R se encuentra profundamente ligada al lenguaje **S**, desarrolla
 
 ### 2. Características Principales y Paradigmas
 
-R se distingue por ser un lenguaje **interpretado**, lo que permite una interacción fluida y la ejecución de comandos línea a línea en una consola o entorno de desarrollo (IDE) como RStudio,,.
+R se distingue por ser un lenguaje **interpretado**, lo que permite una interacción fluida y la ejecución de comandos línea a línea en una consola o entorno de desarrollo (IDE) como [RStudio](https://posit.co/download/rstudio-desktop/) o [Positron](https://positron.posit.co).
 
 #### A. Naturaleza del Entorno
 R se define como un "ambiente" (*environment*) porque es un sistema planificado y coherente, en contraposición a una acumulación de herramientas aisladas. Sus capacidades incluyen la manipulación de datos, el cálculo matricial y la generación de gráficos de alta calidad,.
@@ -70,6 +70,8 @@ $$Y \sim X_1 + X_2 + \dots + X_k$$
 
 # Positron
 
+La elección de un **Entorno de Desarrollo Integrado (IDE)** es crítica para garantizar la eficiencia del flujo de trabajo y la reproductibilidad de los resultados.
+
 <figure>
 [![](https://positron.posit.co/images/astropy.png)]()
 <small>https://positron.posit.co/images/astropy.png</small>
@@ -79,7 +81,6 @@ $$Y \sim X_1 + X_2 + \dots + X_k$$
 El IDE Positron es un software de reciente aparición (2024). 
 :::
 
-La elección de un **Entorno de Desarrollo Integrado (IDE)** es crítica para garantizar la eficiencia del flujo de trabajo y la reproductibilidad de los resultados. Es pertinente aclarar que las fuentes proporcionadas centran su análisis en herramientas consolidadas como **RStudio** y **RCommander**.
 
 ### 1. Antecedentes e Historia de Positron
 
