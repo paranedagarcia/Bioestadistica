@@ -9,7 +9,10 @@ sidebar_position: 2
 
 El **Teorema del Límite Central (TLC)** es uno de los pilares fundamentales de la estadística inferencial y la teoría de la probabilidad, con una relevancia trascendental en la investigación epidemiológica. Su postulado principal establece que, bajo condiciones generales, la suma (o el promedio) de un número suficientemente grande de variables aleatorias independientes e idénticamente distribuidas (i.i.d.) tenderá a seguir una **distribución normal**, independientemente de la forma de la distribución original de la población.
 
-
+<figure>
+![](img/tlc.webp)
+<small>Infografía creada por IA.</small>
+</figure>
 
 ### 1. Enunciado y Fundamentación
 
