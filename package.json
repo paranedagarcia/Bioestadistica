@@ -1,5 +1,5 @@
 {
-  "name": "bioestadistica-medica",
+  "name": "bioestadistica",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
+    "@docusaurus/faster": "^3.9.2",
     "@docusaurus/preset-classic": "3.9.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
@@ -26,7 +27,9 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/types": "3.9.2"
+    "@docusaurus/types": "3.9.2",
+    "webpack": "^5.95.0",
+    "webpack-dev-server": "^4.15.2"
   },
   "browserslist": {
     "production": [

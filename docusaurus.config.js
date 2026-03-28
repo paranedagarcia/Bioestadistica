@@ -160,6 +160,11 @@ const config = {
       crossorigin: 'anonymous',
     },
   ],
+  future: {
+    experimental_faster: {
+      rspackBundler: true, // Reemplaza Webpack con Rspack
+    },
+  },
 };
 
 export default config;
