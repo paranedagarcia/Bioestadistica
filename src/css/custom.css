@@ -49,4 +49,11 @@ figure {
 
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.6rem !important;
+  color: #525f58 !important;
+}
+
+.title_kItE {
+  --ifm-h1-font-size: 2.6rem !important;
+  margin-bottom: calc(1.25 * var(--ifm-leading));
+  color: #525f58 !important;
 }
