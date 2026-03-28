@@ -115,6 +115,10 @@ const config = {
                 label: 'Curso',
                 to: '/docs/intro',
               },
+              {
+                label: 'Autor',
+                to: '/docs/autor',
+              },
             ],
           },
           {

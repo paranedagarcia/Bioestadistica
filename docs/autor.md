@@ -7,14 +7,14 @@ sidebar_position: 11
 
 
 <div class="container">
-<div class="avatar">
+<div class="avatar avatar--vertical">
   <img
     class="avatar__photo avatar__photo--xl"
     src="https://patricioaraneda.cl/wp-content/uploads/2021/05/pato-fondo2-300x300.jpg" />
   <div class="avatar__intro">
     <div class="avatar__name">Patricio Araneda</div>
     <small class="avatar__subtitle">
-      Dirección de Proyectos TI. Magíster en Informática Médica
+      Dirección de Proyectos TI | Magíster en Informática Médica
     </small>
   </div>
 </div>
