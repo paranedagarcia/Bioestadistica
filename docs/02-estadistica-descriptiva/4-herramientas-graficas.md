@@ -82,7 +82,7 @@ El conjunto de datos Iris es un conjunto de datos clásico en el campo del apren
 #### Referencias
 - Freedman, D., Pisani, R., & Purves, R. (2007). *Statistics* (4th ed.). W. W. Norton & Company.
 
-![Iris Dataset Image](./img/iris.png)
+![Iris Dataset Image](./img/iris.webp)
 ![Iris Dataset Image](./img/iris-sepal.png)
 
 ```r
