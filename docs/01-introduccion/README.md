@@ -20,7 +20,7 @@ Aunque ambas comparten la base matemática, la Bioestadística se distingue de l
 
 3.  **Significancia Estadística vs. Relevancia Clínica:** En bioestadística, un resultado puede ser estadísticamente significativo (un valor $p < 0.05$) pero carecer de importancia práctica en la salud de un paciente. Esta distinción es crítica en medicina, donde la magnitud del efecto biológico prima sobre el mero rigor matemático.
 
-### Relevancia en el Área Médica
+### Relevancia en Biomedicina
 En la medicina contemporánea, la bioestadística es el núcleo del método científico y la medicina basada en la evidencia. Sus aplicaciones principales incluyen:
 
 *   **Estimación de Parámetros Poblacionales:** Mediante el cálculo del **Error Típico de la Media (SEM)**, que cuantifica la variabilidad de la media muestral respecto a la media poblacional real ($\mu$):
