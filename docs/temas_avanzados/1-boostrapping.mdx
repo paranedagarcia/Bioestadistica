@@ -4,6 +4,8 @@ title: Boostrapping
 sidebar_label: Boostrapping
 sidebar_position: 1
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Boostrapping
 
@@ -31,15 +33,10 @@ Funciona incluso con distribuciones desconocidas o con muestras pequeñas.
 **✔ 2. Estima incertidumbre de cualquier estadístico**
 
 - Media
-
 - Mediana
-
 - Percentiles
-
 - Coeficientes de regresión
-
 - Correlaciones
-
 - Estadísticos complejos
 
 **✔ 3. Permite construir intervalos de confianza robustos**
@@ -83,8 +80,12 @@ F^{*}(\theta) = \frac{1}{B} \sum_{b=1}^B I(\hat{\theta}^{*b} \le \theta)
 
 y se utiliza para construir intervalos de confianza y estimar la incertidumbre del estimador.
 
-#### Ejemplo en Python
+#### Ejemplo
 
+
+
+<Tabs>
+  <TabItem value="apple" label="Python" default>
 ```python
 # Dataset de ejemplo
 # Usaremos un pequeño conjunto de datos simulados (por ejemplo, pesos en kg).
@@ -104,7 +105,6 @@ theta_hat, n
 
 
 # Bootstrapping de la media
-
 # Realizamos $B$ remuestras con reemplazo y calculamos la media en cada una de ellas.
 
 rng = np.random.default_rng(123)
@@ -128,6 +128,19 @@ plt.ylabel("Frecuencia")
 plt.legend()
 plt.show()
 ```
+
+  </TabItem>
+  <TabItem value="banana" label="R">
+    ```r
+    codigo en R....
+
+    Pendiente
+    ```
+  </TabItem>
+</Tabs>
+
+
+
 ![](img/boostrap-media.png)
 
 

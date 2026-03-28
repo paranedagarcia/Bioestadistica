@@ -4,6 +4,8 @@ title: Ley de Benford
 sidebar_label: Ley de Benford
 sidebar_position: 2
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # 📘 La Ley de Benford
 
@@ -92,9 +94,12 @@ $$
 
 <br /> 
 
-### 🧪 Ejemplo en Python (para Jupyter Notebook)
+### 🧪 Código de ejemplo
 
-A continuación tienes un conjunto de celdas listo para copiar/pegar en un notebook.
+<Tabs>
+  <TabItem value="apple" label="Python" default>
+Ejemplo en Python (para Jupyter Notebook)
+
 ```python
 # importar librerias
 import numpy as np
@@ -156,9 +161,24 @@ plt.show()
 En la mayoría de los casos verás que **la distribución se acerca bastante a lo esperado por la Ley de Benford**.
 <br />
 
+</TabItem>
+<TabItem value="banana" label="R">
+    ```r
+    codigo en R.... proximamente
+
+
+    ```
+  </TabItem>
+</Tabs>
+
+### 🧪 Ejemplo adicional: precios aleatorios multiplicativos
+Los datos multiplicativos suelen seguir Benford
+
+<Tabs>
+  <TabItem value="apple" label="Python" default>
+
 ```python
-## 🧪 Ejemplo adicional: precios aleatorios multiplicativos
-#Los datos multiplicativos suelen seguir Benford:
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -184,6 +204,15 @@ plt.show()
 ![](img/benford-multiplica.png)
 
 Este tipo de datos casi siempre sigue muy bien la Ley de Benford.
+</TabItem>
+<TabItem value="banana" label="R">
+    ```r
+    codigo en R.... proximamente
+
+
+    ```
+  </TabItem>
+</Tabs>
 
 <br />
 
