@@ -20,6 +20,8 @@ Un concepto central en la probabilidad es el de **variable aleatoria**. Una vari
 
 A partir de las variables aleatorias, se definen las **distribuciones de probabilidad**, que describen cómo se distribuyen las probabilidades de los posibles valores de una variable aleatoria. Como mencionamos anteriormente, algunas distribuciones son tan comunes que se han convertido en herramientas esenciales en la ciencia de datos. La elección de una distribución para modelar un fenómeno de datos no es arbitraria; se basa en la naturaleza del problema: el tipo de datos (discreto o continuo), la simetría esperada, los límites de los valores y la frecuencia de los valores extremos.
 
+![Distribuciones](img/distribuciones.webp)
+
 Aquí hay una tabla que resume algunas de las distribuciones de probabilidad más importantes y sus aplicaciones en la ciencia de datos:
 
 | Distribución | Tipo | Parámetros Clave | Aplicaciones Comunes |
@@ -34,9 +36,9 @@ Aquí hay una tabla que resume algunas de las distribuciones de probabilidad má
 
 En resumen, la probabilidad no es solo un tema teórico; es una herramienta práctica para modelar el mundo tal como es: lleno de incertidumbre. Proporciona la base matemática para todo lo que sigue: desde el Teorema Central del Límite hasta la construcción de intervalos de confianza y las pruebas de hipótesis. Para cualquier aspirante a científico de datos, dominar la intuición detrás de estas distribuciones y saber cuándo aplicarlas es un paso decisivo hacia un análisis de datos más profundo y riguroso.
 
-## Dominando las Distribuciones: Herramientas para Modelar Fenómenos Reales
+## Dominando las Distribuciones
 
-Si la probabilidad es el lenguaje de la incertidumbre, entonces las **distribuciones de probabilidad** son sus vocablos más importantes. Son modelos matemáticos que describen cómo se distribuyen las probabilidades de los posibles resultados de una variable aleatoria. En la ciencia de datos, elegir la distribución correcta para modelar un conjunto de datos es un acto de comprensión profunda del fenómeno subyacente. No todas las distribuciones son iguales, y su uso adecuado puede ser la diferencia entre un modelo predictivo exitoso y uno que falla rotundamente. Las distribuciones pueden clasificarse principalmente en discretas y continuas, dependiendo de si la variable aleatoria toma un conjunto contable de valores o un rango continuo.
+Si la probabilidad es el lenguaje de la incertidumbre, entonces las **distribuciones de probabilidad** son sus vocablos más importantes. Son modelos matemáticos que describen cómo se distribuyen las probabilidades de los posibles resultados de una variable aleatoria. Elegir la distribución correcta para modelar un conjunto de datos es un acto de comprensión profunda del fenómeno subyacente. No todas las distribuciones son iguales, y su uso adecuado puede ser la diferencia entre un modelo predictivo exitoso y uno que falla rotundamente. Las distribuciones pueden clasificarse principalmente en discretas y continuas, dependiendo de si la variable aleatoria toma un conjunto contable de valores o un rango continuo.
 
 ### Distribución Normal
 

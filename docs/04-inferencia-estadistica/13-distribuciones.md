@@ -19,7 +19,7 @@ El desarrollo de esta distribución se atribuye al matemático suizo **Jacob Ber
 
 Posteriormente, en el siglo XVIII, **Abraham de Moivre** introdujo la aproximación de la distribución binomial a la normal. Su motivación fue puramente práctica: el cálculo manual de términos binomiales para muestras grandes (por ejemplo, $n > 50$) resultaba extremadamente tedioso antes de la existencia de la computación moderna.
 
-### 2. Definición y Formulación Matemática
+### 2. Definición y Formulación
 Una variable aleatoria discreta $X$ sigue una distribución binomial si representa el número de éxitos en $n$ ensayos de Bernoulli independientes.
 
 #### Función de Masa de Probabilidad (PMF)
@@ -48,14 +48,14 @@ P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}
 
 ### 3. Fundamentos Científicos y Supuestos
 Para que un fenómeno biológico o médico pueda ser modelado rigurosamente mediante una distribución binomial, debe cumplir con las condiciones **BInS**:
-1.  **B**inario: Cada ensayo tiene solo dos resultados posibles (ej. positivo/negativo, sobrevive/muere).
-2.  **I**ndependencia: El resultado de un ensayo no afecta la probabilidad del siguiente.
-3.  **n** constante: El número de ensayos se fija de antemano.
-4.  **S**uccess (éxito): La probabilidad $p$ es la misma en cada ensayo.
+- **B**inario: Cada ensayo tiene solo dos resultados posibles (ej. positivo/negativo, sobrevive/muere).
+- **I**ndependencia: El resultado de un ensayo no afecta la probabilidad del siguiente.
+- **n** constante: El número de ensayos se fija de antemano.
+- **S**uccess (éxito): La probabilidad $p$ es la misma en cada ensayo.
 
 **Nota sobre el muestreo:** En informática médica, a menudo se muestrea de poblaciones finitas sin reemplazo (lo que técnicamente sugeriría una distribución hipergeométrica). Sin embargo, se acepta el uso de la binomial si el tamaño de la muestra $n$ es menor al 5% del tamaño de la población $N$, ya que la probabilidad $p$ se mantiene virtualmente constante.
 
-### 4. Usos en el Ámbito de la Salud e Informática Médica
+### 4. Usos en el Ámbito de la Salud
 La distribución binomial es la piedra angular para el análisis de variables cualitativas dicotómicas:
 
 *   **Epidemiología:** Estimar la prevalencia de una enfermedad en una comunidad (ej. casos positivos de influenza H1N1 en una muestra de 500 sujetos).
@@ -97,17 +97,17 @@ En el marco de los modelos estadísticos avanzados, la distribución de Poisson 
 
 ### 3. Fundamentos: El Proceso de Poisson
 Para que un fenómeno se considere un experimento o **proceso de Poisson**, deben satisfacerse las siguientes condiciones de rigor científico:
-1.  **Independencia**: La ocurrencia de un evento en un intervalo no influye en la probabilidad de que ocurra en otro intervalo distinto.
-2.  **Proporcionalidad**: La probabilidad de que ocurra un solo evento en un subintervalo muy pequeño es proporcional a la longitud de dicho intervalo ($\lambda \Delta t$).
-3.  **Exclusividad**: La probabilidad de que ocurra más de un evento en un subintervalo infinitesimal tiende a cero.
-4.  **Tasa Constante**: El promedio de ocurrencias ($\lambda$) permanece invariable durante todo el periodo de observación.
+- **Independencia**: La ocurrencia de un evento en un intervalo no influye en la probabilidad de que ocurra en otro intervalo distinto.
+- **Proporcionalidad**: La probabilidad de que ocurra un solo evento en un subintervalo muy pequeño es proporcional a la longitud de dicho intervalo ($\lambda \Delta t$).
+- **Exclusividad**: La probabilidad de que ocurra más de un evento en un subintervalo infinitesimal tiende a cero.
+- **Tasa Constante**: El promedio de ocurrencias ($\lambda$) permanece invariable durante todo el periodo de observación.
 
 #### Propiedades Críticas
 *   **Igualdad de Momentos**: Una propiedad distintiva y diagnóstica es que la **media ($E[X]$)** y la **varianza ($V[X]$)** son idénticas y equivalen a $\lambda$.
 *   **Relación con la Distribución Exponencial**: Si el número de eventos sigue una distribución de Poisson, el tiempo transcurrido entre dos eventos sucesivos sigue una **distribución exponencial** con parámetro $\lambda$.
 *   **Convergencia**: A medida que $\lambda$ aumenta (típicamente $\lambda \ge 10$ o $\ge 100$ para mayor rigor), la distribución de Poisson se vuelve simétrica y puede ser aproximada satisfactoriamente por la **distribución normal**.
 
-### 4. Aplicaciones en Salud e Informática Médica
+### 4. Aplicaciones en Salud
 En la práctica clínica y la gestión sanitaria, la distribución de Poisson es indispensable para:
 *   **Análisis de Datos Clínicos**: Modelado del conteo de glóbulos blancos en una muestra de sangre, eosinófilos en un campo microscópico o desintegraciones radiactivas en medicina nuclear.
 *   **Epidemiología**: Estimación de la incidencia de enfermedades raras, como casos de cáncer en una comunidad específica o mortalidad materna.
@@ -150,7 +150,7 @@ $$t = \frac{\overline{X} - \mu}{S / \sqrt{n}}$$
 *   **$n$:** El tamaño de la muestra.
 *   **$S / \sqrt{n}$ (Error Estándar de la Media o SEM):** Representa la precisión de la media muestral como estimador de la poblacional; cuantifica el "ruido" aleatorio en la medición.
 
-### 3. Fundamento Científico y Propiedades
+### 3. Fundamento y Propiedades
 La distribución t se fundamenta en la necesidad de corregir la incertidumbre adicional que surge al estimar la varianza de la población a partir de una muestra pequeña.
 
 *   **Simetría:** Al igual que la distribución normal, es simétrica respecto al valor cero y presenta una forma acampanada (unimodal).
@@ -162,18 +162,18 @@ La distribución t se fundamenta en la necesidad de corregir la incertidumbre ad
 ### 4. Usos en Salud
 La aplicación de la t de Student es ubicua en la investigación biomédica para la validación de hipótesis.
 
-1.  **Estimación por Intervalos de Confianza:** Permite delimitar el rango de valores donde se encuentra la verdadera media de una variable (ej. nivel de glucosa) con una confianza determinada (ej. 95%).
+- **Estimación por Intervalos de Confianza:** Permite delimitar el rango de valores donde se encuentra la verdadera media de una variable (ej. nivel de glucosa) con una confianza determinada (ej. 95%).
     ```math
     IC = \overline{x} \pm t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}
     ```
 
-2.  **Prueba t de una muestra:** Para determinar si la media de un grupo de pacientes difiere de un estándar clínico conocido (ej. ¿es la tensión arterial media superior a lo normal?).
+- **Prueba t de una muestra:** Para determinar si la media de un grupo de pacientes difiere de un estándar clínico conocido (ej. ¿es la tensión arterial media superior a lo normal?).
 
-3.  **Prueba t para muestras independientes:** Crucial en ensayos clínicos para comparar la eficacia de dos tratamientos distintos (ej. fármaco nuevo vs. placebo).
+- **Prueba t para muestras independientes:** Crucial en ensayos clínicos para comparar la eficacia de dos tratamientos distintos (ej. fármaco nuevo vs. placebo).
 
-4.  **Prueba t para muestras apareadas:** Se utiliza cuando se mide al mismo paciente antes y después de una intervención, eliminando la variabilidad entre individuos y aumentando la eficiencia estadística.
+- **Prueba t para muestras apareadas:** Se utiliza cuando se mide al mismo paciente antes y después de una intervención, eliminando la variabilidad entre individuos y aumentando la eficiencia estadística.
 
-5.  **Regresión Lineal:** En informática médica, se emplea para testar si los coeficientes de un modelo predictivo ($\beta$) son significativamente distintos de cero, validando así la relación entre predictores y resultados de salud.
+- **Regresión Lineal:** En informática médica, se emplea para testar si los coeficientes de un modelo predictivo ($\beta$) son significativamente distintos de cero, validando así la relación entre predictores y resultados de salud.
 
 <br />
 
@@ -221,7 +221,7 @@ El rigor de la distribución de Bernoulli se sustenta en el cumplimiento de los 
 
 En informática médica, la suma de $n$ ensayos de Bernoulli independientes da lugar a la **distribución binomial**, permitiendo modelar el número total de éxitos en una muestra clínica.
 
-### 4. Usos en Salud e Informática Médica
+### 4. Usos en Salud
 En el ámbito biomédico, la distribución de Bernoulli es indispensable para caracterizar variables cualitativas y procesos de clasificación:
 *   **Diagnóstico Clínico:** El resultado de una prueba serológica (ej. VIH) donde el resultado es reactivo (éxito) o no reactivo (fracaso).
 *   **Epidemiología:** El estado de un individuo respecto a una patología, como ser diabético o no.
