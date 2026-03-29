@@ -11,29 +11,30 @@ La integración de lenguajes de programación en la bioinformática ha consolida
 
 
 
-## 🟦 R: El Entorno Especializado para Bioestadística
+## 🟦 R: El Entorno Especializado
 
 R se define no solo como un lenguaje, sino como un **ambiente integrado** para el cómputo estadístico y gráfico. Su origen se remonta al lenguaje S, desarrollado en los laboratorios Bell para el análisis de datos.
 
 ### Ventajas en el Área Médica
-* ***Dominio en Epidemiología y Genómica:** R es considerado la "lingua franca" del análisis de datos científicos. Posee repositorios especializados como **Bioconductor**, que contiene miles de paquetes específicos para bioinformática y análisis genómico.
+**Dominio en Epidemiología y Genómica:** R es considerado la "lingua franca" del análisis de datos científicos. Posee repositorios especializados como **Bioconductor**, que contiene miles de paquetes específicos para bioinformática y análisis genómico.
 
-* **Rigor en el Modelado Estadístico:** La sintaxis de R permite implementar modelos complejos de forma directa. Por ejemplo, la función `glm()` facilita el ajuste de **Modelos Lineales Generalizados**, esenciales para desenlaces biomédicos dicotómicos o de conteo.
-    *   *Fórmula base de un GLM en R:*
+**Rigor en el Modelado Estadístico:** La sintaxis de R permite implementar modelos complejos de forma directa. Por ejemplo, la función `glm()` facilita el ajuste de **Modelos Lineales Generalizados**, esenciales para desenlaces biomédicos dicotómicos o de conteo.
+
+*Fórmula base de un GLM en R:*
         ```math
         g(E[Y]) = \beta_0 + \beta_1 X_1 + ... + \beta_k X_k
         ```
 
-        Donde $g$ es la función de enlace (link function) que conecta la esperanza matemática del resultado con el predictor lineal.
+    Donde $g$ es la función de enlace (link function) que conecta la esperanza matemática del resultado con el predictor lineal.
 
-* **Capacidad Gráfica Superior:** Herramientas como `ggplot2` y el sistema base de R permiten crear visualizaciones de calidad editorial (curvas de supervivencia de Kaplan-Meier, diagramas de caja, curvas ROC) de manera más sofisticada que la mayoría de los paquetes comerciales.
+**Capacidad Gráfica Superior:** Herramientas como `ggplot2` y el sistema base de R permiten crear visualizaciones de calidad editorial (curvas de supervivencia de Kaplan-Meier, diagramas de caja, curvas ROC) de manera más sofisticada que la mayoría de los paquetes comerciales.
 
-*   **Reproducibilidad Científica:** Mediante el uso de *scripts* y herramientas como `knitr` o `Sweave`, R permite integrar el código y los resultados en un único documento, garantizando que el flujo de trabajo pueda ser auditado y replicado exactamente meses después.
+**Reproducibilidad Científica:** Mediante el uso de *scripts* y herramientas como `knitr` o `Sweave`, R permite integrar el código y los resultados en un único documento, garantizando que el flujo de trabajo pueda ser auditado y replicado exactamente meses después.
 
 ### Desventajas
-*   **Curva de Aprendizaje:** Para usuarios habituados a interfaces de "apuntar y hacer clic" (como SPSS), R puede resultar intimidante al requerir comandos escritos.
+**Curva de Aprendizaje:** Para usuarios habituados a interfaces de "apuntar y hacer clic" (como SPSS), R puede resultar intimidante al requerir comandos escritos.
 
-*   **Gestión de Memoria RAM:** R carga todos los objetos en la memoria virtual, lo que puede alentar el sistema o generar errores si se trabaja con bases de datos masivas (en el rango de gigabytes o terabytes) sin técnicas de optimización.
+**Gestión de Memoria RAM:** R carga todos los objetos en la memoria virtual, lo que puede alentar el sistema o generar errores si se trabaja con bases de datos masivas (en el rango de gigabytes o terabytes) sin técnicas de optimización.
 
 ### Bibliotecas esenciales en bioestadística
 
@@ -60,9 +61,9 @@ Donde $E[Y]$ es el valor esperado de la variable biológica y $\eta$ es el predi
 
 ### 2. Análisis de Supervivencia (Time-to-Event)
 El análisis de datos truncados o censurados es el "pilar" de la investigación clínica y epidemiológica.
-*   **`survival`**: Es la biblioteca de referencia absoluta. Contiene funciones críticas como `Surv()` para definir objetos de supervivencia, `survfit()` para estimaciones de Kaplan-Meier y `coxph()` para el modelo de riesgos proporcionales de Cox.
+**`survival`**: Es la biblioteca de referencia absoluta. Contiene funciones críticas como `Surv()` para definir objetos de supervivencia, `survfit()` para estimaciones de Kaplan-Meier y `coxph()` para el modelo de riesgos proporcionales de Cox.
 
-*   **`coxrobust`**: Específicamente diseñada para la estimación robusta en modelos de Cox cuando existen valores atípicos que pueden sesgar los resultados.
+**`coxrobust`**: Específicamente diseñada para la estimación robusta en modelos de Cox cuando existen valores atípicos que pueden sesgar los resultados.
 
 El modelo de Cox ajustado en estas bibliotecas se expresa como:
 
@@ -73,17 +74,25 @@ El modelo de Cox ajustado en estas bibliotecas se expresa como:
 Donde $\lambda(t|Z)$ es la función de riesgo condicionado a las covariables $Z$, y $\lambda_0(t)$ es el riesgo basal.
 
 ### 3. El Ecosistema `tidyverse` para Ciencia de Datos Médicos
+
+![Tidyverse](../05-r-basico/img/tidyverse.png)
+
 La informática médica moderna requiere herramientas eficientes para la limpieza y organización de grandes bases de datos hospitalarias.
-*   **`dplyr` y `tidyr`**: Esenciales para la manipulación de datos y la transformación de formatos "anchos" a "largos", garantizando que los datos sean "tidy" (ordenados) antes del análisis.
 
-*   **`ggplot2`**: Implementación de la "Gramática de Gráficos", permite generar visualizaciones de alta calidad para publicaciones, desde curvas ROC hasta diagramas de cajas complejos.
+**`dplyr` y `tidyr`**: Esenciales para la manipulación de datos y la transformación de formatos "anchos" a "largos", garantizando que los datos sean "tidy" (ordenados) antes del análisis.
 
-*   **`lubridate`**: Crítica para manejar la complejidad de fechas y tiempos en registros de salud electrónicos.
+**`ggplot2`**: Implementación de la "Gramática de Gráficos", permite generar visualizaciones de alta calidad para publicaciones, desde curvas ROC hasta diagramas de cajas complejos.
+
+**`lubridate`**: Crítica para manejar la complejidad de fechas y tiempos en registros de salud electrónicos.
+
+Enlaces
+- https://tidyverse.org/
+- https://rpubs.com/paraneda/tidyverse
 
 ### 4. Epidemiología y Bioinformática
 *   **`epibasix`**: Proporciona herramientas elementales para problemas epidemiológicos comunes, como el cálculo del tamaño muestral y el análisis de tablas de contingencia $2 \times 2$.
  
-*   **`Bioconductor` (Repositorio)**: No es un paquete único, sino un ecosistema para el análisis ómico. Incluye bibliotecas como `SNPassoc` para estudios de asociación genética y `pcaMethods` para la reducción de dimensionalidad en datos genómicos.
+*   **`Bioconductor` (Repositorio)**: No es un paquete único, sino un ecosistema para el análisis ómico. Incluye bibliotecas como `SNPassoc` para estudios de asociación genética y `pcaMethods` para la reducción de dimensionalidad en datos genómicos. https://www.bioconductor.org/
 
 *   **`meta` y `metafor`**: Bibliotecas estándar de oro para realizar meta-análisis, permitiendo la síntesis cuantitativa de evidencia clínica de múltiples estudios.
 
@@ -91,6 +100,8 @@ La informática médica moderna requiere herramientas eficientes para la limpiez
 *   **`mice` (Multivariate Imputation by Chained Equations)**: Esencial para tratar el problema de los datos faltantes en estudios clínicos mediante imputación múltiple, preservando la variabilidad de los datos.
 
 *   **`coin`**: Implementa procedimientos de inferencia condicional y pruebas de permutación, útiles cuando los supuestos de las pruebas paramétricas tradicionales no se cumplen en muestras médicas pequeñas.
+
+
 
 <br />
 
@@ -100,16 +111,16 @@ La informática médica moderna requiere herramientas eficientes para la limpiez
 Python es un lenguaje de programación de uso general, lo que significa que su arquitectura está diseñada para construir cualquier tipo de aplicación, no exclusivamente para estadística.
 
 ### Ventajas
-*   **Integración de Sistemas:** Es excelente para integrarse con infraestructuras de software hospitalario, aplicaciones web o dispositivos médicos, permitiendo que un modelo estadístico pase a producción de manera más fluida que R.
+**Integración de Sistemas:** Es excelente para integrarse con infraestructuras de software hospitalario, aplicaciones web o dispositivos médicos, permitiendo que un modelo estadístico pase a producción de manera más fluida que R.
 
-*   **Sintaxis Intuitiva:** Su estructura es a menudo percibida como más coherente para personas con formación en ingeniería de software, lo que facilita el desarrollo de aplicaciones de informática médica complejas.
+**Sintaxis Intuitiva:** Su estructura es a menudo percibida como más coherente para personas con formación en ingeniería de software, lo que facilita el desarrollo de aplicaciones de informática médica complejas.
 
-*   **Machine Learning a Escala:** Aunque R tiene capacidades robustas, Python suele liderar en el entrenamiento de modelos de redes neuronales profundas (*Deep Learning*) para el análisis de imágenes médicas (ej. radiografías u oncología digital).
+**Machine Learning a Escala:** Aunque R tiene capacidades robustas, Python suele liderar en el entrenamiento de modelos de redes neuronales profundas (*Deep Learning*) para el análisis de imágenes médicas (ej. radiografías u oncología digital).
 
 ### Desventajas
-*   **Fragmentación Bioestadística:** A diferencia de R, donde un paquete como `survival` es el estándar universal para análisis de supervivencia, en Python las bibliotecas estadísticas están más dispersas y a veces carecen de la profundidad técnica específica de los paquetes de CRAN desarrollados por comunidades de estadísticos académicos.
+**Fragmentación Bioestadística:** A diferencia de R, donde un paquete como `survival` es el estándar universal para análisis de supervivencia, en Python las bibliotecas estadísticas están más dispersas y a veces carecen de la profundidad técnica específica de los paquetes de CRAN desarrollados por comunidades de estadísticos académicos.
 
-*   **Menor Enfoque en la Inferencia:** Mientras R se centra en la **inferencia** (entender la relación entre variables y su significancia), Python a menudo prioriza la **predicción** (precisión del resultado final), lo que puede ser un inconveniente en la investigación clínica tradicional.
+**Menor Enfoque en la Inferencia:** Mientras R se centra en la **inferencia** (entender la relación entre variables y su significancia), Python a menudo prioriza la **predicción** (precisión del resultado final), lo que puede ser un inconveniente en la investigación clínica tradicional.
 
 
 ### Bibliotecas de Python esenciales
@@ -161,7 +172,7 @@ Aunque no es estrictamente una biblioteca estadística, `pandas` proporciona la 
 
 ## Comparaciones en áreas específicas
 
-### 1. Modelado Estadístico: R vs. `statsmodels` (Python)
+### 1. Modelado Estadístico: R vs. statsmodels
 En la bioestadística clínica, el rigor en la inferencia es prioritario sobre la mera predicción.
 
 **R (Base y `rms`):** R utiliza funciones nativas como `glm()` para Modelos Lineales Generalizados, permitiendo especificar distribuciones de error y funciones de enlace con precisión matemática. La biblioteca `rms` de Frank Harrell es el estándar de oro para el modelado multivariado en medicina.
@@ -179,14 +190,16 @@ g(E[Y]) = \beta_0 + \sum_{j=1}^{k} \beta_j X_j
 *   $E[Y]$: Es la esperanza matemática o valor esperado de la variable respuesta biológica.
 *   $\beta_0, \beta_j$: Representan los parámetros o coeficientes a estimar.
 
-### 2. Bioinformática y Genética: `Bioconductor` (R) vs. `Biopython` (Python)
+### 2. Bioinformática y Genética: `Bioconductor` (R) vs. Biopython
+
 El manejo de datos ómicos (genómica, transcriptómica) requiere estructuras de datos capaces de gestionar alta dimensionalidad.
 
 *   **R (`Bioconductor`):** Es un proyecto masivo de código abierto diseñado específicamente para el análisis de datos genómicos. Incluye paquetes como `genetics` para estudios de asociación y `SNPassoc` para polimorfismos de un solo nucleótido.
 
 *   **Python (`Biopython`):** A diferencia de la orientación analítica de Bioconductor, `Biopython` se centra en la computación biológica (manipulación de secuencias, lectura de archivos estructurales PDB y acceso a bases de datos como NCBI). Es superior en la creación de tuberías (*pipelines*) de bioinformática estructural.
 
-### 3. Proteómica y Espectrometría: R vs. `pyOpenMS` (Python)
+### 3. Proteómica y Espectrometría: R vs. pyOpenMS
+
 El análisis de proteínas y su expresión es crítico para el descubrimiento de biomarcadores.
 
 *   **R (Ecosistema Proteómico):** Dentro de Bioconductor, R ofrece paquetes para el procesamiento de espectrometría de masas y análisis de abundancia relativa, facilitando el análisis estadístico posterior de los péptidos detectados.

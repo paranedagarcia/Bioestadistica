@@ -11,6 +11,8 @@ La **bioestadística** es la aplicación de métodos estadísticos a problemas b
 
 La Bioestadística se define formalmente como la rama especializada de la estadística que se ocupa de la aplicación de métodos, principios y reglas estadísticas a la recolección, organización, análisis e interpretación de datos procedentes de las ciencias biológicas, médicas y de la salud. Es una ciencia interdisciplinaria que actúa como puente entre la teoría estadística y la realidad empírica de la biología y la medicina, permitiendo transformar la variabilidad intrínseca de los organismos vivos en información científica útil para la toma de decisiones.
 
+![Bioestadistica](img/bioestadistica.webp)
+
 ## ¿Qué es la Bioestadística?
 
 Desde una perspectiva académica, la Bioestadística es el conjunto de procedimientos lógicos y matemáticos utilizados para discernir el **"señal"** (el fenómeno biológico de interés) del **"ruido"** (la variabilidad aleatoria e imprecisión experimental) en sistemas vivos. Su objetivo primordial no es solo la descripción numérica de fenómenos biológicos, sino el desarrollo de **inferencias válidas** sobre poblaciones a partir de muestras, cuantificando la incertidumbre inherente a los procesos de salud-enfermedad.
@@ -32,6 +34,9 @@ Aunque ambas comparten la base matemática, la Bioestadística se distingue de l
 3.  **Significancia Estadística vs. Relevancia Clínica:** En bioestadística, un resultado puede ser estadísticamente significativo (un valor $p < 0.05$) pero carecer de importancia práctica en la salud de un paciente. Esta distinción es crítica en medicina, donde la magnitud del efecto biológico prima sobre el mero rigor matemático.
 
 ### Relevancia en Biomedicina
+
+![Bioestadistica](img/bioestadistica-bio.webp)
+
 En la medicina contemporánea, la bioestadística es el núcleo del método científico y la medicina basada en la evidencia. Sus aplicaciones principales incluyen:
 
 *   **Estimación de Parámetros Poblacionales:** Mediante el cálculo del **Error Típico de la Media (SEM)**, que cuantifica la variabilidad de la media muestral respecto a la media poblacional real ($\mu$):
