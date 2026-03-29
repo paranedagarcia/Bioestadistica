@@ -5,12 +5,23 @@ sidebar_label: Curvas ROC
 sidebar_position: 5
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ### Evaluación de la Capacidad Discriminatoria (Análisis de Curvas ROC)
 **Problema:** Validar un nuevo marcador biológico para predecir la supervivencia a un año en pacientes con cirrosis biliar primaria (CBP).
 
 **Fundamento:** La curva ROC (*Receiver Operating Characteristic*) grafica la Sensibilidad (Tasa de Verdaderos Positivos) frente al complementario de la Especificidad (1 - Tasa de Verdaderos Negativos) para todos los posibles puntos de corte de un biomarcador.
 
+<Tabs>
+  <TabItem value="python" label="Python" default>
+```python
+# Ejemplo de Covid-19 basado en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
 **Ejemplo en R:**
 ```r
 library(survivalROC)
@@ -25,3 +36,5 @@ plot(roc_mayo$FP, roc_mayo$TP, type = "l", xlab = "1 - Especificidad", ylab = "S
 abline(0, 1, lty = 2)
 text(0.6, 0.2, paste("AUC =", round(roc_mayo$AUC, 3)))
 ```
+</TabItem>
+</Tabs>

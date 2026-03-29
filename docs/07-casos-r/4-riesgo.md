@@ -5,6 +5,8 @@ sidebar_label: Análisis de riesgo
 sidebar_position: 4
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
 ## Análisis de Riesgos Proporcionales (Modelo de Cox)
@@ -18,6 +20,15 @@ sidebar_position: 4
 
 Donde $\lambda_0(t)$ es el riesgo basal y $\exp(\beta)$ representa el *Hazard Ratio* (HR), asumiendo que el efecto de las covariables es constante en el tiempo.
 
+<Tabs>
+  <TabItem value="python" label="Python" default>
+```python
+# Ejemplo de Covid-19 basado en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
 **Ejemplo en R:**
 ```r
 library(survival)
@@ -29,3 +40,5 @@ fit_cox <- coxph(Surv(futime, fustat) ~ age + ecog.ps, data = ovarian)
 # Obtención de los Hazard Ratios y su significancia
 summary(fit_cox)
 ```
+</TabItem>
+</Tabs>

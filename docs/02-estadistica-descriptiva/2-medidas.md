@@ -40,17 +40,16 @@ Una característica clave de la mediana es su resistencia al sesgo causado por v
 
 
 <details>
-    <summary>Código R</summary>
+    <summary>Código Python</summary>
 
-    ```r
+    ```python
 
     ```
 
 </details>
 
 <details>
-    <summary>Código Python</summary>
-    npm 
+    <summary>Código R</summary>
     ```r
 
     ```

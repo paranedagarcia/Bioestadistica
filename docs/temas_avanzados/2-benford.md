@@ -1,5 +1,5 @@
 ---
-id: temas-benford
+id: benford
 title: Ley de Benford
 sidebar_label: Ley de Benford
 sidebar_position: 2
@@ -96,7 +96,7 @@ $$
 
 ### 🧪 Código de ejemplo
 
-<Tabs>
+<Tabs className="unique-tabs">
   <TabItem value="apple" label="Python" default>
 Ejemplo en Python (para Jupyter Notebook)
 
@@ -162,9 +162,9 @@ En la mayoría de los casos verás que **la distribución se acerca bastante a l
 <br />
 
 </TabItem>
-<TabItem value="banana" label="R">
+<TabItem value="r" label="R">
     ```r
-    codigo en R.... proximamente
+    Ejemplo de codigo en R.... proximamente
 
 
     ```
@@ -173,9 +173,8 @@ En la mayoría de los casos verás que **la distribución se acerca bastante a l
 
 ### 🧪 Ejemplo adicional: precios aleatorios multiplicativos
 Los datos multiplicativos suelen seguir Benford
-
 <Tabs>
-  <TabItem value="apple" label="Python" default>
+  <TabItem value="python" label="Python" default>
 
 ```python
 
@@ -205,9 +204,9 @@ plt.show()
 
 Este tipo de datos casi siempre sigue muy bien la Ley de Benford.
 </TabItem>
-<TabItem value="banana" label="R">
+<TabItem value="r" label="R">
     ```r
-    codigo en R.... proximamente
+    Ejemplo de codigo en R.... proximamente
 
 
     ```

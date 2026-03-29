@@ -10,17 +10,6 @@ Este sitio de estudio está diseñado para guiar a los principiantes a través d
 
 Exploraremos cómo la estadística descriptiva nos permite conocer nuestros datos, cómo la inferencia estadística nos permite generalizar hallazgos, y cómo la teoría de la probabilidad y las distribuciones de probabilidad son herramientas indispensables para modelar incertidumbre y construir predicciones robustas.
 
-## Contenido del Curso
-
-- **Introducción a la Bioestadística**: Variables, niveles de medición, conceptos fundamentales
-- **Estadística Descriptiva**: Medidas de tendencia central y dispersión, visualización
-- **Probabilidad y Distribuciones**: Distribución normal, binomial, t de Student, chi-cuadrado
-- **Inferencia Estadística**: Pruebas de hipótesis, intervalos de confianza, correlación, ANOVA
-- **R para Bioestadística**: Introducción al lenguaje R con ejemplos biomédicos
-- **Python para Bioestadística**: Introducción a Python con numpy, pandas, scipy y matplotlib
-- **Casos de uso en salud**: Basados en el entorno de programación R y además en Python
-
-
 
 ## ¿Por qué aprender Bioestadística?
 
@@ -53,11 +42,15 @@ El curso está organizado en los siguientes módulos:
 
 | Módulo | Contenido |
 |--------|-----------|
-| **Estadística Descriptiva** | Medidas de tendencia central y dispersión, visualización de datos |
-| **Probabilidad** | Conceptos básicos, distribuciones de probabilidad |
-| **Inferencia Estadística** | Pruebas de hipótesis, intervalos de confianza |
-| **R Básico** | Introducción al lenguaje R para bioestadística |
-| **Python Básico** | Introducción a Python para bioestadística |
+| [**Introducción a la Bioestadística**](../docs/01-introduccion/README.md) | Variables, niveles de medición, conceptos fundamentales |
+| [**Estadística Descriptiva**](../docs/02-estadistica-descriptiva/README.md) | Medidas de tendencia central y dispersión, visualización de datos |
+| [**Probabilidad**](../docs/03-probabilidad/README.md) | Distribución normal, binomial, t de Student, chi-cuadrado |
+| [**Inferencia Estadística**](../docs/04-inferencia-estadistica/README.md) | Pruebas de hipótesis, intervalos de confianza, correlación, ANOVA |
+| **Programación con R** | Introducción al lenguaje R con ejemplos biomédicos |
+| **Programación en Python** | Introducción a Python con numpy, pandas, scipy y matplotlib |
+| **Casos de uso** | Basados en el entorno de programación R y además en Python |
+| [**Temas avanzados**](/bioestadistica/docs/category/temas_avanzados/) | Conceptos avanzados de Bioestadística |
+
 
 ## Tipos de Variables
 

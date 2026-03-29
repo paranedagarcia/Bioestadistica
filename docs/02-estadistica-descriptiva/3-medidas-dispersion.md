@@ -91,3 +91,20 @@ Consideremos el conjunto de datos: [4, 8, 6, 5, 3, 7]
 3. **Desviación Estándar:** $S = \sqrt{S^2} = \sqrt{3.5} \approx 1.87$     
 La desviación estándar de aproximadamente 1.87 indica que, en promedio, los datos se desvían de la media en esa cantidad.
 
+
+<details>
+    <summary>Código Python</summary>
+
+    ```python
+
+    ```
+
+</details>
+
+<details>
+    <summary>Código R</summary>
+    ```r
+
+    ```
+
+</details>

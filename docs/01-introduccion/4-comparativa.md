@@ -11,7 +11,7 @@ La integración de lenguajes de programación en la bioinformática ha consolida
 
 
 
-## 1. R: El Entorno Especializado para Bioestadística
+## 🟦 R: El Entorno Especializado para Bioestadística
 
 R se define no solo como un lenguaje, sino como un **ambiente integrado** para el cómputo estadístico y gráfico. Su origen se remonta al lenguaje S, desarrollado en los laboratorios Bell para el análisis de datos.
 
@@ -35,7 +35,7 @@ R se define no solo como un lenguaje, sino como un **ambiente integrado** para e
 
 *   **Gestión de Memoria RAM:** R carga todos los objetos en la memoria virtual, lo que puede alentar el sistema o generar errores si se trabaja con bases de datos masivas (en el rango de gigabytes o terabytes) sin técnicas de optimización.
 
-## Bibliotecas esenciales en bioestadística
+### Bibliotecas esenciales en bioestadística
 
 El entorno R no se considera simplemente un paquete estadístico, sino un ecosistema computacional completo y un lenguaje de programación orientado a objetos que permite la manipulación, evaluación e interpretación de procedimientos estadísticos complejos aplicados a datos de salud. La extensibilidad de R a través de sus bibliotecas (paquetes) es lo que permite abordar desde análisis descriptivos básicos hasta modelos genómicos de alta dimensionalidad.
 
@@ -95,7 +95,7 @@ La informática médica moderna requiere herramientas eficientes para la limpiez
 <br />
 
 
-## 2. Python: La Versatilidad del Propósito General
+## 🟩 Python: La Versatilidad del Propósito General
 
 Python es un lenguaje de programación de uso general, lo que significa que su arquitectura está diseñada para construir cualquier tipo de aplicación, no exclusivamente para estadística.
 
@@ -112,7 +112,7 @@ Python es un lenguaje de programación de uso general, lo que significa que su a
 *   **Menor Enfoque en la Inferencia:** Mientras R se centra en la **inferencia** (entender la relación entre variables y su significancia), Python a menudo prioriza la **predicción** (precisión del resultado final), lo que puede ser un inconveniente en la investigación clínica tradicional.
 
 
-## Bibliotecas de Python esenciales
+### Bibliotecas de Python esenciales
 
 El ecosistema de Python ofrece una infraestructura robusta que complementa las capacidades analíticas de R, especialmente cuando se requiere la integración de modelos predictivos en sistemas de producción o el procesamiento de datos biológicos a gran escala.
 

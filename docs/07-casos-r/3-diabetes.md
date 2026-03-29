@@ -5,6 +5,8 @@ sidebar_label: Diabetes
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Modelado de Probabilidad de Eventos Dicotómicos (Regresión Logística)
 **Problema:** En epidemiología clínica, es vital predecir la probabilidad de presencia de una enfermedad (ej. diabetes) basada en factores de riesgo continuos como el Índice de Masa Corporal (IMC).
@@ -17,6 +19,15 @@ logit(\pi) = \ln\left(\frac{\pi}{1-\pi}\right) = \beta_0 + \beta_1X_1
 
 Donde $\pi$ es el valor esperado del desenlace binario y $\beta_1$ representa el efecto del IMC sobre el logaritmo de la *odds* de padecer la enfermedad,.
 
+<Tabs>
+  <TabItem value="python" label="Python" default>
+```python
+# Ejemplo de Covid-19 basado en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
 **Ejemplo en R:**
 ```r
 # Carga de datos de pacientes Pima (Diabetes)
@@ -31,3 +42,5 @@ summary(modelo_logit)
 # Predicción de probabilidad para un IMC de 35
 predict(modelo_logit, data.frame(bmi = 35), type = "response")
 ```
+</TabItem>
+</Tabs>

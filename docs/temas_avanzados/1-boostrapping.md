@@ -1,5 +1,5 @@
 ---
-id: temas-boostrapping
+id: boostrapping
 title: Boostrapping
 sidebar_label: Boostrapping
 sidebar_position: 1
