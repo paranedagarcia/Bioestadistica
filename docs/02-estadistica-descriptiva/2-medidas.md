@@ -4,6 +4,8 @@ title: Medidas
 sidebar_label: Medidas descriptivas
 sidebar_position: 2
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Medidas de Tendencia Central
 
@@ -39,7 +41,82 @@ Una característica clave de la mediana es su resistencia al sesgo causado por v
 | **Ejemplo** | (2+4+6+8)/4 = 5 | Lista impar: [1,3,5] → 3; <br/>Par: [1,2,3,4] → 2.5 | [1,1,2,2,2,3] → Moda = 2 |
 
 
-<details>
+<Tabs>
+  <TabItem value="python" label="Python" default>
+    ```python
+    # Medidas de tendencia central en Python...
+    import statistics
+
+# 1. Definición del conjunto de datos (mismas edades que en el ejemplo de R)
+datos = [22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22]
+
+# 2. Cálculo de la Media (Promedio)
+media = statistics.mean(datos)
+
+# 3. Cálculo de la Mediana
+mediana = statistics.median(datos)
+
+# 4. Cálculo de la Moda
+try:
+    moda = statistics.mode(datos)
+except statistics.StatisticsError:
+    moda = "No hay una moda única"
+
+# 5. Mostrar los resultados
+print("--- Medidas de Tendencia Central (Python) ---")
+print(f"Datos: {datos}")
+print(f"Media: {media:.2f}")
+print(f"Mediana: {mediana}")
+print(f"Moda: {moda}")
+
+# Extra: Usando una librería más avanzada (NumPy) para análisis masivo
+import numpy as np
+print("\n--- Resultados con NumPy ---")
+print(f"Media: {np.mean(datos):.2f}")
+print(f"Mediana: {np.median(datos)}")
+    ```
+  </TabItem>
+  <TabItem value="r" label="R">
+    ```r
+    # Medidas de tendencia central en R....
+
+    # 1. Definición del conjunto de datos (ejemplo: edades de un grupo)
+datos <- c(22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22)
+
+# 2. Cálculo de la Media (Promedio aritmético)
+# Se utiliza la función mean()
+media <- mean(datos)
+
+# 3. Cálculo de la Mediana (Valor central tras ordenar los datos)
+# Se utiliza la función median()
+mediana <- median(datos)
+
+# 4. Cálculo de la Moda (El valor con mayor frecuencia)
+# Creamos una función personalizada para encontrar el valor más frecuente
+calcular_moda <- function(v) {
+  tab <- table(v)                # Crea una tabla de frecuencias
+  indice_max <- which.max(tab)    # Encuentra la posición del valor máximo
+  moda <- names(tab)[indice_max]  # Obtiene el nombre (valor) de esa posición
+  return(as.numeric(moda))        # Lo devuelve como número
+}
+
+moda <- calcular_moda(datos)
+
+# 5. Mostrar los resultados en la consola
+cat("--- Medidas de Tendencia Central ---\n")
+cat("Datos analizados:", datos, "\n")
+cat("Media:", media, "\n")
+cat("Mediana:", mediana, "\n")
+cat("Moda:", moda, "\n")
+
+# Extra: Resumen estadístico rápido
+cat("\n--- Resumen General ---\n")
+print(summary(datos))
+    ```
+  </TabItem>
+</Tabs>
+
+<!-- <details>
     <summary>Código Python</summary>
 
     ```python
@@ -51,10 +128,41 @@ Una característica clave de la mediana es su resistencia al sesgo causado por v
 <details>
     <summary>Código R</summary>
     ```r
+    # 1. Definición del conjunto de datos (ejemplo: edades de un grupo)
+datos <- c(22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22)
 
+# 2. Cálculo de la Media (Promedio aritmético)
+# Se utiliza la función mean()
+media <- mean(datos)
+
+# 3. Cálculo de la Mediana (Valor central tras ordenar los datos)
+# Se utiliza la función median()
+mediana <- median(datos)
+
+# 4. Cálculo de la Moda (El valor con mayor frecuencia)
+# Creamos una función personalizada para encontrar el valor más frecuente
+calcular_moda <- function(v) {
+  tab <- table(v)                # Crea una tabla de frecuencias
+  indice_max <- which.max(tab)    # Encuentra la posición del valor máximo
+  moda <- names(tab)[indice_max]  # Obtiene el nombre (valor) de esa posición
+  return(as.numeric(moda))        # Lo devuelve como número
+}
+
+moda <- calcular_moda(datos)
+
+# 5. Mostrar los resultados en la consola
+cat("--- Medidas de Tendencia Central ---\n")
+cat("Datos analizados:", datos, "\n")
+cat("Media:", media, "\n")
+cat("Mediana:", mediana, "\n")
+cat("Moda:", moda, "\n")
+
+# Extra: Resumen estadístico rápido
+cat("\n--- Resumen General ---\n")
+print(summary(datos))
     ```
 
-</details>
+</details> -->
 
 <br />
 

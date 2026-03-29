@@ -128,6 +128,7 @@ plt.ylabel("Frecuencia")
 plt.legend()
 plt.show()
 ```
+![](img/boostrap-media.png)
 
   </TabItem>
   <TabItem value="banana" label="R">
@@ -141,7 +142,7 @@ plt.show()
 
 
 
-![](img/boostrap-media.png)
+
 
 
 

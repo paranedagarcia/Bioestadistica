@@ -49,7 +49,7 @@ El curso está organizado en los siguientes módulos:
 | **Programación con R** | Introducción al lenguaje R con ejemplos biomédicos |
 | **Programación en Python** | Introducción a Python con numpy, pandas, scipy y matplotlib |
 | **Casos de uso** | Basados en el entorno de programación R y además en Python |
-| [**Temas avanzados**](/bioestadistica/docs/category/temas_avanzados/) | Conceptos avanzados de Bioestadística |
+| **Temas avanzados** | Conceptos avanzados de Bioestadística |
 
 
 ## Tipos de Variables
