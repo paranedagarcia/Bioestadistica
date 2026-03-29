@@ -92,19 +92,86 @@ Consideremos el conjunto de datos: [4, 8, 6, 5, 3, 7]
 La desviación estándar de aproximadamente 1.87 indica que, en promedio, los datos se desvían de la media en esa cantidad.
 
 
-<details>
-    <summary>Código Python</summary>
-
+<Tabs>
+  <TabItem value="python" label="Python" default>
     ```python
+    # Medidas de dispersion en Python...
+import statistics
+import numpy as np
 
+# 1. Dataset (the same ages used in the previous examples)
+data = [22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22]
+
+# 2. Range
+data_range = max(data) - min(data)
+
+# 3. Variance
+variance = statistics.variance(data)
+
+# 4. Standard Deviation
+std_dev = statistics.stdev(data)
+
+# 5. Interquartile Range (IQR)
+q75, q25 = np.percentile(data, [75 ,25])
+iqr = q75 - q25
+
+# 6. Displaying the results
+print("--- Measures of Dispersion (Python) ---")
+print(f"Dataset: {data}")
+print(f"Range: {data_range}")
+print(f"Variance: {variance:.2f}")
+print(f"Standard Deviation: {std_dev:.2f}")
+print(f"Interquartile Range (IQR): {iqr}")
+
+# 3. Generating the Horizontal Boxplot
+plt.figure(figsize=(10, 5))
+# 'vert=False' ensures the orientation is horizontal
+plt.boxplot(data, vert=False, patch_artist=True,
+            boxprops=dict(facecolor='#D1E8FF', color='#004C99'),
+            medianprops=dict(color='#CC0000', linewidth=2),
+            flierprops=dict(marker='o', markerfacecolor='#FF8000', markersize=8))
+
+plt.title('Analysis of Dispersion: Distribution of Ages', fontsize=14, fontweight='bold')
+plt.xlabel('Age (Years)', fontsize=12)
+plt.yticks([1], ['Sample Group'])
+plt.grid(axis='x', linestyle='--', alpha=0.6)
+plt.tight_layout()
+
+# Saving and displaying the plot
+plt.savefig('dispersion_analysis.png')
+plt.show()
     ```
+![](img/python_dispersion_analysis.png)
 
-</details>
+    </TabItem>
+    <TabItem value="r" label="R" default>
+    ```python
+    # Medidas de tendencia central en R...
+# 1. Definición del conjunto de datos
+datos <- c(22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22)
 
-<details>
-    <summary>Código R</summary>
-    ```r
+# 2. Rango
+rango <- max(datos) - min(datos)
 
+# 3. Varianza
+varianza <- var(datos)
+
+# 4. Desviación Estándar
+desviacion_estandar <- sd(datos)
+
+# 5. Rango Intercuartílico (IQR)
+rango_iqr <- IQR(datos)
+
+# 6. Mostrar los resultados
+cat("--- Medidas de Dispersión en R ---\n")
+cat("Datos analizados:", datos, "\n")
+cat("Rango:", rango, "\n")
+cat("Varianza:", round(varianza, 2), "\n")
+cat("Desviación Estándar:", round(desviacion_estandar, 2), "\n")
+cat("Rango Intercuartílico (IQR):", rango_iqr, "\n")
+
+# Extra: Visualización rápida de la dispersión
+boxplot(datos, main="Diagrama de Caja de las Edades", horizontal=TRUE, col="lightblue")
     ```
-
-</details>
+    </TabItem>
+</Tabs>
