@@ -141,15 +141,14 @@ plt.tight_layout()
 plt.savefig('dispersion_analysis.png')
 plt.show()
     ```
-![](img/python_dispersion_analysis.png)
+![](img/python-boxplot.png)
 
     </TabItem>
     <TabItem value="r" label="R" default>
     ```python
     # Medidas de tendencia central en R...
 # 1. Definición del conjunto de datos
-datos <- c(22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22)
-
+datos = c(14, 15, 22, 25, 22, 21, 24, 24, 30, 25, 22, 36, 40, 35, 36, 25, 22, 28, 22)
 # 2. Rango
 rango <- max(datos) - min(datos)
 
@@ -173,5 +172,7 @@ cat("Rango Intercuartílico (IQR):", rango_iqr, "\n")
 # Extra: Visualización rápida de la dispersión
 boxplot(datos, main="Diagrama de Caja de las Edades", horizontal=TRUE, col="lightblue")
     ```
+![Boxplot](img/r-boxplot.png)
+
     </TabItem>
 </Tabs>
