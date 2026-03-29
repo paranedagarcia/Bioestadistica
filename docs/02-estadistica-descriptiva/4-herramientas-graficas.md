@@ -11,19 +11,13 @@ Además de estas medidas, la estadística descriptiva utiliza diversas herramien
 ### Histogramas
 Un histograma es una representación gráfica que organiza un conjunto de datos numéricos en intervalos (o "bins") y muestra la frecuencia de datos dentro de cada intervalo mediante barras. A diferencia de un gráfico de barras tradicional, que se utiliza para datos categóricos, un histograma es ideal para datos continuos y ayuda a visualizar la distribución de los datos.
 
-```r
-# R
-hist(datos, 
-     main = "Distribución de los datos",
-     xlab = "Valores",
-     ylab = "Frecuencia",
-     col = "steelblue",
-     border = "white")
-```
-
+<Tabs>
+  <TabItem value="python1" label="Python" default>
 ```python
 # Python con matplotlib
 import matplotlib.pyplot as plt
+
+datos = [22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22]
 
 plt.figure(figsize=(8, 5))
 plt.hist(datos, bins=6, color='steelblue', edgecolor='white')
@@ -32,6 +26,25 @@ plt.xlabel('Valores')
 plt.ylabel('Frecuencia')
 plt.show()
 ```
+![](img/pyhton-histograma.png)
+  </TabItem>
+  <TabItem value="r1" label="R" default>
+```r
+# R
+datos = [22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22]
+hist(datos, 
+     main = "Distribución de los datos",
+     xlab = "Valores",
+     ylab = "Frecuencia",
+     col = "steelblue",
+     border = "white")
+```
+  </TabItem>
+</Tabs>
+
+
+
+
 
 ### Diagramas de Caja (Box Plots)
 Un diagrama de caja, o box plot, es una herramienta gráfica que resume la distribución de un conjunto de datos a través de sus cinco números resumen: 
@@ -52,22 +65,39 @@ El box plot muestra la mediana como una línea dentro de la caja, que representa
 
 El boxplot muestra visualmente la mediana, cuartiles y valores atípicos:
 
+<Tabs>
+  <TabItem value="python2" label="Python" default>
+```python
+# Python
+import matplotlib.pyplot as plt
+
+datos = [14, 15, 22, 25, 22, 21, 24, 24, 30, 25, 22, 36, 40, 35, 36, 25, 22, 28, 22]
+
+plt.figure(figsize=(10, 5))
+plt.boxplot(datos, vert=False, patch_artist=True,
+        boxprops=dict(facecolor='#D1E8FF', color='#004C99'),
+        medianprops=dict(color='#CC0000', linewidth=2),
+        flierprops=dict(marker='o', markerfacecolor='#FF8000', markersize=8))
+plt.title('Diagrama de Caja')
+plt.ylabel('Valores')
+plt.show()
+```
+![Boxplot](img/python-boxplot.png)
+  </TabItem>
+  <TabItem value="r2" label="R" default>
 ```r
 # R
+datos = [14, 15, 22, 25, 22, 21, 24, 24, 30, 25, 22, 36, 40, 35, 36, 25, 22, 28, 22]
 boxplot(datos,
         main = "Diagrama de Caja",
         ylab = "Valores",
         col = "lightblue")
 ```
 
-```python
-# Python
-plt.figure(figsize=(6, 6))
-plt.boxplot(datos)
-plt.title('Diagrama de Caja')
-plt.ylabel('Valores')
-plt.show()
-```
+  </TabItem>
+</Tabs>
+
+
 
 ## Diagramas de dispersión
 Un diagrama de dispersión, o scatter plot, es una representación gráfica que utiliza puntos para mostrar la relación entre dos variables numéricas. Cada punto en el gráfico representa un par de valores correspondientes a las dos variables, con una variable representada en el eje X (horizontal) y la otra en el eje Y (vertical).
@@ -85,8 +115,22 @@ El conjunto de datos Iris es un conjunto de datos clásico en el campo del apren
 ![Iris Dataset Image](./img/iris.webp)
 ![Iris Dataset Image](./img/iris-sepal.png)
 
-```r
-# crea un ejemplo de diagrama de dispersión utilizando el dataset iris
+<Tabs>
+  <TabItem value="python3" label="Python" default>
+```python
+# Python
+import matplotlib.pyplot as plt
+
 
 ```
+
+  </TabItem>
+  <TabItem value="r3" label="R" default>
+```r
+# R
+
+```
+
+  </TabItem>
+</Tabs>
 

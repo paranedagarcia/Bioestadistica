@@ -120,3 +120,23 @@ print(q1_filas)
 - IQR alto → alta heterogeneidad del portafolio; segmenta o normaliza.  
 - Asimetría (Q3 muy alejado de Q2) → evalúa transformaciones (log) o métricas robustas (mediana, MAD).  
 - Outliers frecuentes → valida calidad de datos, caps/winsorization, reglas de negocio.
+
+
+<Tabs>
+  <TabItem value="python3" label="Python" default>
+```python
+# Python
+import matplotlib.pyplot as plt
+
+
+```
+
+  </TabItem>
+  <TabItem value="r3" label="R" default>
+```r
+# R
+
+```
+
+  </TabItem>
+</Tabs>
