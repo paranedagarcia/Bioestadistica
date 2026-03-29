@@ -46,7 +46,7 @@ Es vital distinguir entre la naturaleza de los datos según su origen (cero abso
 **Escala de Razón:** Posee todas las propiedades de la escala de intervalo más un cero absoluto o natural, lo que permite realizar comparaciones de proporcionalidad (ej. $x$ es el doble que $y$).
 *   *Ejemplo:* Peso en kilogramos, edad en años, temperatura en grados Kelvin (donde 0 K es el cero absoluto).
 
-## 4. Otras Clasificaciones Especiales en Informática Médica
+## 4. Otras Clasificaciones Especiales
 **Variables Latentes y Observables:** Una variable latente es un atributo no directamente medible (como la inteligencia o calidad de vida), mientras que las variables observables son las que se utilizan para cuantificar dicho concepto (como el puntaje de un test de CI).
 
 **Variables Indicadoras (Dummy):** Recodificación binaria (0 y 1) de variables cualitativas para que puedan ser incluidas en modelos de regresión matemática.

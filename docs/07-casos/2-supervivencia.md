@@ -5,9 +5,8 @@ sidebar_label: Análisis de supervivencia
 sidebar_position: 2
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+<Tabs>
+<TabItem value="supervivencia" label="Antecedentes" default>
 ## Estimación de Probabilidad de Supervivencia (Método de Kaplan-Meier)
 **Problema:** Determinar la eficacia de un tratamiento de mantenimiento en pacientes con leucemia mielógena aguda (LMA) midiendo el tiempo hasta la recaída.
 
@@ -17,9 +16,9 @@ import TabItem from '@theme/TabItem';
 \hat{S}(t) = \prod_{t_i \le t} \left(1 - \frac{d_i}{n_i}\right)
 ```
 
-Donde $d_i$ es el número de eventos (muertes/recaídas) en el tiempo $t_i$, y $n_i$ es el número de sujetos en riesgo justo antes de $t_i$,.
+Donde $d_i$ es el número de eventos (muertes/recaídas) en el tiempo $t_i$, y $n_i$ es el número de sujetos en riesgo justo antes de $t_i$.
 
-<Tabs>
+</TabItem>
   <TabItem value="python" label="Python" default>
 ```python
 # Ejemplo de Covid-19 basado en Python

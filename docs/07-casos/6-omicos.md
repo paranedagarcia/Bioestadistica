@@ -5,9 +5,11 @@ sidebar_label: Datos omicos
 sidebar_position: 6
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
+
+
+<Tabs>
+<TabItem value="omicos" label="Antecedentes" default>
 ## Reducción de Dimensionalidad en Datos Ómicos (PCA)
 **Problema:** Analizar perfiles de expresión génica masiva (ej. dataset NCI60 con >6,000 genes) para visualizar agrupamientos de diferentes tipos de cáncer en un espacio bidimensional.
 
@@ -16,9 +18,8 @@ import TabItem from '@theme/TabItem';
 ```math
 Z_1 = \phi_{11}X_1 + \phi_{21}X_2 + \dots + \phi_{p1}X_p
 ```
-Donde $\phi$ son los *loadings* (pesos) que definen la dirección de máxima variabilidad,.
-
-<Tabs>
+Donde $\phi$ son los *loadings* (pesos) que definen la dirección de máxima variabilidad.
+</TabItem>
   <TabItem value="python" label="Python" default>
 ```python
 # Ejemplo de Covid-19 basado en Python

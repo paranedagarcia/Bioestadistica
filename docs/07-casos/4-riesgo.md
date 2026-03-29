@@ -9,7 +9,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+
+
+<Tabs>
+<TabItem value="riesgo" label="Antecedente" default>
 ## Análisis de Riesgos Proporcionales (Modelo de Cox)
+
 **Problema:** Evaluar el impacto simultáneo de múltiples covariables (ej. edad y capacidad funcional) sobre la tasa de fallo en pacientes con cáncer de ovario, manejando datos censurados.
 
 **Planteamiento Matemático:** La función de riesgo (*hazard*) se modela como:
@@ -19,11 +24,10 @@ import TabItem from '@theme/TabItem';
 ```
 
 Donde $\lambda_0(t)$ es el riesgo basal y $\exp(\beta)$ representa el *Hazard Ratio* (HR), asumiendo que el efecto de las covariables es constante en el tiempo.
-
-<Tabs>
+</TabItem>
   <TabItem value="python" label="Python" default>
 ```python
-# Ejemplo de Covid-19 basado en Python
+# Ejemplo en Python
 
 ```
 

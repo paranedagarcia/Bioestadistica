@@ -5,9 +5,9 @@ sidebar_label: Cálculo de Potencia
 sidebar_position: 7
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
+<Tabs>
+<TabItem value="potencia" label="Antecedentes" default>
 ## 6. Diseño de Estudios y Cálculo de Potencia (Power Analysis)
 **Problema:** Determinar el tamaño muestral necesario para detectar una diferencia clínicamente relevante en la media de una variable continua (ej. presión arterial) entre dos grupos, evitando errores tipo II.
 
@@ -17,9 +17,8 @@ import TabItem from '@theme/TabItem';
 n = \frac{2\sigma^2(z_{1-\alpha/2} + z_{1-\beta})^2}{\Delta^2}
 ```
 
-Donde $\sigma$ es la desviación estándar común y $\Delta$ es la diferencia mínima que se desea detectar,.
-
-<Tabs>
+Donde $\sigma$ es la desviación estándar común y $\Delta$ es la diferencia mínima que se desea detectar.
+</TabItem>
   <TabItem value="python" label="Python" default>
 ```python
 # Ejemplo de Covid-19 basado en Python
