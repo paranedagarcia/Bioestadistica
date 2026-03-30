@@ -37,11 +37,15 @@ Una característica distintiva es la **vectorización**, que permite aplicar ope
 
 **Ejemplo Matemático de Operación Vectorial:**
 Si se desea calcular la media aritmética ($\bar{x}$) de un vector de datos clínicos $X = \{x_1, x_2, \dots, x_n\}$, R aplica internamente:
-$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$
+
+```math
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+```
+
 *Donde:*
-*   $n$: Representa la longitud del vector o número de observaciones (`length(x)`),.
+*   $n$: Representa la longitud del vector o número de observaciones (`length(x)`).
 *   $x_i$: Es el valor de la $i$-ésima unidad estadística.
-*   $\sum$: Es el operador de sumatoria implementado eficientemente en la función `sum(x)`,.
+*   $\sum$: Es el operador de sumatoria implementado eficientemente en la función `sum(x)`.
 
 #### D. Extensibilidad: El Ecosistema CRAN
 La funcionalidad de R se expande mediante **paquetes**,. El repositorio oficial, **CRAN** (*Comprehensive R Archive Network*), alberga actualmente más de 20,000 paquetes especializados en áreas que van desde la genómica hasta los ensayos clínicos y el aprendizaje automático,,.
