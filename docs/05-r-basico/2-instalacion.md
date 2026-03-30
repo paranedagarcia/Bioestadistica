@@ -64,7 +64,7 @@ pip install jupyterlab
 ```
 Instalar kernel R "IRkernel" desde el terminal R: 
 *user = FALSE para instalar a todos los usuarios del sistema*
-- Ejecuta R en el terminal para que cambie a R >
+- Ejecuta R en el terminal para que cambie a R > y ejecuta las siguientes sentencias:
 ```r
 install.packages(IRkernel')
 IRkernel::installspec(user=TRUE) 
