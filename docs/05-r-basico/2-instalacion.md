@@ -62,6 +62,15 @@ Se sugiere instalar la version 3.13.12
 ```bash
 pip install jupyterlab
 ```
+Instalar kernel R "IRkernel" desde el terminal R: 
+*user = FALSE para instalar a todos los usuarios del sistema*
+- Ejecuta R en el terminal para que cambie a R >
+```r
+install.packages(IRkernel')
+IRkernel::installspec(user=TRUE) 
+q() # salir de la sesion
+```
+
 Para ejecutar KupyterLab, escribe en la terminal:
 ```bash
 jupyter lab

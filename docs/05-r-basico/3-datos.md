@@ -11,6 +11,8 @@ En el ecosistema de programación R, los datos se organizan en jerarquías que v
 
 Se encuentran de distinta clase.
 
+![](img/r-estructuras.webp)
+
 ### 1. Clases Atómicas (Tipos de Datos Simples)
 R maneja cinco clases básicas de datos, denominadas atómicas, que sirven como los bloques de construcción de cualquier análisis clínico:
 
@@ -72,6 +74,8 @@ En registros de salud electrónicos (EHR), es común encontrar irregularidades q
 *   **NA (Not Available):** Representa un dato ausente (p. ej., una prueba de laboratorio no realizada).
 *   **NaN (Not a Number):** Resultado de operaciones matemáticas indefinidas como $0/0$.
 *   **Inf:** Infinito positivo o negativo (p. ej., $1/0$).
+   
+![](img/r-datos.webp)
 
 ### Resumen de Propiedades
 
@@ -85,3 +89,8 @@ En registros de salud electrónicos (EHR), es común encontrar irregularidades q
 
 ***
 
+Ejemplo en R:
+```r
+# Uso de datos en R
+
+```
