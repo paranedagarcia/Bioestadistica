@@ -7,6 +7,14 @@ sidebar_position: 6
 
 <div class="container">
   <div class="row">
+
+  <div class="col col--4">
+
+![](img/rbase.png)
+
+R-base programación
+[R base](../../static/files/base-r-cheat-sheet.pdf)
+</div>
 <div class="col col--4">
 
 ![](img/logo-readr.png)
@@ -19,7 +27,7 @@ Transformaciones de datos
 ![](img/logo-dplyr.png)
 
 Transformaciones de datos
-[dplyr](../../static/files/data-transformation_es.pdffiles/)
+[dplyr](../../static/files/data-transformation_es.pdf)
 
 </div>
 <div class="col col--4">
