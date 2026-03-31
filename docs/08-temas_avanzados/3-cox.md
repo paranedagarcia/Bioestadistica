@@ -55,7 +55,7 @@ En el contexto médico, la medida de efecto principal es el *Hazard Ratio*, obte
 
 En un estudio de remisión de leucemia, si el coeficiente del tratamiento es $\beta = 1.294$, el $HR = e^{1.294} = 3.65$, lo que significa que el grupo placebo tiene 3.65 veces más riesgo de salir de remisión en cualquier momento dado en comparación con el grupo tratado.
 
-El modelo de riesgos proporcionales de Cox es una herramienta fundamental en la informática médica para el análisis de supervivencia, permitiendo evaluar la relación entre el tiempo transcurrido hasta un evento y un conjunto de variables predictoras. A diferencia de los modelos paramétricos, el modelo de Cox es **semiparamétrico**, ya que no requiere especificar la forma de la distribución del tiempo de supervivencia basal ($\lambda_0(t)$), lo que lo hace extremadamente robusto en aplicaciones clínicas.
+El modelo de riesgos proporcionales de Cox es una herramienta fundamental para el análisis de supervivencia, permitiendo evaluar la relación entre el tiempo transcurrido hasta un evento y un conjunto de variables predictoras. A diferencia de los modelos paramétricos, el modelo de Cox es **semiparamétrico**, ya que no requiere especificar la forma de la distribución del tiempo de supervivencia basal ($\lambda_0(t)$), lo que lo hace extremadamente robusto en aplicaciones clínicas.
 
 
 ### Ejemplo de Aplicación en R
@@ -163,7 +163,7 @@ En Python, se debe verificar que el efecto de las covariables sea constante en e
 
 ## Aplicación en genómica
 
-En el ámbito de la informática médica y la bioinformática, el **Modelo de Riesgos Proporcionales de Cox** se ha consolidado como la metodología estándar para analizar datos de tiempo hasta un evento (*time-to-event*), permitiendo evaluar la influencia de variables genéticas y clínicas en la supervivencia o progresión de una enfermedad. A diferencia de los modelos paramétricos, el modelo de Cox es **semiparamétrico**, ya que no requiere especificar la distribución del tiempo de supervivencia basal ($h_0(t)$), lo que le confiere una robustez excepcional para tratar la variabilidad intrínseca de los sistemas biológicos.
+En el ámbito de la bioinformática, el **Modelo de Riesgos Proporcionales de Cox** se ha consolidado como la metodología estándar para analizar datos de tiempo hasta un evento (*time-to-event*), permitiendo evaluar la influencia de variables genéticas y clínicas en la supervivencia o progresión de una enfermedad. A diferencia de los modelos paramétricos, el modelo de Cox es **semiparamétrico**, ya que no requiere especificar la distribución del tiempo de supervivencia basal ($h_0(t)$), lo que le confiere una robustez excepcional para tratar la variabilidad intrínseca de los sistemas biológicos.
 
 
 En las investigaciones genómicas contemporáneas, el modelo de Cox se aplica para discernir el impacto de variantes moleculares sobre desenlaces clínicos.

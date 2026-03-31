@@ -97,7 +97,7 @@ Para la ejecución técnica de un MAS en un entorno clínico u hospitalario, se 
 **Limitaciones:** Su principal desventaja es la dificultad técnica y el costo de elaborar marcos muestrales completos en poblaciones extensas. Además, si la característica de interés presenta una varianza elevada (coeficiente de variación $> 30\%$), se requiere un tamaño de muestra considerablemente grande para mantener la precisión.
 
 En la práctica clínica y epidemiológica, el MAS se aplica en escenarios diversos:
-*   **Auditoría de Calidad en Informática Médica:** Selección de 5 expedientes clínicos electrónicos de una base de datos de 1.000 para verificar la integridad de los datos codificados.
+*   **Auditoría de Calidad:** Selección de 5 expedientes clínicos electrónicos de una base de datos de 1.000 para verificar la integridad de los datos codificados.
 
 *   **Ensayos Clínicos Controlados:** Asignación aleatoria de 50 especímenes de laboratorio o sujetos a grupos de tratamiento y control para garantizar la comparabilidad basal.
 
@@ -265,7 +265,7 @@ En el muestreo por conglomerados de una etapa con tamaños desiguales, el estima
 *   **Error de Muestreo Elevado:** Generalmente presenta un error estándar mayor que el muestreo aleatorio simple (MAS) para un mismo tamaño de muestra. Esto se debe a que los elementos dentro de un conglomerado tienden a parecerse entre sí (correlación intraclase).
 *   **Complejidad Analítica:** Requiere fórmulas de estimación más sofisticadas que el MAS.
 
-#### 5. Aplicaciones en Salud e Informática Médica
+#### 5. Aplicaciones en Salud
 Este muestreo es la herramienta de elección en:
 *   **Ensayos Comunitarios:** Donde la intervención se aplica a grupos completos (ej. fluoración del agua en ciudades aleatorizadas o programas educativos en centros de salud específicos).
 *   **Auditorías Clínicas:** Selección de centros hospitalarios para evaluar la calidad de los registros electrónicos de salud.

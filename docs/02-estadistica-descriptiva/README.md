@@ -26,7 +26,7 @@ La naturaleza del análisis descriptivo está rígidamente determinada por el ti
 *   **Variables Cuantitativas (Numéricas):** Representan cantidades. Se dividen en **discretas** (conteos enteros, como el número de cirugías) y **continuas** (mediciones en un intervalo real, como la concentración de creatinina).
 
 ### 3. Organización Tabular: Distribuciones de Frecuencia
-El primer paso para reducir la complejidad de los datos es la **Tabla de Distribución de Frecuencias (TDF)**. En informática médica, esto permite resumir grandes volúmenes de datos en estructuras compactas que incluyen,,,:
+El primer paso para reducir la complejidad de los datos es la **Tabla de Distribución de Frecuencias (TDF)**. Esto permite resumir grandes volúmenes de datos en estructuras compactas que incluyen,,,:
 *   **Frecuencia Absoluta ($f_i$):** Número de veces que aparece un valor.
 *   **Frecuencia Relativa ($h_i$):** Proporción del total ($f_i / n$).
 *   **Frecuencia Acumulada ($F_i$):** Suma progresiva de frecuencias, vital para determinar percentiles clínicos.

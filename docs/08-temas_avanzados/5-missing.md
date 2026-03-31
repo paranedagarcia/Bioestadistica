@@ -22,7 +22,7 @@ Definimos $Y$ como el vector de datos completos, que se particiona en $Y_{obs}$ 
 
 ## Elementos Esenciales del Manejo de Datos
 
-Un protocolo riguroso de informática médica debe incluir:
+Un protocolo riguroso debe incluir:
 1.  **Identificación y Tabulación:** Uso de funciones diagnósticas (como `is.na()`, `summary()` o `md.pattern()` en R) para cuantificar la magnitud y el patrón (monótono o general) de la ausencia.
 
 2.  **Evaluación del Impacto:** El sesgo ocurre cuando los datos no son MCAR, ya que las estimaciones de los casos observados difieren sistemáticamente de la población real. Además, existe una pérdida de eficiencia (potencia estadística) por la reducción del tamaño muestral efectivo ($n$).

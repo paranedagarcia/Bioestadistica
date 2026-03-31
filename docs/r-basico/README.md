@@ -50,7 +50,7 @@ Si se desea calcular la media aritmética ($\bar{x}$) de un vector de datos clí
 #### D. Extensibilidad: El Ecosistema CRAN
 La funcionalidad de R se expande mediante **paquetes**,. El repositorio oficial, **CRAN** (*Comprehensive R Archive Network*), alberga actualmente más de 20,000 paquetes especializados en áreas que van desde la genómica hasta los ensayos clínicos y el aprendizaje automático,,.
 
-### 3. Estructura de Datos en Informática Médica
+### 3. Estructura de Datos
 
 Para la gestión de registros de salud, R utiliza estructuras específicas que permiten manejar la heterogeneidad de la información clínica:
 

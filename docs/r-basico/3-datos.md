@@ -55,7 +55,7 @@ estadio <- factor(c("I", "II", "I", "III"), levels = c("I", "II", "III"), ordere
 ```
 
 #### D. Data Frames
-Es la estructura de datos por excelencia en la informática médica. Es una lista de vectores de igual longitud, pero cada vector (columna) puede tener un tipo de dato distinto. Esto emula la estructura de una hoja de cálculo o una tabla de base de datos SQL.
+Es la estructura de datos por excelencia en la biomedicina. Es una lista de vectores de igual longitud, pero cada vector (columna) puede tener un tipo de dato distinto. Esto emula la estructura de una hoja de cálculo o una tabla de base de datos SQL.
 
 **Ejemplo:**
 ```r

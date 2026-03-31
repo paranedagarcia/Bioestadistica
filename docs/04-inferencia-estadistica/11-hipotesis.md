@@ -68,7 +68,7 @@ Esencial en epidemiología para comparar tasas de incidencia o prevalencia de un
 *   **Significado:** $p$ representa la proporción de éxito o presencia de un evento en la población. La hipótesis nula postula que la probabilidad de ocurrencia es la misma en ambos estratos.
 
 #### C. Modelos de Regresión e Independencia
-En informática médica, se aplica para validar si un predictor (ej. un biomarcador) influye realmente en el desenlace clínico.
+Se aplica para validar si un predictor (ej. un biomarcador) influye realmente en el desenlace clínico.
 *   **Fórmula:** $H_0: \beta_i = 0$.
 *   **Significado:** $\beta_i$ es el coeficiente de regresión parcial. Un valor de cero implica que la variable independiente no aporta información para predecir la variable dependiente.
 
@@ -133,7 +133,7 @@ Un concepto fundamental vinculado a la hipótesis alternativa es la **potencia d
 
 **Riesgo $\beta$ (Error Tipo II):** Es la probabilidad de no rechazar $H_0$ cuando en realidad $H_a$ es la verdadera.
 
-Un diseño experimental robusto en informática médica debe garantizar una potencia adecuada (usualmente $\geq 80\%$) para asegurar que, si el tratamiento o intervención tiene el efecto postulado en la hipótesis alternativa, el estudio sea capaz de demostrarlo significativamente.
+Un diseño experimental robusto debe garantizar una potencia adecuada (usualmente $\geq 80\%$) para asegurar que, si el tratamiento o intervención tiene el efecto postulado en la hipótesis alternativa, el estudio sea capaz de demostrarlo significativamente.
 
 
 

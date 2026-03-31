@@ -55,7 +55,7 @@ p = \hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 
 Investigaciones sugieren que, en muestras pequeñas, el intervalo de Agresti-Coull es más preciso.
 
-### 4. Aplicaciones y Usos en Informática Médica
+### 4. Aplicaciones y Usos
 
 Los intervalos de confianza son herramientas superiores a los p-valores porque integran información sobre la magnitud del efecto y la precisión de los datos. Sus usos principales incluyen:
 

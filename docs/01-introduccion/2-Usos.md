@@ -5,7 +5,7 @@ sidebar_label: "🔸Utilidad"
 sidebar_position: 2
 ---
 
-La **Bioestadística** se define conceptualmente como la rama especializada de la estadística que se ocupa de la aplicación de métodos estadísticos a la recolección, organización, análisis e interpretación de datos provenientes de las ciencias biológicas, médicas y de la salud. En el marco de la informática médica, su papel es trascendental, pues actúa como el núcleo del método científico al permitir discernir entre la "señal" (fenómeno biológico real) y el "ruido" (variabilidad aleatoria o error experimental) en sistemas vivos.
+La **Bioestadística** se define conceptualmente como la rama especializada de la estadística que se ocupa de la aplicación de métodos estadísticos a la recolección, organización, análisis e interpretación de datos provenientes de las ciencias biológicas, médicas y de la salud. Su papel es trascendental, pues actúa como el núcleo del método científico al permitir discernir entre la "señal" (fenómeno biológico real) y el "ruido" (variabilidad aleatoria o error experimental) en sistemas vivos.
 
 Algunas de las áreas fundamentales donde el uso de la bioestadística es esencial:
 
@@ -52,7 +52,7 @@ Esta área se enfoca en estudiar el lapso de tiempo que transcurre hasta que ocu
 
 *   **Ejemplo:** Comparar la eficacia de dos regímenes de quimioterapia para extender la vida en pacientes con leucemia mieloide aguda.
 
-*   **Concepto clave:** El **Modelo de Riesgos Proporcionales de Cox**, que permite estimar la razón de riesgo (*Hazard Ratio*) ajustando por terceras variables como la edad o el estadio tumoral.
+*   **Concepto clave:** El **Modelo de Riesgos Proporcionales de [Cox](/docs/08-temas_avanzados/3-cox.md)**, que permite estimar la razón de riesgo (*Hazard Ratio*) ajustando por terceras variables como la edad o el estadio tumoral.
 
 ### 5. Bioinformática y Genética Estadística
 La bioestadística es el pilar para analizar grandes volúmenes de datos genómicos, como microarrays o secuenciación de ADN, ayudando a identificar variantes genéticas asociadas con predisposiciones a enfermedades complejas.

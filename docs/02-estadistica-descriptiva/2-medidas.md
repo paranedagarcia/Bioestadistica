@@ -29,8 +29,12 @@ En la lista [1, 2, 3, 4, 5, 6, 7, 8], la mediana es (4+5)/2 = 4.5.
 
 Una característica clave de la mediana es su resistencia al sesgo causado por valores atípicos o extremos, lo que la hace preferible en distribuciones asimétricas.
 
+![](img/media.webp)
+
 ### Moda
 **Moda** Es el valor que aparece con mayor frecuencia en un conjunto de datos. Puede haber más de una moda si varios valores tienen la misma frecuencia máxima, o ninguna moda si todos los valores son únicos. Es especialmente útil para datos categóricos nominales.
+
+![moda](img/moda.webp)
 
 | Característica | Media | Mediana | Moda |
 | :--- | :--- | :--- | :--- |
@@ -38,6 +42,16 @@ Una característica clave de la mediana es su resistencia al sesgo causado por v
 | **Sensibilidad a Outliers** | Alta | Baja (Resistente) | No aplica (categórico) |
 | **Aplicación** | Cuantitativa continua/skewness | Cuantitativa/skewed data | Cualitativa/categórica |
 | **Ejemplo** | (2+4+6+8)/4 = 5 | Lista impar: [1,3,5] → 3; <br/>Par: [1,2,3,4] → 2.5 | [1,1,2,2,2,3] → Moda = 2 |
+
+![](img/escalera.webp)
+
+![asimetria](img/asimetria.webp)
+
+### Matriz de decisión
+
+Un marco de referencia rápido para encontrar el estadístico adecuado según el comportamiento matemático de la variable.
+
+![Matriz](img/matriz.webp)
 
 
 <Tabs>
@@ -165,7 +179,3 @@ print(summary(datos))
 
 <br />
 
-<object data="/bioestadistica/files/data_medidas.pdf" type="application/pdf" width="100%" height="600px">
-    <p>Parece que no tienes un visor de PDF integrado. 
-    Puedes <a href="/files/data_medidas.pdf">descargar el archivo</a> aquí.</p>
-</object>

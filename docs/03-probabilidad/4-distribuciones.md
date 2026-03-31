@@ -10,7 +10,7 @@ sidebar_position: 4
 
 ## Distribución Binomial
 
-La **Distribución Binomial** es uno de los modelos de probabilidad discretas más fundamentales en la bioestadística y la informática médica. Se utiliza para modelar el número de "éxitos" observados en una serie de ensayos independientes que tienen una probabilidad constante de ocurrencia.
+La **Distribución Binomial** es uno de los modelos de probabilidad discretas más fundamentales en la bioestadística. Se utiliza para modelar el número de "éxitos" observados en una serie de ensayos independientes que tienen una probabilidad constante de ocurrencia.
 
 
 ### 1. Contexto Histórico
@@ -53,7 +53,7 @@ Para que un fenómeno biológico o médico pueda ser modelado rigurosamente medi
 - **n** constante: El número de ensayos se fija de antemano.
 - **S**uccess (éxito): La probabilidad $p$ es la misma en cada ensayo.
 
-**Nota sobre el muestreo:** En informática médica, a menudo se muestrea de poblaciones finitas sin reemplazo (lo que técnicamente sugeriría una distribución hipergeométrica). Sin embargo, se acepta el uso de la binomial si el tamaño de la muestra $n$ es menor al 5% del tamaño de la población $N$, ya que la probabilidad $p$ se mantiene virtualmente constante.
+**Nota sobre el muestreo:** A menudo se muestrea de poblaciones finitas sin reemplazo (lo que técnicamente sugeriría una distribución hipergeométrica). Sin embargo, se acepta el uso de la binomial si el tamaño de la muestra $n$ es menor al 5% del tamaño de la población $N$, ya que la probabilidad $p$ se mantiene virtualmente constante.
 
 ### 4. Usos en el Ámbito de la Salud
 La distribución binomial es la piedra angular para el análisis de variables cualitativas dicotómicas:
@@ -91,7 +91,7 @@ El software R proporciona funciones nativas para gestionar esta distribución si
 
 ## Distribución de Poisson
 
-La **Distribución de Poisson** constituye uno de los pilares de la probabilidad discreta en la informática médica, siendo esencial para modelar fenómenos biológicos y operativos caracterizados por el recuento de eventos aleatorios que ocurren con una tasa constante en un intervalo continuo de tiempo o espacio.
+La **Distribución de Poisson** constituye uno de los pilares de la probabilidad discreta, siendo esencial para modelar fenómenos biológicos y operativos caracterizados por el recuento de eventos aleatorios que ocurren con una tasa constante en un intervalo continuo de tiempo o espacio.
 
 ### 1. Contexto Histórico
 Esta distribución debe su nombre al matemático y físico francés **Siméon-Denis Poisson** (1781-1840), quien desarrolló el concepto a partir de sus investigaciones en mecánica celeste y teoría de números. Fue formalmente introducida en su obra de 1837 como una forma límite de la distribución binomial para casos donde el número de ensayos es muy grande y la probabilidad de éxito es sumamente pequeña. Históricamente, también se le ha denominado la "ley de los sucesos raros".
@@ -130,7 +130,7 @@ En la práctica clínica y la gestión sanitaria, la distribución de Poisson es
 *   **Análisis de Datos Clínicos**: Modelado del conteo de glóbulos blancos en una muestra de sangre, eosinófilos en un campo microscópico o desintegraciones radiactivas en medicina nuclear.
 *   **Epidemiología**: Estimación de la incidencia de enfermedades raras, como casos de cáncer en una comunidad específica o mortalidad materna.
 *   **Gestión Hospitalaria**: Predicción de la llegada de pacientes a servicios de urgencias o admisiones diarias para optimizar el personal de turno.
-*   **Informática Médica y Bioinformática**: Análisis del flujo de paquetes en redes de telemedicina, número de solicitudes a servidores web de salud o errores en secuencias genéticas.
+*   **Informática y Bioinformática**: Análisis del flujo de paquetes en redes de telemedicina, número de solicitudes a servidores web de salud o errores en secuencias genéticas.
 *   **Seguridad del Paciente**: Registro de accidentes laborales, fallas de equipos médicos por unidad de tiempo o errores de medicación en farmacia hospitalaria.
 
 <br />
@@ -139,7 +139,7 @@ En la práctica clínica y la gestión sanitaria, la distribución de Poisson es
 
 ## Distribución t de Student
 
-La **Distribución t de Student** es una distribución de probabilidad continua de fundamental importancia en la bioestadística y la informática médica, especialmente diseñada para realizar inferencias sobre la media poblacional cuando el tamaño de la muestra es reducido y la varianza de la población es desconocida.
+La **Distribución t de Student** es una distribución de probabilidad continua de fundamental importancia en la bioestadística, especialmente diseñada para realizar inferencias sobre la media poblacional cuando el tamaño de la muestra es reducido y la varianza de la población es desconocida.
 
 ### 1. Contexto Histórico
 La génesis de esta distribución se remonta a 1908, fruto del trabajo de **William Sealy Gosset**, un químico y matemático que laboraba para la cervecería Guinness en Dublín. Gosset buscaba mejorar los procesos de control de calidad de la cerveza mediante el examen de muestras pequeñas, observando que en estas condiciones la distribución normal no capturaba adecuadamente la variabilidad de las medias. Debido a las estrictas políticas de su empleador sobre la divulgación de secretos comerciales (como el uso de herramientas estadísticas en la producción), se vio obligado a publicar sus hallazgos bajo el seudónimo de **"Student"**. Posteriormente, el eminente estadístico **R. A. Fisher** reconoció la trascendencia del trabajo de Gosset, introdujo formalmente el concepto de "grados de libertad" y extendió su aplicación al análisis de comparación de medias.
@@ -193,7 +193,7 @@ La aplicación de la t de Student es ubicua en la investigación biomédica para
 
 - **Prueba t para muestras apareadas:** Se utiliza cuando se mide al mismo paciente antes y después de una intervención, eliminando la variabilidad entre individuos y aumentando la eficiencia estadística.
 
-- **Regresión Lineal:** En informática médica, se emplea para testar si los coeficientes de un modelo predictivo ($\beta$) son significativamente distintos de cero, validando así la relación entre predictores y resultados de salud.
+- **Regresión Lineal:** Se emplea para testar si los coeficientes de un modelo predictivo ($\beta$) son significativamente distintos de cero, validando así la relación entre predictores y resultados de salud.
 
 <br />
 
@@ -244,7 +244,7 @@ El rigor de la distribución de Bernoulli se sustenta en el cumplimiento de los 
 
 3.  **Probabilidad Constante:** El parámetro $p$ permanece invariable en cada ejecución del experimento.
 
-En informática médica, la suma de $n$ ensayos de Bernoulli independientes da lugar a la **distribución binomial**, permitiendo modelar el número total de éxitos en una muestra clínica.
+La suma de $n$ ensayos de Bernoulli independientes da lugar a la **distribución binomial**, permitiendo modelar el número total de éxitos en una muestra clínica.
 
 ### 4. Usos en Salud
 En el ámbito biomédico, la distribución de Bernoulli es indispensable para caracterizar variables cualitativas y procesos de clasificación:

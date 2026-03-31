@@ -7,7 +7,7 @@ sidebar_position: 12
 
 # ANOVA
 
-El **Análisis de Varianza (ANOVA)** es un conjunto de modelos estadísticos y sus procedimientos asociados en los cuales la varianza observada en una variable particular se particiona en componentes atribuibles a diferentes fuentes de variación. En el contexto de la informática médica, se utiliza primordialmente para determinar si existen diferencias significativas entre las medias de tres o más grupos independientes, generalizando la prueba *t* de Student.
+El **Análisis de Varianza (ANOVA)** es un conjunto de modelos estadísticos y sus procedimientos asociados en los cuales la varianza observada en una variable particular se particiona en componentes atribuibles a diferentes fuentes de variación. Se utiliza primordialmente para determinar si existen diferencias significativas entre las medias de tres o más grupos independientes, generalizando la prueba *t* de Student.
 
 ### 1. Contexto Histórico
 El desarrollo del ANOVA es obra del eminente estadístico y genetista británico **Sir Ronald A. Fisher**, quien introdujo formalmente el método en la década de 1920. Fisher comenzó su trabajo en la Estación Experimental Agrícola de Rothamsted en 1919, donde ideó métodos de aleatorización y análisis de varianza para evaluar la eficacia de diferentes tratamientos en cultivos. 
@@ -51,7 +51,7 @@ Para que los resultados del ANOVA sean rigurosos en la investigación biomédica
 3.  **Homocedasticidad (Homogeneidad de Varianza):** Las varianzas de los grupos deben ser aproximadamente iguales. Se puede verificar mediante pruebas como la de Bartlett o Levene.
 
 ### 5. Tipos de Diseño y Usos en Salud
-El ANOVA se adapta a diversas estructuras de investigación en informática médica:
+El ANOVA se adapta a diversas estructuras de investigación en biomedicina:
 
 *   **ANOVA Unifactorial (One-Way):** Compara el efecto de un solo factor con múltiples niveles. *Ejemplo:* Evaluar la reducción de presión arterial media usando cuatro marcas distintas de fármacos antihipertensivos.
 

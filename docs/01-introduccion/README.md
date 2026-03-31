@@ -29,7 +29,7 @@ Aunque ambas comparten la base matemática, la Bioestadística se distingue de l
 
 1.  **La Naturaleza de la Variabilidad:** Mientras que en la estadística industrial la variabilidad puede considerarse un error de proceso, en bioestadística la **variabilidad biológica** es una característica natural, constante y necesaria de los seres vivos. El desafío bioestadístico es modelar esta diversidad sin reducirla meramente a un "error de medición".
 
-2.  **Limitaciones Éticas y Experimentales:** A diferencia de la estadística aplicada a objetos inanimados, el investigador en bioestadística enfrenta restricciones éticas severas. No siempre es posible asignar "tratamientos" (como el tabaquismo) de forma experimental, lo que obliga al desarrollo de diseños observacionales y técnicas de ajuste (como la regresión de Cox o el análisis estratificado) para controlar variables confusoras.
+2.  **Limitaciones Éticas y Experimentales:** A diferencia de la estadística aplicada a objetos inanimados, el investigador en bioestadística enfrenta restricciones éticas severas. No siempre es posible asignar "tratamientos" (como el tabaquismo) de forma experimental, lo que obliga al desarrollo de diseños observacionales y técnicas de ajuste (como la [regresión de Cox](/docs/08-temas_avanzados/3-cox.md) o el análisis estratificado) para controlar variables confusoras.
 
 3.  **Significancia Estadística vs. Relevancia Clínica:** En bioestadística, un resultado puede ser estadísticamente significativo (un valor $p < 0.05$) pero carecer de importancia práctica en la salud de un paciente. Esta distinción es crítica en medicina, donde la magnitud del efecto biológico prima sobre el mero rigor matemático.
 

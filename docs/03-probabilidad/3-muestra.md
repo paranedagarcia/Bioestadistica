@@ -5,7 +5,7 @@ sidebar_label: "🔸Población y muestra"
 sidebar_position: 3
 ---
 
-En el marco de la informática médica y la investigación biomédica, la capacidad de generalizar hallazgos desde un grupo reducido hacia una colectividad es fundamental. Este proceso se sustenta en la relación lógica entre población y muestra, mediada por técnicas de muestreo que garantizan la validez de la inferencia estadística.
+En el marco de la investigación biomédica, la capacidad de generalizar hallazgos desde un grupo reducido hacia una colectividad es fundamental. Este proceso se sustenta en la relación lógica entre población y muestra, mediada por técnicas de muestreo que garantizan la validez de la inferencia estadística.
 
 ## 1. Población y Muestra: El Fundamento de la Inferencia
 La **Población** (o universo) se define como el conjunto total de elementos o unidades de análisis que comparten características comunes y que constituyen el objeto de interés en un estudio. En medicina, estas poblaciones pueden ser **finitas**, como los pacientes ingresados en una unidad de cuidados intensivos en un día determinado, o **infinitas/conceptuales**, como todos los pacientes futuros que podrían padecer una patología específica bajo ciertas condiciones experimentales.
@@ -20,7 +20,7 @@ Es la técnica base donde cada elemento de la población tiene exactamente la mi
 
 Garantiza la independencia de las observaciones.
 
-El **Muestreo Aleatorio Simple (MAS)** representa el diseño experimental base de la inferencia estadística, definiéndose como el procedimiento donde una muestra de tamaño $n$ se selecciona de una población de tamaño $N$ de tal manera que cada subconjunto posible de $n$ elementos tenga exactamente la misma probabilidad de ser elegido. En el rigor de la informática médica, este método garantiza que cada unidad experimental (paciente, registro clínico o muestra biológica) posea una probabilidad de inclusión conocida e idéntica, eliminando sesgos de selección sistemáticos.
+El **Muestreo Aleatorio Simple (MAS)** representa el diseño experimental base de la inferencia estadística, definiéndose como el procedimiento donde una muestra de tamaño $n$ se selecciona de una población de tamaño $N$ de tal manera que cada subconjunto posible de $n$ elementos tenga exactamente la misma probabilidad de ser elegido. Este método garantiza que cada unidad experimental (paciente, registro clínico o muestra biológica) posea una probabilidad de inclusión conocida e idéntica, eliminando sesgos de selección sistemáticos.
 
 ### Fundamentación
 
@@ -44,7 +44,7 @@ El uso del FPC es crítico en estudios de salud de comunidades pequeñas, ya que
 ### Aplicación Rigurosa en el Ámbito de la Salud
 
 En la práctica clínica y epidemiológica, el MAS se aplica en escenarios diversos:
-*   **Auditoría de Calidad en Informática Médica:** Selección de 5 expedientes clínicos electrónicos de una base de datos de 1.000 para verificar la integridad de los datos codificados.
+*   **Auditoría de Calidad:** Selección de 5 expedientes clínicos electrónicos de una base de datos de 1.000 para verificar la integridad de los datos codificados.
 
 *   **Ensayos Clínicos Controlados:** Asignación aleatoria de 50 especímenes de laboratorio o sujetos a grupos de tratamiento y control para garantizar la comparabilidad basal.
 
@@ -92,7 +92,7 @@ Se utiliza cuando la población es heterogénea y puede dividirse en subgrupos h
     ```
     Donde $n_h$ es el tamaño de la muestra en el estrato, $n$ el tamaño de la muestra total, $N_h$ el tamaño del estrato en la población y $N$ el total de la población.
 
-El **Muestreo Aleatorio Estratificado (MAE)** es un diseño de muestreo probabilístico complejo que busca optimizar la precisión de los estimadores y garantizar la representación de subgrupos específicos dentro de una población heterogénea. En el contexto de la informática médica y la investigación clínica, este método es superior al muestreo aleatorio simple (MAS) cuando se identifican variables (estratos) que influyen significativamente en la variable de respuesta, permitiendo reducir la varianza del error de estimación.
+El **Muestreo Aleatorio Estratificado (MAE)** es un diseño de muestreo probabilístico complejo que busca optimizar la precisión de los estimadores y garantizar la representación de subgrupos específicos dentro de una población heterogénea. En el contexto de la investigación clínica, este método es superior al muestreo aleatorio simple (MAS) cuando se identifican variables (estratos) que influyen significativamente en la variable de respuesta, permitiendo reducir la varianza del error de estimación.
 
 ### 1. Fundamentación
 
@@ -179,7 +179,7 @@ Consiste en seleccionar elementos de una lista ordenada a intervalos regulares. 
 *   **Relación:** Es más eficiente que el MAS cuando la lista está ordenada de forma que no existan periodicidades ocultas que sesguen la muestra.
 *   **Ejemplo:** Seleccionar cada 10º paciente que ingresa a urgencias, empezando por un número al azar entre 1 y 10.
 
-El **Muestreo Sistemático** es un procedimiento de selección probabilística que se fundamenta en la extracción de elementos de una población organizada en una lista o secuencia, mediante la aplicación de un intervalo constante tras un arranque aleatorio inicial. En la informática médica y la investigación clínica, se valora por su eficiencia operativa y por garantizar una distribución uniforme de la muestra a lo largo del marco muestral, lo que en poblaciones con tendencias ordenadas puede aumentar la precisión de los estimadores.
+El **Muestreo Sistemático** es un procedimiento de selección probabilística que se fundamenta en la extracción de elementos de una población organizada en una lista o secuencia, mediante la aplicación de un intervalo constante tras un arranque aleatorio inicial. En la investigación clínica, se valora por su eficiencia operativa y por garantizar una distribución uniforme de la muestra a lo largo del marco muestral, lo que en poblaciones con tendencias ordenadas puede aumentar la precisión de los estimadores.
 
 ### 1. Fundamentación
 
@@ -262,7 +262,7 @@ A diferencia de la estratificación (donde se busca homogeneidad interna), el mu
 Es una técnica costo-efectiva útil cuando no existe un marco muestral de individuos, pero sí de grupos geográficos o administrativos.
 :::
 
-El **Muestreo por Conglomerados** (o por racimos) es una técnica de muestreo probabilístico en la que la unidad de selección no es el individuo, sino un grupo de individuos que forman una unidad natural o administrativa, denominada **conglomerado**. En el ámbito de la salud y la informática médica, esta técnica es esencial cuando no se dispone de un listado exhaustivo de todos los pacientes (marco muestral individual), pero sí existe un registro de las instituciones o áreas donde se agrupan.
+El **Muestreo por Conglomerados** (o por racimos) es una técnica de muestreo probabilístico en la que la unidad de selección no es el individuo, sino un grupo de individuos que forman una unidad natural o administrativa, denominada **conglomerado**. En el ámbito de la salud, esta técnica es esencial cuando no se dispone de un listado exhaustivo de todos los pacientes (marco muestral individual), pero sí existe un registro de las instituciones o áreas donde se agrupan.
 
 ### 1. Fundamentación
 
@@ -330,7 +330,7 @@ media_est <- mean(muestra_final$calidad_atencion)
 print(paste("Estimación de la calidad media:", round(media_est, 2)))
 ```
 
-### 5. Ventajas en Informática Médica
+### 5. Ventajas
 *   **Eficiencia de Costos:** Reduce drásticamente los desplazamientos de los investigadores al concentrar la recolección en puntos específicos.
 
 *   **Viabilidad Logística:** Es la única opción cuando los pacientes están dispersos geográficamente y no existe una base de datos centralizada.

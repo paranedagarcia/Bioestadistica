@@ -5,7 +5,7 @@ sidebar_label: "🔸R vs Python"
 sidebar_position: 4
 ---
 
-En el ecosistema de la informática médica y la bioestadística, la elección entre **R** y **Python** no representa meramente una preferencia técnica, sino una decisión estratégica basada en el objetivo de la investigación. Mientras que R fue concebido por y para estadísticos, Python surgió como un lenguaje de propósito general con una adopción posterior masiva en la ciencia de datos.
+En el ecosistema de la bioestadística, la elección entre **R** y **Python** no representa meramente una preferencia técnica, sino una decisión estratégica basada en el objetivo de la investigación. Mientras que R fue concebido por y para estadísticos, Python surgió como un lenguaje de propósito general con una adopción posterior masiva en la ciencia de datos.
 
 La integración de lenguajes de programación en la bioinformática ha consolidado a **R** y **Python** como las herramientas predominantes para el análisis bioestadístico y la investigación biomédica. Mientras que R se mantiene como la "lingua franca" del análisis de datos científico debido a su origen estadístico, Python ha ganado terreno por su versatilidad en la integración de sistemas y el aprendizaje profundo (*Deep Learning*).
 
@@ -63,9 +63,9 @@ Donde $E[Y]$ es el valor esperado de la variable biológica y $\eta$ es el predi
 El análisis de datos truncados o censurados es el "pilar" de la investigación clínica y epidemiológica.
 **`survival`**: Es la biblioteca de referencia absoluta. Contiene funciones críticas como `Surv()` para definir objetos de supervivencia, `survfit()` para estimaciones de Kaplan-Meier y `coxph()` para el modelo de riesgos proporcionales de Cox.
 
-**`coxrobust`**: Específicamente diseñada para la estimación robusta en modelos de Cox cuando existen valores atípicos que pueden sesgar los resultados.
+**`coxrobust`**: Específicamente diseñada para la estimación robusta en [modelos de Cox](/docs/08-temas_avanzados/3-cox.md) cuando existen valores atípicos que pueden sesgar los resultados.
 
-El modelo de Cox ajustado en estas bibliotecas se expresa como:
+El [modelo de Cox](/docs/08-temas_avanzados/3-cox.md) ajustado en estas bibliotecas se expresa como:
 
 ```math
 \lambda(t|Z) = \lambda_0(t) e^{\theta'Z}
@@ -77,7 +77,7 @@ Donde $\lambda(t|Z)$ es la función de riesgo condicionado a las covariables $Z$
 
 ![Tidyverse](../r-basico/img/tidyverse.png)
 
-La informática médica moderna requiere herramientas eficientes para la limpieza y organización de grandes bases de datos hospitalarias.
+La informática moderna requiere herramientas eficientes para la limpieza y organización de grandes bases de datos hospitalarias.
 
 **`dplyr` y `tidyr`**: Esenciales para la manipulación de datos y la transformación de formatos "anchos" a "largos", garantizando que los datos sean "tidy" (ordenados) antes del análisis.
 
@@ -113,7 +113,7 @@ Python es un lenguaje de programación de uso general, lo que significa que su a
 ### Ventajas
 **Integración de Sistemas:** Es excelente para integrarse con infraestructuras de software hospitalario, aplicaciones web o dispositivos médicos, permitiendo que un modelo estadístico pase a producción de manera más fluida que R.
 
-**Sintaxis Intuitiva:** Su estructura es a menudo percibida como más coherente para personas con formación en ingeniería de software, lo que facilita el desarrollo de aplicaciones de informática médica complejas.
+**Sintaxis Intuitiva:** Su estructura es a menudo percibida como más coherente para personas con formación en ingeniería de software, lo que facilita el desarrollo de aplicaciones de informática complejas.
 
 **Machine Learning a Escala:** Aunque R tiene capacidades robustas, Python suele liderar en el entrenamiento de modelos de redes neuronales profundas (*Deep Learning*) para el análisis de imágenes médicas (ej. radiografías u oncología digital).
 
