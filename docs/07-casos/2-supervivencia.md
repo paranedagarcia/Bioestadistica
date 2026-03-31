@@ -19,7 +19,7 @@ sidebar_position: 2
 Donde $d_i$ es el número de eventos (muertes/recaídas) en el tiempo $t_i$, y $n_i$ es el número de sujetos en riesgo justo antes de $t_i$.
 
 </TabItem>
-  <TabItem value="python" label="Python" default>
+<TabItem value="python" label="Python" default>
 ```python
 # Ejemplo de Covid-19 basado en Python
 
@@ -42,9 +42,7 @@ plot(fit_km, col = c("blue", "red"), lty = 1:2,
 legend("topright", legend = c("Mantenido", "No mantenido"), col = c("blue", "red"), lty = 1:2)
 ```
 
-
 </TabItem>
-
 </Tabs>
 
 

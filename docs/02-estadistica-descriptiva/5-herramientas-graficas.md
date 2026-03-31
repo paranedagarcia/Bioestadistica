@@ -2,7 +2,7 @@
 id: herramientas-graficas
 title: Visualización científica
 sidebar_label: Visualización científica
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Herramientas gráficas

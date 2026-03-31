@@ -2,7 +2,7 @@
 id: quantiles
 title: Quantiles
 sidebar_label: Quantiles
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 

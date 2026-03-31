@@ -75,7 +75,7 @@ Donde $\lambda(t|Z)$ es la función de riesgo condicionado a las covariables $Z$
 
 ### 3. El Ecosistema `tidyverse` para Ciencia de Datos Médicos
 
-![Tidyverse](../05-r-basico/img/tidyverse.png)
+![Tidyverse](../r-basico/img/tidyverse.png)
 
 La informática médica moderna requiere herramientas eficientes para la limpieza y organización de grandes bases de datos hospitalarias.
 

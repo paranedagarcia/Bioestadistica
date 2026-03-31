@@ -2,7 +2,7 @@
 id: temas-agresti
 title: Intervalo Agresti-Coull
 sidebar_label: Intervalo Agresti-Coull
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 El **intervalo de Agresti-Coull** es un método de estimación por intervalo para una proporción poblacional ($p$) que surge como una optimización técnica frente al intervalo tradicional de Wald. En la investigación clínica, este intervalo es altamente valorado debido a que su **probabilidad de cobertura** (el porcentaje de veces que el intervalo contiene el parámetro real) es mucho más cercano al nivel de confianza nominal (ej. 95%), especialmente cuando se trabaja con muestras pequeñas o proporciones extremas.

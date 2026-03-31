@@ -2,7 +2,7 @@
 id: distribuciones
 title: Distribuciones estadísticas
 sidebar_label: Distribuciones estadísticas
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 
