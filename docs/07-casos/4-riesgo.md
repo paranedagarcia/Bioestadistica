@@ -1,7 +1,7 @@
 ---
 id: caso-riesgo
 title: Análisis de riesgo
-sidebar_label: Análisis de riesgo
+sidebar_label: "🔸Análisis de riesgo"
 sidebar_position: 4
 ---
 

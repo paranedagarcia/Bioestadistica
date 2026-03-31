@@ -1,7 +1,7 @@
 ---
 id: coleccion
 title: Colección de datos y muestreo
-sidebar_label: Datos y muestreo
+sidebar_label: "🔸Datos y muestreo"
 sidebar_position: 6
 description: Técnicas de recolección de datos, muestreo probabilístico y no probabilístico.
 ---

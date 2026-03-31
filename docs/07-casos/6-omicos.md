@@ -1,7 +1,7 @@
 ---
 id: casos-omicos
 title: Datos omicos
-sidebar_label: Datos omicos
+sidebar_label: "🔸Datos omicos"
 sidebar_position: 6
 ---
 

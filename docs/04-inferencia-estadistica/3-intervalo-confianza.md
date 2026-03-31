@@ -1,7 +1,7 @@
 ---
 id: intervalo-confianza
 title: Intervalo de Confianza
-sidebar_label: 🔹​Intervalo de Confianza
+sidebar_label: "🔹​Intervalo de Confianza"
 sidebar_position: 3
 ---
 

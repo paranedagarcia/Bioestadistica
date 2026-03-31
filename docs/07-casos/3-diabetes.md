@@ -1,7 +1,7 @@
 ---
 id: caso-diabetes
 title: Análisis de diabetes
-sidebar_label: Diabetes
+sidebar_label: "🔸Diabetes"
 sidebar_position: 3
 ---
 

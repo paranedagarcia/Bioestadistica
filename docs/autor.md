@@ -1,13 +1,8 @@
 ---
 id: autor
 title:  Autor
-<<<<<<< HEAD
-sidebar_label: Autor
-sidebar_position: 13
-=======
-sidebar_label: 👤 Autor
+sidebar_label: "👤 Autor"
 sidebar_position: 11
->>>>>>> 4a5024b (emojis)
 ---
 
 
@@ -29,8 +24,7 @@ sidebar_position: 11
 <div class="row">
 <div class="col col--8">
 
-Profesional senior con 20+ años en informática y software, especializado en Data Science, gobierno
-de datos y transformación digital. Líder de equipos multidisciplinarios y gestión de programas
+Profesional senior con +20 años de experiencia en informática y software, especializado en Data Science, gobierno de datos y transformación digital. Líder de equipos multidisciplinarios y gestión de programas
 end-to-end (Agile/Waterfall) integrando analítica avanzada y soluciones en nube (Azure). Experiencia
 transversal como CTO/CIO/PO/Program Manager.
 
@@ -55,5 +49,7 @@ transversal como CTO/CIO/PO/Program Manager.
 * **Web**: https://patricioaraneda.cl
 * **Email**: paranedagarcia@gmail.com, paraneda@dataclinica.cl
 * **LinkedIn**: https://www.linkedin.com/in/patricioaraneda/
+* **GitHub**: https://github.com/paranedagarcia/kibernum
+
 
 </div>

@@ -1,8 +1,8 @@
 ---
 id: muestra
 title: Población y Muestra
-sidebar_label: 🔸Población y muestra
-sidebar_position: 4
+sidebar_label: "🔸Población y muestra"
+sidebar_position: 3
 ---
 
 En el marco de la informática médica y la investigación biomédica, la capacidad de generalizar hallazgos desde un grupo reducido hacia una colectividad es fundamental. Este proceso se sustenta en la relación lógica entre población y muestra, mediada por técnicas de muestreo que garantizan la validez de la inferencia estadística.

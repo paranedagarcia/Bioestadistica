@@ -1,11 +1,7 @@
 ---
 id: variables
 title: Tipos de variables
-<<<<<<< HEAD
-sidebar_label: Tipos de variables
-=======
 sidebar_label: "🔸Variables"
->>>>>>> 4a5024b (emojis)
 sidebar_position: 3
 ---
 

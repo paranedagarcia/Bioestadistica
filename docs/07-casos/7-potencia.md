@@ -1,7 +1,7 @@
 ---
 id: casos-potencia
 title: Cálculo de Potencia
-sidebar_label: Cálculo de Potencia
+sidebar_label: "🔸Cálculo de Potencia"
 sidebar_position: 7
 ---
 

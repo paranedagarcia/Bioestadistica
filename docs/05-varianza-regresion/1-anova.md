@@ -1,13 +1,8 @@
 ---
 id: anova
 title: ANOVA
-<<<<<<< HEAD:docs/05-varianza-regresion/1-anova.md
-sidebar_label: ANOVA
-sidebar_position: 1
-=======
-sidebar_label: 🔹​ANOVA
+sidebar_label: "🔹​ANOVA"
 sidebar_position: 12
->>>>>>> 4a5024b (emojis):docs/04-inferencia-estadistica/12-anova.md
 ---
 
 # ANOVA

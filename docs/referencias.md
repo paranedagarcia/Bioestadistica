@@ -1,13 +1,8 @@
 ---
 id: referencias
 title:  Referencias
-<<<<<<< HEAD
-sidebar_label: Referencias
-sidebar_position: 12
-=======
-sidebar_label: 📚 Referencias
+sidebar_label: "📚 Referencias"
 sidebar_position: 10
->>>>>>> 4a5024b (emojis)
 ---
 
 

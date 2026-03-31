@@ -1,7 +1,7 @@
 ---
 id: caso-curvas
 title: Curvas ROC
-sidebar_label: Curvas ROC
+sidebar_label: "🔸Curvas ROC"
 sidebar_position: 5
 ---
 

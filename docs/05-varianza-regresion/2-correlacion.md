@@ -1,13 +1,8 @@
 ---
 id: correlacion
 title: Correlación
-<<<<<<< HEAD:docs/05-varianza-regresion/2-correlacion.md
-sidebar_label: Correlación
-sidebar_position: 2
-=======
-sidebar_label: 🔹​Correlaciones
+sidebar_label: "🔹​Correlaciones"
 sidebar_position: 7
->>>>>>> 4a5024b (emojis):docs/04-inferencia-estadistica/7-correlacion.md
 ---
 
 # Correlación
