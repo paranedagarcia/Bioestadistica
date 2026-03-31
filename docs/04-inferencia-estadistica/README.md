@@ -1,7 +1,7 @@
 ---
 id: inferencia-estadistica
 title: Inferencia Estadística
-sidebar_label: Inferencia Estadística
+sidebar_label: 🔹​Inferencia Estadística
 sidebar_position: 1
 ---
 

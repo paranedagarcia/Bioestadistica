@@ -1,7 +1,7 @@
 ---
 id: kalman
 title: Filtro de Kalman
-sidebar_label: Filtro de Kalman
+sidebar_label: 🔹​Filtro de Kalman
 sidebar_position: 8
 ---
 

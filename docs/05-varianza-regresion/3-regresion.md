@@ -1,8 +1,15 @@
 ---
+<<<<<<< HEAD:docs/05-varianza-regresion/3-regresion.md
 id: regresion
 title: Regresión
 sidebar_label: Regresión
 sidebar_position: 3
+=======
+id: analisis-predictivo
+title: Análisis Predictivo
+sidebar_label: 🔹​Análisis Predictivo
+sidebar_position: 4
+>>>>>>> 4a5024b (emojis):docs/04-inferencia-estadistica/4-analisis-predictivo.md
 ---
 
 # El Análisis Predictivo: Regresión Lineal y Covarianza

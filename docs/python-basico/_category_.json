@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD:docs/python-basico/_category_.json
   "label": "📌 Programación en Python",
   "position": 9,
+=======
+  "label": "💻 Programación en Python",
+  "position": 7,
+>>>>>>> 4a5024b (emojis):docs/06-python-basico/_category_.json
   "link": {
     "type": "generated-index",
     "description": "Aprende Python desde cero, desde los conceptos básicos hasta tópicos avanzados."

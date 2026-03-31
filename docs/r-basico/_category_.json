@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD:docs/r-basico/_category_.json
   "label": "📌 Programación en R",
   "position": 10,
+=======
+  "label": "💻 Programación en R",
+  "position": 6,
+>>>>>>> 4a5024b (emojis):docs/05-r-basico/_category_.json
   "link": {
     "type": "generated-index",
     "description": "Aspectos básicos de la programación en R para la investigación médica."

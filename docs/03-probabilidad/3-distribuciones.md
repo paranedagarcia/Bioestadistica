@@ -1,8 +1,13 @@
 ---
 id: distribuciones
 title: Distribuciones estadísticas
+<<<<<<< HEAD:docs/03-probabilidad/3-distribuciones.md
 sidebar_label: Distribuciones estadísticas
 sidebar_position: 3
+=======
+sidebar_label: 🔹​Distribuciones estadísticas
+sidebar_position: 13
+>>>>>>> 4a5024b (emojis):docs/04-inferencia-estadistica/13-distribuciones.md
 ---
 
 

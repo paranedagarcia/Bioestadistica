@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "label": "Temas avanzados",
   "position": 11,
+=======
+  "label": "📦 Temas avanzados",
+  "position": 9,
+>>>>>>> 4a5024b (emojis)
   "link": {
     "type": "generated-index",
     "description": "Temas avanzados de Bioestadística"

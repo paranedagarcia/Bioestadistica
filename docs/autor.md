@@ -1,8 +1,13 @@
 ---
 id: autor
 title:  Autor
+<<<<<<< HEAD
 sidebar_label: Autor
 sidebar_position: 13
+=======
+sidebar_label: 👤 Autor
+sidebar_position: 11
+>>>>>>> 4a5024b (emojis)
 ---
 
 
@@ -12,9 +17,10 @@ sidebar_position: 13
     class="avatar__photo avatar__photo--xl"
     src="https://patricioaraneda.cl/wp-content/uploads/2021/05/pato-fondo2-300x300.jpg" />
   <div class="avatar__intro">
-    <div class="avatar__name">Patricio Araneda</div>
+    <div class="avatar__name">🇨🇱​ Patricio Araneda</div>
     <small class="avatar__subtitle">
-      Dirección de Proyectos TI | Magíster en Informática Médica
+      Magíster en Informática Médica<br />
+      Dirección de Proyectos TI | 
     </small>
   </div>
 </div>
@@ -22,9 +28,6 @@ sidebar_position: 13
 
 <div class="row">
 <div class="col col--8">
-Magíster en Informática Médica<br />
-Ingeniero en Computación e Informática<br />
-Profesor de Biología y Ciencias Naturales<br />
 
 Profesional senior con 20+ años en informática y software, especializado en Data Science, gobierno
 de datos y transformación digital. Líder de equipos multidisciplinarios y gestión de programas

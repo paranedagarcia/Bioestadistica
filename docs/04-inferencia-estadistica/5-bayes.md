@@ -1,7 +1,7 @@
 ---
 id: bayes
-title: Teorema de Bayes
-sidebar_label: Teorema de Bayes
+title: Teorema de 🔹​Bayes
+sidebar_label: 🔹​Teorema de Bayes
 sidebar_position: 5
 ---
 

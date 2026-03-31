@@ -1,7 +1,7 @@
 ---
 id: probabilidad
 title: Probabilidad y Distribuciones
-sidebar_label: Probabilidad
+sidebar_label: 🔸Probabilidad
 sidebar_position: 1
 ---
 

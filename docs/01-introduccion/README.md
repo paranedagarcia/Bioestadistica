@@ -1,7 +1,7 @@
 ---
 id: introduccion
 title: Introducción a la Bioestadística
-sidebar_label: Introducción
+sidebar_label: 🔸Introducción
 sidebar_position: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: utilidad
 title: Usos de la Bioestadística
-sidebar_label: Utilidad
+sidebar_label: 🔸Utilidad
 sidebar_position: 2
 ---
 

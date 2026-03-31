@@ -1,7 +1,7 @@
 ---
 id: markov
 title: Modelo de Markov
-sidebar_label: Modelo de Markov
+sidebar_label: 🔹​Modelo de Markov
 sidebar_position: 9
 ---
 

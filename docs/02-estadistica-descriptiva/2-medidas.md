@@ -1,7 +1,7 @@
 ---
 id: medidas-central
 title: Medidas
-sidebar_label: Medidas descriptivas
+sidebar_label: 🔸Medidas descriptivas
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';

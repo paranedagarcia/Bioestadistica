@@ -1,7 +1,7 @@
 ---
 id: teoria-probabilidad
 title: Teoria de Probabilidad
-sidebar_label: Teoria de probabilidad
+sidebar_label: 🔸Teoria de probabilidad
 sidebar_position: 2
 ---
 

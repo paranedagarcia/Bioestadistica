@@ -1,7 +1,7 @@
 ---
 id: estadistica-descriptiva
 title: Principios estadísticos 
-sidebar_label: Principios estadísticos
+sidebar_label: 🔸Principios estadísticos
 sidebar_position: 1
 ---
 
