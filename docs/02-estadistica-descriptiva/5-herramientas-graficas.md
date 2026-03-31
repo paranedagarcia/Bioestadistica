@@ -6,7 +6,7 @@ sidebar_label: Visualización científica
 sidebar_position: 5
 =======
 title: Herramientas gráficas
-sidebar_label: 🔸Herramientas gráficas
+sidebar_label: "🔸Herramientas gráficas"
 sidebar_position: 4
 >>>>>>> 4a5024b (emojis):docs/02-estadistica-descriptiva/4-herramientas-graficas.md
 ---

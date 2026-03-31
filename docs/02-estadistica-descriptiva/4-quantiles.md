@@ -5,7 +5,7 @@ title: Quantiles
 sidebar_label: Quantiles
 sidebar_position: 4
 =======
-sidebar_label: 🔸Quantiles
+sidebar_label: "🔸Quantiles"
 sidebar_position: 5
 >>>>>>> 4a5024b (emojis):docs/02-estadistica-descriptiva/5-quantiles.md
 ---

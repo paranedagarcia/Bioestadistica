@@ -1,7 +1,7 @@
 ---
 id: medidas-dispersion
 title: Medidas
-sidebar_label: 🔸Medidas de dispersión
+sidebar_label: "🔸Medidas de dispersión"
 sidebar_position: 3
 ---
 
