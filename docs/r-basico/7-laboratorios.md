@@ -1,3 +1,9 @@
+---
+id: r-laboratorios
+title: Laboratorios
+sidebar_label: Laboratorios
+sidebar_position: 6
+---
 
 
 ```r

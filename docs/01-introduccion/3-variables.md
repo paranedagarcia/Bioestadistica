@@ -1,7 +1,7 @@
 ---
 id: variables
 title: Tipos de variables
-sidebar_label: Variables
+sidebar_label: Tipos de variables
 sidebar_position: 3
 ---
 

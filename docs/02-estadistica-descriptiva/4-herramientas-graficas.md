@@ -1,7 +1,7 @@
 ---
 id: herramientas-graficas
-title: Herramientas gráficas
-sidebar_label: Herramientas gráficas
+title: Visualización científica
+sidebar_label: Visualización científica
 sidebar_position: 4
 ---
 
@@ -98,6 +98,7 @@ boxplot(datos, horizontal = TRUE,
   </TabItem>
 </Tabs>
 
+## Gráficas de tallo y hoja
 
 
 ## Diagramas de dispersión

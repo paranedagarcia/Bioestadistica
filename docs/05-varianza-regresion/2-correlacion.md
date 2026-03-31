@@ -2,7 +2,7 @@
 id: correlacion
 title: Correlación
 sidebar_label: Correlación
-sidebar_position: 7
+sidebar_position: 2
 ---
 
 # Correlación

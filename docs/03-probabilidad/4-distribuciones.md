@@ -2,11 +2,11 @@
 id: distribuciones
 title: Distribuciones estadísticas
 sidebar_label: Distribuciones estadísticas
-sidebar_position: 13
+sidebar_position: 4
 ---
 
 
-# Distribuciones estadísticas
+# Distribuciones discretas
 
 ## Distribución Binomial
 
@@ -117,6 +117,8 @@ En la práctica clínica y la gestión sanitaria, la distribución de Poisson es
 
 <br />
 
+# Distribuciones continuas
+
 ## Distribución t de Student
 
 La **Distribución t de Student** es una distribución de probabilidad continua de fundamental importancia en la bioestadística y la informática médica, especialmente diseñada para realizar inferencias sobre la media poblacional cuando el tamaño de la muestra es reducido y la varianza de la población es desconocida.
@@ -174,6 +176,11 @@ La aplicación de la t de Student es ubicua en la investigación biomédica para
 - **Prueba t para muestras apareadas:** Se utiliza cuando se mide al mismo paciente antes y después de una intervención, eliminando la variabilidad entre individuos y aumentando la eficiencia estadística.
 
 - **Regresión Lineal:** En informática médica, se emplea para testar si los coeficientes de un modelo predictivo ($\beta$) son significativamente distintos de cero, validando así la relación entre predictores y resultados de salud.
+
+<br />
+
+## Distribución chi-cuadrado
+
 
 <br />
 
