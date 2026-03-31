@@ -59,3 +59,19 @@ El ANOVA se adapta a diversas estructuras de investigación en informática méd
 
 *   **ANOVA de Medidas Repetidas:** Se utiliza cuando los mismos sujetos pasan por todos los tratamientos (estudios longitudinales o cruzados). *Ejemplo:* Medir los niveles de glucosa en un mismo grupo de pacientes antes del tratamiento, al mes y a los tres meses.
 
+<Tabs>
+<TabItem value="python" label="Python" default>
+```python
+# Implementación en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
+```r
+# Implementación en en R
+
+```
+
+</TabItem>
+</Tabs>

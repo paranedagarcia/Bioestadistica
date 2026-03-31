@@ -1,8 +1,8 @@
 ---
-id: analisis-predictivo
-title: Análisis Predictivo
-sidebar_label: Análisis Predictivo
-sidebar_position: 4
+id: regresion
+title: Regresión
+sidebar_label: Regresión
+sidebar_position: 3
 ---
 
 # El Análisis Predictivo: Regresión Lineal y Covarianza
@@ -36,9 +36,9 @@ Estos métodos son la base de muchas aplicaciones en la ciencia de datos. El com
 ## 1.1 El Concepto Básico del Modelo
 Cualquier modelo estadístico describe una variable de respuesta (Y) como la suma de dos componentes [8]:
 
-$$
+```math
 \text{Variable de respuesta } = \text{ Componente sistemático } + \text{ Componente de error}
-$$
+```
 
 El **Componente Sistemático** describe la variación de Y que puede ser explicada por el modelo (las variables $X$) [8]. El **Componente de Error** ($e_i$) representa la variación en Y que no se puede explicar; esto incluye errores de medición o la influencia de otras variables no incluidas [8].
 
@@ -49,9 +49,9 @@ La RLS asume que la relación entre la variable de respuesta ($Y$) y la variable
 ### 2.1 La Fórmula del Modelo RLS
 El modelo de RLS para un sujeto $i$ se expresa como [8]:
 
-$$
+```math
 Y_{i} = \beta_{0} + \beta_{1}X_{i} + e_{i}
-$$
+```
 
 **Explicación:**
 *   $Y_i$: Es el valor observado de la variable de respuesta para el sujeto $i$.
@@ -62,9 +62,9 @@ $$
 
 La parte sistemática, que es la línea recta que estamos estimando, es el valor esperado de $Y$ dado $X$ ($\mu_{Y|X}$) [9, 10]:
 
-$$
+```math
 \mu_{Y|X} = \beta_{0} + \beta_{1}X
-$$
+```
 
 ### 2.2 Relación con Modelos Lineales
 La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si sus parámetros ($\beta_0, \beta_1$, etc.) no están en funciones complejas (como el exponente) [4].
@@ -75,16 +75,18 @@ La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si s
 2.  **Transformación Logarítmica de Y:**
     $$\ln(Y_{i}) = \beta_{0} + \beta_{1}X_{i} + e_{i}$$
 3.  **Modelo Polinómico (Relación Curva):** Se utiliza para modelar una asociación no lineal (curva) entre $Y$ y $X$, pero se ajusta usando técnicas de regresión lineal porque los $\beta$s no están elevados a potencias [7].
-    $$Y_{i} = \beta_{0} + \beta_{1}X_{i} + \beta_{2}X_{i}^{2} + e_{i}$$
+    ```math
+    Y_{i} = \beta_{0} + \beta_{1}X_{i} + \beta_{2}X_{i}^{2} + e_{i}
+    ```
 
 ## 3. Modelos de Regresión No Lineal (MRNL)
 
 Un modelo es considerado verdaderamente **No Lineal** si es no lineal en los parámetros ($\beta$s) [4].
 
 **Ejemplo de MRNL (No lineal en $\beta$s):**
-$$
+```math
 Y_{i} = \beta_{0} + e^{\beta_{1}X_{i}}
-$$
+```
 **Explicación:** Aquí, el parámetro $\beta_1$ está dentro de una función exponencial, lo que requiere métodos de estimación diferentes a los utilizados para los modelos de regresión lineal [4].
 
 ## 4. Métodos de Validación y Adecuación del Modelo
@@ -93,9 +95,10 @@ La validación es esencial para determinar si se cumplen los supuestos del model
 
 ### 4.1 Definición de Residual
 El residual ($\hat{e}_i$) es la diferencia entre el valor observado de Y ($y_i$) y el valor predicho ($\hat{y}_i$) por el modelo [12]:
-$$
+
+```math
 \hat{e}_{i}=y_{i}-\hat{y}_{i}
-$$
+```
 
 ### 4.2 Verificación de Supuestos mediante Gráficos [13, 14]
 
@@ -118,9 +121,9 @@ A pesar de que la relación modelada es curva, se ajusta utilizando la metodolog
 ### 6.1 Fórmula Matemática
 El modelo polinómico más común (cuadrático) incluye el predictor $X$ elevado a la segunda potencia:
 
-$$
+```math
 Y_{i} = \beta_{0} + \beta_{1}X_{i} + \beta_{2}X_{i}^{2} + e_{i}
-$$
+```
 
 **Explicación:**
 *   $\beta_0, \beta_1, \beta_2$: Son los coeficientes o parámetros a estimar. Debido a que estos coeficientes no están elevados a potencias o incluidos en funciones no lineales (como el exponente), el modelo se considera lineal en sus parámetros [13].

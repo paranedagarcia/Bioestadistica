@@ -53,6 +53,22 @@ A continuación, se muestra una tabla con la interpretación de los valores del 
 | menor que 0          | correlación negativa                                          |
 | igual a -1           | relación lineal negativa perfecta                             |
 
+<Tabs>
+<TabItem value="python" label="Python" default>
+```python
+# Implementación en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
+```r
+# Implementación en en R
+
+```
+
+</TabItem>
+</Tabs>
 
 ### Coeficiente de correlación de Spearman
 El coeficiente de correlación de Spearman es una medida no paramétrica que evalúa la relación monótona entre dos variables. A diferencia del coeficiente de Pearson, que asume que la relación es lineal, Spearman se basa en los rangos de los datos en lugar de los valores brutos. Esto lo hace más robusto frente a valores atípicos y adecuado para datos ordinales.
@@ -129,3 +145,19 @@ Desde el dataset **Breast Cancer Wisconsin (Diagnostic) (WBCD)**, se pueden obse
 - https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
 - Wolberg, W., Mangasarian, O., Street, N., & Street, W. (1993). Breast Cancer Wisconsin (Diagnostic) [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5DW2B.
 
+<Tabs>
+<TabItem value="python" label="Python" default>
+```python
+# Implementación en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
+```r
+# Implementación en en R
+
+```
+
+</TabItem>
+</Tabs>

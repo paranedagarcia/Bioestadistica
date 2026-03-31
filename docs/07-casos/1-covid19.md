@@ -39,6 +39,5 @@ Chile implementó una de las campañas de vacunación más rápidas de América 
 ```
 
 </TabItem>
-
 </Tabs>
 

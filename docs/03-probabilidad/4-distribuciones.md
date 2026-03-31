@@ -12,7 +12,6 @@ sidebar_position: 4
 
 La **Distribución Binomial** es uno de los modelos de probabilidad discretas más fundamentales en la bioestadística y la informática médica. Se utiliza para modelar el número de "éxitos" observados en una serie de ensayos independientes que tienen una probabilidad constante de ocurrencia.
 
-A continuación, se desarrolla este concepto bajo el rigor académico requerido para programas de postgrado en salud.
 
 ### 1. Contexto Histórico
 El desarrollo de esta distribución se atribuye al matemático suizo **Jacob Bernoulli** (1654-1705), quien formalizó el estudio de procesos con dos resultados posibles en su obra póstuma *Ars Conjectandi*, publicada en 1713. Los coeficientes utilizados en su expansión matemática, conocidos como el "Triángulo de Pascal", tienen antecedentes que se remontan al siglo XIII.
@@ -37,6 +36,7 @@ P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}
 
 #### Momentos de la Distribución
 *   **Esperanza Matemática (Media, $\mu$):** Indica el número promedio de éxitos esperado a largo plazo.
+    
     ```math
     \mu = np
     ```
@@ -68,6 +68,24 @@ El software R proporciona funciones nativas para gestionar esta distribución si
 *   `dbinom(x, n, p)`: Calcula la probabilidad exacta de $x$ éxitos.
 *   `pbinom(x, n, p)`: Calcula la probabilidad acumulada (útil para pruebas de hipótesis).
 *   `rbinom(m, n, p)`: Genera $m$ valores aleatorios siguiendo una distribución binomial.
+
+<Tabs>
+<TabItem value="python" label="Python" default>
+```python
+# Implementación en Python
+
+```
+
+</TabItem>
+<TabItem value="r" label="R">
+```r
+# Implementación en en R
+
+```
+
+</TabItem>
+</Tabs>
+
 
 <br />
 
