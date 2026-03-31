@@ -1,7 +1,7 @@
 ---
 id: temas-missing
 title: Datos faltantes
-sidebar_label: Datos faltantes
+sidebar_label: "🔸Datos faltantes"
 sidebar_position: 4
 description: Introducción al manejo de datos faltantes (missing data) y sesgos en investigación
 ---

@@ -1,8 +1,8 @@
 ---
 id: r-cheatsheet
 title: Cheat Sheet
-sidebar_label: Cheat Sheet
-sidebar_position: 6
+sidebar_label: "▪️​Cheat Sheet"
+sidebar_position: 7
 ---
 
 <div class="container">

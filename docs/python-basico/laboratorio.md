@@ -1,7 +1,7 @@
 ---
 id: lab-1
-title: Ejercicio 1
-sidebar_label: Ejercicio 1
+title: Ejercicios
+sidebar_label: "▪️​Ejercicios"
 sidebar_position: 3
 ---
 

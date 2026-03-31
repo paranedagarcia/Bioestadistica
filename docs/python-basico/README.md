@@ -1,11 +1,11 @@
 ---
 id: python-basico
-title: Python para Bioestadística
-sidebar_label: Python Básico
+title: Python
+sidebar_label: "▪️Introducción a Python"
 sidebar_position: 1
 ---
 
-# Python para Bioestadística
+# Python
 
 [Python](https://www.python.org/) es un lenguaje de programación versátil y poderoso, con un ecosistema excepcional para análisis de datos y bioestadística.
 

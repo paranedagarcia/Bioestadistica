@@ -1,7 +1,7 @@
 ---
 id: benford
 title: Ley de Benford
-sidebar_label: Ley de Benford
+sidebar_label: "🔸Ley de Benford"
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';

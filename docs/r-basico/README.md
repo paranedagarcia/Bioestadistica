@@ -1,7 +1,7 @@
 ---
 id: r-basico
 title: R para Bioestadística
-sidebar_label: R Básico y Positron
+sidebar_label: "▪️Introducción a R"
 sidebar_position: 1
 ---
 

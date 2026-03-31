@@ -1,7 +1,7 @@
 ---
 id: pandas
 title: Pandas
-sidebar_label: Pandas
+sidebar_label: "▪️​Pandas"
 sidebar_position: 2
 ---
 

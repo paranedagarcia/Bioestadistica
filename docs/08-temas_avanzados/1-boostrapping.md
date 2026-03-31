@@ -1,7 +1,7 @@
 ---
 id: boostrapping
 title: Boostrapping
-sidebar_label: Boostrapping
+sidebar_label: "🔸Boostrapping"
 sidebar_position: 1
 ---
 import Tabs from '@theme/Tabs';
