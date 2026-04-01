@@ -201,6 +201,53 @@ La aplicación de la t de Student es ubicua en la investigación biomédica para
 
 ## Distribución chi-cuadrado
 
+La **distribución chi-cuadrado ($\chi^2$)** es una de las distribuciones de probabilidad continua más trascendentales en la informática médica y la investigación clínica, siendo el pilar fundamental para el análisis de datos categóricos y la estimación de la variabilidad poblacional. Formalmente, se define como la distribución que sigue la suma de los cuadrados de $k$ variables aleatorias independientes que siguen una distribución normal estándar ($Z \sim N(0,1)$).
+
+### 1. Marco Conceptual y Propiedades Matemáticas
+
+La morfología de esta distribución depende exclusivamente de un parámetro denominado **grados de libertad ($v$ o $df$)**. 
+* **No negatividad:** Dado que es una suma de cuadrados, la variable $\chi^2$ solo puede tomar valores entre $0$ e $+\infty$.
+* **Asimetría:** La distribución presenta un sesgo positivo (hacia la derecha). No obstante, a medida que los grados de libertad aumentan ($v \rightarrow \infty$), la distribución se vuelve más simétrica y tiende asintóticamente a la distribución normal.
+* **Momentos:** La media de una distribución chi-cuadrado es igual a sus grados de libertad ($E[X] = v$) y su varianza es el doble de los mismos ($Var[X] = 2v$).
+
+### 2. El Estadístico de Pearson
+
+En bioestadística, la aplicación más ubicua se realiza a través del estadístico de Pearson, que permite cuantificar la discrepancia entre las frecuencias observadas en una muestra y las esperadas bajo un modelo teórico. La fórmula general es:
+
+```math
+\chi^{2} = \sum_{i=1}^{k} \frac{(O_{i} - E_{i})^{2}}{E_{i}}
+```
+
+Donde:
+* **$O_i$**: Es la frecuencia observada en la categoría $i$.
+* **$E_i$**: Es la frecuencia esperada teóricamente para dicha categoría.
+* **$k$**: Representa el número de clases o categorías.
+
+### 3. Implicancias y Aplicaciones en Bioestadística
+
+#### A. Pruebas de Bondad de Ajuste (*Goodness-of-Fit*)
+Se utiliza para determinar si los datos de una muestra se ajustan a una distribución teórica específica (como la Normal, Poisson o Binomial). Un ejemplo clásico en genética médica es verificar si las frecuencias observadas de fenotipos en una descendencia cumplen con las **Leyes de Mendel**. Si el valor calculado de $\chi^2$ es pequeño, los datos son consistentes con la teoría; si es inusualmente grande, se rechaza el modelo.
+
+#### B. Pruebas de Independencia y Homogeneidad
+Mediante el uso de **tablas de contingencia ($r \times c$)**, se evalúa si existe asociación entre dos variables categóricas (ej. relación entre el hábito de fumar y el desarrollo de cáncer). En este contexto, los grados de libertad se calculan como $gl = (r-1) \times (c-1)$, donde $r$ es el número de filas y $c$ el de columnas.
+
+#### C. Inferencia sobre la Varianza Poblacional
+A diferencia de otras pruebas, la distribución $\chi^2$ permite construir intervalos de confianza y realizar contrastes de hipótesis para la varianza ($\sigma^2$) de una población normal. El estadístico pivote utilizado es:
+
+```math
+\chi^{2} = \frac{(n - 1)s^{2}}{\sigma^{2}}
+```
+
+Donde $s^2$ es la varianza muestral y $n$ el tamaño de la muestra. Esto es vital en informática médica para el **control de calidad** de instrumentos de medición que requieren una precisión estricta.
+
+#### D. Modelado Avanzado: Regresión Logística y Genética
+En modelos de regresión logística, la distribución chi-cuadrado se emplea para evaluar la **devianza** (bondad de ajuste del modelo multivariado) y en la **prueba de Wald** para determinar la significancia de los coeficientes de regresión ($\beta$). En genética de poblaciones, es la herramienta estándar para probar el **Equilibrio de Hardy-Weinberg** y el desequilibrio de ligamiento.
+
+### 4. Limitaciones y Requisitos Técnicos
+Para que la aproximación a la distribución chi-cuadrado sea válida, se deben cumplir criterios de tamaño muestral:
+1.  Las observaciones deben ser independientes entre sí.
+2.  Las frecuencias esperadas ($E_i$) deben ser, por lo general, $\ge 5$ en al menos el 80% de las celdas, y ninguna debe ser $< 1$. En muestras pequeñas que violan estos supuestos, se recomienda el uso de la **Prueba Exacta de Fisher**.
+
 
 <br />
 
@@ -220,41 +267,41 @@ P(X=x) = p^x(1-p)^{1-x}, \quad \text{para } x \in \{0, 1\}
 ```
 
 Donde sus componentes significan:
-*   **$x$**: El valor observado de la variable (1 para éxito, 0 para fracaso).
-*   **$p$**: El parámetro que define la probabilidad de éxito en el ensayo ($0 \le p \le 1$).
-*   **$q$ (o $1-p$)**: La probabilidad de fracaso, cumpliéndose que $p + q = 1$.
+* **$x$**: El valor observado de la variable (1 para éxito, 0 para fracaso).
+* **$p$**: El parámetro que define la probabilidad de éxito en el ensayo ($0 \le p \le 1$).
+* **$q$ (o $1-p$)**: La probabilidad de fracaso, cumpliéndose que $p + q = 1$.
 
 #### Momentos de la Distribución
-*   **Esperanza Matemática (Media, $\mu$):** Es idéntica a la probabilidad de éxito.
+* **Esperanza Matemática (Media, $\mu$):** Es idéntica a la probabilidad de éxito.
     ```math
     E(X) = p
     ```
-*   **Varianza ($\sigma^2$):** Cuantifica la dispersión de los datos alrededor de la media.
+* **Varianza ($\sigma^2$):** Cuantifica la dispersión de los datos alrededor de la media.
     ```math
     Var(X) = p \cdot (1 - p)
     ```
-*   **Desviación Estándar ($\sigma$):**
+* **Desviación Estándar ($\sigma$):**
     ```math
     \sigma = \sqrt{p \cdot q}
     ```
 
-### 3. Fundamento Científico
+### 3. Fundamento
 El rigor de la distribución de Bernoulli se sustenta en el cumplimiento de los **ensayos de Bernoulli**, que poseen tres propiedades críticas:
-1.  **Dicotomía:** El ensayo solo admite dos categorías (p. ej., sano/enfermo, positivo/negativo).
+1. **Dicotomía:** El ensayo solo admite dos categorías (p. ej., sano/enfermo, positivo/negativo).
 
-2.  **Independencia:** El resultado de un ensayo no afecta la probabilidad de éxito de cualquier observación subsiguiente.
+2. **Independencia:** El resultado de un ensayo no afecta la probabilidad de éxito de cualquier observación subsiguiente.
 
-3.  **Probabilidad Constante:** El parámetro $p$ permanece invariable en cada ejecución del experimento.
+3. **Probabilidad Constante:** El parámetro $p$ permanece invariable en cada ejecución del experimento.
 
 La suma de $n$ ensayos de Bernoulli independientes da lugar a la **distribución binomial**, permitiendo modelar el número total de éxitos en una muestra clínica.
 
 ### 4. Usos en Salud
 En el ámbito biomédico, la distribución de Bernoulli es indispensable para caracterizar variables cualitativas y procesos de clasificación:
-*   **Diagnóstico Clínico:** El resultado de una prueba serológica (ej. VIH) donde el resultado es reactivo (éxito) o no reactivo (fracaso).
-*   **Epidemiología:** El estado de un individuo respecto a una patología, como ser diabético o no.
-*   **Ensayos Clínicos:** La respuesta dicotómica a un tratamiento médico, clasificada como recuperación satisfactoria o ausencia de la misma.
-*   **Genética:** La presencia o ausencia de un alelo específico vinculado a enfermedades como el Alzheimer.
-*   **Informática Médica:** El análisis de errores en el procesamiento de datos por software hospitalario (presencia de error = 1, ausencia = 0).
+* **Diagnóstico Clínico:** El resultado de una prueba serológica (ej. VIH) donde el resultado es reactivo (éxito) o no reactivo (fracaso).
+* **Epidemiología:** El estado de un individuo respecto a una patología, como ser diabético o no.
+* **Ensayos Clínicos:** La respuesta dicotómica a un tratamiento médico, clasificada como recuperación satisfactoria o ausencia de la misma.
+* **Genética:** La presencia o ausencia de un alelo específico vinculado a enfermedades como el Alzheimer.
+* **Informática Médica:** El análisis de errores en el procesamiento de datos por software hospitalario (presencia de error = 1, ausencia = 0).
 
 <br />
 

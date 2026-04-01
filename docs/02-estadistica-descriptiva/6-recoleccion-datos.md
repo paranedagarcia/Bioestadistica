@@ -59,13 +59,17 @@ El MAS se sustenta en la construcción de un **marco muestral** (*sampling frame
     \sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} \cdot \sqrt{\frac{N-n}{N-1}}
     ```
 *   **Error Estándar (SE):** Cuantifica la variabilidad del estimador y se reduce a medida que aumenta el tamaño de la muestra ($n$):
-    $$SE(\bar{x}) = \frac{\sigma}{\sqrt{n}}$$
+    ```math
+    SE(\bar{x}) = \frac{\sigma}{\sqrt{n}}
+    ```
     *(Si $n$ representa más del 5% de la población, se debe aplicar el factor de corrección para población finita: $\sqrt{\frac{N-n}{N-1}}$)*.
 
 
 El MAS garantiza que los estadísticos calculados sean **estimadores insesgados** de los parámetros poblacionales. 
 *   **Media Muestral ($\bar{x}$):** Su valor esperado coincide con la media poblacional ($\mu$), es decir, $E(\bar{X}) = \mu$. Se calcula como:
-    $$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}$$
+    ```math
+    \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
+    ```
 
 
 El uso del FPC es crítico en estudios de salud de comunidades pequeñas, ya que reduce la varianza estimada al reconocer que se ha capturado una proporción importante de la información total de la población.
