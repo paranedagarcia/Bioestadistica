@@ -8,6 +8,8 @@ sidebar_position: 6
 
 
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="omicos" label="Antecedentes" default>
 ## Reducción de Dimensionalidad en Datos Ómicos (PCA)

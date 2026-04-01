@@ -5,12 +5,9 @@ sidebar_label: "🔸Análisis de riesgo"
 sidebar_position: 4
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-
-
-
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="riesgo" label="Antecedente" default>
 ## Análisis de Riesgos Proporcionales (Modelo de Cox)

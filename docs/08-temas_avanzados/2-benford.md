@@ -173,6 +173,9 @@ En la mayoría de los casos verás que **la distribución se acerca bastante a l
 
 ### 🧪 Ejemplo adicional: precios aleatorios multiplicativos
 Los datos multiplicativos suelen seguir Benford
+
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="python" label="Python" default>
 

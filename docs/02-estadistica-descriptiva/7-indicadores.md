@@ -10,6 +10,8 @@ hide_table_of_contents: true
 # Indicadores básicos de salud
 
 
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="python3" label="Python" default>
 ```python

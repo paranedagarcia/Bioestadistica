@@ -69,6 +69,8 @@ El software R proporciona funciones nativas para gestionar esta distribución si
 *   `pbinom(x, n, p)`: Calcula la probabilidad acumulada (útil para pruebas de hipótesis).
 *   `rbinom(m, n, p)`: Genera $m$ valores aleatorios siguiendo una distribución binomial.
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
 ```python

@@ -54,6 +54,8 @@ Un marco de referencia rápido para encontrar el estadístico adecuado según el
 ![Matriz](img/matriz.webp)
 
 
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="python" label="Python" default>
     ```python

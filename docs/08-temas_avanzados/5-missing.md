@@ -114,6 +114,8 @@ La implementación del algoritmo EM es ubicua en diversas subdisciplinas de la s
 ### 4. Relación con Otras Metodologías
 Es vital distinguir el EM de la **Imputación Múltiple (MI)**. Mientras que el EM proporciona una estimación puntual única (el MLE) y a menudo requiere métodos adicionales (como el de Louis) para calcular la varianza, la MI reconoce explícitamente la incertidumbre mediante la creación de múltiples datasets simulados. No obstante, algoritmos como el de **Aumentación de Datos (DA)** son versiones estocásticas de MCMC que actúan como un análogo bayesiano del EM.
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
 ```python

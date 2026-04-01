@@ -2,7 +2,7 @@
 id: herramientas-graficas
 title: Herramientas gráficas
 sidebar_label: "🔸Herramientas gráficas"
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Herramientas gráficas
@@ -11,6 +11,8 @@ Además de estas medidas, la estadística descriptiva utiliza diversas herramien
 ### Histogramas
 Un histograma es una representación gráfica que organiza un conjunto de datos numéricos en intervalos (o "bins") y muestra la frecuencia de datos dentro de cada intervalo mediante barras. A diferencia de un gráfico de barras tradicional, que se utiliza para datos categóricos, un histograma es ideal para datos continuos y ayuda a visualizar la distribución de los datos.
 
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="python1" label="Python" default>
 ```python
@@ -54,7 +56,7 @@ Un diagrama de caja, o box plot, es una herramienta gráfica que resume la distr
 - tercer cuartil (Q3) y 
 - máximo. 
 
-El box plot muestra la mediana como una línea dentro de la caja, que representa el rango intercuartílico (IQR, por sus siglas en inglés), que es la distancia entre Q1 y Q3. Los "bigotes" se extienden desde la caja hasta los valores mínimo y máximo, excluyendo los valores atípicos, que se representan como puntos individuales fuera de los bigotes.
+El box plot muestra la mediana como una línea dentro de la caja, que representa el **rango intercuartílico** (IQR, por sus siglas en inglés), que es la distancia entre Q1 y Q3. Los "bigotes" se extienden desde la caja hasta los valores mínimo y máximo, excluyendo los valores atípicos, que se representan como puntos individuales fuera de los bigotes.
 
 ![Histogram](./img/boxplot-1.webp)
 * *Box plot de ejemplo*
@@ -65,6 +67,8 @@ El box plot muestra la mediana como una línea dentro de la caja, que representa
 
 El boxplot muestra visualmente la mediana, cuartiles y valores atípicos:
 
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="python2" label="Python" default>
 ```python
@@ -117,6 +121,8 @@ El conjunto de datos Iris es un conjunto de datos clásico en el campo del apren
 ![Iris Dataset Image](./img/iris.webp)
 ![Iris Dataset Image](./img/iris-sepal.png)
 
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="python3" label="Python" default>
 ```python

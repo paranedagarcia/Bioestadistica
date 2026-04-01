@@ -53,6 +53,8 @@ A continuación, se muestra una tabla con la interpretación de los valores del 
 | menor que 0          | correlación negativa                                          |
 | igual a -1           | relación lineal negativa perfecta                             |
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
 ```python
@@ -145,6 +147,8 @@ Desde el dataset **Breast Cancer Wisconsin (Diagnostic) (WBCD)**, se pueden obse
 - https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
 - Wolberg, W., Mangasarian, O., Street, N., & Street, W. (1993). Breast Cancer Wisconsin (Diagnostic) [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5DW2B.
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
 ```python

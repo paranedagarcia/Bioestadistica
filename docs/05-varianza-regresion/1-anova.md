@@ -59,6 +59,8 @@ El ANOVA se adapta a diversas estructuras de investigación en biomedicina:
 
 *   **ANOVA de Medidas Repetidas:** Se utiliza cuando los mismos sujetos pasan por todos los tratamientos (estudios longitudinales o cruzados). *Ejemplo:* Medir los niveles de glucosa en un mismo grupo de pacientes antes del tratamiento, al mes y a los tres meses.
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
 ```python

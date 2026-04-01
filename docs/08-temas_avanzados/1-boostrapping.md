@@ -80,10 +80,9 @@ F^{*}(\theta) = \frac{1}{B} \sum_{b=1}^B I(\hat{\theta}^{*b} \le \theta)
 
 y se utiliza para construir intervalos de confianza y estimar la incertidumbre del estimador.
 
-#### Ejemplo
 
-
-
+<br />
+#### 📝 Programación:
 <Tabs>
   <TabItem value="apple" label="Python" default>
 ```python

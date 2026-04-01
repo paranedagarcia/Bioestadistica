@@ -103,9 +103,9 @@ En la práctica clínica y epidemiológica, el MAS se aplica en escenarios diver
 
 *   **Estudios de Prevalencia:** Selección de una muestra de ciudadanos para estimar la tasa de vacunación o la incidencia de enfermedades raras como la poliomielitis.
 
-#### Ejemplo
 
-
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="mas" label="Antecedente" default>
 Considere un investigador que desea auditar la calidad de los registros clínicos en una base de datos hospitalaria que contiene $N = 1000$ archivos de pacientes. Para obtener una muestra aleatoria simple de $n = 5$ archivos, el investigador debe:
@@ -207,6 +207,8 @@ El muestreo estratificado es la herramienta de elección en la investigación cl
 *   **Representatividad de Grupos Minoritarios:** En estudios sobre enfermedades raras, asegura que los subgrupos de interés con baja prevalencia tengan presencia suficiente en la muestra final para permitir inferencias válidas.
 *   **Análisis Multicéntrico:** Facilita la gestión administrativa de estudios realizados en múltiples hospitales o regiones geográficas, tratando a cada centro como un estrato independiente.
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
 ```python
@@ -271,6 +273,8 @@ Este muestreo es la herramienta de elección en:
 *   **Auditorías Clínicas:** Selección de centros hospitalarios para evaluar la calidad de los registros electrónicos de salud.
 *   **Vigilancia Epidemiológica:** Estudios sobre la prevalencia de patologías infecciosas en áreas geográficas extensas.
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
 ```python
@@ -336,6 +340,8 @@ También se aplica en el control de calidad de procesos hospitalarios, como la r
 *   **Muestreo Circular:** En casos donde $N/n$ no es un número entero, se puede emplear el "muestreo circular", donde la lista se trata como si el último elemento estuviera conectado al primero, garantizando que todos los elementos tengan la misma probabilidad de ser elegidos.
 
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
 ```python
@@ -366,6 +372,8 @@ El dominio de estas técnicas permite al informático médico diseñar sistemas 
 
 
 
+<br />
+#### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
 ```python
