@@ -6,7 +6,6 @@ sidebar_position: 4
 ---
 
 
-## Análisis de Cuantiles 
 
 Los **cuantiles** son valores que dividen una distribución de datos en partes iguales. Un cuantil de orden *q* (donde 0 ≤ q ≤ 1) es el valor por debajo del cual se encuentra el *q*×100% de los datos.
 
@@ -74,7 +73,7 @@ En publicaciones científicas, cuando la suposición de normalidad se viola (det
 
 
 
-### 🔹 Concepto estadístico: cuartil y cuantiles
+## Concepto estadístico: cuartil y cuantiles
 
 La función quantile(q=0.25) devuelve el primer cuartil (Q1) de los datos en cada columna (o fila) del DataFrame, usando por defecto el método de interpolación lineal.
 

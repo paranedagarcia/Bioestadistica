@@ -8,6 +8,8 @@ description: Técnicas de recolección de datos, muestreo probabilístico y no p
 
 La calidad de la evidencia generada depende intrínsecamente del rigor aplicado en la obtención de los datos. Este proceso se divide en la selección de las fuentes, la aplicación de técnicas instrumentales y el diseño de estrategias de muestreo que garanticen la representatividad de la población.
 
+![poblacion](img/muestra.webp)
+
 ## Técnicas de Recolección de Datos
 
 La recolección de datos es el procedimiento sistemático para obtener información de las unidades de estudio. En salud, se distinguen según su origen:
@@ -24,6 +26,8 @@ La **Muestra** es un subconjunto representativo de la población, extraído con 
 
 ## 2. Técnicas de Muestreo Poblacional
 El muestreo es el procedimiento científico que asegura que la muestra sea un reflejo fiel de la variabilidad biológica de la población objetivo. Se dividen principalmente en probabilísticos y no probabilísticos, siendo los primeros los únicos que permiten cuantificar el error aleatorio y realizar inferencias válidas.
+
+![muestreo](img/muestra-4.webp)
 
 ## Muestreo Probabilístico (Aleatorio)
 
@@ -89,7 +93,7 @@ Para la ejecución técnica de un MAS en un entorno clínico u hospitalario, se 
 1.  **Marco Muestral:** Un listado, mapa o base de datos exhaustiva y actualizada que identifique a todos los elementos de la población objetivo, numerados secuencialmente del $1$ al $N$.
 2.  **Mecanismo de Aleatorización:** La selección debe basarse estrictamente en el azar, utilizando herramientas como tablas de números aleatorios, generadores computacionales, calculadoras (función `RAN#`) o software especializado como Excel (`ALEATORIO.ENTRE`) u OpenEpi.
 
-
+![](img/muestradiagrama.webp)
 
 #### 4. Usos y Limitaciones
 **Usos:** Es ideal cuando la población es homogénea y las unidades están concentradas en un área pequeña, facilitando la enumeración. Es la base para diseños más complejos como el muestreo estratificado o por conglomerados.
