@@ -57,3 +57,7 @@ figure {
   margin-bottom: calc(1.25 * var(--ifm-leading));
   color: #525f58 !important;
 }
+
+.tabs__item--active{
+  background-color: rgb(170, 201, 107) !important;
+}

@@ -6,9 +6,14 @@ sidebar_position: 6
 description: Técnicas de recolección de datos, muestreo probabilístico y no probabilístico.
 ---
 
+
+
+En el marco de toda investigación biomédica o no, la capacidad de generalizar hallazgos desde un grupo reducido hacia una colectividad es fundamental. Este proceso se sustenta en la relación lógica entre población y muestra, mediada por técnicas de muestreo que garantizan la validez de la inferencia estadística.
+
 La calidad de la evidencia generada depende intrínsecamente del rigor aplicado en la obtención de los datos. Este proceso se divide en la selección de las fuentes, la aplicación de técnicas instrumentales y el diseño de estrategias de muestreo que garanticen la representatividad de la población.
 
 ![poblacion](img/muestra.webp)
+
 
 ## Técnicas de Recolección de Datos
 
@@ -19,31 +24,25 @@ La recolección de datos es el procedimiento sistemático para obtener informaci
 
 Para que la recolección sea científicamente válida, el investigador debe considerar la **especificidad** (distinguir la variable de interés de confusores) y la **sensibilidad** de la técnica.
 
-## 1. Población y Muestra: El Fundamento de la Inferencia
+## Población y Muestra: El Fundamento de la Inferencia
 La **Población** (o universo) se define como el conjunto total de elementos o unidades de análisis que comparten características comunes y que constituyen el objeto de interés en un estudio. En medicina, estas poblaciones pueden ser **finitas**, como los pacientes ingresados en una unidad de cuidados intensivos en un día determinado, o **infinitas/conceptuales**, como todos los pacientes futuros que podrían padecer una patología específica bajo ciertas condiciones experimentales.
 
 La **Muestra** es un subconjunto representativo de la población, extraído con el fin de investigar características de la totalidad sin necesidad de realizar un censo, lo cual sería logística y económicamente inviable. La relación crítica radica en que los **parámetros** (medidas descriptivas de la población, como la media $\mu$) son estimados a través de los **estadísticos** (medidas calculadas en la muestra, como la media $\overline{x}$).
 
-## 2. Técnicas de Muestreo Poblacional
+## Técnicas de Muestreo Poblacional
 El muestreo es el procedimiento científico que asegura que la muestra sea un reflejo fiel de la variabilidad biológica de la población objetivo. Se dividen principalmente en probabilísticos y no probabilísticos, siendo los primeros los únicos que permiten cuantificar el error aleatorio y realizar inferencias válidas.
 
 ![muestreo](img/muestra-4.webp)
 
-## Muestreo Probabilístico (Aleatorio)
 
-El muestreo probabilístico se fundamenta en que cada miembro de la población tiene una probabilidad conocida y mayor a cero de ser incluido en la muestra. Es el único método que permite realizar inferencias estadísticas válidas y cuantificar el error de muestreo.
 
-Requiere obligatoriamente un **marco muestral** (*sampling frame*), que es el listado o mapa actualizado de todos los elementos de la población objetivo.
+### 🔸​Muestreo Aleatorio Simple (MAS)
 
-### Tipos y Aplicaciones:
-
-### Muestreo Aleatorio Simple (MAS)
-
-El **Muestreo Aleatorio Simple (MAS)** constituye el esquema fundamental de la teoría del muestreo probabilístico y es la técnica de referencia para la estadística inferencial. Se define rigurosamente como aquel procedimiento en el que cada unidad de la población tiene una probabilidad conocida, constante y mayor a cero de ser incluida en la muestra. Cada unidad experimental (paciente, registro clínico o muestra biológica) posea una probabilidad de inclusión conocida e idéntica, eliminando sesgos de selección sistemáticos. Se requiere de un **marco muestral** (lista exhaustiva de la población) y la selección se realiza mediante generadores de números aleatorios o sorteos.
+El **Muestreo Aleatorio Simple (MAS)** constituye el esquema fundamental de la teoría del muestreo probabilístico y es la técnica de referencia para la estadística inferencial. Se define como aquel procedimiento en el que cada unidad de la población tiene una probabilidad conocida, constante y mayor a cero de ser incluida en la muestra. Cada unidad experimental (paciente, registro clínico o muestra biológica) posea una probabilidad de inclusión conocida e idéntica, eliminando sesgos de selección sistemáticos. Requiere obligatoriamente un **marco muestral** (*sampling frame*), que es el listado o mapa actualizado de todos los elementos de la población objetivo y la selección se realiza mediante generadores de números aleatorios o sorteos.
 
 Garantiza la independencia de las observaciones.
 
-#### 1. Definición y Fundamento Teórico
+#### Definición y Fundamento Teórico
 El MAS se sustenta en la construcción de un **marco muestral** (*sampling frame*), que consiste en la lista exhaustiva y numerada de todos los elementos que componen la población objetivo. Matemáticamente, si extraemos una muestra aleatoria de una variable $X$ con media poblacional $\mu$ y varianza $\sigma^2$, los estimadores fundamentales operan bajo los siguientes principios:
 
 1.  **Media Muestral ($\bar{X}$):** Es un estimador insesgado de $\mu$, calculado como:
@@ -62,7 +61,8 @@ El MAS se sustenta en la construcción de un **marco muestral** (*sampling frame
     ```math
     SE(\bar{x}) = \frac{\sigma}{\sqrt{n}}
     ```
-    *(Si $n$ representa más del 5% de la población, se debe aplicar el factor de corrección para población finita: $\sqrt{\frac{N-n}{N-1}}$)*.
+* *(Si $n$ representa más del 5% de la población, se debe aplicar el factor de corrección para población finita: $\sqrt{\frac{N-n}{N-1}}$)*.
+
 
 
 El MAS garantiza que los estadísticos calculados sean **estimadores insesgados** de los parámetros poblacionales. 
@@ -70,7 +70,6 @@ El MAS garantiza que los estadísticos calculados sean **estimadores insesgados*
     ```math
     \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
     ```
-
 
 El uso del FPC es crítico en estudios de salud de comunidades pequeñas, ya que reduce la varianza estimada al reconocer que se ha capturado una proporción importante de la información total de la población.
 
@@ -92,25 +91,56 @@ P(\text{muestra}) = \frac{1}{M}
 
 La probabilidad individual de que cualquier unidad sea incluida en la muestra es $n/N$.
 
-#### 2. Requisitos Operativos
+#### Requisitos Operativos
 Para la ejecución técnica de un MAS en un entorno clínico u hospitalario, se requieren dos elementos críticos:
 1.  **Marco Muestral:** Un listado, mapa o base de datos exhaustiva y actualizada que identifique a todos los elementos de la población objetivo, numerados secuencialmente del $1$ al $N$.
 2.  **Mecanismo de Aleatorización:** La selección debe basarse estrictamente en el azar, utilizando herramientas como tablas de números aleatorios, generadores computacionales, calculadoras (función `RAN#`) o software especializado como Excel (`ALEATORIO.ENTRE`) u OpenEpi.
 
 ![](img/muestradiagrama.webp)
 
-#### 4. Usos y Limitaciones
+#### Implementación en el Entorno R
+
+El lenguaje R ofrece herramientas robustas para la ejecución del MAS, permitiendo la reproducibilidad científica mediante la fijación de la semilla del generador de números pseudoaleatorios.
+
+<details>
+<summary>R: Selección de una muestra desde un marco muestral</summary>
+
+**Ejemplo 1:** Para seleccionar 10 pacientes aleatorios de un listado de 355 registrados en un sistema hospitalario:
+
+```r
+set.seed(123) # Garantiza reproducibilidad
+poblacion_id <- 1:355 # Marco muestral numerado
+muestra <- sample(poblacion_id, size = 10, replace = FALSE) # MAS sin reemplazo
+print(muestra)
+```
+**Ejemplo 2:** Simulación de la distribución del peso al nacer en una población normal para evaluar la media muestral:
+```r
+# Generación de una población hipotética de pesos (n=1000, media=3100g, sd=500g)
+poblacion_pesos <- rnorm(1000, mean = 3100, sd = 500)
+
+# Extracción de una MAS de 50 pesos
+muestra_pesos <- sample(poblacion_pesos, size = 50)
+
+# Cálculo de la media y error típico
+media_obs <- mean(muestra_pesos)
+error_tipico <- sd(muestra_pesos) / sqrt(50)
+```
+</details>
+
+#### Usos y Limitaciones
 **Usos:** Es ideal cuando la población es homogénea y las unidades están concentradas en un área pequeña, facilitando la enumeración. Es la base para diseños más complejos como el muestreo estratificado o por conglomerados.
 
 **Limitaciones:** Su principal desventaja es la dificultad técnica y el costo de elaborar marcos muestrales completos en poblaciones extensas. Además, si la característica de interés presenta una varianza elevada (coeficiente de variación $> 30\%$), se requiere un tamaño de muestra considerablemente grande para mantener la precisión.
 
 En la práctica clínica y epidemiológica, el MAS se aplica en escenarios diversos:
-*   **Auditoría de Calidad:** Selección de 5 expedientes clínicos electrónicos de una base de datos de 1.000 para verificar la integridad de los datos codificados.
+* **Auditoría de Calidad:** Selección de 5 expedientes clínicos electrónicos de una base de datos de 1.000 para verificar la integridad de los datos codificados.
 
-*   **Ensayos Clínicos Controlados:** Asignación aleatoria de 50 especímenes de laboratorio o sujetos a grupos de tratamiento y control para garantizar la comparabilidad basal.
+* **Ensayos Clínicos Controlados:** Asignación aleatoria de 50 especímenes de laboratorio o sujetos a grupos de tratamiento y control para garantizar la comparabilidad basal.
 
-*   **Estudios de Prevalencia:** Selección de una muestra de ciudadanos para estimar la tasa de vacunación o la incidencia de enfermedades raras como la poliomielitis.
+* **Estudios de Prevalencia:** Selección de una muestra de ciudadanos para estimar la tasa de vacunación o la incidencia de enfermedades raras como la poliomielitis.
 
+#### Diferenciación Conceptual Importante
+Es imperativo distinguir entre el muestreo **con reemplazo** y **sin reemplazo**. El muestreo con reemplazo se modela mediante una distribución binomial, permitiendo que un mismo individuo sea seleccionado múltiples veces; sin embargo, en biomedicina es estándar el muestreo sin reemplazo (hipergeométrico), ya que carece de sentido clínico evaluar el mismo sujeto dos veces como si fueran entidades independientes.
 
 <br />
 #### 📝 Programación:
@@ -176,18 +206,27 @@ cat("Archivos seleccionados (IDs):", muestra_seleccionada, "\n")
 
 <br />
 
-### Muestreo Estratificado
+### 🔸​Muestreo Estratificado
 
-El **muestreo aleatorio estratificado (MAE)** es un método de muestreo probabilístico diseñado para optimizar la precisión de las estimaciones estadísticas cuando se trabaja con poblaciones heterogéneas. Este procedimiento consiste en particionar la población total ($N$) en subgrupos mutuamente excluyentes y colectivamente exhaustivos denominados **estratos**, los cuales deben ser internamente homogéneos con respecto a la característica de estudio, pero heterogéneos entre sí.
+El **muestreo aleatorio estratificado (MAE)** es un método de muestreo probabilístico diseñado para optimizar la precisión de las estimaciones estadísticas cuando se trabaja con poblaciones heterogéneas. Este procedimiento consiste en particionar la población total ($N$) en subgrupos mutuamente excluyentes y colectivamente exhaustivos denominados **estratos**, los cuales deben ser internamente homogéneos con respecto a la característica de estudio, pero heterogéneos entre sí. Este método es superior al muestreo aleatorio simple (MAS) cuando se identifican variables (estratos) que influyen significativamente en la variable de respuesta, permitiendo reducir la varianza del error de estimación.
 
 Tras la división, se procede a realizar un muestreo aleatorio simple (MAS) de forma independiente dentro de cada estrato para conformar la muestra global ($n$).
 
-#### 1. Fundamento Matemático y Estimación
+* **Significado:** Reduce el error de muestreo al controlar la variabilidad interna de los grupos.
+* **Fórmula de asignación proporcional:** 
+    ```math
+    n_h = n \cdot \left(\frac{N_h}{N}\right)
+    ```
+    Donde $n_h$ es el tamaño de la muestra en el estrato, $n$ el tamaño de la muestra total, $N_h$ el tamaño del estrato en la población y $N$ el total de la población.
+
+#### 1. Fundamentación
 
 El uso del MAE permite reducir el error de muestreo en comparación con el muestreo aleatorio simple, ya que garantiza que las características críticas de la población queden debidamente representadas.
 
+El MAE consiste en dividir la población total de tamaño $N$ en $L$ subpoblaciones o **estratos** mutuamente excluyentes y colectivamente exhaustivos, de tamaños $N_1, N_2, \dots, N_L$, de tal manera que $\sum_{h=1}^{L} N_h = N$. Una vez definidos, se extrae una muestra aleatoria simple (MAS) de tamaño $n_h$ de cada estrato de forma independiente.
+
 #### Media Aritmética Estratificada ($\bar{x}_{st}$)
-El estimador de la media poblacional en un diseño estratificado se calcula mediante una media ponderada de las medias obtenidas en cada estrato:
+El estimador de la media poblacional en un diseño estratificado ($\bar{x}_{st}$), se calcula mediante una media ponderada de las medias obtenidas en cada estrato ($\bar{x}_h$):
 
 ```math
 \bar{x}_{st} = \sum_{h=1}^{L} W_h \bar{x}_h = \frac{\sum_{h=1}^{L} N_h \bar{x}_h}{N}
@@ -205,15 +244,69 @@ El estimador de la media poblacional en un diseño estratificado se calcula medi
 La determinación de cuántas unidades de observación ($n_h$) deben extraerse de cada estrato es crucial para la eficiencia del diseño. Se distinguen tres técnicas principales:
 
 1.  **Afijación Igual:** Se selecciona el mismo número de unidades para cada estrato, independientemente de su tamaño poblacional ($n_h = n / L$). Es útil cuando se desea obtener información detallada de cada subgrupo por separado.
+
 2.  **Afijación Proporcional:** El tamaño de la muestra en cada estrato es proporcional a su peso en la población ($n_h = n \cdot W_h$). Es el método más común pues mantiene la representatividad de la estructura poblacional en la muestra.
+
 3.  **Afijación Óptima (Neyman):** El tamaño de $n_h$ se determina considerando tanto el tamaño del estrato como su variabilidad interna ($\sigma_h$) y el costo unitario de muestreo ($C_h$). Su objetivo es minimizar el error de estimación para un costo total dado.
 
 #### 3. Aplicaciones
 
+En medicina, la estratificación es crítica para controlar **variables confusoras**. Por ejemplo, en un estudio sobre la eficacia de un nuevo fármaco antihipertensivo, la "edad" o el "sexo" pueden ser factores que modifiquen el efecto. Si se utilizara un MAS, se correría el riesgo de que, por azar, un grupo de tratamiento tuviera significativamente más adultos mayores que el grupo control, sesgando los resultados. El MAE asegura que cada grupo etario esté representado proporcionalmente, aumentando la **validez interna** del estudio.
+
 El muestreo estratificado es la herramienta de elección en la investigación clínica y epidemiológica por varias razones estratégicas:
 *   **Control de Confusión:** Permite evaluar la asociación entre una exposición y una patología controlando variables de confusión mediante la estratificación por niveles (ej. edad, sexo o severidad clínica).
+
 *   **Representatividad de Grupos Minoritarios:** En estudios sobre enfermedades raras, asegura que los subgrupos de interés con baja prevalencia tengan presencia suficiente en la muestra final para permitir inferencias válidas.
+
 *   **Análisis Multicéntrico:** Facilita la gestión administrativa de estudios realizados en múltiples hospitales o regiones geográficas, tratando a cada centro como un estrato independiente.
+
+<details>
+<summary>R: Escenario clínico, nivel promedio de hemoglobina en una población hospitalaria...</summary>
+
+**Escenario Clínico:** Se desea estudiar el nivel promedio de hemoglobina en una población hospitalaria de 1,000 pacientes, estratificada por "Severidad de la Enfermedad" (Leve, Moderada, Grave), dado que se sabe que la variabilidad biológica es distinta en cada grupo.
+
+*   $N_{Leve} = 500$
+*   $N_{Mod} = 300$
+*   $N_{Grave} = 200$
+*   Tamaño de muestra total deseado: $n = 100$.
+```r
+# Definición de la población (Marco Muestral)
+set.seed(42) # Reproducibilidad
+poblacion <- data.frame(
+  id = 1:1000,
+  estrato = c(rep("Leve", 500), rep("Moderado", 300), rep("Grave", 200)),
+  hemoglobina = c(rnorm(500, 14, 1), rnorm(300, 12, 1.5), rnorm(200, 10, 2))
+)
+
+# Cálculo de tamaños de muestra por estrato (Afijación Proporcional)
+n_total <- 100
+N <- nrow(poblacion)
+pesos <- table(poblacion$estrato) / N
+nh <- round(n_total * pesos)
+
+# Extracción de la muestra estratificada usando split y lapply
+estratos_lista <- split(poblacion, poblacion$estrato)
+muestra_lista <- lapply(names(estratos_lista), function(nombre) {
+  df_estrato <- estratos_lista[[nombre]]
+  tamano <- nh[nombre]
+  df_estrato[sample(1:nrow(df_estrato), tamano), ] # MAS dentro de cada estrato
+})
+
+muestra_estratificada <- do.call(rbind, muestra_lista)
+
+# Estimación de la media estratificada
+media_st <- sum(pesos * sapply(split(muestra_estratificada$hemoglobina, 
+                                     muestra_estratificada$estrato), mean))
+print(media_st)
+```
+</details>
+
+#### Ventajas Metodológicas
+*   **Reducción del Error Estándar:** Si los estratos son internamente homogéneos, el error típico de la media estratificada será menor que el de una media obtenida por MAS.
+
+*   **Garantía de Análisis de Subgrupos:** Permite obtener conclusiones válidas para cada estrato por separado, lo cual es vital en epidemiología para identificar grupos de riesgo.
+
+*   **Eficiencia en Costos:** En poblaciones muy dispersas, estratificar geográficamente puede reducir los gastos de recolección de datos.
 
 <br />
 #### 📝 Programación:
@@ -232,17 +325,30 @@ El muestreo estratificado es la herramienta de elección en la investigación cl
 
 <br />
 
-### Muestreo por Conglomerados
+
+### 🔸Muestreo por Conglomerados
 
 El **Muestreo por Conglomerados** (o por racimos) es una técnica de muestreo probabilístico en la que las unidades de muestreo no son individuos aislados, sino conjuntos o agrupaciones naturales de elementos denominados "conglomerados". En la investigación a gran escala, este método es esencial cuando la población es muy numerosa, se encuentra geográficamente dispersa o cuando no se dispone de un marco muestral (listado detallado) de todos los individuos, pero sí de las agrupaciones que los contienen.
 
-#### 1. Fundamento y Lógica del Diseño
-A diferencia del muestreo estratificado —donde se busca homogeneidad interna en los estratos y heterogeneidad entre ellos—, el muestreo por conglomerados opera bajo la premisa inversa: se espera que cada conglomerado sea lo más **heterogéneo** posible en su interior (una "pequeña réplica" de la población total) y que exista **homogeneidad** entre los distintos conglomerados.
+A diferencia de la estratificación (donde se busca homogeneidad interna), el muestreo por conglomerados divide la población en grupos naturales que se supone son tan heterogéneos como la población misma (p. ej., hospitales, escuelas o manzanas de una ciudad). Se seleccionan aleatoriamente algunos conglomerados y se estudian todos los individuos dentro de ellos (una etapa) o una muestra de ellos (dos etapas).
+
+:::info
+Es una técnica costo-efectiva útil cuando no existe un marco muestral de individuos, pero sí de grupos geográficos o administrativos.
+:::
+
+El Muestreo por Conglomerados (o por racimos) es una técnica de muestreo probabilístico en la que la unidad de selección no es el individuo, sino un grupo de individuos que forman una unidad natural o administrativa, denominada **conglomerado**. En el ámbito de la salud, esta técnica es esencial cuando no se dispone de un listado exhaustivo de todos los pacientes (marco muestral individual), pero sí existe un registro de las instituciones o áreas donde se agrupan.
+
+#### 1. Fundamentación
+A diferencia del muestreo estratificado, donde se busca homogeneidad interna y heterogeneidad entre estratos, el muestreo por conglomerados asume que cada grupo es una **"micro-población"** que representa fielmente la diversidad de la población total. Por lo tanto, se busca que exista **heterogeneidad interna** (máxima variabilidad dentro del grupo) y **homogeneidad externa** (que los conglomerados sean similares entre sí).
 
 Desde una perspectiva técnica, el proceso consiste en:
 1.  Dividir la población total en $N$ grupos mutuamente excluyentes y colectivamente exhaustivos (ej. hospitales, manzanas, escuelas).
 2.  Seleccionar aleatoriamente una muestra de $n$ conglomerados.
 3.  Realizar el estudio sobre los elementos pertenecientes a los conglomerados seleccionados.
+
+#### Unidades Primarias y Secundarias
+*   **Unidades Primarias de Muestreo (UPM):** Son los conglomerados seleccionados en la primera etapa (ej. hospitales, centros de salud, manzanas geográficas).
+*   **Unidades Secundarias de Muestreo (USM):** Son los elementos individuales dentro de los conglomerados (ej. pacientes, expedientes clínicos).
 
 #### 2. Clasificación según Etapas de Selección
 El diseño puede variar en complejidad dependiendo de si se analizan todos los elementos del racimo o solo una parte:
@@ -254,25 +360,36 @@ El diseño puede variar en complejidad dependiendo de si se analizan todos los e
 *   **Muestreo Polietápico (Multietápico):** Es una generalización que implica múltiples fases de selección (ej. Ciudad $\rightarrow$ Barrios $\rightarrow$ Manzanas $\rightarrow$ Viviendas $\rightarrow$ Individuos).
 
 #### 3. Estimadores Matemáticos
-En el muestreo por conglomerados de una etapa con tamaños desiguales, el estimador de la media poblacional ($\overline{X}_{cl}$) se comporta como un estimador de razón:
+En un diseño de conglomerados, si se desea estimar la media de una variable de salud (ej. niveles de glucosa), el estimador de la media por unidad ($\overline{x}_{clu}$) se calcula como la razón entre la suma total de los valores observados y el total de individuos muestreados:
 
 ```math
 \overline{X}_{cl} = \frac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} m_i}
 ```
 
-**Significado de sus componentes:**
+**Donde:**
 *   **$n$**: Número de conglomerados seleccionados en la muestra.
 *   **$x_i$**: Suma de los valores de la variable en el $i$-ésimo conglomerado.
 *   **$m_i$**: Número de elementos (tamaño) del $i$-ésimo conglomerado.
-*   **Nota:** Este estimador es técnicamente sesgado si no se conoce el total de elementos de la población ($M$), pero el sesgo suele ser despreciable en muestras grandes.
+
+:::info Nota
+Este estimador es técnicamente sesgado si no se conoce el total de elementos de la población ($M$), pero el sesgo suele ser despreciable en muestras grandes.
+:::
+
+:::warning
+**Nota sobre el Error:** El error de muestreo suele ser mayor que en el muestreo aleatorio simple (MAS) si existe correlación intraclase (ej. pacientes en un mismo hospital tienden a recibir tratamientos similares), por lo que a veces se requiere aumentar el tamaño de la muestra para compensar este "efecto de diseño".
+:::
 
 #### 4. Ventajas y Desventajas Técnicas
 **Ventajas:**
-*   **Eficiencia de Costos:** Reduce drásticamente los gastos de transporte y logística, ya que el investigador solo se traslada a los puntos seleccionados en lugar de recorrer toda la región.
-*   **Viabilidad:** Es el único método práctico cuando no existe un listado previo de la población objetivo.
+*   **Eficiencia de Costos:** Reduce drásticamente los desplazamientos de los investigadores al concentrar la recolección en puntos específicos.
+
+*   **Viabilidad Logística:** Es la única opción cuando los pacientes están dispersos geográficamente y no existe una base de datos centralizada.
+
+*   **Análisis Multinivel:** Permite capturar variaciones debidas a la gestión institucional (efecto hospital) frente a la variación individual del paciente.
 
 **Desventajas:**
 *   **Error de Muestreo Elevado:** Generalmente presenta un error estándar mayor que el muestreo aleatorio simple (MAS) para un mismo tamaño de muestra. Esto se debe a que los elementos dentro de un conglomerado tienden a parecerse entre sí (correlación intraclase).
+
 *   **Complejidad Analítica:** Requiere fórmulas de estimación más sofisticadas que el MAS.
 
 #### 5. Aplicaciones en Salud
@@ -284,60 +401,153 @@ Este muestreo es la herramienta de elección en:
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Pyhton" default>
+<TabItem value="mc" label="Antecedentes" default>
+**Escenario Clínico:** Se desea evaluar la calidad de la atención (escala 0-100) en los centros de atención primaria de una provincia. No hay un listado nacional de pacientes, pero sí de los 50 centros de salud (conglomerados). Se decide realizar un muestreo bietápico: seleccionar 5 centros y, dentro de cada uno, auditar 10 historias clínicas.
+</TabItem>
+<TabItem value="mc-python" label="Pyhton" default>
 ```python
 # Implementación en Python
 ```
 </TabItem>
-<TabItem value="r" label="R" default>
+<TabItem value="mc-r" label="R" default>
 ```r
 # Implementación en R
+# 1. Simulación del Marco Muestral (50 centros con n pacientes cada uno)
+set.seed(123)
+poblacion_centros <- data.frame(
+  centro_id = rep(1:50, each = 100),
+  calidad_atencion = rnorm(5000, mean = 75, sd = 10)
+)
+
+# 2. Etapa 1: Selección Aleatoria de Conglomerados (UPM)
+n_clusters <- 5
+clusters_seleccionados <- sample(unique(poblacion_centros$centro_id), size = n_clusters)
+
+# 3. Etapa 2: Selección Aleatoria de Individuos dentro de los clusters (USM)
+# Filtramos la población por los centros seleccionados
+muestra_upm <- poblacion_centros[poblacion_centros$centro_id %in% clusters_seleccionados, ]
+
+# Seleccionamos 10 pacientes por cada centro usando split y lapply
+muestra_final_lista <- lapply(split(muestra_upm, muestra_upm$centro_id), function(df_centro) {
+  df_centro[sample(1:nrow(df_centro), 10), ]
+})
+
+muestra_final <- do.call(rbind, muestra_final_lista)
+
+# 4. Cálculo del Estimador de la Media de Conglomerados
+media_est <- mean(muestra_final$calidad_atencion)
+print(paste("Estimación de la calidad media:", round(media_est, 2)))
 ```
 </TabItem>
 </Tabs>
 
 <br />
 
-### Muestreo Sistemático
+### 🔸Muestreo Sistemático
 
-El **Muestreo Sistemático** es un procedimiento de selección probabilística que se fundamenta en la extracción de elementos a intervalos regulares a lo largo de una lista ordenada de la población. Este método se valora por su simplicidad operativa y su capacidad para garantizar una cobertura uniforme de la población objetivo cuando se dispone de marcos muestrales organizados cronológica o alfabéticamente.
+El **Muestreo Sistemático** es un procedimiento de selección probabilística que se fundamenta en la extracción de elementos a intervalos regulares de una población organizada en una lista o secuencia, mediante la aplicación de un intervalo constante tras un arranque aleatorio inicial. Este método se valora por su simplicidad y eficiencia operativa y su capacidad para garantizar una cobertura y distribución uniforme de la muestra de la población objetivo cuando se dispone de marcos muestrales organizados cronológica o alfabéticamente, lo que en poblaciones con tendencias ordenadas puede aumentar la precisión de los estimadores.
 
-#### 1. Fundamento Matemático y Procedimiento
+Consiste en seleccionar elementos de una lista ordenada a intervalos regulares. Se elige un punto de arranque aleatorio entre el primer elemento y el valor del intervalo $k$.
+*   **Intervalo de muestreo ($k$):** 
+    $$k = \frac{N}{n}$$
 
-La ejecución técnica del muestreo sistemático requiere la determinación de dos componentes críticos: el intervalo de selección y el punto de arranque aleatorio.
+*   **Relación:** Es más eficiente que el MAS cuando la lista está ordenada de forma que no existan periodicidades ocultas que sesguen la muestra.
 
-**A. Cálculo del Intervalo de Muestreo ($k$)**
+*   **Ejemplo:** Seleccionar cada 10º paciente que ingresa a urgencias, empezando por un número al azar entre 1 y 10.
 
-El intervalo de muestreo, denotado frecuentemente como $k$, representa la distancia numérica entre dos unidades consecutivas seleccionadas para la muestra. Se calcula mediante la razón:
+#### 1. Fundamentación
+
+La ejecución técnica del muestreo sistemático requiere la determinación de dos componentes críticos: el intervalo de selección y el punto de arranque aleatorio. El rigor del muestreo sistemático reside en la determinación precisa de dos componentes críticos: el intervalo de muestreo ($k$) y el punto de arranque aleatorio ($A$).
+
+**Cálculo del Intervalo de Muestreo ($k$)**
+
+El intervalo de muestreo, denotado frecuentemente como $k$, representa la distancia numérica fija entre dos unidades consecutivas seleccionadas para la muestra. Se define matemáticamente como la razón entre el tamaño de la población ($N$) y el tamaño de la muestra deseado ($n$):
 
 ```math
 k = \frac{N}{n}
 ```
+:::info Nota
+Si el cociente no es un número entero, se suele redondear al entero más cercano o superior para asegurar la cobertura.
+:::
 
 **Significado de sus componentes:**
 *   **$N$**: Tamaño total de la población o universo.
 *   **$n$**: Tamaño de la muestra deseado.
 *   **$k$**: Intervalo de salto; si el resultado no es entero, se recomienda redondear al número superior más cercano para mantener el rigor del diseño.
 
-**B. Selección del Punto de Arranque ($m$)**
+**Selección del Punto de Arranque ($m$)**
 
 Para que el muestreo mantenga su naturaleza probabilística, el primer elemento debe elegirse estrictamente al azar. Se selecciona un número aleatorio $m$ tal que $1 \le m \le k$. Este número $m$ identifica la primera unidad de la lista que formará parte de la muestra, denominada "punto de arranque".
+```math
+1 \le A \le k
+```
 
-#### C. Secuencia de Selección
-Una vez establecido $m$, la muestra se compone de los elementos situados en las posiciones:
+**Secuencia de Selección**
+
+Una vez establecido $m$, los elementos que conformarán la muestra son aquellos que ocupan las posiciones:
 
 ```math
 \{e_m, e_{m+k}, e_{m+2k}, e_{m+3k}, \dots, e_{m+(n-1)k}\}
 ```
+:::info
 Este proceso se repite automáticamente hasta completar el tamaño muestral $n$.
+:::
+
+**Variación: Muestreo Sistemático Circular**
+
+Cuando el intervalo $k$ no es exacto, existe el riesgo de que los últimos elementos de la lista tengan una probabilidad nula de ser elegidos, introduciendo un sesgo de selección. Para mitigar esto, se utiliza el **muestreo circular**, donde se considera que el elemento $N+1$ coincide con el primero, permitiendo recorrer la lista completamente partiendo de cualquier número aleatorio entre $1$ y $N$.
 
 #### 2. Aplicaciones
 
-Este método es particularmente útil en entornos clínicos donde los pacientes o registros ingresan de forma secuencial. Por ejemplo, en una auditoría de historias clínicas electrónicas, si se desea analizar $n=100$ registros de una base de $N=1000$, se calcula un intervalo $k=10$. Si el punto de arranque aleatorio es 8, se auditarán los expedientes 8, 18, 28, y así sucesivamente.
+Este método es particularmente útil en entornos clínicos donde los pacientes o registros ingresan de forma secuencial o están organizados jerárquicamente: Por ejemplo, en una auditoría de historias clínicas electrónicas, si se desea analizar $n=100$ registros de una base de $N=1000$, se calcula un intervalo $k=10$. Si el punto de arranque aleatorio es 8, se auditarán los expedientes 8, 18, 28, y así sucesivamente.
 
-También se aplica en el control de calidad de procesos hospitalarios, como la revisión del cumplimiento de protocolos por parte del personal, seleccionando, por ejemplo, cada décima tarjeta de registro diario.
+*   **Auditoría de Calidad Hospitalaria:** Si un hospital atiende a 1,200 pacientes al mes y se desea auditar 120 historias clínicas electrónicas ($k=10$), se selecciona un número al azar entre 1 y 10 (p. ej., el 4) y se analizan las fichas 4, 14, 24, etc..
+
+*   **Ensayos Clínicos en Emergencias:** Selección de pacientes que ingresan a una unidad de cuidados críticos. Al no existir un marco muestral previo, se puede preestablecer estudiar a cada $k$-ésimo paciente que ingrese durante una semana.
+
+*   **Control de Procesos de Laboratorio:** Extracción de una muestra de suero cada 15 tubos procesados por un analizador automático para verificar la calibración.
+
+*   **Control de calidad de procesos hospitalarios:** Como la revisión del cumplimiento de protocolos por parte del personal, seleccionando, por ejemplo, cada décima tarjeta de registro diario.
+
+<details>
+<summary>R: Selección de una muestra de pacientes en una base de datos hospitalaria.</summary>
+
+Simulación de un marco muestral de 1000 pacientes con una variable de interés (ej. Presión Arterial Sistólica)
+```R
+set.seed(2024)
+hospital_data <- data.frame(
+  id = 1:1000,
+  pas = rnorm(1000, mean = 125, sd = 15)
+)
+
+# Parámetros del muestreo
+N <- nrow(hospital_data)
+n <- 50
+k <- floor(N / n) # Intervalo de muestreo
+
+# 1. Selección del Punto de Arranque Aleatorio (A)
+punto_arranque <- sample(1:k, 1)
+
+# 2. Generación de los índices sistemáticos
+indices_sistematicos <- seq(from = punto_arranque, 
+                            by = k, 
+                            length.out = n)
+
+# 3. Extracción de la muestra
+muestra_sistematica <- hospital_data[indices_sistematicos, ]
+
+# Estimación de la media muestral y error típico
+media_muestral <- mean(muestra_sistematica$pas)
+error_estandar <- sd(muestra_sistematica$pas) / sqrt(n)
+
+cat("Punto de arranque:", punto_arranque, "\n")
+cat("Media estimada:", media_muestral, "\n")
+```
+</details>
 
 #### 3. Ventajas y Consideraciones Críticas
+
+La mayor amenaza a la validez del muestreo sistemático es la **periodicidad oculta**. Si la población presenta un ciclo biológico o administrativo que coincide exactamente con el intervalo $k$, la muestra dejaría de ser representativa.
 
 *   **Eficiencia y Simplicidad:** Es más directo y económico que el muestreo aleatorio simple (MAS), ya que solo requiere una selección al azar inicial.
 
@@ -346,6 +556,7 @@ También se aplica en el control de calidad de procesos hospitalarios, como la r
 *   **Riesgo de Periodicidad:** Un peligro inherente es la existencia de "periodicidades ocultas" en la lista que coincidan con el intervalo $k$. Si, por ejemplo, se analiza la ocupación hospitalaria cada 7 días y el intervalo cae siempre en domingo, la muestra estará sesgada y no representará la variabilidad real de la semana.
 
 *   **Muestreo Circular:** En casos donde $N/n$ no es un número entero, se puede emplear el "muestreo circular", donde la lista se trata como si el último elemento estuviera conectado al primero, garantizando que todos los elementos tengan la misma probabilidad de ser elegidos.
+
 
 
 <br />
@@ -365,17 +576,17 @@ También se aplica en el control de calidad de procesos hospitalarios, como la r
 
 <br />
 
-## Muestreo No Probabilístico
+### 🔸Muestreo No Probabilístico
 
 En este modelo, la selección de los sujetos no depende del azar, sino del criterio del investigador o la accesibilidad de las unidades. Sus resultados no son generalizables a la población general, independientemente del tamaño de la muestra.
 
-### Tipos y Aplicaciones:
+#### Tipos y Aplicaciones:
 *   **Muestreo por Conveniencia:** Selección de sujetos fácilmente accesibles (ej. pacientes voluntarios en una sala de espera). Es común en estudios piloto iniciales.
 *   **Muestreo por Cuotas:** Se fijan cantidades específicas de sujetos con ciertas características (ej. 50 hombres y 50 mujeres) pero la selección final es a criterio del entrevistador.
 *   **Muestreo de Casos Consecutivos:** Se incluyen todos los pacientes que cumplen con los criterios de elegibilidad durante un periodo de tiempo determinado. Es el método no probabilístico que más se aproxima al rigor del muestreo aleatorio en investigación clínica.
 *   **Muestreo en Bola de Nieve:** Los sujetos estudiados reclutan a otros participantes. Es vital para estudiar poblaciones de difícil acceso o estigmatizadas (ej. usuarios de drogas inyectables).
 
-### Aplicaciones
+#### Aplicaciones
 El dominio de estas técnicas permite al informático médico diseñar sistemas de soporte a la decisión basados en datos robustos, validar algoritmos de *machine learning* con muestras representativas y realizar vigilancia epidemiológica precisa a través de la integración de fuentes primarias y secundarias.
 
 
@@ -394,3 +605,11 @@ El dominio de estas técnicas permite al informático médico diseñar sistemas 
 ```
 </TabItem>
 </Tabs>
+
+### Resumen de los tipos muestrales
+| Técnica           | Unidad        | Objetivo Principal             | Relación con la Población          |
+| :---------------- | :------------ | :----------------------------- | :--------------------------------- |
+| **MAS**           | Individuo     | Simplicidad y equiprobabilidad | Representación directa.            |
+| **Estratificado** | Estrato       | Representatividad de subgrupos | Control de varianza interna.       |
+| **Sistemático**   | Intervalo $k$ | Facilidad operativa            | Distribución uniforme en la lista. |
+| **Conglomerados** | Grupo natural | Eficiencia en recursos         | Útil ante dispersión geográfica.   |
