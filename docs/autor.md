@@ -47,9 +47,9 @@ transversal como CTO/CIO/PO/Program Manager.
 ### Contacto
 
 * **Web**: https://patricioaraneda.cl
-* **Email**: paranedagarcia@gmail.com, paraneda@dataclinica.cl
+* **Email**: paranedagarcia@gmail.com
 * **LinkedIn**: https://www.linkedin.com/in/patricioaraneda/
-* **GitHub**: https://github.com/paranedagarcia/kibernum
+* **GitHub**: https://github.com/paranedagarcia
 
 
 </div>

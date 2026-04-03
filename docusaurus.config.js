@@ -12,7 +12,7 @@ import remarkMath from 'remark-math';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Bioestadística',
+  title: 'Bioestadística v1.0',
   tagline: 'Estadística para la investigación biomédica',
   favicon: 'img/favicon.ico',
 
