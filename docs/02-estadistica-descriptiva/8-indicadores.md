@@ -14,7 +14,7 @@ hide_table_of_contents: true
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python3" label="Python" default>
-```python
+```python showLineNumbers
 # Python
 import matplotlib.pyplot as plt
 
@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 
   </TabItem>
   <TabItem value="r3" label="R" default>
-```r
+```r showLineNumbers
 # R
 
 ```

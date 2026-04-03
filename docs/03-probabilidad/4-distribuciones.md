@@ -73,14 +73,14 @@ El software R proporciona funciones nativas para gestionar esta distribución si
 #### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 
 ```
 
 </TabItem>
 <TabItem value="r" label="R">
-```r
+```r showLineNumbers
 # Implementación en en R
 
 ```

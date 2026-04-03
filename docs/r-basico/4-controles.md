@@ -11,7 +11,7 @@ sidebar_position: 4
 
 Ejecuta código condicionalmente según una expresión lógica.
 
-```r
+```r showLineNumbers
 x <- 10
 
 if (x > 5) {
@@ -27,7 +27,7 @@ if (x > 5) {
 
 Itera sobre una secuencia de valores.
 
-```r
+```r showLineNumbers
 for (i in 1:5) {
     print(i)
 }
@@ -43,7 +43,7 @@ for (fruta in frutas) {
 
 Ejecuta código mientras una condición sea verdadera.
 
-```r
+```r showLineNumbers
 contador <- 1
 while (contador <= 5) {
     print(contador)
@@ -55,7 +55,7 @@ while (contador <= 5) {
 
 Ejecuta código indefinidamente hasta encontrar `break`.
 
-```r
+```r showLineNumbers
 numero <- 1
 repeat {
     print(numero)
@@ -69,7 +69,7 @@ repeat {
 - `break`: Detiene el bucle.
 - `next`: Salta a la siguiente iteración.
 
-```r
+```r showLineNumbers
 for (i in 1:10) {
     if (i == 3) next      # Salta cuando i es 3
     if (i == 8) break     # Detiene cuando i es 8
@@ -81,7 +81,7 @@ for (i in 1:10) {
 
 Versión vectorizada de `if/else` para operaciones sobre vectores.
 
-```r
+```r showLineNumbers
 numeros <- c(1, 5, 10, 15, 20)
 resultado <- ifelse(numeros > 10, "grande", "pequeño")
 print(resultado)

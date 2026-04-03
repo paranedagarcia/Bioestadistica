@@ -118,12 +118,12 @@ Es vital distinguir el EM de la **Imputación Múltiple (MI)**. Mientras que el 
 #### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 ```
 </TabItem>
 <TabItem value="r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 ```
 </TabItem>

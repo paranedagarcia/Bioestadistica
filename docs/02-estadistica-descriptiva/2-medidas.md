@@ -58,7 +58,7 @@ Un marco de referencia rápido para encontrar el estadístico adecuado según el
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python" label="Python" default>
-    ```python
+    ```python showLineNumbers
     # Medidas de tendencia central en Python...
     import statistics
 
@@ -92,7 +92,7 @@ print(f"Mediana: {np.median(datos)}")
     ```
   </TabItem>
   <TabItem value="r" label="R">
-    ```r
+    ```r showLineNumbers
     # Medidas de tendencia central en R....
 
     # 1. Definición del conjunto de datos (ejemplo: edades de un grupo)
@@ -134,7 +134,7 @@ print(summary(datos))
 <!-- <details>
     <summary>Código Python</summary>
 
-    ```python
+    ```python showLineNumbers
 
     ```
 
@@ -142,7 +142,7 @@ print(summary(datos))
 
 <details>
     <summary>Código R</summary>
-    ```r
+    ```r showLineNumbers
     # 1. Definición del conjunto de datos (ejemplo: edades de un grupo)
 datos <- c(22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22)
 

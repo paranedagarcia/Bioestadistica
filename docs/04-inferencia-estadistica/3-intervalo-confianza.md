@@ -105,7 +105,7 @@ La interpretación correcta es que **el nivel de confianza es una propiedad del 
 </div>
 </TabItem>
 <TabItem value="me-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 # ------------------------------------------------
 # Escenario 1: Varianza Poblacional Desconocida
@@ -154,7 +154,7 @@ print(f"IC {conf_level*100}% (Z-Normal): {interval_z}")
 ```
 </TabItem>
 <TabItem value="me-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 # --- Script de Bioestadística: Cálculo de Intervalos de Confianza ---
 # Contexto: Niveles de glucosa en mg/dL de una muestra de pacientes

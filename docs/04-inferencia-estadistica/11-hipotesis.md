@@ -216,7 +216,7 @@ Se calcula el **p-value** en base a las tasas de clics observadas.
 * Si *p-value = 0.22* → datos compatibles con que no hay diferencia → **no se rechaza H₀**.
 
 #### Ejemplo en Python:
-```python
+```python showLineNumbers
 import numpy as np
 from scipy import stats
 

@@ -20,13 +20,13 @@ Pandas es una biblioteca de Python diseñada para análisis y manipulación de d
 
 ## Instalación
 
-```python
+```python showLineNumbers
 pip install pandas
 ```
 
 ## Uso básico
 
-```python
+```python showLineNumbers
 import pandas as pd
 
 # Crear un DataFrame

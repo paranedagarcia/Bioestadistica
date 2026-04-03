@@ -85,7 +85,7 @@ y se utiliza para construir intervalos de confianza y estimar la incertidumbre d
 #### 📝 Programación:
 <Tabs>
   <TabItem value="apple" label="Python" default>
-```python
+```python showLineNumbers
 # Dataset de ejemplo
 # Usaremos un pequeño conjunto de datos simulados (por ejemplo, pesos en kg).
 import numpy as np
@@ -131,7 +131,7 @@ plt.show()
 
   </TabItem>
   <TabItem value="banana" label="R">
-    ```r
+    ```r showLineNumbers
     codigo en R....
 
     Pendiente
@@ -160,7 +160,7 @@ Esto reemplaza la necesidad de asumir normalidad u otras distribuciones teórica
 
 Python:
 
-```python
+```python showLineNumbers
 ## Paso 1 — Tenemos una muestra original
 data = np.array([48, 52, 50, 49, 51, 47, 53, 50, 52, 49])
 
@@ -204,7 +204,7 @@ Ventaja:
 
 Código:
 
-```python
+```python showLineNumbers
 ic_95 = np.percentile(boot_stats, [2.5, 97.5])
 ```
 
@@ -217,7 +217,7 @@ Assume aproximación normal:
 IC = \hat{\theta} \pm z_{0.975} \cdot SE_{bootstrap}
 ```
 
-```python
+```python showLineNumbers
 theta_hat = np.mean(data)
 se_boot = np.std(boot_stats, ddof=1)
 
@@ -243,7 +243,7 @@ Es el **estándar para intervalos altamente confiables**.
 
 Python (scikit-bootstrap):
 
-```python
+```python showLineNumbers
 !pip install scikits-bootstrap
 from scikits_bootstrap import bootstrap as bs
 
@@ -254,7 +254,7 @@ print(ic_bca)
 
 ### Ejemplo completo en Python (paso a paso)
 
-```python
+```python showLineNumbers
 import numpy as np
 
 data = np.array([48, 52, 50, 49, 51, 47, 53, 50, 52, 49])
@@ -326,7 +326,7 @@ IC_{normal} = \hat{\theta} \pm z_{1-\alpha/2} \cdot SE_{boot}
 
 donde $SE_{boot}$ es la desviación estándar de las medias bootstrap.
 
-```python
+```python showLineNumbers
 alpha = 0.05
 ic_percentil = np.percentile(boot_means, [100*alpha/2, 100*(1-alpha/2)])
 ic_percentil
@@ -355,7 +355,7 @@ IC_{t} = \left[ \hat{\theta} - t_{(1-\alpha/2)}^{*} \cdot SE(\hat{\theta}),\; \h
 
 Esto requiere un **bootstrap anidado** para estimar el error estándar en cada remuestra, lo que lo hace computacionalmente más costoso.
 
-```python
+```python showLineNumbers
 def bootstrap_se(sample, B2=300, rng=None):
     if rng is None:
         rng = np.random.default_rng()
@@ -427,7 +427,7 @@ donde:
 
 y $z_p$ es el cuantil estándar normal de nivel $p$.
 
-```python
+```python showLineNumbers
 # 7.1 Cálculo de z0 (corrección de sesgo)
 prop_less = np.mean(boot_means < theta_hat)
 z0 = norm.ppf(prop_less)
@@ -471,7 +471,7 @@ z0, a, ic_bca
 
 Comparamos los intervalos obtenidos: Percentil, Normal, Bootstrap-t y BCa.
 
-```python
+```python showLineNumbers
 methods = ["Percentil", "Normal", "Bootstrap-t", "BCa"]
 ics = [ic_percentil, ic_normal, ic_t, ic_bca]
 
@@ -502,7 +502,7 @@ plt.show()
 
 Ilustramos cómo usar bootstrapping para estimar un intervalo de confianza para el coeficiente de una regresión lineal simple.
 
-```python
+```python showLineNumbers
 from sklearn.linear_model import LinearRegression
 
 rng = np.random.default_rng(999)

@@ -57,14 +57,14 @@ A continuación, se muestra una tabla con la interpretación de los valores del 
 #### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 
 ```
 
 </TabItem>
 <TabItem value="r" label="R">
-```r
+```r showLineNumbers
 # Implementación en en R
 
 ```
@@ -151,14 +151,14 @@ Desde el dataset **Breast Cancer Wisconsin (Diagnostic) (WBCD)**, se pueden obse
 #### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 
 ```
 
 </TabItem>
 <TabItem value="r" label="R">
-```r
+```r showLineNumbers
 # Implementación en en R
 
 ```

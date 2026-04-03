@@ -66,7 +66,7 @@ A continuación, se presenta un ejemplo utilizando el conjunto de datos `addicts
 
 #### Código en R:
 
-```r
+```r showLineNumbers
 # 1. Cargar la biblioteca necesaria
 library(survival)
 
@@ -100,7 +100,7 @@ Al ejecutar el comando `summary()`, el software proporciona varios componentes c
 
 Una fase crítica es verificar que el efecto de las covariables sea constante en el tiempo. En R, esto se evalúa mediante los residuos de Schoenfeld con la función `cox.zph()`.
 
-```r
+```r showLineNumbers
 # Prueba de la asunción de riesgos proporcionales
 test_ph <- cox.zph(modelo_cox)
 print(test_ph)
@@ -119,7 +119,7 @@ El ecosistema de **Python** ofrece bibliotecas robustas para este fin. A continu
 
 Utilizaremos el conjunto de datos **"addicts"** (comúnmente citado en las fuentes para comparar clínicas de tratamiento de adicciones). Las variables clave son `survt` (tiempo), `status` (evento) y covariables como `prison` (antecedentes) y `dose` (dosis de metadona).
 
-```python
+```python showLineNumbers
 import pandas as pd
 from lifelines import CoxPHFitter
 

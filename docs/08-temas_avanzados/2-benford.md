@@ -100,7 +100,7 @@ $$
   <TabItem value="apple" label="Python" default>
 Ejemplo en Python (para Jupyter Notebook)
 
-```python
+```python showLineNumbers
 # importar librerias
 import numpy as np
 import pandas as pd
@@ -163,7 +163,7 @@ En la mayoría de los casos verás que **la distribución se acerca bastante a l
 
 </TabItem>
 <TabItem value="r" label="R">
-    ```r
+    ```r showLineNumbers
     Ejemplo de codigo en R.... proximamente
 
 
@@ -179,7 +179,7 @@ Los datos multiplicativos suelen seguir Benford
 <Tabs>
   <TabItem value="python" label="Python" default>
 
-```python
+```python showLineNumbers
 
 import numpy as np
 import pandas as pd
@@ -208,7 +208,7 @@ plt.show()
 Este tipo de datos casi siempre sigue muy bien la Ley de Benford.
 </TabItem>
 <TabItem value="r" label="R">
-    ```r
+    ```r showLineNumbers
     Ejemplo de codigo en R.... proximamente
 
 

@@ -6,7 +6,7 @@ sidebar_position: 6
 ---
 
 
-```r
+```r showLineNumbers
 # ==============================================================================
 # Laboratorio 1: Matrices - Script Final con Dataframe de Resultados
 # ==============================================================================

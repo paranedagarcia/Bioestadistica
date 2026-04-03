@@ -15,7 +15,7 @@ Un histograma es una representación gráfica que organiza un conjunto de datos 
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python1" label="Python" default>
-```python
+```python showLineNumbers
 # Python con matplotlib
 import matplotlib.pyplot as plt
 
@@ -31,7 +31,7 @@ plt.show()
 ![](img/pyhton-histograma.png)
   </TabItem>
   <TabItem value="r1" label="R" default>
-```r
+```r showLineNumbers
 # R
 datos = [22, 25, 22, 30, 25, 22, 40, 35, 25, 22, 28, 22]
 hist(datos, 
@@ -71,7 +71,7 @@ El boxplot muestra visualmente la mediana, cuartiles y valores atípicos:
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python2" label="Python" default>
-```python
+```python showLineNumbers
 # Python
 import matplotlib.pyplot as plt
 
@@ -89,7 +89,7 @@ plt.show()
 ![Boxplot](img/python-boxplot.png)
   </TabItem>
   <TabItem value="r2" label="R" default>
-```r
+```r showLineNumbers
 # R
 datos = c(14, 15, 22, 25, 22, 21, 24, 24, 30, 25, 22, 36, 40, 35, 36, 25, 22, 28, 22)
 boxplot(datos, horizontal = TRUE,
@@ -125,7 +125,7 @@ El conjunto de datos Iris es un conjunto de datos clásico en el campo del apren
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python3" label="Python" default>
-```python
+```python showLineNumbers
 # iris
 import pandas as pd
 import seaborn as sns
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
   </TabItem>
   <TabItem value="r3" label="R" default>
-```r
+```r showLineNumbers
 # ==============================================================================
 # PROGRAMA EN R PARA ANALIZAR EL DATASET IRIS CON UN PAIRPLOT
 # ==============================================================================

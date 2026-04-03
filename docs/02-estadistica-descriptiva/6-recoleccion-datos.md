@@ -107,14 +107,14 @@ El lenguaje R ofrece herramientas robustas para la ejecución del MAS, permitien
 
 **Ejemplo 1:** Para seleccionar 10 pacientes aleatorios de un listado de 355 registrados en un sistema hospitalario:
 
-```r
+```r showLineNumbers
 set.seed(123) # Garantiza reproducibilidad
 poblacion_id <- 1:355 # Marco muestral numerado
 muestra <- sample(poblacion_id, size = 10, replace = FALSE) # MAS sin reemplazo
 print(muestra)
 ```
 **Ejemplo 2:** Simulación de la distribución del peso al nacer en una población normal para evaluar la media muestral:
-```r
+```r showLineNumbers
 # Generación de una población hipotética de pesos (n=1000, media=3100g, sd=500g)
 poblacion_pesos <- rnorm(1000, mean = 3100, sd = 500)
 
@@ -154,7 +154,7 @@ Considere un investigador que desea auditar la calidad de los registros clínico
 </div>
 </TabItem>
 <TabItem value="python" label="Pyhton" >
-```python
+```python showLineNumbers
 # Implementación en Python
 # MAS
 import random
@@ -181,7 +181,7 @@ print(f"Archivos de pacientes seleccionados para revisión: {muestra_seleccionad
 ```
 </TabItem>
 <TabItem value="r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 # MAS
 # Parámetros del estudio
@@ -271,7 +271,7 @@ El muestreo estratificado es la herramienta de elección en la investigación cl
 *   $N_{Mod} = 300$
 *   $N_{Grave} = 200$
 *   Tamaño de muestra total deseado: $n = 100$.
-```r
+```r showLineNumbers
 # Definición de la población (Marco Muestral)
 set.seed(42) # Reproducibilidad
 poblacion <- data.frame(
@@ -319,12 +319,12 @@ print(media_st)
 </div>
 </TabItem>
 <TabItem value="me-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 ```
 </TabItem>
 <TabItem value="me-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 ```
 </TabItem>
@@ -418,7 +418,7 @@ Este muestreo es la herramienta de elección en:
 </div>
 </TabItem>
 <TabItem value="mc-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 import pandas as pd
 import random
@@ -472,7 +472,7 @@ print(f"\nPromedio General de la Provincia (estimado): {df_muestra_final['Calida
 ```
 </TabItem>
 <TabItem value="mc-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 # 1. Simulación del Marco Muestral (50 centros con n pacientes cada uno)
 set.seed(123)
@@ -575,7 +575,7 @@ Este método es particularmente útil en entornos clínicos donde los pacientes 
 <summary>R: Selección de una muestra de pacientes en una base de datos hospitalaria.</summary>
 
 Simulación de un marco muestral de 1000 pacientes con una variable de interés (ej. Presión Arterial Sistólica)
-```R
+```r showLineNumbers
 set.seed(2024)
 hospital_data <- data.frame(
   id = 1:1000,
@@ -630,12 +630,12 @@ La mayor amenaza a la validez del muestreo sistemático es la **periodicidad ocu
 </div>
 </TabItem>
 <TabItem value="ms-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 ```
 </TabItem>
 <TabItem value="ms-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 ```
 </TabItem>
@@ -667,12 +667,12 @@ El dominio de estas técnicas permite al informático médico diseñar sistemas 
 </div>
 </TabItem>
 <TabItem value="mnp-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 ```
 </TabItem>
 <TabItem value="mnp-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 ```
 </TabItem>

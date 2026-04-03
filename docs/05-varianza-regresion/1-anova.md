@@ -63,14 +63,14 @@ El ANOVA se adapta a diversas estructuras de investigación en biomedicina:
 #### 📝 Programación:
 <Tabs>
 <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 
 ```
 
 </TabItem>
 <TabItem value="r" label="R">
-```r
+```r showLineNumbers
 # Implementación en en R
 
 ```

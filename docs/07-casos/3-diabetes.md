@@ -26,7 +26,7 @@ Donde $\pi$ es el valor esperado del desenlace binario y $\beta_1$ representa el
 
 </TabItem>
   <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Ejemplo de Covid-19 basado en Python
 
 ```
@@ -34,7 +34,7 @@ Donde $\pi$ es el valor esperado del desenlace binario y $\beta_1$ representa el
 </TabItem>
 <TabItem value="r" label="R">
 **Ejemplo en R:**
-```r
+```r showLineNumbers
 # Carga de datos de pacientes Pima (Diabetes)
 library(faraway)
 data(pima)

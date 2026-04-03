@@ -27,7 +27,7 @@ $$P(E) = \frac{\text{Número de resultados favorables}}{\text{Número total de r
 
 Podemos simular un experimento simple como lanzar un dado.
 
-```python
+```python showLineNumbers
 # Importamos la librería 'random' para simular el lanzamiento
 import random
 
@@ -91,7 +91,7 @@ Volvamos a nuestro dado de 6 caras. Queremos calcular:
 
 **Pregunta:** ¿Cuál es la probabilidad de obtener un número impar, *dado que* el número fue mayor que 3? $P(A|B)$.
 
-```python
+```python showLineNumbers
 # Definimos las probabilidades de los eventos
 P_A = 3/6  # P(impar)
 P_B = 3/6  # P(mayor que 3)
@@ -155,7 +155,7 @@ Podemos ver las operaciones de manera práctica usando los conjuntos de Python.
 
 **Experimento:** Lanzar un dado ($\Omega = \{1, 2, 3, 4, 5, 6\}$).
 
-```python
+```python showLineNumbers
 espacio_muestral = {1, 2, 3, 4, 5, 6}
 A = {1, 2, 3}  # Evento A: Obtener 3 o menos
 B = {2, 4, 6}  # Evento B: Obtener un número par

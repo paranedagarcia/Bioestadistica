@@ -28,14 +28,14 @@ Chile implementó una de las campañas de vacunación más rápidas de América 
 
 </TabItem>
   <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Ejemplo de Covid-19 basado en Python
 
 ```
 
 </TabItem>
 <TabItem value="r" label="R">
-```r
+```r showLineNumbers
 # Ejemplo de Covid-19 basado en R
 
 ```

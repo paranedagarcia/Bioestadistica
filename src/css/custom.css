@@ -61,3 +61,7 @@ figure {
 .tabs__item--active{
   background-color: rgb(170, 201, 107) !important;
 }
+
+.table-of-contents {
+    font-size: .86rem !important;
+}

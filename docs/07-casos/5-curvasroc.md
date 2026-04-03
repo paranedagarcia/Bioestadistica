@@ -19,7 +19,7 @@ sidebar_position: 5
 **Fundamento:** La curva ROC (*Receiver Operating Characteristic*) grafica la Sensibilidad (Tasa de Verdaderos Positivos) frente al complementario de la Especificidad (1 - Tasa de Verdaderos Negativos) para todos los posibles puntos de corte de un biomarcador.
 </TabItem>
 <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Ejemplo en Python
 
 ```
@@ -27,7 +27,7 @@ sidebar_position: 5
 </TabItem>
 <TabItem value="r" label="R">
 
-```r
+```r showLineNumbers
 # Ejemplo en R
 library(survivalROC)
 data(mayo) # Datos de la Clínica Mayo sobre CBP

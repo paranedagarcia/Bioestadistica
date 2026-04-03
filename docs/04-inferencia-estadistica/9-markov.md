@@ -64,7 +64,7 @@ A continuación, se presentan dos ejemplos prácticos de análisis secuencial.
 
 #### Ejemplo: Predicción meteorológica (dataset NOAA)
 
-```python
+```python showLineNumbers
 #
 
 ```

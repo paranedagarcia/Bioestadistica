@@ -160,7 +160,7 @@ Aunque los umbrales pueden variar según la disciplina, un marco referencial com
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python" label="Python" default>
-    ```python
+    ```python showLineNumbers
     # Medidas de dispersion en Python...
 import statistics
 import numpy as np
@@ -211,7 +211,7 @@ plt.show()
 
     </TabItem>
     <TabItem value="r" label="R" default>
-    ```python
+    ```python showLineNumbers
     # Medidas de tendencia central en R...
 # 1. Definición del conjunto de datos
 datos = c(14, 15, 22, 25, 22, 21, 24, 24, 30, 25, 22, 36, 40, 35, 36, 25, 22, 28, 22)

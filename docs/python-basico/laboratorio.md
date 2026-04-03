@@ -5,7 +5,7 @@ sidebar_label: "▪️​Ejercicios"
 sidebar_position: 3
 ---
 
-```python
+```python showLineNumbers
 # ==============================================================================
 # Laboratorio 1: Matrices - Script de Solución en Python
 # ==============================================================================

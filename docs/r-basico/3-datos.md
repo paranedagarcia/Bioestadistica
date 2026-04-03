@@ -23,7 +23,7 @@ R maneja cinco clases básicas de datos, denominadas atómicas, que sirven como 
 *   **Complex:** Números con partes imaginarias, denotadas por el sufijo `i`.
 
 **Ejemplo de uso:**
-```r
+```r showLineNumbers
 # Definición de variables clínicas simples
 presion_sistolica <- 120.5       # numeric
 frecuencia_cardiaca <- 72L       # integer
@@ -48,7 +48,7 @@ Son extensiones de los vectores con dimensiones. Una **matriz** es bidimensional
 Son estructuras críticas para la estadística, diseñadas para manejar **variables categóricas** (nominales u ordinales). Internamente, R almacena un factor como un vector de enteros con una tabla de niveles (*levels*) asociada.
 
 **Ejemplo:**
-```r
+```r showLineNumbers
 # Clasificación de estadios tumorales
 estadio <- factor(c("I", "II", "I", "III"), levels = c("I", "II", "III"), ordered = TRUE)
 # Esto permite que R entienda que estadio I < estadio II.
@@ -58,7 +58,7 @@ estadio <- factor(c("I", "II", "I", "III"), levels = c("I", "II", "III"), ordere
 Es la estructura de datos por excelencia en la biomedicina. Es una lista de vectores de igual longitud, pero cada vector (columna) puede tener un tipo de dato distinto. Esto emula la estructura de una hoja de cálculo o una tabla de base de datos SQL.
 
 **Ejemplo:**
-```r
+```r showLineNumbers
 pacientes <- data.frame(
   ID = 1:3,
   Edad = c(25, 40, 55),
@@ -90,7 +90,7 @@ En registros de salud electrónicos (EHR), es común encontrar irregularidades q
 ***
 
 Ejemplo en R:
-```r
+```r showLineNumbers
 # Uso de datos en R
 
 ```

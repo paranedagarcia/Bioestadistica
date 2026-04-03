@@ -81,7 +81,7 @@ Basado en el dataset cáncer de mama (Breast cancer)
 </div>
 </TabItem>
 <TabItem value="mnp-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 import pandas as pd
 import numpy as np
@@ -181,7 +181,7 @@ plt.show()
 ```
 </TabItem>
 <TabItem value="mnp-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 # Instalación (si es necesario) y carga de librerías
 if(!require(mlbench)) install.packages("mlbench")

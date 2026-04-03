@@ -22,7 +22,7 @@ Donde $d_i$ es el número de eventos (muertes/recaídas) en el tiempo $t_i$, y $
 
 </TabItem>
 <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Ejemplo de Covid-19 basado en Python
 
 ```
@@ -30,7 +30,7 @@ Donde $d_i$ es el número de eventos (muertes/recaídas) en el tiempo $t_i$, y $
 </TabItem>
 <TabItem value="r" label="R">
 **Ejemplo en R:**
-```r
+```r showLineNumbers
 library(survival)
 data(aml) # Datos de supervivencia en leucemia
 

@@ -37,16 +37,16 @@ https://infima.dev/
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">
-**Muestreo no probabilistico:**
+**Muestreo no probabilistico:**<br />
 </div>
 </TabItem>
 <TabItem value="mnp-python" label="Pyhton" default>
-```python
+```python showLineNumbers
 # Implementación en Python
 ```
 </TabItem>
 <TabItem value="mnp-r" label="R" default>
-```r
+```r showLineNumbers
 # Implementación en R
 ```
 </TabItem>

@@ -14,6 +14,20 @@ sidebar_position: 2
 4. Sigue el asistente de instalación con las opciones predeterminadas
 5. Verifica la instalación abriendo CMD y ejecutando: `R --version`
 
+```bash
+$: R --version
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+https://www.gnu.org/licenses/.
+
+```
+
 :::warning Error
 Si presenta mensaje de error del tipo: 
 `Cannot locate the history for command line --version`
@@ -109,7 +123,7 @@ pip install jupyterlab
 Instalar kernel R "IRkernel" desde el terminal R: 
 *user = FALSE para instalar a todos los usuarios del sistema*
 - Ejecuta R en el terminal para que cambie a R > y ejecuta las siguientes sentencias:
-```r
+```r showLineNumbers
 install.packages(IRkernel')
 IRkernel::installspec(user=TRUE) 
 q() # salir de la sesion

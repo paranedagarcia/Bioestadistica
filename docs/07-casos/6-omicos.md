@@ -23,7 +23,7 @@ Z_1 = \phi_{11}X_1 + \phi_{21}X_2 + \dots + \phi_{p1}X_p
 Donde $\phi$ son los *loadings* (pesos) que definen la dirección de máxima variabilidad.
 </TabItem>
   <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Ejemplo de Covid-19 basado en Python
 
 ```
@@ -31,7 +31,7 @@ Donde $\phi$ son los *loadings* (pesos) que definen la dirección de máxima var
 </TabItem>
 <TabItem value="r" label="R">
 **Ejemplo en R:**
-```r
+```r showLineNumbers
 # Uso del dataset NCI60 de microarrays
 library(ISLR)
 nci_data <- NCI60$data

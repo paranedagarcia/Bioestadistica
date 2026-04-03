@@ -23,7 +23,7 @@ sidebar_position: 4
 Donde $\lambda_0(t)$ es el riesgo basal y $\exp(\beta)$ representa el *Hazard Ratio* (HR), asumiendo que el efecto de las covariables es constante en el tiempo.
 </TabItem>
   <TabItem value="python" label="Python" default>
-```python
+```python showLineNumbers
 # Ejemplo en Python
 
 ```
@@ -31,7 +31,7 @@ Donde $\lambda_0(t)$ es el riesgo basal y $\exp(\beta)$ representa el *Hazard Ra
 </TabItem>
 <TabItem value="r" label="R">
 **Ejemplo en R:**
-```r
+```r showLineNumbers
 library(survival)
 data(ovarian)
 

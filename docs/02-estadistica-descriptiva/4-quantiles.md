@@ -94,7 +94,7 @@ Es una medida no paramétrica de tendencia y dispersión, que no depende de supu
 
 Si tienes una serie de datos numéricos, por ejemplo:
 
-```python
+```python showLineNumbers
 import pandas as pd
 
 s = pd.Series([10, 20, 30, 40, 50])
@@ -108,7 +108,7 @@ El resultado será 20.0, porque el 25% de los valores se encuentran por debajo d
 La función permite especificar cómo se interpola cuando el cuantil no coincide exactamente con un índice de la muestra.
 
 Por ejemplo:
-```python
+```python showLineNumbers
 df.quantile(0.25, interpolation='linear')
 ```
 
@@ -134,7 +134,7 @@ IQR=Q3−Q1=quantile(0.75)−quantile(0.25)
 - En boxplots, Q1 es el límite inferior de la caja.
 
 
-```python
+```python showLineNumbers
 # Por columnas (axis=0 - default)
 q1_columnas = df_completo.quantile(0.25, axis=0)
 
@@ -163,7 +163,7 @@ print(q1_filas)
 #### 📝 Programación:
 <Tabs>
   <TabItem value="python3" label="Python" default>
-```python
+```python showLineNumbers
 # Python
 import matplotlib.pyplot as plt
 
@@ -172,7 +172,7 @@ import matplotlib.pyplot as plt
 
   </TabItem>
   <TabItem value="r3" label="R" default>
-```r
+```r showLineNumbers
 # R
 
 ```

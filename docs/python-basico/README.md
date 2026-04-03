@@ -29,7 +29,7 @@ jupyter lab
 
 ## Bibliotecas Esenciales
 
-```python
+```python showLineNumbers
 # Instalar (si no usas Anaconda)
 # pip install numpy pandas scipy matplotlib seaborn statsmodels scikit-learn
 
@@ -45,7 +45,7 @@ import statsmodels.api as sm  # Modelos estadísticos
 
 ### Tipos de Datos
 
-```python
+```python showLineNumbers
 # Numérico
 x = 3.14
 type(x)   # float
@@ -68,7 +68,7 @@ edades = [25, 30, 35, 28, 32, 40, 27, 33]
 
 ### NumPy
 
-```python
+```python showLineNumbers
 import numpy as np
 
 # Array NumPy
@@ -87,7 +87,7 @@ print(f"Percentil 75: {np.percentile(edades, 75)}")
 
 ### Pandas - DataFrames
 
-```python
+```python showLineNumbers
 import pandas as pd
 
 # Crear DataFrame
@@ -110,7 +110,7 @@ print(pacientes.isnull().sum())   # Valores faltantes
 
 ## Manipulación de Datos con Pandas
 
-```python
+```python showLineNumbers
 # Seleccionar columnas
 pacientes['edad']
 pacientes[['nombre', 'edad', 'presion_sistolica']]
@@ -138,7 +138,7 @@ print(resumen)
 
 ## Lectura de Datos
 
-```python
+```python showLineNumbers
 import pandas as pd
 
 # CSV
@@ -162,7 +162,7 @@ print(datos.info())
 
 ## Visualización con Matplotlib y Seaborn
 
-```python
+```python showLineNumbers
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -206,7 +206,7 @@ plt.show()
 
 ## Análisis Estadístico
 
-```python
+```python showLineNumbers
 from scipy import stats
 import statsmodels.formula.api as smf
 
@@ -241,7 +241,7 @@ print(f"R²: {reg.score(X, y):.4f}")
 
 ## Tablas de Contingencia
 
-```python
+```python showLineNumbers
 import pandas as pd
 from scipy.stats import chi2_contingency
 

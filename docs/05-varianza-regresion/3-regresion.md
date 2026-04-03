@@ -129,12 +129,21 @@ Y_{i} = \beta_{0} + \beta_{1}X_{i} + \beta_{2}X_{i}^{2} + e_{i}
 *   $\beta_0, \beta_1, \beta_2$: Son los coeficientes o parámetros a estimar. Debido a que estos coeficientes no están elevados a potencias o incluidos en funciones no lineales (como el exponente), el modelo se considera lineal en sus parámetros [13].
 *   $X_i$ y $X_i^2$: Son las variables predictoras. La inclusión de $X^2$ permite que la línea ajustada sea una parábola (curva) en lugar de una línea recta.
 
-### 6.2 Ejemplo de Código (Regresión Polinómica Cuadrática)
 
+
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="rpc" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Regresión Polinómica Cuadrática:**<br />
 Usaremos el ejemplo de los niveles de triglicéridos ($Y$) explicados por la edad ($X$) y la edad al cuadrado ($X^2$), tal como se encuentra en los estudios de regresión lineal múltiple.
+</div>
+</TabItem>
+<TabItem value="rpc-python" label="Pyhton" default>
 
-```python
-
+```python showLineNumbers
+# Implementación en Python
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -200,3 +209,11 @@ plt.ylabel('Residuales')
 plt.title('Residuales vs. Valores Predichos (Debe ser uniforme)')
 plt.show()
 ```
+
+</TabItem>
+<TabItem value="rpc-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs>
