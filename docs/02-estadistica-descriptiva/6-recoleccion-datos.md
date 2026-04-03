@@ -146,10 +146,12 @@ Es imperativo distinguir entre el muestreo **con reemplazo** y **sin reemplazo**
 #### 📝 Programación:
 <Tabs>
 <TabItem value="mas" label="Antecedente" default>
+<div class="alert alert--primary">
 Considere un investigador que desea auditar la calidad de los registros clínicos en una base de datos hospitalaria que contiene $N = 1000$ archivos de pacientes. Para obtener una muestra aleatoria simple de $n = 5$ archivos, el investigador debe:
 1.  Asignar un número de identificación del 1 al 1000 a cada registro.
 2.  Generar una secuencia de números aleatorios mediante un algoritmo computacional.
 3.  Seleccionar los registros cuyos números coincidan con los generados, excluyendo repeticiones si el muestreo es sin reemplazo.
+</div>
 </TabItem>
 <TabItem value="python" label="Pyhton" >
 ```python
@@ -311,12 +313,17 @@ print(media_st)
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Pyhton" default>
+<TabItem value="me" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Muestreo estratificado:**
+</div>
+</TabItem>
+<TabItem value="me-python" label="Pyhton" default>
 ```python
 # Implementación en Python
 ```
 </TabItem>
-<TabItem value="r" label="R" default>
+<TabItem value="me-r" label="R" default>
 ```r
 # Implementación en R
 ```
@@ -399,14 +406,69 @@ Este muestreo es la herramienta de elección en:
 *   **Vigilancia Epidemiológica:** Estudios sobre la prevalencia de patologías infecciosas en áreas geográficas extensas.
 
 <br />
+
 #### 📝 Programación:
+
 <Tabs>
 <TabItem value="mc" label="Antecedentes" default>
-**Escenario Clínico:** Se desea evaluar la calidad de la atención (escala 0-100) en los centros de atención primaria de una provincia. No hay un listado nacional de pacientes, pero sí de los 50 centros de salud (conglomerados). Se decide realizar un muestreo bietápico: seleccionar 5 centros y, dentro de cada uno, auditar 10 historias clínicas.
+<div class="alert alert--primary">
+**Muestreo por conglomerado:** 
+
+**Escenario Clínico**: Se desea evaluar la calidad de la atención (escala 0-100) en los centros de atención primaria de una provincia. No hay un listado nacional de pacientes, pero sí de los 50 centros de salud (conglomerados). Se decide realizar un muestreo bietápico: seleccionar 5 centros y, dentro de cada uno, auditar 10 historias clínicas.
+</div>
 </TabItem>
 <TabItem value="mc-python" label="Pyhton" default>
 ```python
 # Implementación en Python
+import pandas as pd
+import random
+
+# 1. Simulación de la Base de Datos
+# Creamos 50 centros de salud, cada uno con un número variable de historias clínicas (entre 50 y 100)
+random.seed(42)  # Para reproductibilidad
+centros_salud = []
+for i in range(1, 51):
+    n_historias = random.randint(50, 100)
+    for j in range(1, n_historias + 1):
+        centros_salud.append({
+            'ID_Centro': f'Centro_{i}',
+            'ID_Historia': f'HC_{i}_{j}',
+            'Calidad_Atencion': random.randint(0, 100)  # Escala 0-100
+        })
+
+df_provincia = pd.DataFrame(centros_salud)
+
+# --- INICIO DEL MUESTREO BIETÁPICO ---
+
+# ETAPA 1: Seleccionar 5 centros de salud (conglomerados)
+todos_los_centros = df_provincia['ID_Centro'].unique()
+centros_seleccionados = random.sample(list(todos_los_centros), k=5)
+
+print(f"ETAPA 1: Centros seleccionados: {centros_seleccionados}\n")
+
+# ETAPA 2: Dentro de cada centro seleccionado, auditar 10 historias clínicas
+muestra_final = []
+
+for centro in centros_seleccionados:
+    # Filtramos la base de datos por el centro actual
+    universo_centro = df_provincia[df_provincia['ID_Centro'] == centro]
+    
+    # Seleccionamos 10 historias al azar de ese centro específico
+    muestra_centro = universo_centro.sample(n=10)
+    muestra_final.append(muestra_centro)
+
+# Consolidamos la muestra total
+df_muestra_final = pd.concat(muestra_final)
+
+# --- RESULTADOS ---
+
+print("RESULTADOS DE LA AUDITORÍA (Muestra de 50 registros):")
+print(df_muestra_final.head(15)) # Mostramos los primeros 15 registros de la muestra
+
+# Análisis rápido de la muestra
+print("\nResumen Estadístico de la Calidad de Atención en la Muestra:")
+print(df_muestra_final.groupby('ID_Centro')['Calidad_Atencion'].mean())
+print(f"\nPromedio General de la Provincia (estimado): {df_muestra_final['Calidad_Atencion'].mean():.2f}")
 ```
 </TabItem>
 <TabItem value="mc-r" label="R" default>
@@ -562,12 +624,17 @@ La mayor amenaza a la validez del muestreo sistemático es la **periodicidad ocu
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Pyhton" default>
+<TabItem value="ms" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Muestreo sistemático:**
+</div>
+</TabItem>
+<TabItem value="ms-python" label="Pyhton" default>
 ```python
 # Implementación en Python
 ```
 </TabItem>
-<TabItem value="r" label="R" default>
+<TabItem value="ms-r" label="R" default>
 ```r
 # Implementación en R
 ```
@@ -594,12 +661,17 @@ El dominio de estas técnicas permite al informático médico diseñar sistemas 
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Pyhton" default>
+<TabItem value="mnp" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Muestreo no probabilistico:**
+</div>
+</TabItem>
+<TabItem value="mnp-python" label="Pyhton" default>
 ```python
 # Implementación en Python
 ```
 </TabItem>
-<TabItem value="r" label="R" default>
+<TabItem value="mnp-r" label="R" default>
 ```r
 # Implementación en R
 ```
