@@ -96,6 +96,9 @@ Positron es un IDE de próxima generación desarrollado por **Posit PBC** (anter
 ### 2. Características Principales
 
 Positron ofrece funcionalidades que optimizan el desarrollo de modelos econométricos y epidemiológicos similares a los descritos en la literatura técnica.
+- Incluye un visor interno de PDF, sin requerir programas adicionales.
+
+- Cuaderno integrado donde las salidas de celdas para dataframes de pandas y polars ahora se muestran como cuadrículas de datos interactivas con desplazamiento, ordenación y selección de celdas; puedes abrir cualquier dataframe directamente en el Explorador de datos con un solo clic. Esta versión también añade la posibilidad de mostrar u ocultar salidas de celdas individuales, compatibilidad con celdas sin procesar para contenido que no debe ejecutarse ni mostrarse, y comandos de división/unión de celdas con atajos de teclado que coinciden con las convenciones de Jupyter. Ahora están disponibles menús contextuales con el botón derecho del ratón en celdas y salidas para un acceso rápido a acciones comunes.
 
 #### A. Arquitectura Políglota y LSP
 Positron utiliza el **Language Server Protocol (LSP)** para proporcionar autocompletado, navegación de código y diagnósticos de errores. Su capacidad para manejar múltiples *kernels* permite que un investigador ejecute simultáneamente una sesión de R para un análisis de supervivencia y una sesión de Python para preprocesamiento de imágenes médicas.
