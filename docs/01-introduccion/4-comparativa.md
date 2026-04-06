@@ -177,7 +177,7 @@ En la bioestadística clínica, el rigor en la inferencia es prioritario sobre l
 
 **R (Base y `rms`):** R utiliza funciones nativas como `glm()` para Modelos Lineales Generalizados, permitiendo especificar distribuciones de error y funciones de enlace con precisión matemática. La biblioteca `rms` de Frank Harrell es el estándar de oro para el modelado multivariado en medicina.
 
-**Python (`statsmodels`):** *Información externa a las fuentes:* `statsmodels` es la biblioteca de Python que más se aproxima al flujo de trabajo de R. Permite realizar estimaciones por Máxima Verosimilitud (MLE) y análisis de varianza (ANOVA).
+**Python (`statsmodels`):** `statsmodels` es la biblioteca de Python que más se aproxima al flujo de trabajo de R. Permite realizar estimaciones por Máxima Verosimilitud (MLE) y análisis de varianza (ANOVA).
 
 **Fundamentación Matemática:** Ambos implementan el modelo lineal generalizado bajo la estructura:
 

@@ -39,13 +39,13 @@ Ningún diseño es intrínsecamente mejor que otro. Su selección depende de fac
 
 La definición operacional de una variable médica consiste en el **conjunto de procedimientos, técnicas y métodos** que se deben realizar para medir dicha variable en los casos de una investigación. En términos prácticos, es la "traducción" de un concepto teórico o clínico a aspectos que sean directamente **medibles y observables** en la realidad.
 
-A continuación se detallan los componentes y ejemplos de cómo se definen operacionalmente estas variables según las fuentes:
+A continuación se detallan los componentes y ejemplos de cómo se definen operacionalmente estas variables:
 
 #### 1. El proceso de operacionalización
 Para definir operacionalmente una variable, el investigador debe especificar las actividades u operaciones necesarias para recibir las impresiones sensoriales que indican la existencia del concepto (por ejemplo, ver un valor en un monitor o una respuesta en un cuestionario). Este proceso permite asignar valores numéricos o símbolos a las distintas manifestaciones de la variable.
 
 #### 2. Ejemplos de definiciones operacionales médicas
-Las fuentes proporcionan ejemplos concretos de cómo pasar de un concepto médico a su definición operacional:
+Ejemplos concretos de cómo pasar de un concepto médico a su definición operacional:
 *   **Presión arterial:** Se define operacionalmente como la lectura de la presión sistólica y diastólica mediante un **esfigmomanómetro** (tensiómetro), comparándola con los estándares clínicos de normalidad según la edad del paciente.
 
 *   **Depresión:** Su definición operacional suelen ser las respuestas obtenidas en un instrumento validado, como el **Inventario de Depresión de Beck** o la **Escala de Hamilton**.
@@ -120,7 +120,7 @@ En resumen, un experimento tiene validez interna cuando el diseño ha logrado el
 
 La diferencia fundamental entre la **validez interna** y la **validez externa** radica en el enfoque de la investigación: mientras la primera se centra en la **certeza de los resultados dentro del estudio**, la segunda se refiere a la **posibilidad de generalizarlos** a otros contextos o personas.
 
-A continuación se detallan sus principales distinciones según las fuentes:
+A continuación se detallan sus principales distinciones:
 
 #### 1. Validez Interna: El rigor dentro del estudio
 *   **Definición:** Es el grado de confianza que se tiene en que los resultados de un experimento se interpreten adecuadamente y sean válidos. Su objetivo principal es asegurar que los cambios observados en la variable dependiente se deban **exclusivamente a la manipulación** de la variable independiente y no a causas extrañas.
@@ -148,7 +148,7 @@ En conclusión, la validez interna garantiza que el investigador ha "purificado"
 
 ### 🔸Fuentes de validación interna
 
-Las fuentes de invalidación interna son factores o "explicaciones rivales" que pueden confundir al investigador, haciendo que no sea posible determinar con certeza si la variable independiente realmente produjo un efecto en la dependiente.
+Estas son factores o "explicaciones rivales" que pueden confundir al investigador, haciendo que no sea posible determinar con certeza si la variable independiente realmente produjo un efecto en la dependiente.
 
 Las más comunes son las siguientes:
 

@@ -117,7 +117,7 @@ Si el valor $p$ global del test es significativo, el supuesto de proporcionalida
 
 El ecosistema de **Python** ofrece bibliotecas robustas para este fin. A continuación, se presenta un ejemplo de aplicación utilizando la biblioteca `lifelines` (estándar de oro para análisis de supervivencia en Python) y `pandas` para la gestión de datos.
 
-Utilizaremos el conjunto de datos **"addicts"** (comúnmente citado en las fuentes para comparar clínicas de tratamiento de adicciones). Las variables clave son `survt` (tiempo), `status` (evento) y covariables como `prison` (antecedentes) y `dose` (dosis de metadona).
+Utilizaremos el conjunto de datos **"addicts"** (comúnmente citado para comparar clínicas de tratamiento de adicciones). Las variables clave son `survt` (tiempo), `status` (evento) y covariables como `prison` (antecedentes) y `dose` (dosis de metadona).
 
 ```python showLineNumbers
 import pandas as pd

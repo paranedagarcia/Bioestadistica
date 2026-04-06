@@ -22,7 +22,7 @@ Reúnen los requisitos de manipulación, medición y control mediante la **asign
     *   *Ejemplo 1:* Un estudio para probar la eficacia de una vacuna contra el Ébola, comparando un grupo vacunado frente a uno que no la recibió.
     *   *Ejemplo 2:* Evaluar el efecto del consumo suplementario de selenio en el ritmo de crecimiento de tumores cancerígenos en los senos, con grupos asignados al azar para diferentes dosis y un grupo de control.
 
-En las fuentes se documentan varios casos reales de **ensayos clínicos aleatorizados (ECA)**, los cuales representan el diseño de tipo experimental por excelencia en las ciencias de la salud. A continuación, se detallan los casos más relevantes encontrados:
+Casos reales de **ensayos clínicos aleatorizados (ECA)**, los cuales representan el diseño de tipo experimental por excelencia en las ciencias de la salud. A continuación, se detallan los casos más relevantes encontrados:
 
 A continuación, se presenta detalles sobre casos reales de **ensayos clínicos aleatorizados (ECA)** documentados , los cuales sirven como modelos de rigor científico en la investigación biomédica:
 
@@ -68,9 +68,9 @@ Se manipulan variables pero los grupos no se asignan al azar, sino que son **gru
 
 En el contexto de los **Ensayos Clínicos Aleatorizados** (experimentos puros), el diseño de **doble ciego** es una técnica de control donde **ni el paciente ni el investigador** saben quién está recibiendo el tratamiento activo y quién el placebo. El propósito es eliminar las explicaciones rivales o fuentes de invalidación interna, como el sesgo del experimentador o el efecto de maduración psicológica del paciente, asegurando que los cambios observados se deban únicamente al estímulo experimental. Esto garantiza que los resultados tengan el máximo rigor científico y puedan generalizarse con confianza (validez externa).
 
-El diseño de un estudio de **doble ciego** (término que se describe en la práctica científica a través de los componentes metodológicos de control en las fuentes) se enmarca dentro de lo que se conoce como un **experimento puro** o **ensayo clínico aleatorizado**. Su propósito es alcanzar el máximo grado de **validez interna**, asegurando que los resultados se deban únicamente a la variable independiente y no a sesgos del investigador o de los participantes.
+El diseño de un estudio de **doble ciego** (término que se describe en la práctica científica a través de los componentes metodológicos de control) se enmarca dentro de lo que se conoce como un **experimento puro** o **ensayo clínico aleatorizado**. Su propósito es alcanzar el máximo grado de **validez interna**, asegurando que los resultados se deban únicamente a la variable independiente y no a sesgos del investigador o de los participantes.
 
-A continuación, se detallan los pasos y requisitos clave para diseñar este tipo de estudio según las fuentes:
+A continuación, se detallan los pasos y requisitos clave para diseñar este tipo de estudio:
 
 #### 1. Definición de variables y planteamiento
 El investigador debe identificar con precisión la **variable independiente** (el tratamiento o estímulo que se manipulará) y la **variable dependiente** (el efecto o resultado que se medirá). Es fundamental establecer qué se entenderá por el tratamiento mediante una **definición operacional experimental**.
@@ -82,7 +82,7 @@ Para garantizar la equivalencia inicial de los grupos, es indispensable realizar
 En el grupo de control (también llamado testigo), se utiliza un **placebo**, como una píldora de azúcar o una sustancia inactiva que tenga la misma apariencia que el medicamento real. Esto permite que los participantes del grupo de control realicen las mismas actividades y tengan las mismas expectativas que el grupo experimental, sin recibir el estímulo real.
 
 #### 4. Control de la conducta del experimentador
-Para que un estudio sea verdaderamente de doble ciego (conforme a la información de nuestra historia de conversación y principios generales de investigación), se debe controlar la **conducta del experimentador**. Las fuentes indican que el comportamiento del investigador puede influir en los resultados; por ello, este debe actuar igual con todos los grupos y mantener la objetividad. En la práctica del doble ciego, esto se traduce en que ni el sujeto ni quien recolecta los datos conocen quién pertenece a cada grupo.
+Para que un estudio sea verdaderamente de doble ciego (conforme a la información de nuestra historia de conversación y principios generales de investigación), se debe controlar la **conducta del experimentador**. El comportamiento del investigador puede influir en los resultados; por ello, este debe actuar igual con todos los grupos y mantener la objetividad. En la práctica del doble ciego, esto se traduce en que ni el sujeto ni quien recolecta los datos conocen quién pertenece a cada grupo.
 
 #### 5. Medición estandarizada
 La recolección de datos debe realizarse mediante instrumentos válidos, confiables y **estandarizados**. De preferencia, la medición posterior (posprueba) debe aplicarse de manera simultánea a ambos grupos inmediatamente después de concluido el tratamiento para evitar que la variable dependiente cambie por el paso del tiempo.
