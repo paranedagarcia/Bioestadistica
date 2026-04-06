@@ -29,7 +29,7 @@ Esta en constante desarrollo, y se irán agregando nuevos contenidos y recursos 
         Se anima a los estudiantes a participar activamente en el curso, compartiendo sus experiencias y sugerencias, 
         y colaborando con otros estudiantes para mejorar el curso y esta comunidad de aprendizaje.
 
-c
+css:
 https://infima.dev/
 
 <br />
