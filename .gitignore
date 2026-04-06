@@ -1,8 +1,14 @@
 # Dependencies
 /node_modules
 
+# Build output and deployment
+/dist
+/build
+/.github
+
 # Production
 /build
+/blog
 
 # Generated files
 .docusaurus

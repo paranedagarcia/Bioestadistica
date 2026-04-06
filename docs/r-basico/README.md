@@ -77,7 +77,7 @@ $$Y \sim X_1 + X_2 + \dots + X_k$$
 La elección de un **Entorno de Desarrollo Integrado (IDE)** es crítica para garantizar la eficiencia del flujo de trabajo y la reproductibilidad de los resultados.
 
 <figure>
-[![](https://positron.posit.co/images/astropy.png)]()
+[![positron](https://positron.posit.co/images/astropy.png)]()
 <small>https://positron.posit.co/images/astropy.png</small>
 </figure>
 
