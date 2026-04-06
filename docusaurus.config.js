@@ -22,9 +22,10 @@ const config = {
   // },
 
   // Set the production url of your site here
-  //url: 'https://patricioaraneda.cl/',
-  //baseUrl: '/bioestadistica/',
+  url: 'https://patricioaraneda.cl/',
+  baseUrl: '/bioestadistica/',
 
+  /*
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   url: 'https://paranedagarcia.github.io', // Your website URL
@@ -32,7 +33,7 @@ const config = {
   trailingSlash: false,
   organizationName: 'paranedagarcia', // Usually your GitHub org/user name.
   projectName: 'Bioestadistica', // Usually your repo name.
-
+  */
   onBrokenLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
