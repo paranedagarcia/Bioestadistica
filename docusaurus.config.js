@@ -22,14 +22,14 @@ const config = {
   // },
 
   // Set the production url of your site here
-  // url: 'https://patricioaraneda.cl/',
-  url: 'https://paranedagarcia.github.io/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Bioestadistica/',
+  //url: 'https://patricioaraneda.cl/',
+  //baseUrl: '/bioestadistica/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
+  url: 'https://paranedagarcia.github.io', // Your website URL
+  baseUrl: '/',
+  trailingSlash: false,
   organizationName: 'paranedagarcia', // Usually your GitHub org/user name.
   projectName: 'Bioestadistica', // Usually your repo name.
 
