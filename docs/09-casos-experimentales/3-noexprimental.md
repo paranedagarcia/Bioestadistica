@@ -9,19 +9,21 @@ description: "Diseños no experimentales en biomedicina"
 
 En estos estudios no hay manipulación de variables; el investigador observa los fenómenos tal como ocurren en su **contexto natural**.
 
-### Transeccionales o Transversales 
+![experimental](img/noexperimental.webp)
+
+### 🔸Transeccionales o Transversales 
 Recolectan datos en un **momento único** en el tiempo.
     *   *Ejemplo 1:* Estimar la prevalencia de diabetes mellitus en adultos mayores de 60 años en una ciudad específica durante el último año.
 
     *   *Ejemplo 2:* Analizar la relación entre el estrés laboral y el desarrollo de enfermedades cardiovasculares en trabajadores de una industria en un periodo concreto.
 
-### Longitudinales
+### 🔸Longitudinales
 Realizan un seguimiento de los participantes a través del tiempo en **varios momentos**.
     *   *Ejemplo 1 (Estudio de Cohorte):* El **Framingham Heart Study**, que ha seguido a generaciones de personas desde 1948 para identificar factores de riesgo cardiovascular.
 
     *   *Ejemplo 2 (Panel):* Analizar la evolución física y mental de un grupo específico de niños detectados con síndrome de Down y cardiopatía congénita durante diez años con evaluaciones periódicas.
 
-### El Framingham Heart Study
+### 🔸El Framingham Heart Study
 El Framingham Heart Study (FHS) es un estudio epidemiológico pionero y de largo plazo, considerado el "estándar de oro" en la investigación de enfermedades cardiovasculares. Iniciado en 1948 bajo la dirección del National Heart, Lung, and Blood Institute ([**NHLBI**](https://www.nhlbi.nih.gov/science/framingham-heart-study-fhs)) y en colaboración con la [Universidad de Boston](https://www.bu.edu/articles/2026/heart-healthcare-framingham-heart-study/), su objetivo original era identificar los factores comunes que contribuyen a las enfermedades del corazón. 
 
 #### Aspectos Clave y Evolución

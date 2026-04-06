@@ -1,12 +1,14 @@
 ---
 id: investigacion
-title: "Diseño de investigación"
-sidebar_label: "🔸Diseño de investigación"
+title: "Rutas de investigación"
+sidebar_label: "🔸Rutas de investigación"
 sidebar_position: 1
 description: "Diseño de investigación"
 ---
 
 El **diseño de investigación** se define como el **plan o estrategia** concebida para obtener la información necesaria con el propósito de responder satisfactoriamente al planteamiento del problema. Representa el "mapa operativo" de un estudio, conectando las etapas conceptuales (objetivos, preguntas e hipótesis) con la recolección y el análisis de los datos.
+
+![investigacion](img/investigacion.webp)
 
 La naturaleza del diseño varía fundamentalmente según el enfoque del estudio científico:
 
