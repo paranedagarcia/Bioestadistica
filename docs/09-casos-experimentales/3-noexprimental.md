@@ -7,9 +7,53 @@ description: "Diseños no experimentales en biomedicina"
 ---
 
 
-En estos estudios no hay manipulación de variables; el investigador observa los fenómenos tal como ocurren en su **contexto natural**.
+Los **estudios observacionales** o no experimentales se definen por la **ausencia de manipulación deliberada** de variables por parte del investigador. En estos diseños, el investigador se limita a **observar los fenómenos tal como ocurren** en su contexto natural para analizarlos posteriormente. A diferencia de los experimentos, en las investigaciones observacionales las causas y efectos **ya ocurrieron en la realidad** o se manifiestan de forma natural sin intervención de quien investiga.
 
 ![experimental](img/noexperimental.webp)
+
+
+### 🔸Estudios de Cohorte
+*   **Definición y Estructura:** Son un tipo de diseño **longitudinal** que realiza un seguimiento a través del tiempo en **varios momentos** a una subpoblación o grupo específico. 
+*   **Identificación del Grupo:** Este grupo se identifica por compartir una **característica común** o estar vinculado por factores como la edad, la región geográfica o la exposición a un hecho o condición de salud.
+*   **Funcionamiento:** En las ciencias de la salud, es frecuente comparar la evolución de una cohorte que posee una condición vinculante (como una enfermedad o factor de riesgo) con otra que no la posee para evaluar cambios en las variables de interés. 
+*   **Ejemplo:** El **Framingham Heart Study** es un referente de este diseño, pues ha seguido a varias generaciones de personas desde 1948 para identificar factores de riesgo cardiovascular.
+
+*   **Ejemplo (Panel):** Analizar la evolución física y mental de un grupo específico de niños detectados con síndrome de Down y cardiopatía congénita durante diez años con evaluaciones periódicas.
+  
+### 🔸Estudios de Casos y Controles
+*   **Definición y Dirección:** Se enmarcan dentro de los diseños no experimentales de tipo **retrospectivo**. Donde se reconstruye las relaciones causales a partir de la variable dependiente (el efecto o fenómeno ya manifestado), retrocediendo en el tiempo para identificar las posibles causas o variables independientes.
+
+Este diseño se caracteriza por los siguientes aspectos:
+
+*   **Sin manipulación de variables:** Al ser un diseño no experimental (también llamado *ex post facto*), el investigador no construye una realidad ni manipula estímulos, sino que observa fenómenos que ya han ocurrido y se han manifestado en su contexto natural.
+*   **Punto de partida:** La indagación se inicia cuando el efecto (la variable dependiente) ya sucedió. Por ejemplo, en medicina, se parte de un grupo de personas que ya tienen una enfermedad específica para investigar sus antecedentes.
+*   **Lógica de reconstrucción:** El investigador busca hacia atrás en el tiempo qué factores o condiciones precedieron al efecto observado para establecer una explicación causal verosímil basada en la literatura previa.
+*   **Alcance:** Generalmente se enmarca dentro de los estudios **correlacionales-causales** (explicativos), ya que su fin último es entender por qué ocurrió un fenómeno y bajo qué condiciones.
+*   **Casos de uso:** Es el diseño preferido para estudiar variables que no pueden ser manipuladas por razones éticas o físicas, como el impacto de un desastre natural pasado, características inherentes de la personalidad o el efecto a largo plazo del consumo histórico de ciertas sustancias.
+
+En resumen, mientras que un experimento "provoca" una causa para ver su efecto, el diseño retrospectivo analiza un efecto ya existente para **descubrir su causa**.
+
+### 🔸Diferencias y Aplicación
+*   **Causalidad:** Mientras que en los experimentos la causalidad es provocada, en los diseños observacionales la causalidad **ya existe** y es el investigador quien determina su dirección y verosimilitud basándose en la literatura.
+
+*   **Ética y Viabilidad:** Estos estudios son la herramienta principal cuando la manipulación de variables independientes no es ética o posible, como en casos de consumo de alcohol, impedimentos físicos o enfermedades irreversibles.
+
+*   **Valor Científico:** Proporcionan información sobre cómo evolucionan las categorías, conceptos y sus relaciones al paso del tiempo en contextos reales, lo que les otorga una elevada **validez externa**.
+
+#### Cuando se prefiere un estudio de caso y control
+
+Un estudio de **casos y controles** se prefiere principalmente cuando el investigador necesita reconstruir relaciones causales a partir de hechos que ya han ocurrido o que se manifiestan de forma natural.
+
+A continuación, se detallan los casos específicos en los que es mejor optar por este diseño:
+
+*   **Cuando el fenómeno o efecto ya ha sucedido:** Se elige este diseño cuando el interés es analizar variables cuya manifestación ya tuvo lugar en la realidad, lo que impide una manipulación intencional. La investigación se inicia a partir de la **variable dependiente** (los "casos" que presentan el efecto o enfermedad) para buscar hacia atrás en el tiempo las posibles causas.
+*   **Cuando existen limitaciones éticas para experimentar:** Es el método preferido cuando no es ético o legal manipular la variable independiente para ver su efecto. Por ejemplo, no se puede obligar a un grupo de personas a consumir alcohol en exceso o exponerlas a agresiones físicas para estudiar sus consecuencias; en estos casos, se buscan personas que ya posean esa condición y se comparan con un grupo que no la tenga.
+*   **Cuando se busca establecer precedentes:** Resulta ideal en medicina y leyes para verificar qué otros casos similares se han presentado anteriormente, cómo fueron tratados y qué resultados obtuvieron antes de tomar una decisión clínica o jurídica.
+*   **Cuando las variables son inherentes o difíciles de manipular:** Se prefiere para estudiar características que no se pueden cambiar a voluntad del investigador, como factores genéticos, el estado civil de los padres, la antigüedad en un trabajo o el hábitat natural de una especie.
+*   **Para maximizar la validez externa:** Al observar los fenómenos tal como se dan en su contexto natural, este tipo de estudio permite que los resultados sean más **generalizables** a situaciones de la vida cotidiana, a diferencia de lo que ocurre en experimentos de laboratorio altamente controlados.
+
+En resumen, este diseño es la herramienta fundamental cuando el investigador desea responder a un planteamiento del problema actuando como un "observador" de una realidad preexistente, reconstruyendo la secuencia de eventos desde la consecuencia hacia la causa.
+
 
 ### 🔸Transeccionales o Transversales 
 Recolectan datos en un **momento único** en el tiempo.
@@ -17,11 +61,7 @@ Recolectan datos en un **momento único** en el tiempo.
 
     *   *Ejemplo 2:* Analizar la relación entre el estrés laboral y el desarrollo de enfermedades cardiovasculares en trabajadores de una industria en un periodo concreto.
 
-### 🔸Longitudinales
-Realizan un seguimiento de los participantes a través del tiempo en **varios momentos**.
-    *   *Ejemplo 1 (Estudio de Cohorte):* El **Framingham Heart Study**, que ha seguido a generaciones de personas desde 1948 para identificar factores de riesgo cardiovascular.
 
-    *   *Ejemplo 2 (Panel):* Analizar la evolución física y mental de un grupo específico de niños detectados con síndrome de Down y cardiopatía congénita durante diez años con evaluaciones periódicas.
 
 ### 🔸El Framingham Heart Study
 El Framingham Heart Study (FHS) es un estudio epidemiológico pionero y de largo plazo, considerado el "estándar de oro" en la investigación de enfermedades cardiovasculares. Iniciado en 1948 bajo la dirección del National Heart, Lung, and Blood Institute ([**NHLBI**](https://www.nhlbi.nih.gov/science/framingham-heart-study-fhs)) y en colaboración con la [Universidad de Boston](https://www.bu.edu/articles/2026/heart-healthcare-framingham-heart-study/), su objetivo original era identificar los factores comunes que contribuyen a las enfermedades del corazón. 
