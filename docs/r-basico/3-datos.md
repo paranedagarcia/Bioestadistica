@@ -9,6 +9,8 @@ sidebar_position: 3
 
 En el ecosistema de programación R, los datos se organizan en jerarquías que van desde tipos atómicos simples hasta estructuras complejas multidimensionales. Es esencial comprender que R es un lenguaje orientado a objetos donde cada entidad posee una clase (que define cómo las funciones interactúan con ella) y un modo (que describe su almacenamiento interno).
 
+**Manual completo de R**: https://epirhandbook.com/es/index.es.html
+
 Se encuentran de distinta clase.
 
 ![](img/r-estructuras.webp)

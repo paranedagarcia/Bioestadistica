@@ -1,4 +1,5 @@
 
+---
 
 ```mermaid
 graph LR
@@ -10,6 +11,9 @@ graph LR
     E --> G[Valorización de Suelo]
     E --> H[Optimización de Rutas/Activos]
 ```
+<br />
+
+---
 
 ```mermaid
 pie title Pets adopted by volunteers
@@ -17,6 +21,7 @@ pie title Pets adopted by volunteers
     "Cats" : 85
     "Rats" : 15
 ```
+<br />
 
 ```mermaid
 flowchart LR
