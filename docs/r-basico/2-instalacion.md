@@ -71,7 +71,7 @@ Verifica: `R --version`
 Utiliza **Positron** ya que es una mejora respecto de RStudio y más orientado a ciencia de datos.
 :::
 
-### 🔹Instalación y configuración de Positrón
+### 🔹Instalación de Positrón
 
 #### Instalación
 1. Descarga la versión según tu sistema operativo desde https://positron.posit.co/download.html

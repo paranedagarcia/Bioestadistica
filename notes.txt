@@ -32,6 +32,12 @@ Esta en constante desarrollo, y se irán agregando nuevos contenidos y recursos 
 css:
 https://infima.dev/
 
+🔹
+🔸​
+▪️​
+▫️
+
+​
 <br />
 #### 📝 Programación:
 <Tabs>

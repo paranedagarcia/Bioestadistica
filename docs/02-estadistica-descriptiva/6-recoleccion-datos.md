@@ -36,7 +36,7 @@ El muestreo es el procedimiento científico que asegura que la muestra sea un re
 
 
 
-### 🔸​Muestreo Aleatorio Simple (MAS)
+### 🔸​Muestreo Aleatorio Simple
 
 El **Muestreo Aleatorio Simple (MAS)** constituye el esquema fundamental de la teoría del muestreo probabilístico y es la técnica de referencia para la estadística inferencial. Se define como aquel procedimiento en el que cada unidad de la población tiene una probabilidad conocida, constante y mayor a cero de ser incluida en la muestra. Cada unidad experimental (paciente, registro clínico o muestra biológica) posea una probabilidad de inclusión conocida e idéntica, eliminando sesgos de selección sistemáticos. Requiere obligatoriamente un **marco muestral** (*sampling frame*), que es el listado o mapa actualizado de todos los elementos de la población objetivo y la selección se realiza mediante generadores de números aleatorios o sorteos.
 
@@ -813,17 +813,75 @@ cat("Tamaño ajustado (finita):", n_final, "\n")
 <TabItem value="mpi" label="Antecedentes" default>
 <div class="alert alert--primary">
 **Muestreo en población finita de variable cuantitativa:** <br />
-Supongamos que un informático médico desea estimar el promedio de los niveles de hemoglobina en una cohorte específica de N=800 pacientes crónicos. Basado en literatura previa, se asume una desviación estándar (σ) de 1.5 mg/dL, y se busca una precisión (d) de ±0.2 mg/dL con un 95% de confianza
+Supongamos que un investigador desea estimar la media de una variable con una desviación estándar supuesta de 15 unidades, buscando una precisión de ±2 unidades con un 95% de confianza
 </div>
 </TabItem>
 <TabItem value="mpi-python" label="Pyhton" default>
+Se recomienda el uso de la librería scipy.stats para obtener valores críticos exactos de z y la librería math para aplicar la regla de redondeo mandatoria en bioestadística.
 ```python showLineNumbers
 # Implementación en Python
+import math
+from scipy import stats
+
+# 1. Definición de parámetros del estudio
+sigma = 15        # Desviación estándar supuesta
+error_E = 2       # Margen de error deseado (precisión)
+confianza = 0.95  # Nivel de confianza (95%)
+
+# 2. Determinación del valor crítico z usando la distribución normal estándar
+# norm.ppf calcula el percentil para el área acumulada (1 - alpha/2)
+alfa = 1 - confianza
+z_critico = stats.norm.ppf(1 - alfa/2)
+
+# 3. Aplicación de la fórmula de tamaño muestral
+n_exacto = (z_critico * sigma / error_E)**2
+
+# 4. Regla de redondeo: Siempre al entero superior inmediato (ceiling)
+# Esto garantiza que el error no exceda el límite E prefijado.
+n_final = math.ceil(n_exacto)
+
+# Resultados del análisis
+print(f"Valor crítico Z (alpha/2): {z_critico:.4f}")
+print(f"Tamaño de muestra calculado (exacto): {n_exacto:.2f}")
+print(f"Tamaño de muestra requerido (n): {n_final}")
+```
+```raw
+Valor crítico Z (alpha/2): 1.9600
+Tamaño de muestra calculado (exacto): 216.08
+Tamaño de muestra requerido (n): 217
 ```
 </TabItem>
 <TabItem value="mpi-r" label="R" default>
+En el entorno de R, se utilizan funciones como qnorm() para obtener el valor preciso de z y ceiling() para el redondeo estadístico correcto hacia el entero superior inmediato.
 ```r showLineNumbers
 # Implementación en R
+# --- Cálculo de tamaño muestral para una población infinita ---
+
+# 1. Definición de parámetros
+sigma <- 15        # Desviación estándar (variabilidad)
+E <- 2            # Margen de error deseado (precisión)
+confianza <- 0.95 # Nivel de confianza
+
+# 2. Obtención del valor crítico z (usando qnorm para mayor precisión)
+alpha <- 1 - confianza
+z <- qnorm(1 - alpha/2) # Aproximadamente 1.96 para 95% [6]
+
+# 3. Aplicación de la fórmula
+n_exacto <- (z * sigma / E)^2
+
+# 4. Regla de redondeo: Siempre al entero superior inmediato
+# En bioestadística, se debe usar ceiling() para no perder potencia [3, 15, 16].
+n_final <- ceiling(n_exacto)
+
+# Resultados
+cat("Valor crítico z:", round(z, 3), "\n")
+cat("Tamaño de muestra calculado:", n_exacto, "\n")
+cat("Tamaño de muestra final (n):", n_final, "\n")
+```
+```raw
+Valor crítico Z_alpha/2: 1.96 
+Tamaño de muestra exacto: 216.0821 
+Tamaño de muestra requerido (n): 217
 ```
 </TabItem>
 </Tabs>

@@ -65,3 +65,8 @@ figure {
 .table-of-contents {
     font-size: .9rem !important;
 }
+
+.alert {
+  margin-bottom: 2rem !important;
+  margin-top: 2rem !important;
+}
