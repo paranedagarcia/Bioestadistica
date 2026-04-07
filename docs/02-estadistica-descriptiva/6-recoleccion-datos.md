@@ -656,6 +656,65 @@ En este modelo, la selección de los sujetos no depende del azar, sino del crite
 #### Aplicaciones
 El dominio de estas técnicas permite al informático médico diseñar sistemas de soporte a la decisión basados en datos robustos, validar algoritmos de *machine learning* con muestras representativas y realizar vigilancia epidemiológica precisa a través de la integración de fuentes primarias y secundarias.
 
+### Tamaño de la muestra
+
+Para determinar el tamaño de la muestra priero esablecemos el tipo de población a estudiar, en términos de su característica cuantificable. Según esta característica se determina el método más adecuado de muestreo y análisis. La distinción entre una población finita e infinita no solo es conceptual, sino que determina la precisión de los estimadores y la eficiencia del diseño muestral. A continuación, se establecen las diferencias metodológicas y matemáticas en el cálculo del tamaño de la muestra ($n$) para ambos escenarios.
+
+#### 1. Definición de los Marcos Poblacionales
+*   **Población Infinita (o Conceptual):** Se asume cuando el número de elementos es ilimitado o tan grande que el proceso de muestreo no altera la probabilidad de selección de las unidades subsiguientes. En investigación biomédica, a menudo se considera la población como el conjunto hipotético de todos los pacientes posibles que podrían recibir un tratamiento bajo condiciones similares.
+
+*   **Población Finita:** Es aquella conformada por un número limitado y computable de unidades ($N$), como los pacientes registrados en una base de datos hospitalaria específica durante un año. En este caso, el muestreo suele realizarse **sin reemplazo**, lo que implica que cada extracción afecta la composición de la población restante.
+
+#### 2. Diferencias en la Formulación Matemática
+
+#### Cálculo para Población Infinita ($n_0$)
+Cuando la población es infinita o el tamaño de la muestra es insignificante respecto al total, se utilizan las fórmulas base:
+
+**Para variables cuantitativas (medias):**
+    ```math
+    n_0 = \frac{Z_{\alpha/2}^2 \cdot \sigma^2}{d^2}
+    ```
+
+**Para variables cualitativas (proporciones):**
+    ```math
+    n_0 = \frac{Z_{\alpha/2}^2 \cdot P \cdot Q}{d^2}
+    ```
+
+**Significado de los componentes:**
+*   **$Z_{\alpha/2}$**: Coeficiente de confiabilidad derivado de la distribución normal estándar (ej. 1.96 para un nivel de confianza del 95%).
+*   **$\sigma^2$**: Varianza poblacional (estimada mediante muestra piloto o literatura previa).
+*   **$P$**: Proporción esperada del evento; **$Q$** es su complemento ($1-P$).
+*   **$d$**: Precisión o error máximo tolerado por el investigador (mitad de la amplitud del intervalo de confianza).
+
+#### Ajuste para Población Finita ($n$)
+Si la población es finita, el tamaño de la muestra calculado inicialmente ($n_0$) debe ajustarse para reflejar que se dispone de menos unidades y que el error estándar se reduce conforme nos acercamos al censo total. La fórmula más utilizada para este ajuste es:
+
+```math
+n = \frac{n_0}{1 + \frac{n_0}{N}}
+```
+
+Este ajuste deriva del **Factor de Corrección para Población Finita (CPF)**, el cual se expresa matemáticamente como:
+```math
+CPF = \sqrt{\frac{N-n}{N-1}}
+```
+
+#### Criterio de Aplicación: La Regla del 5%
+No siempre es obligatorio aplicar el ajuste por población finita. El consenso estadístico establece que si el tamaño de la muestra calculado ($n$) es **menor o igual al 5%** del tamaño de la población total ($n/N \le 0.05$), el factor de corrección es tan cercano a 1 que su efecto es despreciable. En tales circunstancias, se puede proceder con la fórmula de población infinita sin sacrificar rigor científico.
+
+### Ejemplo Comparativo
+Suponga que se desea estimar la proporción de registros erróneos en un sistema de información hospitalario con una precisión del 5% ($d=0.05$) y un nivel de confianza del 95% ($Z=1.96$). Se asume una variabilidad máxima ($P=0.5$).
+
+1.  **Cálculo como Población Infinita:**
+    ```math
+    n_0 = \frac{1.96^2 \cdot 0.5 \cdot 0.5}{0.05^2} = 384.16 \approx 385 \text{ registros.}
+    ```
+2.  **Ajuste si la Población es Finita ($N=1000$):**
+    ```math
+    n = \frac{385}{1 + \frac{385}{1000}} = \frac{385}{1.385} \approx 278 \text{ registros.}
+    ```
+
+**Conclusión técnica:** El uso del ajuste para poblaciones finitas permite obtener la misma precisión estadística con un tamaño de muestra significativamente menor (278 vs 385), optimizando los recursos de auditoría y tiempo en el entorno clínico.
+
 
 
 <br />
@@ -663,20 +722,91 @@ El dominio de estas técnicas permite al informático médico diseñar sistemas 
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">
-**Muestreo no probabilistico:**
+**Muestreo en población finita de variable cuantitativa:** <br />
+Supongamos que un informático médico desea estimar el promedio de los niveles de hemoglobina en una cohorte específica de N=800 pacientes crónicos. Basado en literatura previa, se asume una desviación estándar (σ) de 1.5 mg/dL, y se busca una precisión (d) de ±0.2 mg/dL con un 95% de confianza
 </div>
 </TabItem>
 <TabItem value="mnp-python" label="Pyhton" default>
+Para los valores proporcionados, el cálculo base para una población infinita arrojaría aproximadamente 217 sujetos. Sin embargo, al aplicar la corrección por población finita para una cohorte de 800 pacientes, el tamaño requerido se reduce a 171 sujetos.
+
+Este ajuste es vital en informática médica para optimizar recursos institucionales. El resultado final debe ser siempre un número entero obtenido mediante la función "techo" (ceiling), ya que incluso una fracción mínima (ej. 170.1) obligaría a reclutar al siguiente paciente para cumplir estrictamente con el margen de error del 0.2 mg/dL y la confianza del 95%
+
 ```python showLineNumbers
 # Implementación en Python
+import math
+from scipy import stats
+
+def calcular_muestra_finita(N, sigma, d, confianza=0.95):
+    """
+    Calcula el tamaño de muestra para una media en población finita.
+    """
+    # 1. Obtención del valor crítico Z (bilateral)
+    alfa = 1 - confianza
+    z = stats.norm.ppf(1 - alfa/2)
+    
+    # 2. Cálculo para población infinita (n0)
+    n0 = (z**2 * sigma**2) / (d**2)
+    
+    # 3. Ajuste para población finita (n)
+    n_final = n0 / (1 + (n0 / N))
+    
+    # 4. Redondeo al entero superior inmediato (Regla de oro en bioestadística)
+    # Es necesario aumentar al siguiente entero para no perder potencia [6, 15, 19].
+    return math.ceil(n_final), n0
+
+# Parámetros del problema
+N_pacientes = 800
+desviacion_estandar = 1.5
+precision_d = 0.2
+nivel_confianza = 0.95
+
+n_ajustado, n_inf = calcular_muestra_finita(N_pacientes, desviacion_estandar, precision_d, nivel_confianza)
+
+print(f"--- Resultados del Cálculo Muestral ---")
+print(f"Tamaño base (población infinita): {math.ceil(n_inf)}")
+print(f"Tamaño ajustado (cohorte N=800): {n_ajustado} pacientes")
+```
+```raw
+--- Resultados del Cálculo Muestral ---
+Tamaño base (población infinita): 217
+Tamaño ajustado (cohorte N=800): 171 pacientes
 ```
 </TabItem>
 <TabItem value="mnp-r" label="R" default>
+En este script, la función qnorm permite obtener el valor exacto de Z para el nivel de confianza especificado. El uso de ceiling es imperativo en bioestadística, ya que cualquier fracción decimal en el cálculo del tamaño de la muestra debe redondearse al entero superior para garantizar que se cumplan los requisitos mínimos de precisión y potencia estadística del estudio.
 ```r showLineNumbers
 # Implementación en R
+# --- Cálculo de Tamaño Muestral para Población Finita ---
+
+# 1. Definición de parámetros
+N <- 800              # Tamaño de la población (finita)
+sigma <- 1.5          # Variabilidad estimada (desviación estándar)
+precision <- 0.2      # Margen de error deseado (d)
+confianza <- 0.95     # Nivel de confianza
+
+# 2. Obtención del valor crítico Z
+alpha <- 1 - confianza
+z <- qnorm(1 - alpha/2)
+
+# 3. Cálculo para población infinita (n0)
+n0 <- (z^2 * sigma^2) / (precision^2)
+
+# 4. Ajuste para población finita (n)
+n_final <- n0 / (1 + (n0 / N))
+
+# 5. Redondeo al entero superior inmediato
+# Siempre se aumenta al siguiente entero para mantener la potencia [7, 19, 23].
+n_final <- ceiling(n_final)
+
+# Resultados
+cat("Tamaño inicial (infinita):", ceiling(n0), "\n")
+cat("Tamaño ajustado (finita):", n_final, "\n")
 ```
 </TabItem>
 </Tabs>
+
+
+
 
 ### Resumen de los tipos muestrales
 | Técnica           | Unidad        | Objetivo Principal             | Relación con la Población          |
@@ -685,3 +815,4 @@ El dominio de estas técnicas permite al informático médico diseñar sistemas 
 | **Estratificado** | Estrato       | Representatividad de subgrupos | Control de varianza interna.       |
 | **Sistemático**   | Intervalo $k$ | Facilidad operativa            | Distribución uniforme en la lista. |
 | **Conglomerados** | Grupo natural | Eficiencia en recursos         | Útil ante dispersión geográfica.   |
+
