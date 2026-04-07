@@ -806,7 +806,27 @@ cat("Tamaño ajustado (finita):", n_final, "\n")
 </Tabs>
 
 
+<br />
+#### 📝 Programación:
 
+<Tabs>
+<TabItem value="mpi" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Muestreo en población finita de variable cuantitativa:** <br />
+Supongamos que un informático médico desea estimar el promedio de los niveles de hemoglobina en una cohorte específica de N=800 pacientes crónicos. Basado en literatura previa, se asume una desviación estándar (σ) de 1.5 mg/dL, y se busca una precisión (d) de ±0.2 mg/dL con un 95% de confianza
+</div>
+</TabItem>
+<TabItem value="mpi-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="mpi-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs>
 
 ### Resumen de los tipos muestrales
 | Técnica           | Unidad        | Objetivo Principal             | Relación con la Población          |
