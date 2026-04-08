@@ -209,7 +209,40 @@ plt.ylabel('Residuales')
 plt.title('Residuales vs. Valores Predichos (Debe ser uniforme)')
 plt.show()
 ```
+```raw
+--- Resumen del Modelo de Regresión Polinómica (Cuadrático) ---
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Trigliceridos   R-squared:                       0.339
+Model:                            OLS   Adj. R-squared:                  0.326
+Method:                 Least Squares   F-statistic:                     24.93
+Date:                Tue, 07 Apr 2026   Prob (F-statistic):           1.84e-09
+Time:                        21:34:17   Log-Likelihood:                -411.11
+No. Observations:                 100   AIC:                             828.2
+Df Residuals:                      97   BIC:                             836.0
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+const            47.2125     12.524      3.770      0.000      22.356      72.069
+Edad             -0.4419      0.547     -0.808      0.421      -1.528       0.644
+Edad_Cuadrado     0.0101      0.005      1.870      0.065      -0.001       0.021
+==============================================================================
+Omnibus:                        0.109   Durbin-Watson:                   2.044
+Prob(Omnibus):                  0.947   Jarque-Bera (JB):                0.002
+Skew:                           0.011   Prob(JB):                        0.999
+Kurtosis:                       3.002   Cond. No.                     2.77e+04
+==============================================================================
 
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.77e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+```
+![rpc](img/rpc.png)
+
+![rpc](img/arl.png)
 </TabItem>
 <TabItem value="rpc-r" label="R" default>
 ```r showLineNumbers
