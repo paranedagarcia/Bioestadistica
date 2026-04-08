@@ -13,6 +13,8 @@ Para aprender sobre la creación con Shiny [sigue este enlace](https://shiny.pos
 
 ## Paneles de Control con Quarto
 
+Documentación de creación de paneles en: https://quarto.org/docs/dashboards/
+
 :::info
 Sección en desarrollo...
 :::
