@@ -8,17 +8,91 @@ sidebar_position: 4
 
 # Distribuciones discretas
 
+
+## Distribución de Bernoulli
+La **distribución de Bernoulli** constituye el modelo de probabilidad más elemental en la estadística, sirviendo como la unidad fundamental para la construcción de distribuciones más complejas como la binomial, la geométrica y la binomial negativa. Representa un experimento aleatorio único con exactamente dos resultados posibles, mutuamente excluyentes, denominados tradicionalmente como "éxito" y "fracaso".
+
+### Contexto Histórico
+Esta distribución debe su nombre al eminente matemático suizo **Jacob Bernoulli** (1654–1705), quien realizó aportes pioneros a la teoría de la probabilidad en el siglo XVII. Bernoulli formalizó el estudio de las pruebas independientes con probabilidades constantes de éxito, conceptos que fueron publicados póstumamente en su obra *Ars Conjectandi* en 1713.
+
+### Definición y Formulación Matemática
+Desde una perspectiva teórica, una variable aleatoria $X$ sigue una distribución de Bernoulli si puede tomar únicamente dos valores: $X=1$ (éxito) y $X=0$ (fracaso).
+
+#### Función de Masa de Probabilidad (PMF)
+La probabilidad de observar un resultado $x$ se define matemáticamente como:
+```math
+P(X=x) = p^x(1-p)^{1-x}, \quad \text{para } x \in \{0, 1\}
+```
+
+Donde sus componentes significan:
+* **$x$**: El valor observado de la variable (1 para éxito, 0 para fracaso).
+* **$p$**: El parámetro que define la probabilidad de éxito en el ensayo ($0 \le p \le 1$).
+* **$q$ (o $1-p$)**: La probabilidad de fracaso, cumpliéndose que $p + q = 1$.
+
+#### Momentos de la Distribución
+* **Esperanza Matemática (Media, $\mu$):** Es idéntica a la probabilidad de éxito.
+    ```math
+    E(X) = p
+    ```
+* **Varianza ($\sigma^2$):** Cuantifica la dispersión de los datos alrededor de la media.
+    ```math
+    Var(X) = p \cdot (1 - p)
+    ```
+* **Desviación Estándar ($\sigma$):**
+    ```math
+    \sigma = \sqrt{p \cdot q}
+    ```
+
+### Fundamento
+El rigor de la distribución de Bernoulli se sustenta en el cumplimiento de los **ensayos de Bernoulli**, que poseen tres propiedades críticas:
+1. **Dicotomía:** El ensayo solo admite dos categorías (p. ej., sano/enfermo, positivo/negativo).
+
+2. **Independencia:** El resultado de un ensayo no afecta la probabilidad de éxito de cualquier observación subsiguiente.
+
+3. **Probabilidad Constante:** El parámetro $p$ permanece invariable en cada ejecución del experimento.
+
+La suma de $n$ ensayos de Bernoulli independientes da lugar a la **distribución binomial**, permitiendo modelar el número total de éxitos en una muestra clínica.
+
+### Usos en Salud
+En el ámbito biomédico, la distribución de Bernoulli es indispensable para caracterizar variables cualitativas y procesos de clasificación:
+* **Diagnóstico Clínico:** El resultado de una prueba serológica (ej. VIH) donde el resultado es reactivo (éxito) o no reactivo (fracaso).
+* **Epidemiología:** El estado de un individuo respecto a una patología, como ser diabético o no.
+* **Ensayos Clínicos:** La respuesta dicotómica a un tratamiento médico, clasificada como recuperación satisfactoria o ausencia de la misma.
+* **Genética:** La presencia o ausencia de un alelo específico vinculado a enfermedades como el Alzheimer.
+* **Informática Médica:** El análisis de errores en el procesamiento de datos por software hospitalario (presencia de error = 1, ausencia = 0).
+
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="db" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Distribución de Bernoulli**<br />
+</div>
+</TabItem>
+<TabItem value="db-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="db-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs>
+
+
 ## Distribución Binomial
 
 La **Distribución Binomial** es uno de los modelos de probabilidad discretas más fundamentales en la bioestadística. Se utiliza para modelar el número de "éxitos" observados en una serie de ensayos independientes que tienen una probabilidad constante de ocurrencia.
 
 
-### 1. Contexto Histórico
+### Contexto
 El desarrollo de esta distribución se atribuye al matemático suizo **Jacob Bernoulli** (1654-1705), quien formalizó el estudio de procesos con dos resultados posibles en su obra póstuma *Ars Conjectandi*, publicada en 1713. Los coeficientes utilizados en su expansión matemática, conocidos como el "Triángulo de Pascal", tienen antecedentes que se remontan al siglo XIII.
 
 Posteriormente, en el siglo XVIII, **Abraham de Moivre** introdujo la aproximación de la distribución binomial a la normal. Su motivación fue puramente práctica: el cálculo manual de términos binomiales para muestras grandes (por ejemplo, $n > 50$) resultaba extremadamente tedioso antes de la existencia de la computación moderna.
 
-### 2. Definición y Formulación
+### Definición y Formulación
 Una variable aleatoria discreta $X$ sigue una distribución binomial si representa el número de éxitos en $n$ ensayos de Bernoulli independientes.
 
 #### Función de Masa de Probabilidad (PMF)
@@ -46,7 +120,7 @@ P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}
     \sigma^2 = npq
     ```
 
-### 3. Fundamentos Científicos y Supuestos
+### Fundamentos Científicos y Supuestos
 Para que un fenómeno biológico o médico pueda ser modelado rigurosamente mediante una distribución binomial, debe cumplir con las condiciones **BInS**:
 - **B**inario: Cada ensayo tiene solo dos resultados posibles (ej. positivo/negativo, sobrevive/muere).
 - **I**ndependencia: El resultado de un ensayo no afecta la probabilidad del siguiente.
@@ -55,7 +129,7 @@ Para que un fenómeno biológico o médico pueda ser modelado rigurosamente medi
 
 **Nota sobre el muestreo:** A menudo se muestrea de poblaciones finitas sin reemplazo (lo que técnicamente sugeriría una distribución hipergeométrica). Sin embargo, se acepta el uso de la binomial si el tamaño de la muestra $n$ es menor al 5% del tamaño de la población $N$, ya que la probabilidad $p$ se mantiene virtualmente constante.
 
-### 4. Usos en el Ámbito de la Salud
+### Usos
 La distribución binomial es la piedra angular para el análisis de variables cualitativas dicotómicas:
 
 *   **Epidemiología:** Estimar la prevalencia de una enfermedad en una comunidad (ej. casos positivos de influenza H1N1 en una muestra de 500 sujetos).
@@ -63,7 +137,7 @@ La distribución binomial es la piedra angular para el análisis de variables cu
 *   **Genética:** Modelar la proporción de una población que posee un gen vinculado a enfermedades complejas como el Alzheimer.
 *   **Farmacología:** Evaluar la tasa de éxito de un nuevo tratamiento quirúrgico o medicamento en ensayos clínicos.
 
-### 5. Implementación en el Entorno R
+#### Implementación en el Entorno R
 El software R proporciona funciones nativas para gestionar esta distribución sin necesidad de cálculos manuales complejos:
 *   `dbinom(x, n, p)`: Calcula la probabilidad exacta de $x$ éxitos.
 *   `pbinom(x, n, p)`: Calcula la probabilidad acumulada (útil para pruebas de hipótesis).
@@ -376,60 +450,6 @@ Para que la aproximación a la distribución chi-cuadrado sea válida, se deben 
 1.  Las observaciones deben ser independientes entre sí.
 2.  Las frecuencias esperadas ($E_i$) deben ser, por lo general, $\ge 5$ en al menos el 80% de las celdas, y ninguna debe ser $< 1$. En muestras pequeñas que violan estos supuestos, se recomienda el uso de la **Prueba Exacta de Fisher**.
 
-
-<br />
-
-## Distribución de Bernoulli
-La **distribución de Bernoulli** constituye el modelo de probabilidad más elemental en la estadística, sirviendo como la unidad fundamental para la construcción de distribuciones más complejas como la binomial, la geométrica y la binomial negativa. Representa un experimento aleatorio único con exactamente dos resultados posibles, mutuamente excluyentes, denominados tradicionalmente como "éxito" y "fracaso".
-
-### 1. Contexto Histórico
-Esta distribución debe su nombre al eminente matemático suizo **Jacob Bernoulli** (1654–1705), quien realizó aportes pioneros a la teoría de la probabilidad en el siglo XVII. Bernoulli formalizó el estudio de las pruebas independientes con probabilidades constantes de éxito, conceptos que fueron publicados póstumamente en su obra *Ars Conjectandi* en 1713.
-
-### 2. Definición y Formulación Matemática
-Desde una perspectiva teórica, una variable aleatoria $X$ sigue una distribución de Bernoulli si puede tomar únicamente dos valores: $X=1$ (éxito) y $X=0$ (fracaso).
-
-#### Función de Masa de Probabilidad (PMF)
-La probabilidad de observar un resultado $x$ se define matemáticamente como:
-```math
-P(X=x) = p^x(1-p)^{1-x}, \quad \text{para } x \in \{0, 1\}
-```
-
-Donde sus componentes significan:
-* **$x$**: El valor observado de la variable (1 para éxito, 0 para fracaso).
-* **$p$**: El parámetro que define la probabilidad de éxito en el ensayo ($0 \le p \le 1$).
-* **$q$ (o $1-p$)**: La probabilidad de fracaso, cumpliéndose que $p + q = 1$.
-
-#### Momentos de la Distribución
-* **Esperanza Matemática (Media, $\mu$):** Es idéntica a la probabilidad de éxito.
-    ```math
-    E(X) = p
-    ```
-* **Varianza ($\sigma^2$):** Cuantifica la dispersión de los datos alrededor de la media.
-    ```math
-    Var(X) = p \cdot (1 - p)
-    ```
-* **Desviación Estándar ($\sigma$):**
-    ```math
-    \sigma = \sqrt{p \cdot q}
-    ```
-
-### 3. Fundamento
-El rigor de la distribución de Bernoulli se sustenta en el cumplimiento de los **ensayos de Bernoulli**, que poseen tres propiedades críticas:
-1. **Dicotomía:** El ensayo solo admite dos categorías (p. ej., sano/enfermo, positivo/negativo).
-
-2. **Independencia:** El resultado de un ensayo no afecta la probabilidad de éxito de cualquier observación subsiguiente.
-
-3. **Probabilidad Constante:** El parámetro $p$ permanece invariable en cada ejecución del experimento.
-
-La suma de $n$ ensayos de Bernoulli independientes da lugar a la **distribución binomial**, permitiendo modelar el número total de éxitos en una muestra clínica.
-
-### 4. Usos en Salud
-En el ámbito biomédico, la distribución de Bernoulli es indispensable para caracterizar variables cualitativas y procesos de clasificación:
-* **Diagnóstico Clínico:** El resultado de una prueba serológica (ej. VIH) donde el resultado es reactivo (éxito) o no reactivo (fracaso).
-* **Epidemiología:** El estado de un individuo respecto a una patología, como ser diabético o no.
-* **Ensayos Clínicos:** La respuesta dicotómica a un tratamiento médico, clasificada como recuperación satisfactoria o ausencia de la misma.
-* **Genética:** La presencia o ausencia de un alelo específico vinculado a enfermedades como el Alzheimer.
-* **Informática Médica:** El análisis de errores en el procesamiento de datos por software hospitalario (presencia de error = 1, ausencia = 0).
 
 <br />
 
