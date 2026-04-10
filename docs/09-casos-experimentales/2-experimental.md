@@ -1,7 +1,7 @@
 ---
 id: experimental
 title: "Diseño experimental"
-sidebar_label: "🔸Experimental"
+sidebar_label: "Experimental"
 sidebar_position: 2
 description: "Diseños experimentales en biomedicina"
 ---

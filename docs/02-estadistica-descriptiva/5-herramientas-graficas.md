@@ -1,7 +1,7 @@
 ---
 id: herramientas-graficas
 title: Herramientas gráficas
-sidebar_label: "🔸Herramientas gráficas"
+sidebar_label: "Herramientas gráficas"
 sidebar_position: 5
 ---
 
@@ -42,7 +42,7 @@ hist(datos,
      border = "white")
 ```
   </TabItem>
-</Tabs>
+</Tabs><br />
 
 
 
@@ -100,7 +100,7 @@ boxplot(datos, horizontal = TRUE,
 ![Boxplot](img/r-boxplot.png)
 
   </TabItem>
-</Tabs>
+</Tabs><br />
 
 ## Gráficas de tallo y hoja
 
@@ -279,5 +279,5 @@ message("\nAnálisis finalizado. El gráfico se ha generado en la pestaña 'Plot
 ```
 
   </TabItem>
-</Tabs>
+</Tabs><br />
 

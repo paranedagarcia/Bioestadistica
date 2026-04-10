@@ -1,7 +1,7 @@
 ---
 id: medidas-central
 title: Medidas
-sidebar_label: "🔸Medidas descriptivas"
+sidebar_label: "Medidas descriptivas"
 sidebar_position: 2
 ---
 
@@ -129,7 +129,7 @@ cat("\n--- Resumen General ---\n")
 print(summary(datos))
     ```
   </TabItem>
-</Tabs>
+</Tabs><br />
 
 <!-- <details>
     <summary>Código Python</summary>

@@ -1,7 +1,7 @@
 ---
 id: bayes
 title: Teorema de 🔹​Bayes
-sidebar_label: "🔹​Teorema de Bayes"
+sidebar_label: "​Teorema de Bayes"
 sidebar_position: 5
 ---
 
@@ -18,7 +18,9 @@ En el contexto del aprendizaje automático (Machine Learning), el Teorema de Bay
 En el contexto de la inferencia, el teorema de Bayes relaciona la probabilidad condicional de dos eventos. Dada una hipótesis H y una evidencia E, el teorema se define formalmente como:
 La fórmula establece cómo la probabilidad de un evento $H$ (la hipótesis) cambia cuando se observa un evento $E$ (la evidencia).
 
-$$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}$$
+```math
+P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}
+```
 
 
 
@@ -32,7 +34,9 @@ $$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}$$
  
 Esta fórmula es igualmente válida si H y E representan variables aleatorias, donde P se convierte en la función de densidad de probabilidad (ξ o f).
 
+```math
 P(Y∣X_1,…,X_n)∝P(Y) 
+```
 
 
 
@@ -74,7 +78,9 @@ El resultado sorprendentemente bajo ($1.9\%$) para $P(\text{Enfermo} | \text{Pos
 
 Esa es una observación clave. La **Probabilidad Previa** $P(H)$ es, de lejos, el factor más determinante en este resultado. Acá se muestro por qué, en términos de la fórmula de Bayes: 💡
 
-$$P(H|E) = \frac{\overbrace{P(E|H) \cdot P(H)}^{\text{Casos Verdaderos Positivos}}}{\underbrace{P(E|H) \cdot P(H) + P(E|\text{No } H) \cdot P(\text{No } H)}_{\text{Casos Positivos Totales (Evidencia, } P(E))}}$$
+```math
+P(H|E) = \frac{\overbrace{P(E|H) \cdot P(H)}^{\text{Casos Verdaderos Positivos}}}{\underbrace{P(E|H) \cdot P(H) + P(E|\text{No } H) \cdot P(\text{No } H)}_{\text{Casos Positivos Totales (Evidencia, } P(E))}}
+```
 
 ### 📉 El Impacto de $P(H)$
 
@@ -91,7 +97,7 @@ Al dividir el numerador muy pequeño ($0.00099$) entre un denominador mucho más
 
 
 
-## 🌎 Aplicaciones de Bayes en Diversas Industrias
+## Aplicaciones de Bayes en Diversas Industrias
 
 ### ⛏️ 1. Geología y Exploración de Recursos
 
@@ -111,7 +117,6 @@ Los robots, drones y vehículos autónomos usan técnicas bayesianas, como el **
 
 Cada nueva lectura de un sensor ($E$) se toma como evidencia que **actualiza** la creencia previa sobre la ubicación. Si el GPS da una ubicación, esta es la *evidencia*. El sistema usa Bayes para ponderar esa evidencia con su última estimación conocida (la *Prior*) y generar una nueva y más precisa estimación (la *Posterior*). Esto permite que la navegación sea fluida y precisa, a pesar del ruido o error en los sensores.
 
-![](https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSby6f7hmf4dsSDRE6kSnI9HvtDunMnM4lF0xgrcVXTaGvVR4rL63YNFuZ7x0ilm7wurhzAMIREZYZKG2ELe1m5MiNqGwZBWeaLUg_YRDom2CuukoY)
 
 ### ⚖️ 3. Ciencia Forense y Legal
 
@@ -121,3 +126,115 @@ En los tribunales, Bayes ayuda a cuantificar el valor de la evidencia, especialm
 * **Evidencia ($E$):** Se encontró una coincidencia de ADN entre el acusado y la escena del crimen.
 
 La fórmula de Bayes ayuda a los expertos a determinar la probabilidad de que la coincidencia de ADN ocurra **dado que** el acusado es inocente ($P(E|\text{No } H)$), contra la probabilidad de que la coincidencia ocurra **dado que** el acusado es culpable ($P(E|H)$). Esto permite a los jurados concentrarse en el verdadero valor probatorio de la evidencia.
+
+<br />
+
+#### 📝 Programación:
+<Tabs>
+<TabItem value="tb" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Teorema de Bayes: Ejemplo de Diagnóstico de Colelitiasis**<br />
+Ejemplo de Diagnóstico de Colelitiasis
+Basándonos en un caso de estudio real sobre el uso de ultrasonidos para diagnosticar colelitiasis, donde se reporta una sensibilidad del 91%, una especificidad del 98% y una prevalencia del 20%.
+
+En este ejemplo clínico, aunque la sensibilidad es alta, el conocimiento a priori (prevalencia del 20%) es el factor determinante. Si un paciente obtiene un resultado positivo, la probabilidad de que realmente sufra colelitiasis asciende de un 20% (antes del test) a un 91.92% (después del test). Por el contrario, si el resultado es negativo, la probabilidad de estar sano es del 97.75%.
+</div>
+</TabItem>
+<TabItem value="tb-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+# --- Script: Aplicación del Teorema de Bayes en Diagnóstico Clínico ---
+
+def analisis_bayesiano_clinico(prevalencia, sensibilidad, especificidad):
+    """
+    Calcula las probabilidades a posteriori (VPP y VPN) dadas la prevalencia,
+    sensibilidad y especificidad de una prueba diagnóstica.
+    """
+    
+    # 1. Definición de probabilidades complementarias
+    prob_sano = 1 - prevalencia                 # P(not E)
+    tasa_falsos_positivos = 1 - especificidad   # P(T+|not E)
+    tasa_falsos_negativos = 1 - sensibilidad    # P(T-|E)
+    
+    # 2. Aplicación de la Ley de Probabilidad Total para el denominador
+    # Probabilidad global de obtener un resultado positivo P(T+)
+    # P(T+) = P(T+|E)*P(E) + P(T+|not E)*P(not E)
+    prob_test_positivo = (sensibilidad * prevalencia) + (tasa_falsos_positivos * prob_sano)
+    
+    # Probabilidad global de obtener un resultado negativo P(T-)
+    prob_test_negativo = 1 - prob_test_positivo
+    
+    # 3. Cálculo de Probabilidades a Posteriori (Teorema de Bayes)
+    
+    # Valor Predictivo Positivo (VPP): P(E|T+)
+    vpp = (sensibilidad * prevalencia) / prob_test_positivo
+    
+    # Valor Predictivo Negativo (VPN): P(not E|T-)
+    vpn = (especificidad * prob_sano) / prob_test_negativo
+    
+    return vpp, vpn, prob_test_positivo
+
+# --- Parámetros del caso: Colelitiasis por Ultrasonidos ---
+prev_colelitiasis = 0.20
+sens_ultrasonido = 0.91
+esp_ultrasonido = 0.98
+
+# Ejecución del modelo
+vpp_final, vpn_final, p_test_pos = analisis_bayesiano_clinico(
+    prev_colelitiasis, sens_ultrasonido, esp_ultrasonido
+)
+
+# Visualización de resultados con formato académico
+print(f"{'--- Análisis Probabilístico de Colelitiasis ---':^50}")
+print(f"Prevalencia (Prior): {prev_colelitiasis * 100:.1f}%")
+print(f"Rendimiento del Test: Sens {sens_ultrasonido*100:.0f}% / Esp {esp_ultrasonido*100:.0f}%")
+print("-" * 50)
+print(f"Probabilidad de Test Positivo P(T+): {p_test_pos:.4f}")
+print(f"Valor Predictivo Positivo (Posterior P(E|T+)): {vpp_final:.4f} (VPP)")
+print(f"Valor Predictivo Negativo (Posterior P(S|T-)): {vpn_final:.4f} (VPN)")
+
+# resultado
+
+```
+</TabItem>
+<TabItem value="tb-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+# --- Script de R: Aplicación del Teorema de Bayes en Diagnóstico Clínico ---
+
+# 1. Definición de parámetros iniciales (Evidencia a priori y rendimiento del test)
+prevalencia <- 0.20           # P(E): Incidencia en la población [11]
+sensibilidad <- 0.91         # P(T+|E): Tasa de verdaderos positivos [11]
+especificidad <- 0.98        # P(T-|S): Tasa de verdaderos negativos [11]
+
+# 2. Cálculos complementarios
+prob_sano <- 1 - prevalencia                 # P(S) o P(not E)
+tasa_falsos_positivos <- 1 - especificidad   # P(T+|S) [12]
+
+# 3. Aplicación de la Ley de Probabilidad Total
+# Calculamos la probabilidad global de obtener un resultado positivo P(T+)
+# P(T+) = P(T+|E)*P(E) + P(T+|S)*P(S)
+prob_test_positivo <- (sensibilidad * prevalencia) + (tasa_falsos_positivos * prob_sano) # [13, 14]
+
+# 4. Cálculo de la Probabilidad a Posteriori (Teorema de Bayes)
+# Valor Predictivo Positivo (VPP)
+vpp <- (sensibilidad * prevalencia) / prob_test_positivo # [11, 15]
+
+# Valor Predictivo Negativo (VPN)
+# P(S|T-) = [P(T-|S) * P(S)] / [P(T-|S)*P(S) + P(T-|E)*P(E)]
+tasa_falsos_negativos <- 1 - sensibilidad
+prob_test_negativo <- 1 - prob_test_positivo
+vpn <- (especificidad * prob_sano) / prob_test_negativo # [16, 17]
+
+# 5. Visualización de resultados
+cat("--- Resultados del Análisis Bayesiano ---\n")
+cat("Probabilidad a priori (Prevalencia):", prevalencia, "\n")
+cat("Probabilidad de Test Positivo P(T+):", round(prob_test_positivo, 4), "\n")
+cat("Valor Predictivo Positivo (VPP):", round(vpp, 4), "\n")
+cat("Valor Predictivo Negativo (VPN):", round(vpn, 4), "\n")
+
+# resultado
+
+```
+</TabItem>
+</Tabs><br />

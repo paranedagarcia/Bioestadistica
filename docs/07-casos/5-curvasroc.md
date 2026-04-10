@@ -1,7 +1,7 @@
 ---
 id: caso-curvas
 title: Curvas ROC
-sidebar_label: "🔸Curvas ROC"
+sidebar_label: "Curvas ROC"
 sidebar_position: 5
 ---
 
@@ -42,4 +42,4 @@ abline(0, 1, lty = 2)
 text(0.6, 0.2, paste("AUC =", round(roc_mayo$AUC, 3)))
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

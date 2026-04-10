@@ -1,7 +1,7 @@
 ---
 id: inferencia-hipotesis
 title: Hipótesis
-sidebar_label: "🔹​Prueba de hipótesis"
+sidebar_label: "​Prueba de hipótesis"
 sidebar_position: 11
 ---
 

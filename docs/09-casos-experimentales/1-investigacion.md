@@ -1,7 +1,7 @@
 ---
 id: investigacion
 title: "Rutas de investigación"
-sidebar_label: "🔸Rutas de investigación"
+sidebar_label: "Rutas de investigación"
 sidebar_position: 1
 description: "Diseño de investigación"
 ---

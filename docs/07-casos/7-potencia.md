@@ -1,7 +1,7 @@
 ---
 id: casos-potencia
 title: Cálculo de Potencia
-sidebar_label: "🔸Cálculo de Potencia"
+sidebar_label: "Cálculo de Potencia"
 sidebar_position: 7
 ---
 
@@ -41,4 +41,4 @@ pwr.t.test(d = 0.5, sig.level = 0.05, power = 0.8,
 # El resultado indicará el 'n' necesario por cada grupo
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

@@ -1,7 +1,7 @@
 ---
 id: r-dashboard
 title: Paneles de control
-sidebar_label: "▪️Paneles de control"
+sidebar_label: "Paneles de control"
 sidebar_position: 8
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: intervalo-confianza
 title: Intervalo de Confianza
-sidebar_label: "🔹​Intervalo de Confianza"
+sidebar_label: "​Intervalo de Confianza"
 sidebar_position: 3
 ---
 
@@ -13,7 +13,7 @@ La **estimación por intervalos de confianza (IC)** constituye un pilar fundamen
 El intervalo de confianza es una técnica de estimación por intervalo.
 :::
 
-### Definición
+## Definición
 
 Un intervalo de confianza es una regla para calcular, a partir de datos muestrales, dos números que delimitan un rango en el que se encuentra el valor verdadero del parámetro poblacional con una probabilidad específica denominada **coeficiente de confianza** ($1-\alpha$). Los niveles de confianza más utilizados en la literatura biomédica son 90%, 95% y 99%.
 
@@ -23,7 +23,7 @@ La amplitud del intervalo es un indicador directo de la **precisión** de la est
 
 El fundamento científico del IC reside en el **Teorema del Límite Central (TLC)**, el cual establece que la distribución de muestreo de muchos estimadores (como la media) tiende a la normalidad cuando el tamaño de la muestra ($n$) es suficientemente grande, independientemente de la distribución original de la población.
 
-#### La Interpretación Frecuentista
+### La Interpretación Frecuentista
 Bajo la perspectiva frecuentista, el parámetro poblacional es una constante fija pero desconocida. El intervalo es el componente aleatorio porque depende de la muestra seleccionada. Por tanto, decir que un IC tiene un nivel de confianza del 95% significa que, si se repitiera el experimento un número infinito de veces y se calculara un IC para cada muestra, el 95% de esos intervalos contendrían el valor real del parámetro poblacional.
 
 #### Estructura General del Intervalo
@@ -36,9 +36,9 @@ Donde:
 *   **Coeficiente de Confiabilidad**: Valor crítico derivado de una distribución de probabilidad (z para normal estándar o t para t-Student) que captura el área central $1-\alpha$.
 *   **Error Típico (SE)**: Medida de la variabilidad del estimador, que cuantifica la incertidumbre asociada al salto de la muestra a la población.
 
-### Modelos Específicos en Bioestadística
+## Modelos Específicos en Bioestadística
 
-#### A. Intervalo para la Media Poblacional ($\mu$)
+### A. Intervalo para la Media Poblacional ($\mu$)
 Cuando se desconoce la varianza poblacional ($\sigma^2$) y la población es normal o la muestra es grande ($n \ge 30$), se utiliza la distribución **t de Student** con $n-1$ grados de libertad:
 
 ```math
@@ -50,7 +50,7 @@ Cuando se desconoce la varianza poblacional ($\sigma^2$) y la población es norm
 *   **$t_{\alpha/2, n-1}$**: Valor crítico que deja un área $\alpha/2$ en las colas.
 *   **$S/\sqrt{n}$**: Error estándar de la media (SEM), donde $S$ es la desviación típica muestral.
 
-#### B. Intervalo para una Proporción Poblacional ($p$)
+### B. Intervalo para una Proporción Poblacional ($p$)
 Esencial para variables cualitativas dicotómicas (ej. presencia de enfermedad). Se basa en la aproximación de la distribución binomial a la normal. El intervalo tradicional (Wald) se expresa como:
 
 ```math
@@ -59,7 +59,7 @@ p = \hat{p} \pm z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 
 Investigaciones sugieren que, en muestras pequeñas, el intervalo de Agresti-Coull es más preciso.
 
-#### C. Ejemplo para la media poblacional ($\mu$):
+### C. Ejemplo para la media poblacional ($\mu$):
 En una muestra grande ($n \ge 30$) o con distribución normal y varianza conocida, la fórmula es:
 
 $$\mu = \overline{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$$
@@ -70,7 +70,7 @@ $$\mu = \overline{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$$
 *   **$\sigma$:** Desviación estándar poblacional (si es desconocida, se sustituye por la desviación estándar muestral $s$ en muestras grandes).
 *   **$n$:** Tamaño de la muestra. Note que al aumentar $n$, el error típico disminuye, resultando en un intervalo más estrecho y preciso.
 
-### Aplicaciones y Usos
+## Aplicaciones y Usos
 
 Los intervalos de confianza son herramientas superiores a los p-valores porque integran información sobre la magnitud del efecto y la precisión de los datos. Sus usos principales incluyen:
 
@@ -85,7 +85,7 @@ Los intervalos de confianza son herramientas superiores a los p-valores porque i
 - **Modelos de Regresión**: Estimación de los coeficientes de regresión ($\beta$), proporcionando un rango para el cambio esperado en la variable dependiente ante variaciones en los predictores médicos.
 
 
-### Interpretación Académica (Perspectiva Frecuentista)
+## Interpretación Académica (Perspectiva Frecuentista)
 
 Es un error común interpretar un IC del 95% como que hay un "95% de probabilidad" de que el parámetro esté dentro de ese intervalo específico una vez calculado. Dado que el parámetro poblacional es una constante fija (pero desconocida), el intervalo calculado lo contiene o no lo contiene (probabilidad 0 o 1).
 
@@ -201,4 +201,4 @@ ic_z <- c(media_muestral - margen_error_z, media_muestral + margen_error_z)
 cat("IC 95% (Varianza conocida - Z):", ic_z, "\n")
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

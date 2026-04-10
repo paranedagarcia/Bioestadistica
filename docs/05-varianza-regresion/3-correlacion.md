@@ -1,8 +1,8 @@
 ---
 id: correlacion
 title: Correlación
-sidebar_label: "🔹​Correlaciones"
-sidebar_position: 7
+sidebar_label: "​Correlaciones"
+sidebar_position: 3
 ---
 
 # Correlación
@@ -15,7 +15,7 @@ Existen 3 medidas para cuantificar la correlación:
 3. **Coeficiente de correlación de Kendall**: Mide la concordancia entre dos variables, evaluando la relación ordinal.
 
 
-### Coeficiente de correlación de Pearson
+## Coeficiente de correlación de Pearson
 El coeficiente de correlación de Pearson es una medida estadística que evalúa la fuerza y la dirección de la relación lineal entre dos variables cuantitativas. Su valor oscila entre -1 y 1, donde:
 - 1 indica una correlación positiva perfecta: a medida que una variable aumenta, la otra también lo hace.
 - -1 indica una correlación negativa perfecta: a medida que una variable aumenta, la otra disminuye.
@@ -56,23 +56,24 @@ A continuación, se muestra una tabla con la interpretación de los valores del 
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Python" default>
+<TabItem value="cp" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Correlación de Pearson**<br />
+</div>
+</TabItem>
+<TabItem value="cp-python" label="Pyhton" default>
 ```python showLineNumbers
 # Implementación en Python
-
 ```
-
 </TabItem>
-<TabItem value="r" label="R">
+<TabItem value="cp-r" label="R" default>
 ```r showLineNumbers
-# Implementación en en R
-
+# Implementación en R
 ```
-
 </TabItem>
-</Tabs>
+</Tabs><br />
 
-### Coeficiente de correlación de Spearman
+## Coeficiente de correlación de Spearman
 El coeficiente de correlación de Spearman es una medida no paramétrica que evalúa la relación monótona entre dos variables. A diferencia del coeficiente de Pearson, que asume que la relación es lineal, Spearman se basa en los rangos de los datos en lugar de los valores brutos. Esto lo hace más robusto frente a valores atípicos y adecuado para datos ordinales.
 
 La fórmula para calcular el coeficiente de correlación de Spearman $( \rho )$ es:
@@ -86,8 +87,27 @@ Donde:
 - $ n $ es el número de pares de datos.
 
 El coeficiente de Spearman también oscila entre -1 y 1, con interpretaciones similares a las del coeficiente de Pearson. Un valor de 1 indica una correlación monótona positiva perfecta, -1 indica una correlación monótona negativa perfecta y 0 indica que no hay correlación monótona.
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="cs" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Correlación de Spearman**<br />
+</div>
+</TabItem>
+<TabItem value="cs-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="cs-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs><br />
 
-### Coeficiente de correlación de Kendall
+## Coeficiente de correlación de Kendall
 El coeficiente de correlación de Kendall es una medida no paramétrica que evalúa la concordancia entre dos variables ordinales. A diferencia de Pearson y Spearman, que se centran en las relaciones lineales y monótonas, respectivamente, Kendall se basa en la comparación de pares de observaciones para determinar la dirección y la fuerza de la relación.
 
 La fórmula para calcular el coeficiente de correlación de Kendall $( \tau )$ es:
@@ -106,6 +126,25 @@ El coeficiente de Kendall también oscila entre -1 y 1, con interpretaciones sim
 * -1 indica una discordancia perfecta y 
 * 0 indica que no hay concordancia.
 
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="ck" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Correlación de Kendall**<br />
+</div>
+</TabItem>
+<TabItem value="ck-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="ck-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs><br />
 
 ### ¿Cuándo debo usar cada coeficiente de correlación?
 
@@ -150,18 +189,19 @@ Desde el dataset **Breast Cancer Wisconsin (Diagnostic) (WBCD)**, se pueden obse
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Python" default>
+<TabItem value="cm" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Análisis de cáncer de mama**<br />
+</div>
+</TabItem>
+<TabItem value="cm-python" label="Pyhton" default>
 ```python showLineNumbers
 # Implementación en Python
-
 ```
-
 </TabItem>
-<TabItem value="r" label="R">
+<TabItem value="cm-r" label="R" default>
 ```r showLineNumbers
-# Implementación en en R
-
+# Implementación en R
 ```
-
 </TabItem>
-</Tabs>
+</Tabs><br />

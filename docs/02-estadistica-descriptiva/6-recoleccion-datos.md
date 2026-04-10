@@ -1,7 +1,7 @@
 ---
 id: coleccion
 title: Colección de datos y muestreo
-sidebar_label: "🔸Datos y muestreo"
+sidebar_label: "Datos y muestreo"
 sidebar_position: 6
 description: Técnicas de recolección de datos, muestreo probabilístico y no probabilístico.
 ---
@@ -36,7 +36,7 @@ El muestreo es el procedimiento científico que asegura que la muestra sea un re
 
 
 
-### 🔸​Muestreo Aleatorio Simple
+### Muestreo Aleatorio Simple
 
 El **Muestreo Aleatorio Simple (MAS)** constituye el esquema fundamental de la teoría del muestreo probabilístico y es la técnica de referencia para la estadística inferencial. Se define como aquel procedimiento en el que cada unidad de la población tiene una probabilidad conocida, constante y mayor a cero de ser incluida en la muestra. Cada unidad experimental (paciente, registro clínico o muestra biológica) posea una probabilidad de inclusión conocida e idéntica, eliminando sesgos de selección sistemáticos. Requiere obligatoriamente un **marco muestral** (*sampling frame*), que es el listado o mapa actualizado de todos los elementos de la población objetivo y la selección se realiza mediante generadores de números aleatorios o sorteos.
 
@@ -204,11 +204,11 @@ cat("Tamaño de muestra:", n, "\n")
 cat("Archivos seleccionados (IDs):", muestra_seleccionada, "\n")
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 <br />
 
-### 🔸​Muestreo Estratificado
+### Muestreo Estratificado
 
 El **muestreo aleatorio estratificado (MAE)** es un método de muestreo probabilístico diseñado para optimizar la precisión de las estimaciones estadísticas cuando se trabaja con poblaciones heterogéneas. Este procedimiento consiste en particionar la población total ($N$) en subgrupos mutuamente excluyentes y colectivamente exhaustivos denominados **estratos**, los cuales deben ser internamente homogéneos con respecto a la característica de estudio, pero heterogéneos entre sí. Este método es superior al muestreo aleatorio simple (MAS) cuando se identifican variables (estratos) que influyen significativamente en la variable de respuesta, permitiendo reducir la varianza del error de estimación.
 
@@ -328,7 +328,7 @@ print(media_st)
 # Implementación en R
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 <br />
 
@@ -501,7 +501,7 @@ media_est <- mean(muestra_final$calidad_atencion)
 print(paste("Estimación de la calidad media:", round(media_est, 2)))
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 <br />
 
@@ -639,7 +639,7 @@ La mayor amenaza a la validez del muestreo sistemático es la **periodicidad ocu
 # Implementación en R
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 <br />
 
@@ -803,7 +803,7 @@ cat("Tamaño inicial (infinita):", ceiling(n0), "\n")
 cat("Tamaño ajustado (finita):", n_final, "\n")
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 
 <br />
@@ -884,7 +884,7 @@ Tamaño de muestra exacto: 216.0821
 Tamaño de muestra requerido (n): 217
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 ### Resumen de los tipos muestrales
 | Técnica           | Unidad        | Objetivo Principal             | Relación con la Población          |

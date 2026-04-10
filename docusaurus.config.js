@@ -86,6 +86,10 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: true,
       },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 2,
+      },
       navbar: {
         title: 'Bioestadística',
         logo: {

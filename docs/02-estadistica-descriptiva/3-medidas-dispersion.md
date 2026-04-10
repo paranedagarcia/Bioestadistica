@@ -1,7 +1,7 @@
 ---
 id: medidas-dispersion
 title: "Medidas de dispersión"
-sidebar_label: "🔸Medidas de dispersión"
+sidebar_label: "Medidas de dispersión"
 sidebar_position: 3
 ---
 
@@ -241,4 +241,4 @@ boxplot(datos, main="Diagrama de Caja de las Edades", horizontal=TRUE, col="ligh
 ![Boxplot](img/r-boxplot.png)
 
     </TabItem>
-</Tabs>
+</Tabs><br />

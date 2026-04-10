@@ -1,7 +1,7 @@
 ---
 id: caso-supervivencia
 title: Análisis de supervivencia
-sidebar_label: "🔸Análisis de supervivencia"
+sidebar_label: "Análisis de supervivencia"
 sidebar_position: 2
 ---
 
@@ -45,7 +45,7 @@ legend("topright", legend = c("Mantenido", "No mantenido"), col = c("blue", "red
 ```
 
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 
 

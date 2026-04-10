@@ -1,7 +1,7 @@
 ---
 id: python-basico
 title: Python
-sidebar_label: "▪️Introducción a Python"
+sidebar_label: "Introducción a Python"
 sidebar_position: 1
 ---
 

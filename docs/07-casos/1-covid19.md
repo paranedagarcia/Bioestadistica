@@ -1,7 +1,7 @@
 ---
 id: casos-covid
 title: Covid-19
-sidebar_label: "🔸Covid-19"
+sidebar_label: "Covid-19"
 sidebar_position: 1
 ---
 
@@ -41,5 +41,5 @@ Chile implementó una de las campañas de vacunación más rápidas de América 
 ```
 
 </TabItem>
-</Tabs>
+</Tabs><br />
 

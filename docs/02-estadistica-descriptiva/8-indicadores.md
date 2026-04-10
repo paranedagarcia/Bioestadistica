@@ -1,7 +1,7 @@
 ---
 id: indicadores
 title: Indicadores de salud
-sidebar_label: "🔸Indicadores de salud"
+sidebar_label: "Indicadores de salud"
 sidebar_position: 8
 description: Indicadores básicos de salud
 hide_table_of_contents: true
@@ -29,4 +29,4 @@ import matplotlib.pyplot as plt
 ```
 
   </TabItem>
-</Tabs>
+</Tabs><br />

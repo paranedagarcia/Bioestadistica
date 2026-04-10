@@ -1,7 +1,7 @@
 ---
 id: caso-diabetes
 title: Análisis de diabetes
-sidebar_label: "🔸Diabetes"
+sidebar_label: "Diabetes"
 sidebar_position: 3
 ---
 
@@ -48,4 +48,4 @@ summary(modelo_logit)
 predict(modelo_logit, data.frame(bmi = 35), type = "response")
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

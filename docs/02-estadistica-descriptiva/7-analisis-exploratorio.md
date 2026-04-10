@@ -1,7 +1,7 @@
 ---
 id: eda
 title: "Análisis exploratorio de datos"
-sidebar_label: "🔸Análisis exploratorio"
+sidebar_label: "Análisis exploratorio"
 sidebar_position: 7
 description: Análisis exploratorio
 ---
@@ -276,4 +276,4 @@ ggplot(df_long, aes(x = Caracteristica, y = Valor, fill = Caracteristica)) +
   labs(title = "Detección de Outliers en Características", x = "", y = "Valor (Escala 1-10)")
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

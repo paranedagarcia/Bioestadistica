@@ -1,7 +1,7 @@
 ---
 id: temas-cox
 title: Modelo de Cox
-sidebar_label: "🔸Modelo de Cox"
+sidebar_label: "Modelo de Cox"
 sidebar_position: 3
 ---
 

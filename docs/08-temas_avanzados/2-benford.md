@@ -1,7 +1,7 @@
 ---
 id: benford
 title: Ley de Benford
-sidebar_label: "🔸Ley de Benford"
+sidebar_label: "Ley de Benford"
 sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
@@ -169,7 +169,7 @@ En la mayoría de los casos verás que **la distribución se acerca bastante a l
 
     ```
   </TabItem>
-</Tabs>
+</Tabs><br />
 
 ### 🧪 Ejemplo adicional: precios aleatorios multiplicativos
 Los datos multiplicativos suelen seguir Benford
@@ -214,7 +214,7 @@ Este tipo de datos casi siempre sigue muy bien la Ley de Benford.
 
     ```
   </TabItem>
-</Tabs>
+</Tabs><br />
 
 <br />
 

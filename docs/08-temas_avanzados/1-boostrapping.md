@@ -1,7 +1,7 @@
 ---
 id: boostrapping
 title: Boostrapping
-sidebar_label: "🔸Boostrapping"
+sidebar_label: "Boostrapping"
 sidebar_position: 1
 ---
 import Tabs from '@theme/Tabs';
@@ -137,7 +137,7 @@ plt.show()
     Pendiente
     ```
   </TabItem>
-</Tabs>
+</Tabs><br />
 
 
 
@@ -189,12 +189,12 @@ print(ic_95)
 ## Tipos principales de intervalos de confianza con bootstrap
 
 
-### 🟦 1. Percentile Bootstrap (más usado, más simple)
+### 1. Percentile Bootstrap (más usado, más simple)
 
 El intervalo está dado simplemente por:
 
 ```math
-IC_ {95%} = $\hat{\theta}^*_{2.5}, \hat{\theta}^*_{97.5}
+IC_{95%} = $\hat{\theta}^*_{2.5}, \hat{\theta}^*_{97.5}
 ```
 
 Ventaja:
@@ -209,7 +209,7 @@ ic_95 = np.percentile(boot_stats, [2.5, 97.5])
 ```
 
 
-### 🟩 2. Normal Bootstrap (basado en error estándar)
+### 2. Normal Bootstrap (basado en error estándar)
 
 Assume aproximación normal:
 
@@ -230,7 +230,7 @@ Requiere normalidad aproximada → menos robusto.
 
 ---
 
-### 🟧 3. BCa Bootstrap (Bias-Corrected and Accelerated)
+### 3. BCa Bootstrap (Bias-Corrected and Accelerated)
 
 Método más riguroso desarrollado por Efron & Tibshirani.
 

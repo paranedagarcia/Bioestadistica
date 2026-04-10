@@ -1,7 +1,7 @@
 ---
 id: r-instalar
 title: Instalación
-sidebar_label: "▪️​Instalación"
+sidebar_label: "​Instalación"
 sidebar_position: 2
 ---
 

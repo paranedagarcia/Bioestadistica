@@ -1,8 +1,8 @@
 ---
 id: analisis-predictivo
 title: Análisis Predictivo
-sidebar_label: "🔹​Análisis Predictivo"
-sidebar_position: 4
+sidebar_label: "​Análisis Predictivo"
+sidebar_position: 1
 ---
 
 # El Análisis Predictivo: Regresión Lineal y Covarianza
@@ -31,9 +31,9 @@ La regresión lineal múltiple extiende este concepto para incorporar más de un
 
 Estos métodos son la base de muchas aplicaciones en la ciencia de datos. El comercio electrónico utiliza la regresión para analizar la relación entre el tiempo de permanencia en una página y las ventas. Los fabricantes usan el análisis de correlación para identificar factores que influyen en la calidad de un producto. Los economistas utilizan la regresión para modelar la relación entre el gasto en publicidad y las ventas de un producto. El aprendizaje automático y la inteligencia artificial se basan enormemente en estas bases estadísticas para crear modelos predictivos que impulsan sistemas de recomendación, detección de fraudes, diagnóstico médico y mucho más. Entender cómo funcionan la covarianza y la regresión no solo ayuda a analizar datos, sino que también proporciona una comprensión profunda de cómo se construyen muchos de los modelos que impulsan la tecnología moderna.
 
-# 1. Conceptos Fundamentales de Regresión
+## Conceptos Fundamentales de Regresión
 
-## 1.1 El Concepto Básico del Modelo
+## El Concepto Básico del Modelo
 Cualquier modelo estadístico describe una variable de respuesta (Y) como la suma de dos componentes [8]:
 
 ```math
@@ -42,11 +42,11 @@ Cualquier modelo estadístico describe una variable de respuesta (Y) como la sum
 
 El **Componente Sistemático** describe la variación de Y que puede ser explicada por el modelo (las variables $X$) [8]. El **Componente de Error** ($e_i$) representa la variación en Y que no se puede explicar; esto incluye errores de medición o la influencia de otras variables no incluidas [8].
 
-## 2. Regresión Lineal Simple (RLS)
+## Regresión Lineal Simple (RLS)
 
 La RLS asume que la relación entre la variable de respuesta ($Y$) y la variable predictora ($X$) se puede describir con una línea recta [3, 9].
 
-### 2.1 La Fórmula del Modelo RLS
+### La Fórmula del Modelo RLS
 El modelo de RLS para un sujeto $i$ se expresa como [8]:
 
 ```math
@@ -66,7 +66,7 @@ La parte sistemática, que es la línea recta que estamos estimando, es el valor
 \mu_{Y|X} = \beta_{0} + \beta_{1}X
 ```
 
-### 2.2 Relación con Modelos Lineales
+### Relación con Modelos Lineales
 La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si sus parámetros ($\beta_0, \beta_1$, etc.) no están en funciones complejas (como el exponente) [4].
 
 **Ejemplos de modelos considerados Lineales (por ser lineales en los $\beta$s) [4]:**
@@ -79,7 +79,7 @@ La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si s
     Y_{i} = \beta_{0} + \beta_{1}X_{i} + \beta_{2}X_{i}^{2} + e_{i}
     ```
 
-## 3. Modelos de Regresión No Lineal (MRNL)
+## Modelos de Regresión No Lineal (MRNL)
 
 Un modelo es considerado verdaderamente **No Lineal** si es no lineal en los parámetros ($\beta$s) [4].
 
@@ -89,18 +89,18 @@ Y_{i} = \beta_{0} + e^{\beta_{1}X_{i}}
 ```
 **Explicación:** Aquí, el parámetro $\beta_1$ está dentro de una función exponencial, lo que requiere métodos de estimación diferentes a los utilizados para los modelos de regresión lineal [4].
 
-## 4. Métodos de Validación y Adecuación del Modelo
+### Métodos de Validación y Adecuación del Modelo
 
 La validación es esencial para determinar si se cumplen los supuestos del modelo antes de realizar inferencias [11]. El procedimiento principal de validación es el **Análisis de Residuales** [12].
 
-### 4.1 Definición de Residual
+### Definición de Residual
 El residual ($\hat{e}_i$) es la diferencia entre el valor observado de Y ($y_i$) y el valor predicho ($\hat{y}_i$) por el modelo [12]:
 
 ```math
 \hat{e}_{i}=y_{i}-\hat{y}_{i}
 ```
 
-### 4.2 Verificación de Supuestos mediante Gráficos [13, 14]
+### Verificación de Supuestos mediante Gráficos [13, 14]
 
 | Supuesto | Método de Verificación | Indicación de Incumplimiento |
 | :--- | :--- | :--- |
@@ -108,17 +108,17 @@ El residual ($\hat{e}_i$) es la diferencia entre el valor observado de Y ($y_i$)
 | **Normalidad de Errores** | Histogramas y gráficos de probabilidad (Q-Q plots) de los residuales [13-15]. | Si los residuales no siguen aproximadamente una campana (distribución normal) en el histograma o una línea recta en el Q-Q plot [15]. |
 | **Detección de Valores Influyentes** | Estadísticas de diagnóstico (e.g., Cook's Distance, DFFITS) [16, 17]. | Valores extremadamente altos en estas estadísticas sugieren que ciertas observaciones tienen un impacto fuerte en los resultados de la regresión y deben ser revisadas [15, 18]. |
 
-## 5. Ejemplo de Código (RLS en Python)
+### Ejemplo de Código (RLS en Python)
 
 Este ejemplo ilustra cómo ajustar un Modelo de Regresión Lineal Simple (RLS) y cómo iniciar el análisis gráfico de residuales. Utilizamos datos ficticios donde el "Peso Corporal" (Y) se explica por la "Edad" (X).
 
-## 6. Modelos de Regresión Polinómica (MRP)
+## Modelos de Regresión Polinómica (MRP)
 
 Un Modelo de Regresión Polinómica se utiliza cuando existe una **asociación curvilínea** (curva) entre la variable de respuesta ($Y$) y la variable predictora ($X$) [12].
 
 A pesar de que la relación modelada es curva, se ajusta utilizando la metodología de Regresión Lineal Múltiple (MLRM) porque el modelo es **lineal en los parámetros** ($\beta$s) [12-14].
 
-### 6.1 Fórmula Matemática
+### órmula Matemática
 El modelo polinómico más común (cuadrático) incluye el predictor $X$ elevado a la segunda potencia:
 
 ```math
@@ -249,4 +249,4 @@ strong multicollinearity or other numerical problems.
 # Implementación en R
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

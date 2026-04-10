@@ -56,4 +56,4 @@ https://infima.dev/
 # Implementación en R
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

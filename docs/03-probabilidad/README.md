@@ -1,22 +1,61 @@
 ---
 id: probabilidad
-title: Probabilidad y Distribuciones
-sidebar_label: "🔸Probabilidad"
+title: "Probabilidad y Distribuciones"
+sidebar_label: "Probabilidad"
 sidebar_position: 1
 ---
 
-# Probabilidad y Distribuciones
+
 
 La **probabilidad** es la rama de las matemáticas que estudia la aleatoriedad y la incertidumbre. En bioestadística, es la base del razonamiento estadístico y la inferencia.
 
-# Fundamentos de la Incertidumbre: La Teoría de la Probabilidad
+## Fundamentos de Incertidumbre
 
 Para que la inferencia estadística funcione, es necesario contar con un lenguaje preciso para cuantificar la incertidumbre. Ese lenguaje es la **teoría de la probabilidad**. La probabilidad es una rama de las matemáticas que asigna un número entre 0 y 1 (o entre 0% y 100%) a la ocurrencia de un evento, donde 0 significa que es imposible y 1 significa que es seguro. En el contexto de la ciencia de datos, la probabilidad nos permite modelar y gestionar la aleatoriedad inherente a casi todos los fenómenos del mundo real. Desde la incertidumbre en las mediciones experimentales hasta la variabilidad en el comportamiento del consumidor, la probabilidad proporciona los instrumentos para expresar y analizar esta incertidumbre de manera sistemática.
 
 Un concepto central en la probabilidad es el de **variable aleatoria**. Una variable aleatoria es una función que asigna un resultado numérico a cada posible resultado de un experimento aleatorio. Hay dos tipos principales:
-*   **Variables Aleatorias Discretas:** Toman un número contable de valores, típicamente enteros. Ejemplos incluyen el número de caras al lanzar una moneda varias veces o el número de clientes que llegan a una tienda en una hora. La probabilidad de cada valor posible se describe mediante una **función de masa de probabilidad (PMF)**.
 
-*   **Variables Aleatorias Continuas:** Pueden tomar cualquier valor numérico dentro de un intervalo o rango continuo. Ejemplos incluyen la altura de una persona, el tiempo que tarda en llegar un autobús o la temperatura en un día determinado. La probabilidad de que una variable continua tome un valor específico es cero; en su lugar, se habla de la probabilidad de que caiga dentro de un cierto rango. Esta probabilidad se describe mediante una **función de densidad de probabilidad (PDF)**, donde el área bajo la curva entre dos puntos representa la probabilidad de que la variable caiga en ese intervalo.
+**Variables Aleatorias Discretas** 
+
+Toman un número contable de valores, típicamente enteros. Ejemplos incluyen el número de caras al lanzar una moneda varias veces o el número de clientes que llegan a una tienda en una hora. Una variable aleatoria es discreta cuando su rango de valores posibles es finito o "contablemente" infinito (puede organizarse en una secuencia numérica como 1,2,3,…). En el ámbito clínico, estas variables suelen ser el resultado de un proceso de conteo.
+
+La probabilidad de cada valor posible se describe mediante una **función de masa de probabilidad (PMF)**.
+
+Ejemplos:
+
+* Número de pacientes admitidos en una unidad de cuidados intensivos en una hora determinada.
+* Conteo de colonias bacterianas en una placa de Petri.
+* Número de cigarrillos consumidos diariamente por un paciente
+
+**Variables Aleatorias Continuas** 
+
+Pueden tomar cualquier valor numérico dentro de un intervalo o rango continuo. Ejemplos incluyen la altura de una persona, el tiempo que tarda en llegar un autobús o la temperatura en un día determinado. La probabilidad de que una variable continua tome un valor específico es cero; en su lugar, se habla de la probabilidad de que caiga dentro de un cierto rango. Esta probabilidad se describe mediante una **función de densidad de probabilidad (PDF)**, donde el área bajo la curva entre dos puntos representa la probabilidad de que la variable caiga en ese intervalo.
+
+Ejemplos:
+
+* Concentración de triglicéridos o glucosa en suero (mg/dL).
+* Índice de masa corporal (IMC) de un paciente.
+* Tiempo transcurrido hasta la recuperación tras una intervención quirúrgica
+
+
+
+
+### Diferencias Críticas y Comparativa
+
+La distinción entre ambos tipos de distribuciones radica en la naturaleza de su soporte y el tratamiento analítico de sus probabilidades:
+
+| Característica           | Distribución Discreta                                | Distribución Continua             |
+| :----------------------- | :--------------------------------------------------- | :-------------------------------- |
+| **Naturaleza**           | Basada en conteos.                                   | Basada en mediciones.             |
+| **Rango**                | Valores aislados y específicos.                      | Intervalos infinitos de valores.  |
+| **Probabilidad Puntual** | $P(X=x) = p(x) > 0$ para valores del rango.          | $P(X=x) = 0$ siempre.             |
+| **Operador Base**        | Sumatoria ($\sum$).                                  | Integral ($\int$).                |
+| **Forma de la CDF**      | Función escalonada con saltos en cada valor posible. | Curva suave y continua.           |
+| **Uso de Desigualdades** | $P(X < b) \ne P(X \le b)$.                           | $P(X < b) = P(X \le b)$.          |
+| **Gráficos Típicos**     | Diagrama de barras o bastones.                       | Curvas de densidad e histogramas. |
+
+Se debe considerar que aunque muchas variables son continuas por naturaleza (como el peso), los instrumentos de medición las "discretizan" al redondearlas (por ejemplo, al gramo más cercano). No obstante, el modelado matemático continuo suele ser más eficiente y preciso para el análisis de grandes cohortes de datos hospitalarios.
+
 
 A partir de las variables aleatorias, se definen las **distribuciones de probabilidad**, que describen cómo se distribuyen las probabilidades de los posibles valores de una variable aleatoria. Como mencionamos anteriormente, algunas distribuciones son tan comunes que se han convertido en herramientas esenciales en la ciencia de datos. La elección de una distribución para modelar un fenómeno de datos no es arbitraria; se basa en la naturaleza del problema: el tipo de datos (discreto o continuo), la simetría esperada, los límites de los valores y la frecuencia de los valores extremos.
 
@@ -48,13 +87,5 @@ La distribución normal está completamente definida por dos parámetros:
 * su media (μ), que determina el centro de la campana, y su desviación estándar (σ), que determina su anchura o dispersión. Una característica notable es la **regla empírica o regla 68-95-99.7**: aproximadamente el 68% de los datos caen dentro de una desviación estándar de la media, el 95% dentro de dos desviaciones estándar y el 99.7% dentro de tres. Esta regla proporciona una intuición rápida sobre la dispersión de los datos. 
 * la distribución normal estándar, con μ=0 y σ=1, es una versión universalizada que se usa para calcular probabilidades a través de los **puntajes z** (que indican cuántas desviaciones estándar está un valor de la media).
 
-### Distribución Binomial
 
-Otra distribución fundamental es la **binomial**. Modela el número de éxitos en un número fijo de ensayos independientes (*n*), donde cada ensayo tiene la misma probabilidad de éxito (*p*). Ejemplos clásicos incluyen el número de caras en 10 lanzamientos de una moneda justa o el número de pacientes que responden a un tratamiento en un ensayo clínico. La forma de la distribución binomial depende de *p*: es simétrica si *p*=0.5 y asimétrica si *p* es diferente de 0.5. Cuando el número de ensayos *n* es grande y la probabilidad de éxito *p* es pequeña, la distribución binomial puede aproximarse bien por una distribución de Poisson.
-
-### Distribución Exponencial
-
-Por último, la distribución **exponencial** está estrechamente relacionada con la distribución de Poisson. Mientras que la distribución de Poisson modela el número de eventos, la distribución exponencial modela el tiempo que transcurre entre dichos eventos en un proceso de Poisson. Es decir, si sabemos que los clientes llegan a un negocio a una tasa media de λ por hora (distribución de Poisson), la distribución exponencial nos dirá la probabilidad de cuánto tiempo pasará antes de que llegue el próximo cliente. Esta distribución es continua y esencial para modelar tiempos de vida útil o tiempos de espera.
-
-La elección de la distribución correcta es una habilidad crítica. Por ejemplo, la resolución de un sensor de precisión podría modelarse con una distribución rectangular (donde todos los valores dentro de un rango son igualmente probables). El tiempo de respuesta de un servidor web podría seguir una distribución exponencial. La distribución log-normal, que es asimétrica hacia la derecha, es útil para modelar variables que no pueden ser negativas y tienen una larga cola a la derecha, como los salarios o el tamaño de las células. El GUM (Guía para la Expresión de la Incertidumbre en el Metrología) recomienda estas distribuciones según el tipo de conocimiento disponible sobre los límites y la probabilidad de los valores. Dominar estas distribuciones permite al científico de datos construir modelos más realistas y robustos, capaces de capturar la esencia de los datos que están analizando.
 

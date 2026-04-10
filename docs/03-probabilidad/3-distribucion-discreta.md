@@ -1,12 +1,9 @@
 ---
-id: distribuciones
-title: Distribuciones estadísticas
-sidebar_label: "🔸​Distribuciones estadísticas"
-sidebar_position: 4
+id: distribucion-discreta
+title: "Distribución discreta"
+sidebar_label: "Distribución discreta"
+sidebar_position: 3
 ---
-
-
-# Distribuciones discretas
 
 
 ## Distribución de Bernoulli
@@ -61,6 +58,28 @@ En el ámbito biomédico, la distribución de Bernoulli es indispensable para ca
 * **Genética:** La presencia o ausencia de un alelo específico vinculado a enfermedades como el Alzheimer.
 * **Informática Médica:** El análisis de errores en el procesamiento de datos por software hospitalario (presencia de error = 1, ausencia = 0).
 
+## Determinación
+
+La detección de un problema que requiere un modelado mediante una **distribución de Bernoulli** se fundamenta en la identificación de procesos estocásticos elementales donde la incertidumbre se reduce a una respuesta binaria. Este modelo es el "átomo" de las distribuciones discretas y sirve como base para estructuras más complejas como la binomial y la geométrica.
+
+Para determinar si un fenómeno clínico debe abordarse bajo este esquema, se deben verificar los siguientes criterios operativos y estructurales:
+
+#### 1. Naturaleza Dicotómica del Resultado
+La característica primordial es que el experimento o proceso de observación solo puede resultar en uno de dos resultados posibles y mutuamente excluyentes. Estos resultados se denominan arbitrariamente como "éxito" ($X=1$) y "fracaso" ($X=0$).
+
+*   **Detección práctica:** El investigador debe preguntarse si la variable objetivo responde a una clasificación binaria pura.
+*   **Ejemplos médicos:** Un test serológico de VIH (positivo o negativo), la supervivencia de un paciente a 30 días (vivo o fallecido), o la presencia de una mutación genética específica en una secuencia de ADN (presente o ausente).
+
+#### 2. Estructura Unitaria del Ensayo
+A diferencia de la distribución binomial, que contabiliza éxitos en varios intentos, la distribución de Bernoulli se aplica estrictamente cuando el experimento se ejecuta **una sola vez** ($n=1$). Si el problema implica una serie de eventos, estamos ante un proceso de Bernoulli, pero la distribución de Bernoulli *per se* solo describe el resultado de un único ensayo individual.
+
+#### 3. Independencia y Probabilidad Constante
+Para que un fenómeno sea tratado como un ensayo de Bernoulli dentro de un modelo mayor, se debe asumir que la probabilidad de éxito ($p$) es un parámetro fijo y que el resultado de un ensayo no afecta a otros potenciales ensayos (independencia).
+
+
+El informático médico detecta la necesidad de este modelo cuando diseña sistemas de soporte a la decisión clínica (CDSS) que operan sobre variables de estado. Por ejemplo, al modelar la probabilidad de que un algoritmo de inteligencia artificial clasifique correctamente una imagen radiológica como "patológica", el resultado de cada clasificación individual es una variable de Bernoulli.
+
+
 <br />
 #### 📝 Programación:
 <Tabs>
@@ -79,7 +98,7 @@ En el ámbito biomédico, la distribución de Bernoulli es indispensable para ca
 # Implementación en R
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 
 ## Distribución Binomial
@@ -96,7 +115,8 @@ Posteriormente, en el siglo XVIII, **Abraham de Moivre** introdujo la aproximaci
 Una variable aleatoria discreta $X$ sigue una distribución binomial si representa el número de éxitos en $n$ ensayos de Bernoulli independientes.
 
 #### Función de Masa de Probabilidad (PMF)
-La probabilidad de observar exactamente $x$ éxitos en $n$ intentos se define como:
+La distribución binomial modela la variable aleatoria $X$, definida como el **número total de éxitos** obtenidos tras ejecutar los $n$ ensayos de Bernoulli. La probabilidad de observar exactamente $p$ éxitos se calcula mediante la función masa de probabilidad (PMF):
+
 ```math
 P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}
 ```
@@ -129,19 +149,49 @@ Para que un fenómeno biológico o médico pueda ser modelado rigurosamente medi
 
 **Nota sobre el muestreo:** A menudo se muestrea de poblaciones finitas sin reemplazo (lo que técnicamente sugeriría una distribución hipergeométrica). Sin embargo, se acepta el uso de la binomial si el tamaño de la muestra $n$ es menor al 5% del tamaño de la población $N$, ya que la probabilidad $p$ se mantiene virtualmente constante.
 
-### Usos
-La distribución binomial es la piedra angular para el análisis de variables cualitativas dicotómicas:
-
-*   **Epidemiología:** Estimar la prevalencia de una enfermedad en una comunidad (ej. casos positivos de influenza H1N1 en una muestra de 500 sujetos).
-*   **Diagnóstico Clínico:** Calcular la probabilidad de obtener un número específico de resultados positivos en pruebas serológicas (como el VIH).
-*   **Genética:** Modelar la proporción de una población que posee un gen vinculado a enfermedades complejas como el Alzheimer.
-*   **Farmacología:** Evaluar la tasa de éxito de un nuevo tratamiento quirúrgico o medicamento en ensayos clínicos.
 
 #### Implementación en el Entorno R
 El software R proporciona funciones nativas para gestionar esta distribución sin necesidad de cálculos manuales complejos:
 *   `dbinom(x, n, p)`: Calcula la probabilidad exacta de $x$ éxitos.
 *   `pbinom(x, n, p)`: Calcula la probabilidad acumulada (útil para pruebas de hipótesis).
 *   `rbinom(m, n, p)`: Genera $m$ valores aleatorios siguiendo una distribución binomial.
+
+
+## Determinación
+
+Para identificar si un fenómeno en el ámbito de la investigación clínica debe ser abordado mediante una **distribución binomial**, es imperativo verificar que la estructura del problema satisfaga rigurosamente cuatro criterios fundamentales, conocidos técnicamente como el modelo de ensayos independientes.
+
+### Criterios de Detección (Propiedades Estructurales)
+
+Un problema se rige por una ley binomial cuando presenta las siguientes características esenciales:
+
+1.  **Naturaleza Dicotómica:** Cada observación o "ensayo" debe dar como resultado únicamente una de dos categorías mutuamente excluyentes y exhaustivas. En medicina, estas suelen ser éxito/fracaso, enfermo/sano, positivo/negativo o fallecido/vivo.
+
+2.  **Número de Ensayos Fijo ($n$):** El experimento consiste en una secuencia de $n$ ensayos, donde este número total de observaciones se determina de forma previa a la recolección de los datos.
+
+3.  **Independencia de los Ensayos:** El resultado de una observación no debe influir ni estar condicionado por el resultado de otra. Por ejemplo, en un muestreo aleatorio de pacientes independientes, el estado de salud de uno no aporta información sobre el estado del siguiente.
+
+4.  **Probabilidad de Éxito Constante ($p$):** La probabilidad de que ocurra el evento de interés (éxito) debe permanecer invariable en cada uno de los ensayos.
+
+
+
+### Reglas de Decisión Metodológica
+
+Se debe prestar atención a dos escenarios críticos que podrían desviar el modelo hacia otras distribuciones:
+
+*   **Población Finita vs. Infinita:** Si el muestreo se realiza **sin reemplazo** en una población pequeña, la probabilidad $p$ cambia en cada ensayo, violando el supuesto de independencia. En este caso, debería usarse la **distribución hipergeométrica**. No obstante, se puede utilizar la aproximación binomial si el tamaño de la muestra es insignificante respecto a la población (regla empírica: $n/N \le 0.05$).
+*   **Aproximación de Poisson:** Cuando $n$ es muy grande y $p$ es muy pequeña (generalmente $np < 7$), se puede optar por la **distribución de Poisson** para simplificar el análisis de "eventos raros".
+
+### Ejemplos
+La distribución binomial es la piedra angular para el análisis de variables cualitativas dicotómicas:
+*   **Pruebas diagnósticas:** Determinar la probabilidad de encontrar 2 resultados positivos en una muestra de 20 sujetos elegidos al azar, dada una prevalencia conocida.
+*   **Eficacia de tratamientos:** Estimar el número de pacientes que experimentarán mejoría tras la administración de un fármaco en una cohorte fija.
+*   **Complicaciones clínicas:** Modelar el número de mujeres embarazadas que presentan complicaciones durante el parto de un total de 100 pacientes.
+*   **Epidemiología:** Estimar la prevalencia de una enfermedad en una comunidad (ej. casos positivos de influenza H1N1 en una muestra de 500 sujetos).
+*   **Diagnóstico Clínico:** Calcular la probabilidad de obtener un número específico de resultados positivos en pruebas serológicas (como el VIH).
+*   **Genética:** Modelar la proporción de una población que posee un gen vinculado a enfermedades complejas como el Alzheimer.
+*   **Farmacología:** Evaluar la tasa de éxito de un nuevo tratamiento quirúrgico o medicamento en ensayos clínicos.
+
 
 <br />
 #### 📝 Programación:
@@ -204,7 +254,7 @@ Probabilidad de encontrar 3 o menos enfermos: 0.8670467
 ![binomial](img/binomial.png)
 
 </TabItem>
-</Tabs>
+</Tabs><br />
 
 
 <br />
@@ -213,10 +263,10 @@ Probabilidad de encontrar 3 o menos enfermos: 0.8670467
 
 La **Distribución de Poisson** constituye uno de los pilares de la probabilidad discreta, siendo esencial para modelar fenómenos biológicos y operativos caracterizados por el recuento de eventos aleatorios que ocurren con una tasa constante en un intervalo continuo de tiempo o espacio.
 
-### 1. Contexto Histórico
+### Contexto Histórico
 Esta distribución debe su nombre al matemático y físico francés **Siméon-Denis Poisson** (1781-1840), quien desarrolló el concepto a partir de sus investigaciones en mecánica celeste y teoría de números. Fue formalmente introducida en su obra de 1837 como una forma límite de la distribución binomial para casos donde el número de ensayos es muy grande y la probabilidad de éxito es sumamente pequeña. Históricamente, también se le ha denominado la "ley de los sucesos raros".
 
-### 2. Definición y Formulación Matemática
+### Definición y Formulación Matemática
 La distribución de Poisson describe la probabilidad de observar exactamente $k$ eventos en un intervalo determinado, dado que se conoce el número promedio de ocurrencias.
 
 La **Función de Masa de Probabilidad (PMF)** se define como:
@@ -233,7 +283,7 @@ Donde los componentes son:
 
 En el marco de los modelos estadísticos avanzados, la distribución de Poisson pertenece a la **familia exponencial** de distribuciones, donde su parámetro natural se define como $\theta = \ln(\lambda)$.
 
-### 3. Fundamentos: El Proceso de Poisson
+### Fundamentos: El Proceso de Poisson
 Para que un fenómeno se considere un experimento o **proceso de Poisson**, deben satisfacerse las siguientes condiciones de rigor científico:
 - **Independencia**: La ocurrencia de un evento en un intervalo no influye en la probabilidad de que ocurra en otro intervalo distinto.
 - **Proporcionalidad**: La probabilidad de que ocurra un solo evento en un subintervalo muy pequeño es proporcional a la longitud de dicho intervalo ($\lambda \Delta t$).
@@ -245,7 +295,7 @@ Para que un fenómeno se considere un experimento o **proceso de Poisson**, debe
 *   **Relación con la Distribución Exponencial**: Si el número de eventos sigue una distribución de Poisson, el tiempo transcurrido entre dos eventos sucesivos sigue una **distribución exponencial** con parámetro $\lambda$.
 *   **Convergencia**: A medida que $\lambda$ aumenta (típicamente $\lambda \ge 10$ o $\ge 100$ para mayor rigor), la distribución de Poisson se vuelve simétrica y puede ser aproximada satisfactoriamente por la **distribución normal**.
 
-### 4. Aplicaciones en Salud
+### Aplicaciones en Salud
 En la práctica clínica y la gestión sanitaria, la distribución de Poisson es indispensable para:
 *   **Análisis de Datos Clínicos**: Modelado del conteo de glóbulos blancos en una muestra de sangre, eosinófilos en un campo microscópico o desintegraciones radiactivas en medicina nuclear.
 *   **Epidemiología**: Estimación de la incidencia de enfermedades raras, como casos de cáncer en una comunidad específica o mortalidad materna.
@@ -316,141 +366,5 @@ Media de la simulación anual: 2.983562
 ```
 ![poisson](img/poisson.png)
 </TabItem>
-</Tabs>
+</Tabs><br />
 <br />
-
-# Distribuciones continuas
-
-## Distribución t de Student
-
-La **Distribución t de Student** es una distribución de probabilidad continua de fundamental importancia en la bioestadística, especialmente diseñada para realizar inferencias sobre la media poblacional cuando el tamaño de la muestra es reducido y la varianza de la población es desconocida.
-
-### 1. Contexto Histórico
-La génesis de esta distribución se remonta a 1908, fruto del trabajo de **William Sealy Gosset**, un químico y matemático que laboraba para la cervecería Guinness en Dublín. Gosset buscaba mejorar los procesos de control de calidad de la cerveza mediante el examen de muestras pequeñas, observando que en estas condiciones la distribución normal no capturaba adecuadamente la variabilidad de las medias. Debido a las estrictas políticas de su empleador sobre la divulgación de secretos comerciales (como el uso de herramientas estadísticas en la producción), se vio obligado a publicar sus hallazgos bajo el seudónimo de **"Student"**. Posteriormente, el eminente estadístico **R. A. Fisher** reconoció la trascendencia del trabajo de Gosset, introdujo formalmente el concepto de "grados de libertad" y extendió su aplicación al análisis de comparación de medias.
-
-### 2. Definición y Formulación Matemática
-Desde una perspectiva teórica, la distribución t surge al considerar el cociente entre una variable normal estándar y la raíz cuadrada de una variable chi-cuadrado independiente dividida por sus grados de libertad.
-
-#### Función de Densidad de Probabilidad (fdp)
-Para una variable aleatoria continua $x$ con $\nu$ grados de libertad, la función de densidad se expresa como:
-
-```math
-f(x; \nu) = \frac{\Gamma[(\nu+1)/2]}{\sqrt{\nu\pi}\Gamma(\nu/2)} \left(1 + \frac{x^2}{\nu}\right)^{-(\nu+1)/2}
-```
-
-Donde:
-*   **$\nu$ (nu):** Representa los grados de libertad, calculados típicamente como $n-1$ para una muestra de tamaño $n$.
-*   **$\Gamma$ (Gamma):** Es la función gamma, una extensión del concepto de factorial a números reales.
-*   **$\pi$ (pi):** Constante matemática $(\approx 3.14159)$.
-
-#### El Estadístico t
-En la práctica clínica, para contrastar una media muestral ($\overline{X}$) contra una media poblacional hipotética ($\mu$), se utiliza la fórmula:
-$$t = \frac{\overline{X} - \mu}{S / \sqrt{n}}$$
-
-**Significado de sus componentes:**
-*   **$\overline{X}$ (Media muestral):** El promedio calculado a partir de los datos observados.
-*   **$\mu$ (Media poblacional):** El valor esperado o parámetro de referencia en la población.
-*   **$S$ (Desviación estándar muestral):** Estimación de la variabilidad biológica dentro de la muestra; sustituye a la desviación típica poblacional $\sigma$ cuando esta es desconocida.
-*   **$n$:** El tamaño de la muestra.
-*   **$S / \sqrt{n}$ (Error Estándar de la Media o SEM):** Representa la precisión de la media muestral como estimador de la poblacional; cuantifica el "ruido" aleatorio en la medición.
-
-### 3. Fundamento y Propiedades
-La distribución t se fundamenta en la necesidad de corregir la incertidumbre adicional que surge al estimar la varianza de la población a partir de una muestra pequeña.
-
-*   **Simetría:** Al igual que la distribución normal, es simétrica respecto al valor cero y presenta una forma acampanada (unimodal).
-
-*   **Colas Pesadas ("Heavy Tails"):** Una propiedad crítica en medicina es que la curva t es más aplanada y posee colas más gruesas que la normal. Esto implica que, en muestras pequeñas, existe una mayor probabilidad de observar valores extremos alejados de la media, lo cual es vital para no subestimar riesgos clínicos.
-
-*   **Convergencia:** A medida que el tamaño de la muestra $n$ aumenta (y por ende los grados de libertad), la estimación de $S$ se vuelve más precisa y la distribución t converge hacia la distribución normal estándar $N(0,1)$. En la práctica de postgrado, suele considerarse que para $n > 30$ la aproximación a la normal es aceptable, aunque el rigor exige el uso de t en cualquier caso donde la varianza poblacional sea desconocida.
-
-<br />
-#### 📝 Programación:
-<Tabs>
-<TabItem value="mnp" label="Antecedentes" default>
-<div class="alert alert--primary">
-**Distribución t de Student**<br />
-</div>
-</TabItem>
-<TabItem value="mnp-python" label="Pyhton" default>
-```python showLineNumbers
-# Implementación en Python
-```
-</TabItem>
-<TabItem value="mnp-r" label="R" default>
-```r showLineNumbers
-# Implementación en R
-```
-</TabItem>
-</Tabs>
-
-### 4. Usos en Salud
-La aplicación de la t de Student es ubicua en la investigación biomédica para la validación de hipótesis.
-
-- **Estimación por Intervalos de Confianza:** Permite delimitar el rango de valores donde se encuentra la verdadera media de una variable (ej. nivel de glucosa) con una confianza determinada (ej. 95%).
-    ```math
-    IC = \overline{x} \pm t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}
-    ```
-
-- **Prueba t de una muestra:** Para determinar si la media de un grupo de pacientes difiere de un estándar clínico conocido (ej. ¿es la tensión arterial media superior a lo normal?).
-
-- **Prueba t para muestras independientes:** Crucial en ensayos clínicos para comparar la eficacia de dos tratamientos distintos (ej. fármaco nuevo vs. placebo).
-
-- **Prueba t para muestras apareadas:** Se utiliza cuando se mide al mismo paciente antes y después de una intervención, eliminando la variabilidad entre individuos y aumentando la eficiencia estadística.
-
-- **Regresión Lineal:** Se emplea para testar si los coeficientes de un modelo predictivo ($\beta$) son significativamente distintos de cero, validando así la relación entre predictores y resultados de salud.
-
-<br />
-
-## Distribución chi-cuadrado
-
-La **distribución chi-cuadrado ($\chi^2$)** es una de las distribuciones de probabilidad continua más trascendentales en la informática médica y la investigación clínica, siendo el pilar fundamental para el análisis de datos categóricos y la estimación de la variabilidad poblacional. Formalmente, se define como la distribución que sigue la suma de los cuadrados de $k$ variables aleatorias independientes que siguen una distribución normal estándar ($Z \sim N(0,1)$).
-
-### 1. Marco Conceptual y Propiedades Matemáticas
-
-La morfología de esta distribución depende exclusivamente de un parámetro denominado **grados de libertad ($v$ o $df$)**. 
-* **No negatividad:** Dado que es una suma de cuadrados, la variable $\chi^2$ solo puede tomar valores entre $0$ e $+\infty$.
-* **Asimetría:** La distribución presenta un sesgo positivo (hacia la derecha). No obstante, a medida que los grados de libertad aumentan ($v \rightarrow \infty$), la distribución se vuelve más simétrica y tiende asintóticamente a la distribución normal.
-* **Momentos:** La media de una distribución chi-cuadrado es igual a sus grados de libertad ($E[X] = v$) y su varianza es el doble de los mismos ($Var[X] = 2v$).
-
-### 2. El Estadístico de Pearson
-
-En bioestadística, la aplicación más ubicua se realiza a través del estadístico de Pearson, que permite cuantificar la discrepancia entre las frecuencias observadas en una muestra y las esperadas bajo un modelo teórico. La fórmula general es:
-
-```math
-\chi^{2} = \sum_{i=1}^{k} \frac{(O_{i} - E_{i})^{2}}{E_{i}}
-```
-
-Donde:
-* **$O_i$**: Es la frecuencia observada en la categoría $i$.
-* **$E_i$**: Es la frecuencia esperada teóricamente para dicha categoría.
-* **$k$**: Representa el número de clases o categorías.
-
-### 3. Implicancias y Aplicaciones en Bioestadística
-
-#### A. Pruebas de Bondad de Ajuste (*Goodness-of-Fit*)
-Se utiliza para determinar si los datos de una muestra se ajustan a una distribución teórica específica (como la Normal, Poisson o Binomial). Un ejemplo clásico en genética médica es verificar si las frecuencias observadas de fenotipos en una descendencia cumplen con las **Leyes de Mendel**. Si el valor calculado de $\chi^2$ es pequeño, los datos son consistentes con la teoría; si es inusualmente grande, se rechaza el modelo.
-
-#### B. Pruebas de Independencia y Homogeneidad
-Mediante el uso de **tablas de contingencia ($r \times c$)**, se evalúa si existe asociación entre dos variables categóricas (ej. relación entre el hábito de fumar y el desarrollo de cáncer). En este contexto, los grados de libertad se calculan como $gl = (r-1) \times (c-1)$, donde $r$ es el número de filas y $c$ el de columnas.
-
-#### C. Inferencia sobre la Varianza Poblacional
-A diferencia de otras pruebas, la distribución $\chi^2$ permite construir intervalos de confianza y realizar contrastes de hipótesis para la varianza ($\sigma^2$) de una población normal. El estadístico pivote utilizado es:
-
-```math
-\chi^{2} = \frac{(n - 1)s^{2}}{\sigma^{2}}
-```
-
-Donde $s^2$ es la varianza muestral y $n$ el tamaño de la muestra. Esto es vital en informática médica para el **control de calidad** de instrumentos de medición que requieren una precisión estricta.
-
-#### D. Modelado Avanzado: Regresión Logística y Genética
-En modelos de regresión logística, la distribución chi-cuadrado se emplea para evaluar la **devianza** (bondad de ajuste del modelo multivariado) y en la **prueba de Wald** para determinar la significancia de los coeficientes de regresión ($\beta$). En genética de poblaciones, es la herramienta estándar para probar el **Equilibrio de Hardy-Weinberg** y el desequilibrio de ligamiento.
-
-### 4. Limitaciones y Requisitos Técnicos
-Para que la aproximación a la distribución chi-cuadrado sea válida, se deben cumplir criterios de tamaño muestral:
-1.  Las observaciones deben ser independientes entre sí.
-2.  Las frecuencias esperadas ($E_i$) deben ser, por lo general, $\ge 5$ en al menos el 80% de las celdas, y ninguna debe ser $< 1$. En muestras pequeñas que violan estos supuestos, se recomienda el uso de la **Prueba Exacta de Fisher**.
-
-
-<br />
-
-

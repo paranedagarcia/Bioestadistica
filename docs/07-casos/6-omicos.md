@@ -1,7 +1,7 @@
 ---
 id: casos-omicos
 title: Datos omicos
-sidebar_label: "🔸Datos omicos"
+sidebar_label: "Datos omicos"
 sidebar_position: 6
 ---
 
@@ -44,4 +44,4 @@ plot(pca_res$x[, 1:2], col = as.factor(NCI60$labs), pch = 19,
      xlab = "Componente Principal 1", ylab = "Componente Principal 2")
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

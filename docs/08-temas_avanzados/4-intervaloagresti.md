@@ -1,7 +1,7 @@
 ---
 id: temas-agresti
 title: Intervalo Agresti-Coull
-sidebar_label: "🔸Intervalo Agresti-Coull"
+sidebar_label: "Intervalo Agresti-Coull"
 sidebar_position: 4
 ---
 

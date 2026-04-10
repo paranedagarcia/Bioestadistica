@@ -1,7 +1,7 @@
 ---
 id: noexperimental
 title: "Diseño no experimental"
-sidebar_label: "🔸No experimental"
+sidebar_label: "No experimental"
 sidebar_position: 3
 description: "Diseños no experimentales en biomedicina"
 ---
@@ -366,4 +366,4 @@ main <- function() {
 main()
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

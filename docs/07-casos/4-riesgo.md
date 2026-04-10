@@ -1,7 +1,7 @@
 ---
 id: caso-riesgo
 title: Análisis de riesgo
-sidebar_label: "🔸Análisis de riesgo"
+sidebar_label: "Análisis de riesgo"
 sidebar_position: 4
 ---
 
@@ -42,4 +42,4 @@ fit_cox <- coxph(Surv(futime, fustat) ~ age + ecog.ps, data = ovarian)
 summary(fit_cox)
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />

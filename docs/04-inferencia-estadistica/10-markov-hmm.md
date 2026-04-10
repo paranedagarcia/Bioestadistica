@@ -1,7 +1,7 @@
 ---
 id: markov-hmm
 title: Modelo de Markov HMM
-sidebar_label: "🔹​Modelo oculto Markov"
+sidebar_label: "​Modelo oculto Markov"
 sidebar_position: 10
 ---
 

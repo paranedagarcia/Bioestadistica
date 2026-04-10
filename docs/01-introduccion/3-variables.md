@@ -1,7 +1,7 @@
 ---
 id: variables
 title: Tipos de variables
-sidebar_label: "🔸Variables"
+sidebar_label: "Variables"
 sidebar_position: 3
 ---
 
@@ -264,4 +264,4 @@ independientes_vs_dependientes()
 
 ```
 </TabItem>
-</Tabs>
+</Tabs><br />
