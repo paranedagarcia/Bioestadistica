@@ -72,18 +72,62 @@ El software R proporciona funciones nativas para gestionar esta distribución si
 <br />
 #### 📝 Programación:
 <Tabs>
-<TabItem value="python" label="Python" default>
+<TabItem value="db" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Distribución binomial**<br />
+Supongamos que un investigador desea estudiar la presencia de una enfermedad cuya prevalencia en la población es del 10% (p=0.1) en una cohorte de 20 pacientes (n=20). El siguiente script utiliza las funciones nativas de R para calcular probabilidades específicas y generar visualizaciones.
+</div>
+</TabItem>
+<TabItem value="dbp" label="Python" default>
 ```python showLineNumbers
 # Implementación en Python
 
 ```
 
 </TabItem>
-<TabItem value="r" label="R">
+<TabItem value="dbr" label="R">
 ```r showLineNumbers
 # Implementación en en R
+# --- Script: Simulación de Distribución Binomial en Salud ---
 
+# 1. Definición de Parámetros
+n_pacientes <- 20    # Tamaño de la muestra (n)
+p_prevalencia <- 0.1 # Probabilidad de éxito (p)
+k_exitos <- 0:n_pacientes
+
+# 2. Cálculo de la Función de Masa de Probabilidad (PMF)
+# ¿Cuál es la probabilidad de encontrar exactamente 'x' enfermos?
+probabilidades <- dbinom(k_exitos, size = n_pacientes, prob = p_prevalencia)
+
+# 3. Cálculo de la Probabilidad Acumulada
+# ¿Cuál es la probabilidad de encontrar 3 o menos enfermos?
+prob_acumulada_3 <- pbinom(3, size = n_pacientes, prob = p_prevalencia)
+
+# 4. Generación de una muestra aleatoria
+# Simulamos 100 cohortes de 20 pacientes cada una
+set.seed(1234)
+simulacion_cohortes <- rbinom(n = 100, size = n_pacientes, prob = p_prevalencia)
+
+# 5. Visualización Científica
+barplot(probabilidades, 
+        names.arg = k_exitos, 
+        main = "Distribución Binomial: Detección de Patología (n=20, p=0.1)",
+        xlab = "Número de Pacientes Enfermos (k)", 
+        ylab = "Probabilidad P(X=k)",
+        col = "steelblue",
+        border = "white")
+
+# 6. Salida de resultados clave
+cat("Esperanza Matemática (E[X]):", n_pacientes * p_prevalencia, "pacientes\n")
+cat("Probabilidad de encontrar exactamente 2 enfermos:", probabilidades[16], "\n")
+cat("Probabilidad de encontrar 3 o menos enfermos:", prob_acumulada_3, "\n")
+
+# resultado
+Esperanza Matemática (E[X]): 2 pacientes
+Probabilidad de encontrar exactamente 2 enfermos: 9.154957e-12 
+Probabilidad de encontrar 3 o menos enfermos: 0.8670467 
 ```
+![binomial](img/binomial.png)
 
 </TabItem>
 </Tabs>
@@ -135,6 +179,70 @@ En la práctica clínica y la gestión sanitaria, la distribución de Poisson es
 *   **Informática y Bioinformática**: Análisis del flujo de paquetes en redes de telemedicina, número de solicitudes a servidores web de salud o errores en secuencias genéticas.
 *   **Seguridad del Paciente**: Registro de accidentes laborales, fallas de equipos médicos por unidad de tiempo o errores de medicación en farmacia hospitalaria.
 
+**Validación de supuestos**: Al trabajar con grandes bases de datos (como el ACL o registros hospitalarios), es común realizar pruebas de bondad de ajuste para verificar si los conteos clínicos siguen realmente una distribución de Poisson o si presentan sobre-dispersión (donde la varianza supera a la media), caso en el cual se preferiría una distribución binomial negativa.
+
+**Uso de la aproximación**: La distribución de Poisson es útil para aproximar la binomial cuando el tamaño de la muestra (n) es muy grande y la probabilidad del evento (p) es muy pequeña (menor a 7).
+
+**Análisis de Tasas**: En epidemiología, el modelo de Poisson es la base para la Regresión de Poisson, la cual permite modelar la densidad de incidencia (casos por persona-tiempo) ajustando por covariables como edad, sexo o exposición a factores de riesgo.
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="dpa" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Distribución de Poisson**<br />
+Supongamos que un administrador hospitalario determina que el promedio de admisiones diarias por una patología específica en la unidad de cuidados intensivos es de 3 pacientes (λ=3). El siguiente script implementa las funciones nativas de R para el análisis de este escenario.
+</div>
+</TabItem>
+<TabItem value="dp-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="dp-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+# --- Script de R: Distribución de Poisson en Entorno Clínico ---
+
+# 1. Configuración de parámetros
+set.seed(1234) # Garantiza la reproductibilidad del experimento 
+lambda_diaria <- 3  # Promedio de admisiones (parámetro lambda) 
+k_eventos <- 0:10   # Rango de posibles ingresos a evaluar
+
+# 2. Cálculo de la Función de Masa de Probabilidad (dpois)
+# Determina la probabilidad de observar exactamente k ingresos 
+prob_exactas <- dpois(k_eventos, lambda = lambda_diaria)
+
+# 3. Cálculo de la Función de Distribución Acumulada (ppois)
+# Probabilidad de recibir 2 o menos pacientes: P(X <= 2)
+prob_acum_2 <- ppois(2, lambda = lambda_diaria)
+
+# 4. Generación de datos simulados (rpois)
+# Simulación del número de ingresos diarios durante un año (365 días)
+simulacion_anual <- rpois(365, lambda = lambda_diaria)
+
+# 5. Visualización científica del modelo teórico
+# Representación mediante gráfico de bastones para variable discreta
+barplot(prob_exactas, 
+        names.arg = k_eventos, 
+        main = expression(paste("Distribución de Poisson (", lambda, " = 3 admissions/día)")),
+        xlab = "Número de pacientes admitidos (k)", 
+        ylab = "Probabilidad P(X = k)",
+        col = "darkseagreen",
+        border = "white")
+
+# 6. Reporte de resultados clave
+cat("Probabilidad de recibir exactamente 3 pacientes:", dpois(3, lambda_diaria), "\n")
+cat("Probabilidad de recibir 2 o menos pacientes:", prob_acum_2, "\n")
+cat("Media de la simulación anual:", mean(simulacion_anual), "\n")
+
+# resultado
+Probabilidad de recibir exactamente 3 pacientes: 0.2240418 
+Probabilidad de recibir 2 o menos pacientes: 0.4231901 
+Media de la simulación anual: 2.983562 
+```
+![poisson](img/poisson.png)
+</TabItem>
+</Tabs>
 <br />
 
 # Distribuciones continuas
@@ -180,6 +288,26 @@ La distribución t se fundamenta en la necesidad de corregir la incertidumbre ad
 *   **Colas Pesadas ("Heavy Tails"):** Una propiedad crítica en medicina es que la curva t es más aplanada y posee colas más gruesas que la normal. Esto implica que, en muestras pequeñas, existe una mayor probabilidad de observar valores extremos alejados de la media, lo cual es vital para no subestimar riesgos clínicos.
 
 *   **Convergencia:** A medida que el tamaño de la muestra $n$ aumenta (y por ende los grados de libertad), la estimación de $S$ se vuelve más precisa y la distribución t converge hacia la distribución normal estándar $N(0,1)$. En la práctica de postgrado, suele considerarse que para $n > 30$ la aproximación a la normal es aceptable, aunque el rigor exige el uso de t en cualquier caso donde la varianza poblacional sea desconocida.
+
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="mnp" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Distribución t de Student**<br />
+</div>
+</TabItem>
+<TabItem value="mnp-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="mnp-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs>
 
 ### 4. Usos en Salud
 La aplicación de la t de Student es ubicua en la investigación biomédica para la validación de hipótesis.
