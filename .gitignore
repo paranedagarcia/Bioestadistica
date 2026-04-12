@@ -5,6 +5,7 @@
 /dist
 /build
 /.github
+/renv
 
 # Production
 /build
