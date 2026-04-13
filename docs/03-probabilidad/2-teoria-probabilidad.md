@@ -7,23 +7,23 @@ sidebar_position: 2
 
 
 
-## 🎲 1. Introducción a la Teoría de la Probabilidad
+## Introducción a la Teoría de la Probabilidad
 
 La **probabilidad** es una rama de las matemáticas que se encarga de cuantificar la **incertidumbre**. Nos permite asignar un valor numérico entre 0 (imposible) y 1 (certeza) a la posibilidad de que ocurra un evento.
 
-### 🔑 Conceptos Clave
+### Conceptos Clave
 
   * **Experimento Aleatorio:** Cualquier proceso cuyo resultado no se puede predecir con certeza (ejemplo: lanzar un dado).
   * **Espacio Muestral ($\Omega$):** El conjunto de todos los posibles resultados de un experimento aleatorio (ejemplo: al lanzar un dado, $\Omega = \{1, 2, 3, 4, 5, 6\}$).
   * **Evento (E):** Un subconjunto del espacio muestral, es decir, un resultado o un conjunto de resultados que nos interesa (ejemplo: obtener un número par, $E = \{2, 4, 6\}$).
 
-### 🔢 Cálculo Básico de la Probabilidad
+### Cálculo Básico de la Probabilidad
 
 La probabilidad simple de que ocurra un evento $E$ se calcula usando la **Regla de Laplace**:
 
 $$P(E) = \frac{\text{Número de resultados favorables}}{\text{Número total de resultados posibles}}$$
 
-### 💻 Ejemplo en Python: Probabilidad Simple
+### Ejemplo en Python: Probabilidad Simple
 
 Podemos simular un experimento simple como lanzar un dado.
 
@@ -59,11 +59,11 @@ Antes de seguir, la probabilidad de obtener un número menor o igual a 3 ($\{1, 
 
 -----
 
-## 🔗 2. Probabilidad Condicional
+## Probabilidad Condicional
 
 La **probabilidad condicional** es la probabilidad de que ocurra un **Evento A**, sabiendo que otro **Evento B** ya ha ocurrido. En esencia, estamos **reduciendo nuestro espacio muestral** a la información que ya conocemos.
 
-### ✍️ Notación y Fórmula
+### Notación y Fórmula
 
 La probabilidad condicional se denota como $P(A|B)$, que se lee: "Probabilidad de A, dado B" o "Probabilidad de A, condicional a B".
 
@@ -78,11 +78,11 @@ Donde:
 
 [Images of Venn diagram conditional probability]
 
-### 💡 El Impacto del "Dado Que"
+### El Impacto del "Dado Que"
 
 El factor clave es el término "**dado que**". Nos dice que ya no consideramos todos los posibles resultados ($\Omega$), sino solo aquellos resultados que cumplen con la condición $B$.
 
-### 💻 Ejemplo en Python: Reducción del Espacio Muestral
+### Ejemplo en Python: Reducción del Espacio Muestral
 
 Volvamos a nuestro dado de 6 caras. Queremos calcular:
 
@@ -126,7 +126,7 @@ Identificar cuáles son los resultados de la intersección ($A \cap B$) y la pro
 -----
 
 
-## 🎯 3. Eventos y Operaciones
+## Eventos y Operaciones
 
 Un **evento** ($\text{E}$) es, simplemente, un **subconjunto** del espacio muestral ($\Omega$). Es la descripción de uno o más resultados que nos interesan de un experimento.
 
@@ -136,9 +136,9 @@ Por ejemplo, si el experimento es la extracción de una carta de una baraja de 5
   * Evento $A$ = Obtener un As.
   * Evento $B$ = Obtener una carta de Corazones.
 
-### 🧮 Operaciones Básicas entre Eventos (Basadas en Teoría de Conjuntos)
+### Operaciones Básicas entre Eventos
 
-Las operaciones nos permiten combinar o modificar los eventos para calcular probabilidades más complejas.
+Las operaciones (basadas en la teoría de conjuntos) nos permiten combinar o modificar los eventos para calcular probabilidades más complejas.
 
 | Operación | Símbolo | Significado | Descripción de Resultados |
 | :--- | :--- | :--- | :--- |
@@ -149,7 +149,7 @@ Las operaciones nos permiten combinar o modificar los eventos para calcular prob
 
 [Images of Venn diagram showing set operations union intersection complement]
 
-### 💻 Ejemplo de Operaciones en Python (Concepto)
+### Ejemplo de Operaciones en Python (Concepto)
 
 Podemos ver las operaciones de manera práctica usando los conjuntos de Python.
 
@@ -183,19 +183,19 @@ Para el evento **A** (Obtener 3 o menos) = $\{1, 2, 3\}$, el **Complemento de A*
 
 
 
-## 📊 4. Probabilidad Marginal
+## Probabilidad Marginal
 
 La **probabilidad marginal** de un evento es la probabilidad de que ese evento ocurra, calculada **sin tener en cuenta ninguna otra variable** (o "marginando" la información sobre otras variables).
 
 Imagina que tienes una tabla de datos (una tabla de contingencia) que muestra la cantidad de hombres y mujeres que votaron 'Sí' o 'No'. La probabilidad marginal sería la probabilidad de "votar Sí" (sin importar si fue hombre o mujer) o la probabilidad de "ser mujer" (sin importar si votó Sí o No).
 
-### 🆚 Contraste con Otros Tipos
+### Contraste con Otros Tipos
 
 * **Probabilidad Marginal ($P(A)$):** La probabilidad de un solo evento. *Ejemplo: ¿Cuál es la probabilidad de que llueva?*
 * **Probabilidad Conjunta ($P(A \cap B)$):** La probabilidad de que dos eventos ocurran juntos. *Ejemplo: ¿Cuál es la probabilidad de que llueva **y** sea fin de semana?*
 * **Probabilidad Condicional ($P(A|B)$):** La probabilidad de A dado que B ya ocurrió. *Ejemplo: ¿Cuál es la probabilidad de que llueva, **dado que** hay nubes negras?*
 
-### ➕ La Ley de la Probabilidad Total (Cálculo Marginal)
+### La Ley de la Probabilidad Total (Cálculo Marginal)
 
 En el contexto del Teorema de Bayes, a menudo no conocemos la probabilidad marginal $P(A)$ directamente. En cambio, usamos la **Ley de la Probabilidad Total (LPT)**, que nos permite calcular $P(A)$ sumando las probabilidades conjuntas de $A$ con todos los posibles escenarios ($B_i$) que pueden causar $A$.
 
@@ -209,7 +209,7 @@ En el mundo real, esta ley nos permite encontrar la probabilidad general de un r
 
 Ahora que hemos cubierto la Probabilidad Condicional y la Marginal, estamos listos para unir estos conceptos en el teorema más poderoso de la probabilidad.
 
-El **Teorema de Bayes** es esencialmente una herramienta para **actualizar nuestras creencias** basadas en nueva evidencia.
+El **[Teorema de Bayes](../04-inferencia-estadistica/5-bayes.md)** es esencialmente una herramienta para **actualizar nuestras creencias** basadas en nueva evidencia.
 
 $$\text{P(Hipótesis | Evidencia)} = \frac{\text{P(Evidencia | Hipótesis)} \cdot \text{P(Hipótesis)}}{\text{P(Evidencia)}}$$
 

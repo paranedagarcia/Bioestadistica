@@ -28,15 +28,15 @@ El proceso exploratorio sigue un flujo metodológico sistemático que se integra
 
 ![](img/eda-marco.webp)
 
-### 🔹Exploración General y Estructura
+### Exploración General y Estructura
 Consiste en recuperar la arquitectura del *dataset*: número de observaciones ($n$), número de variables, identificación de tipos de datos (nominales, ordinales o cuantitativos) y verificación de datos ausentes (*NA*). En lenguajes como R, este paso se operacionaliza con funciones como `str()`, `class()` y `summary()`.
 
 ![](img/eda-estruct.webp)
 
-### 🔹Organización Tabular y Frecuencias
+### Organización Tabular y Frecuencias
 El resumen de variables cualitativas requiere la construcción de Tablas de Distribución de Frecuencias (TDF). Para el informático médico, esto es esencial al caracterizar la demografía de una cohorte hospitalaria.
 
-### 🔹Resumen Estadístico
+### Resumen Estadístico
 Se calculan métricas de posición y variabilidad para describir el "centro de gravedad" y la dispersión biológica de la muestra.
 
 ![](img/eda-resumen.webp)
@@ -44,7 +44,7 @@ Se calculan métricas de posición y variabilidad para describir el "centro de g
 *   **Media Aritmética ($\bar{x}$):** Estimador puntual del parámetro poblacional.
 *   **Varianza Muestral ($s^2$):** Cuantifica la dispersión absoluta respecto a la media.
 
-### 🔹Visualización Científica
+### Visualización Científica
 La representación gráfica es el núcleo del EDA, pues permite procesar visualmente patrones complejos que no son evidentes en los análisis numéricos.
 
 ![](img/eda-vis.webp)
@@ -53,15 +53,15 @@ La representación gráfica es el núcleo del EDA, pues permite procesar visualm
 *   **Diagramas de Cajas (*Box-plots*):** Herramienta robusta que visualiza la mediana, el rango intercuartílico (IQR) y detecta *outliers* sistemáticos mediante las "vallas" de Tukey (valores fuera de $1.5 \times IQR$).
 *   **Diagramas de Dispersión (*Scatterplots*):** Esenciales para explorar la relación bivariada entre dos variables cuantitativas y diagnosticar la linealidad potencial para futuros modelos de regresión.
 
-### 🔹Detección de anomalías
+### Detección de anomalías
 
 ![](img/eda-anom.webp)
 
-### 🔹Dimensiones y relaciones
+### Dimensiones y relaciones
 
 ![](img/eda-advance.webp)
 
-### 🔹Refinamiento y Diagnóstico
+### Refinamiento y Diagnóstico
 La etapa final del EDA implica refinar las preguntas iniciales y evaluar la colinealidad (correlación excesiva entre predictores), lo que determina la selección eficiente de variables para el modelado multivariado posterior.
 
 <br />
@@ -179,6 +179,12 @@ plt.show()
 
 
 ```
+
+![eda](img/python-eda.png)
+
+![correlation](img/python-eda-corr.png)
+
+![relacion](img/python-eda-dist.png)
 </TabItem>
 <TabItem value="mnp-r" label="R" default>
 ```r showLineNumbers

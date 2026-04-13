@@ -88,7 +88,7 @@ const config = {
       },
       tableOfContents: {
         minHeadingLevel: 2,
-        maxHeadingLevel: 2,
+        maxHeadingLevel: 3,
       },
       navbar: {
         title: 'Bioestadística',
@@ -176,6 +176,30 @@ const config = {
       rspackBundler: true, // Reemplaza Webpack con Rspack
     },
   },
+  headTags: [
+    // Declare a <link> preconnect tag
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://patricioaraneda.cl',
+      },
+    },
+    // Declare some json-ld structured data
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'Organization',
+        name: 'Patricio Araneda',
+        url: 'https://patricioaraneda.cl/',
+        logo: 'https://patricioaraneda.cl/wp-content/uploads/2021/08/cropped-avatar1-1.png',
+      }),
+    },
+  ],
 };
 
 export default config;

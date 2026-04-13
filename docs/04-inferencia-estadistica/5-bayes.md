@@ -41,7 +41,7 @@ P(Y∣X_1,…,X_n)∝P(Y)
 
 
 
-### 💡 Ejemplos Cotidianos de su Uso
+### Ejemplos Cotidianos de su Uso
 
 El teorema de Bayes se utiliza constantemente en sistemas donde las predicciones deben adaptarse a nuevos datos.
 
@@ -57,7 +57,7 @@ El teorema de Bayes se utiliza constantemente en sistemas donde las predicciones
 
       * Los analistas usan modelos bayesianos para actualizar las probabilidades de un evento económico (ej. una recesión) a medida que se publican nuevos datos (ej. tasas de desempleo).
 
-### 💉 Ejemplo Práctico en Python: El Test Médico
+#### Ejemplo Práctico en Python: El Test Médico
 
 Retomemos el ejemplo médico para ver la fuerza de la **Probabilidad Previa ($P(H)$)**.
 
@@ -82,7 +82,7 @@ Esa es una observación clave. La **Probabilidad Previa** $P(H)$ es, de lejos, e
 P(H|E) = \frac{\overbrace{P(E|H) \cdot P(H)}^{\text{Casos Verdaderos Positivos}}}{\underbrace{P(E|H) \cdot P(H) + P(E|\text{No } H) \cdot P(\text{No } H)}_{\text{Casos Positivos Totales (Evidencia, } P(E))}}
 ```
 
-### 📉 El Impacto de $P(H)$
+### El Impacto de $P(H)$
 
 1.  **El Numerador (Casos Verdaderos Positivos):** La probabilidad de que un resultado positivo sea verdadero es directamente proporcional a $P(H)$. Dado que $P(H)$ es muy pequeña ($0.001$), el numerador es diminuto: $0.99 \times 0.001 = 0.00099$.
 
@@ -99,7 +99,7 @@ Al dividir el numerador muy pequeño ($0.00099$) entre un denominador mucho más
 
 ## Aplicaciones de Bayes en Diversas Industrias
 
-### ⛏️ 1. Geología y Exploración de Recursos
+### Geología y Exploración de Recursos
 
 En la búsqueda de petróleo, gas o depósitos minerales, las empresas enfrentan una gran incertidumbre.
 
@@ -108,7 +108,7 @@ En la búsqueda de petróleo, gas o depósitos minerales, las empresas enfrentan
 
 Antes de la perforación, la **Probabilidad Previa ($P(H)$)** puede ser muy baja (ej. 10%). Sin embargo, si los costosos y complejos datos sísmicos ($E$) son positivos, se usa Bayes para calcular la **Probabilidad Posterior ($P(H|E)$)**. Esta probabilidad actualizada es la que se utiliza para tomar la decisión de invertir millones en la perforación.
 
-### 🤖 2. Robótica y Navegación Autónoma
+### Robótica y Navegación Autónoma
 
 Los robots, drones y vehículos autónomos usan técnicas bayesianas, como el **Filtro de Kalman**, para estimar su ubicación en tiempo real.
 
@@ -118,7 +118,7 @@ Los robots, drones y vehículos autónomos usan técnicas bayesianas, como el **
 Cada nueva lectura de un sensor ($E$) se toma como evidencia que **actualiza** la creencia previa sobre la ubicación. Si el GPS da una ubicación, esta es la *evidencia*. El sistema usa Bayes para ponderar esa evidencia con su última estimación conocida (la *Prior*) y generar una nueva y más precisa estimación (la *Posterior*). Esto permite que la navegación sea fluida y precisa, a pesar del ruido o error en los sensores.
 
 
-### ⚖️ 3. Ciencia Forense y Legal
+### Ciencia Forense y Legal
 
 En los tribunales, Bayes ayuda a cuantificar el valor de la evidencia, especialmente la evidencia estadística como el ADN.
 
@@ -192,9 +192,16 @@ print("-" * 50)
 print(f"Probabilidad de Test Positivo P(T+): {p_test_pos:.4f}")
 print(f"Valor Predictivo Positivo (Posterior P(E|T+)): {vpp_final:.4f} (VPP)")
 print(f"Valor Predictivo Negativo (Posterior P(S|T-)): {vpn_final:.4f} (VPN)")
-
+```
+```raw
 # resultado
-
+--- Análisis Probabilístico de Colelitiasis ---  
+Prevalencia (Prior): 20.0%
+Rendimiento del Test: Sens 91% / Esp 98%
+--------------------------------------------------
+Probabilidad de Test Positivo P(T+): 0.1980
+Valor Predictivo Positivo (Posterior P(E|T+)): 0.9192 (VPP)
+Valor Predictivo Negativo (Posterior P(S|T-)): 0.9776 (VPN)
 ```
 </TabItem>
 <TabItem value="tb-r" label="R" default>

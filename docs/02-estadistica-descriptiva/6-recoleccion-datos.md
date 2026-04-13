@@ -262,46 +262,6 @@ El muestreo estratificado es la herramienta de elección en la investigación cl
 
 *   **Análisis Multicéntrico:** Facilita la gestión administrativa de estudios realizados en múltiples hospitales o regiones geográficas, tratando a cada centro como un estrato independiente.
 
-<details>
-<summary>R: Escenario clínico, nivel promedio de hemoglobina en una población hospitalaria...</summary>
-
-**Escenario Clínico:** Se desea estudiar el nivel promedio de hemoglobina en una población hospitalaria de 1,000 pacientes, estratificada por "Severidad de la Enfermedad" (Leve, Moderada, Grave), dado que se sabe que la variabilidad biológica es distinta en cada grupo.
-
-*   $N_{Leve} = 500$
-*   $N_{Mod} = 300$
-*   $N_{Grave} = 200$
-*   Tamaño de muestra total deseado: $n = 100$.
-```r showLineNumbers
-# Definición de la población (Marco Muestral)
-set.seed(42) # Reproducibilidad
-poblacion <- data.frame(
-  id = 1:1000,
-  estrato = c(rep("Leve", 500), rep("Moderado", 300), rep("Grave", 200)),
-  hemoglobina = c(rnorm(500, 14, 1), rnorm(300, 12, 1.5), rnorm(200, 10, 2))
-)
-
-# Cálculo de tamaños de muestra por estrato (Afijación Proporcional)
-n_total <- 100
-N <- nrow(poblacion)
-pesos <- table(poblacion$estrato) / N
-nh <- round(n_total * pesos)
-
-# Extracción de la muestra estratificada usando split y lapply
-estratos_lista <- split(poblacion, poblacion$estrato)
-muestra_lista <- lapply(names(estratos_lista), function(nombre) {
-  df_estrato <- estratos_lista[[nombre]]
-  tamano <- nh[nombre]
-  df_estrato[sample(1:nrow(df_estrato), tamano), ] # MAS dentro de cada estrato
-})
-
-muestra_estratificada <- do.call(rbind, muestra_lista)
-
-# Estimación de la media estratificada
-media_st <- sum(pesos * sapply(split(muestra_estratificada$hemoglobina, 
-                                     muestra_estratificada$estrato), mean))
-print(media_st)
-```
-</details>
 
 #### Ventajas Metodológicas
 *   **Reducción del Error Estándar:** Si los estratos son internamente homogéneos, el error típico de la media estratificada será menor que el de una media obtenida por MAS.
@@ -315,25 +275,330 @@ print(media_st)
 <Tabs>
 <TabItem value="me" label="Antecedentes" default>
 <div class="alert alert--primary">
-**Muestreo estratificado:**
+**Muestreo estratificado**<br />
+**Escenario Clínico:** nivel promedio de hemoglobina en una población hospitalaria. Se desea estudiar el nivel promedio de hemoglobina en una población hospitalaria de 1,000 pacientes, estratificada por "Severidad de la Enfermedad" (Leve, Moderada, Grave), dado que se sabe que la variabilidad biológica es distinta en cada grupo.
+
+*   $N_{Leve} = 500$
+*   $N_{Mod} = 300$
+*   $N_{Grave} = 200$
+*   Tamaño de muestra total deseado: $n = 100$.
+
+🔬 Interpretación clínica esperada:
+
+- Estrato Leve: Distribución más concentrada alrededor de 14 g/dL (poca variabilidad, pacientes estables).
+- Estrato Moderada: Mayor dispersión, cola izquierda más marcada (anemia moderada, comorbilidades).
+- Estrato Grave: Distribución desplazada hacia valores bajos (menor a 10 g/dL) con alta variabilidad (pacientes críticos, transfusiones, pérdida sanguínea).
 </div>
 </TabItem>
 <TabItem value="me-python" label="Pyhton" default>
 ```python showLineNumbers
 # Implementación en Python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def generar_datos_clinicos():
+    """
+    Genera una población sintética de 1,000 pacientes con niveles de hemoglobina
+    estratificados por severidad de la enfermedad.
+    """
+    np.random.seed(42)
+    N = 1000
+    
+    # Definición de estratos y sus pesos en la población (N_h)
+    # Se asume una prevalencia hospitalaria común: Leve (50%), Moderada (30%), Grave (20%)
+    estratos_config = {
+        'Leve': {'N_h': 500, 'mean': 14.5, 'std': 1.0},
+        'Moderada': {'N_h': 300, 'mean': 11.5, 'std': 1.5},
+        'Grave': {'N_h': 200, 'mean': 9.0, 'std': 2.0}
+    }
+    
+    datos = []
+    for severidad, config in estratos_config.items():
+        # Generación de valores siguiendo una distribución normal N(mu, sigma^2)
+        hb_vals = np.random.normal(config['mean'], config['std'], config['N_h'])
+        for val in hb_vals:
+            datos.append({'Severidad': severidad, 'Hemoglobina': val})
+            
+    return pd.DataFrame(datos), estratos_config
+
+def analisis_estratificado():
+    """
+    Ejecuta el flujo de muestreo estratificado y cálculo de estimadores.
+    """
+    df_poblacion, config_poblacion = generar_datos_clinicos()
+    N = len(df_poblacion)
+    
+    # 1. Parámetros Poblacionales Reales (Gold Standard)
+    media_poblacional_real = df_poblacion['Hemoglobina'].mean()
+    print(f"--- PARÁMETROS POBLACIONALES (N={N}) ---")
+    print(f"Media Poblacional Real (mu): {media_poblacional_real:.4f} g/dL\n")
+
+    # 2. Diseño del Muestreo Estratificado
+    # Deseamos una muestra total n = 100 utilizando Afijación Proporcional
+    n_total = 100
+    
+    # n_h = n * (N_h / N)
+    print(f"--- DISEÑO DE MUESTRREO (n={n_total}, Afijación Proporcional) ---")
+    muestras_estratos = {}
+    
+    for severidad, config in config_poblacion.items():
+        N_h = config['N_h']
+        W_h = N_h / N  # Peso del estrato
+        n_h = int(n_total * W_h) # Tamaño de muestra del estrato h
+        
+        # Selección aleatoria simple dentro del estrato
+        estrato_data = df_poblacion[df_poblacion['Severidad'] == severidad]
+        muestras_estratos[severidad] = estrato_data.sample(n=n_h, random_state=42)
+        
+        print(f"Estrato {severidad:8}: N_h={N_h}, W_h={W_h:.2f}, n_h={n_h}")
+
+    # 3. Estimación de la Media Estratificada (y_st)
+    # Formula: y_st = sum(W_h * y_bar_h)
+    df_muestra_total = pd.concat(muestras_estratos.values())
+    
+    estimaciones_h = []
+    for severidad, muestra_h in muestras_estratos.items():
+        y_bar_h = muestra_h['Hemoglobina'].mean()
+        s_h_sq = muestra_h['Hemoglobina'].var()
+        W_h = config_poblacion[severidad]['N_h'] / N
+        estimaciones_h.append({
+            'Severidad': severidad,
+            'y_bar_h': y_bar_h,
+            's_h_sq': s_h_sq,
+            'W_h': W_h,
+            'n_h': len(muestra_h)
+        })
+
+    df_est = pd.DataFrame(estimaciones_h)
+    media_estratificada = (df_est['W_h'] * df_est['y_bar_h']).sum()
+
+    # 4. Cálculo de la Varianza del Estimador
+    # Var(y_st) = sum [ W_h^2 * (1 - f_h) * (s_h^2 / n_h) ]
+    # f_h = n_h / N_h (fracción de muestreo)
+    varianza_y_st = 0
+    for idx, row in df_est.iterrows():
+        N_h = config_poblacion[row['Severidad']]['N_h']
+        f_h = row['n_h'] / N_h
+        termino = (row['W_h']**2) * (1 - f_h) * (row['s_h_sq'] / row['n_h'])
+        varianza_y_st += termino
+    
+    error_estandar = np.sqrt(varianza_y_st)
+    
+    # Intervalo de Confianza 95%
+    z = stats.norm.ppf(0.975)
+    ic_inf = media_estratificada - z * error_estandar
+    ic_sup = media_estratificada + z * error_estandar
+
+    print(f"\n--- RESULTADOS DE LA INFERENCIA ---")
+    print(f"Media Estratificada Estimada (y_st): {media_estratificada:.4f} g/dL")
+    print(f"Error Estándar (SE): {error_estandar:.4f}")
+    print(f"IC 95%: [{ic_inf:.4f}, {ic_sup:.4f}]")
+    
+    # 5. Visualización
+    plt.figure(figsize=(10, 6))
+    colors = {'Leve': 'skyblue', 'Moderada': 'orange', 'Grave': 'salmon'}
+    
+    for severidad in config_poblacion.keys():
+        subset = df_poblacion[df_poblacion['Severidad'] == severidad]
+        plt.hist(subset['Hemoglobina'], bins=20, alpha=0.5, 
+                 label=f'Población {severidad}', color=colors[severidad])
+    
+    plt.axvline(media_poblacional_real, color='black', linestyle='--', label='Media Poblacional Real')
+    plt.axvline(media_estratificada, color='red', linewidth=2, label='Estimación Estratificada')
+    
+    plt.title('Distribución de Hemoglobina por Estratos de Severidad', fontsize=14)
+    plt.xlabel('Hemoglobina (g/dL)', fontsize=12)
+    plt.ylabel('Frecuencia', fontsize=12)
+    plt.legend()
+    plt.grid(axis='y', alpha=0.3)
+    plt.show()
+
+if __name__ == "__main__":
+    analisis_estratificado()
 ```
+```raw
+# resultados
+--- PARÁMETROS POBLACIONALES (N=1000) ---
+Media Poblacional Real (mu): 12.5401 g/dL
+
+--- DISEÑO DE MUESTRREO (n=100, Afijación Proporcional) ---
+Estrato Leve    : N_h=500, W_h=0.50, n_h=50
+Estrato Moderada: N_h=300, W_h=0.30, n_h=30
+Estrato Grave   : N_h=200, W_h=0.20, n_h=20
+
+--- RESULTADOS DE LA INFERENCIA ---
+Media Estratificada Estimada (y_st): 12.4430 g/dL
+Error Estándar (SE): 0.1380
+IC 95%: [12.1726, 12.7134]
+```
+![estratidicado-python](img/python-estratificado.png)
 </TabItem>
 <TabItem value="me-r" label="R" default>
 ```r showLineNumbers
 # Implementación en R
+# ==============================================================================
+# SCRIPT: Muestreo Estratificado - Gráfico de Frecuencias de Hemoglobina
+# ==============================================================================
+
+# Instalar y cargar librerías necesarias
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+if (!requireNamespace("scales", quietly = TRUE)) install.packages("scales")
+library(ggplot2)
+library(scales)
+
+set.seed(42)  # Reproducibilidad
+
+# 1. PARÁMETROS DE LA POBLACIÓN
+N_total <- 1000
+estratos <- c("Leve", "Moderada", "Grave")
+N_estrato <- c(Leve = 500, Moderada = 300, Grave = 200)
+
+# Parámetros biológicos (media y SD en g/dL)
+mu_estrato <- c(Leve = 14.0, Moderada = 11.5, Grave = 9.0)
+sd_estrato <- c(Leve = 1.2, Moderada = 2.0, Grave = 2.5)
+
+# 2. SIMULAR POBLACIÓN COMPLETA
+poblacion <- data.frame()
+for (est in estratos) {
+  n_est <- N_estrato[est]
+  hemoglobina <- rnorm(n_est, mean = mu_estrato[est], sd = sd_estrato[est])
+  poblacion <- rbind(poblacion, data.frame(
+    ID = seq_len(n_est),
+    Estrato = est,
+    Hemoglobina = hemoglobina
+  ))
+}
+poblacion$ID <- 1:nrow(poblacion)
+media_poblacional <- mean(poblacion$Hemoglobina)
+
+# 3. MUESTREO ESTRATIFICADO (n = 100, asignación proporcional)
+n_total <- 100
+n_muestra <- round(n_total * (N_estrato / N_total))
+diff_n <- n_total - sum(n_muestra)
+n_muestra[1] <- n_muestra[1] + diff_n  # Ajuste por redondeo
+
+cat("Tamaño de muestra por estrato:\n")
+print(n_muestra)
+
+# 4. EXTRACCIÓN DE LA MUESTRA
+muestra <- data.frame()
+for (est in estratos) {
+  idx_estrato <- which(poblacion$Estrato == est)
+  idx_muestra <- sample(idx_estrato, size = n_muestra[est], replace = FALSE)
+  muestra <- rbind(muestra, poblacion[idx_muestra, ])
+}
+
+# 5. ESTIMACIÓN DE LA MEDIA
+medias_por_estrato <- tapply(muestra$Hemoglobina, muestra$Estrato, mean)
+media_estratificada <- sum((N_estrato / N_total) * medias_por_estrato)
+
+cat("\n=== RESULTADOS ===\n")
+cat(sprintf("Media poblacional real:        %.3f g/dL\n", media_poblacional))
+cat(sprintf("Estimador estratificado:       %.3f g/dL\n", media_estratificada))
+cat(sprintf("Error absoluto:                %.3f g/dL\n", abs(media_poblacional - media_estratificada)))
+
+# 6. GRÁFICO DE FRECUENCIAS (Histograma + Densidad por Estrato)
+
+# Preparar datos: añadir densidad para suavizado
+muestra$Estrato <- factor(muestra$Estrato, levels = c("Leve", "Moderada", "Grave"))
+
+p_freq <- ggplot(muestra, aes(x = Hemoglobina, fill = Estrato)) +
+  # Histograma con densidad (y = after_stat(density)) para superponer curva
+  geom_histogram(aes(y = after_stat(density)), 
+                 bins = 15, 
+                 alpha = 0.5, 
+                 color = "black", 
+                 linewidth = 0.3,
+                 position = "identity") +
+  # Curva de densidad kernel (KDE)
+  geom_density(alpha = 0.8, linewidth = 1, adjust = 1.2) +
+  # Líneas verticales con medias de cada estrato
+  geom_vline(data = data.frame(Estrato = names(medias_por_estrato), 
+                               Media = medias_por_estrato),
+             aes(xintercept = Media, color = Estrato),
+             linetype = "dashed", linewidth = 1) +
+  # Línea de media poblacional real
+  geom_vline(xintercept = media_poblacional, 
+             color = "darkblue", linetype = "dotted", linewidth = 1.2) +
+  # Escala de colores
+  scale_fill_manual(values = c("Leve" = "#2ca02c", "Moderada" = "#ff7f0e", "Grave" = "#d62728"),
+                    name = "Severidad") +
+  scale_color_manual(values = c("Leve" = "#2ca02c", "Moderada" = "#ff7f0e", "Grave" = "#d62728"),
+                     guide = "none") +
+  # Etiquetas y títulos
+  labs(
+    title = "Distribución de Frecuencias de Hemoglobina por Severidad",
+    subtitle = paste("Muestreo Estratificado (n =", n_total, ") | Líneas: medias por estrato (discontinuas) y poblacional (punteada azul)"),
+    x = "Nivel de Hemoglobina (g/dL)",
+    y = "Densidad de Frecuencia"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank(),
+        plot.title = element_text(face = "bold", hjust = 0.5),
+        plot.subtitle = element_text(size = 10, hjust = 0.5, color = "gray30"))
+
+print(p_freq)
+
+# 7. GRÁFICO ADICIONAL: Facetas separadas para mejor comparación individual
+p_facet <- ggplot(muestra, aes(x = Hemoglobina, fill = Estrato)) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 bins = 12, 
+                 alpha = 0.7, 
+                 color = "black", 
+                 linewidth = 0.3) +
+  geom_density(alpha = 0.9, linewidth = 1, color = "black", adjust = 1.1) +
+  geom_vline(aes(xintercept = media_poblacional), 
+             color = "darkblue", linetype = "dotted", linewidth = 1) +
+  facet_wrap(~Estrato, ncol = 1, scales = "free_y") +
+  scale_fill_manual(values = c("Leve" = "#2ca02c", "Moderada" = "#ff7f0e", "Grave" = "#d62728")) +
+  labs(
+    title = "Distribución de Hemoglobina por Estrato (Vista Individual)",
+    x = "Hemoglobina (g/dL)",
+    y = "Densidad",
+    caption = "Línea azul punteada: Media poblacional real"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(legend.position = "none",
+        strip.text = element_text(face = "bold", size = 11),
+        plot.title = element_text(face = "bold", hjust = 0.5))
+
+print(p_facet)
+
+# 8. TABLA RESUMEN DE ESTADÍSTICOS MUESTRALES
+resumen <- data.frame(
+  Estrato = estratos,
+  N_poblacion = N_estrato,
+  n_muestra = n_muestra,
+  Media_muestral = sapply(estratos, function(e) mean(muestra$Hemoglobina[muestra$Estrato == e])),
+  SD_muestral = sapply(estratos, function(e) sd(muestra$Hemoglobina[muestra$Estrato == e])),
+  Min = sapply(estratos, function(e) min(muestra$Hemoglobina[muestra$Estrato == e])),
+  Max = sapply(estratos, function(e) max(muestra$Hemoglobina[muestra$Estrato == e]))
+)
+
+cat("\n=== RESUMEN ESTADÍSTICO POR ESTRATO ===\n")
+print(resumen, row.names = FALSE)
 ```
+```raw
+Tamaño de muestra por estrato:
+    Leve Moderada    Grave 
+      50       30       20 
+
+=== RESULTADOS ===
+Media poblacional real:        12.218 g/dL
+Estimador estratificado:       11.316 g/dL
+Error absoluto:                0.902 g/dL
+```
+![estratificado-r](img/r-estratificado.png)
 </TabItem>
 </Tabs><br />
 
 <br />
 
 
-### 🔸Muestreo por Conglomerados
+### Muestreo por Conglomerados
 
 El **Muestreo por Conglomerados** (o por racimos) es una técnica de muestreo probabilístico en la que las unidades de muestreo no son individuos aislados, sino conjuntos o agrupaciones naturales de elementos denominados "conglomerados". En la investigación a gran escala, este método es esencial cuando la población es muy numerosa, se encuentra geográficamente dispersa o cuando no se dispone de un marco muestral (listado detallado) de todos los individuos, pero sí de las agrupaciones que los contienen.
 
@@ -505,7 +770,7 @@ print(paste("Estimación de la calidad media:", round(media_est, 2)))
 
 <br />
 
-### 🔸Muestreo Sistemático
+### Muestreo Sistemático
 
 El **Muestreo Sistemático** es un procedimiento de selección probabilística que se fundamenta en la extracción de elementos a intervalos regulares de una población organizada en una lista o secuencia, mediante la aplicación de un intervalo constante tras un arranque aleatorio inicial. Este método se valora por su simplicidad y eficiencia operativa y su capacidad para garantizar una cobertura y distribución uniforme de la muestra de la población objetivo cuando se dispone de marcos muestrales organizados cronológica o alfabéticamente, lo que en poblaciones con tendencias ordenadas puede aumentar la precisión de los estimadores.
 
@@ -571,11 +836,107 @@ Este método es particularmente útil en entornos clínicos donde los pacientes 
 
 *   **Control de calidad de procesos hospitalarios:** Como la revisión del cumplimiento de protocolos por parte del personal, seleccionando, por ejemplo, cada décima tarjeta de registro diario.
 
-<details>
-<summary>R: Selección de una muestra de pacientes en una base de datos hospitalaria.</summary>
 
-Simulación de un marco muestral de 1000 pacientes con una variable de interés (ej. Presión Arterial Sistólica)
+#### 3. Ventajas y Consideraciones Críticas
+
+La mayor amenaza a la validez del muestreo sistemático es la **periodicidad oculta**. Si la población presenta un ciclo biológico o administrativo que coincide exactamente con el intervalo $k$, la muestra dejaría de ser representativa.
+
+*   **Eficiencia y Simplicidad:** Es más directo y económico que el muestreo aleatorio simple (MAS), ya que solo requiere una selección al azar inicial.
+
+*   **Representatividad:** Cuando el orden de la lista refleja una tendencia (como el aumento de severidad clínica o el tiempo), el muestreo sistemático suele ser más preciso que el MAS al asegurar que todas las secciones de la población queden representadas.
+
+*   **Riesgo de Periodicidad:** Un peligro inherente es la existencia de "periodicidades ocultas" en la lista que coincidan con el intervalo $k$. Si, por ejemplo, se analiza la ocupación hospitalaria cada 7 días y el intervalo cae siempre en domingo, la muestra estará sesgada y no representará la variabilidad real de la semana.
+
+*   **Muestreo Circular:** En casos donde $N/n$ no es un número entero, se puede emplear el "muestreo circular", donde la lista se trata como si el último elemento estuviera conectado al primero, garantizando que todos los elementos tengan la misma probabilidad de ser elegidos.
+
+
+
+<br />
+#### 📝 Programación:
+<Tabs>
+<TabItem value="ms" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Muestreo sistemático:** <br />
+Selección de una muestra de pacientes en una base de datos hospitalaria. Simulación de un marco muestral de 1000 pacientes con una variable de interés (ej. Presión Arterial Sistólica)
+</div>
+</TabItem>
+<TabItem value="ms-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+import pandas as pd
+import numpy as np
+import random
+
+# 1. Simulación del Marco Muestral (N = 1000 pacientes)
+# Se genera una variable de interés: Presión Arterial Sistólica (PAS)
+# Asumimos una distribución normal típica en adultos: media=120, ds=15 [9, 10]
+np.random.seed(2024)
+N = 1000
+n_muestra = 100  # Tamaño deseado para el análisis
+
+pacientes_id = np.arange(1, N + 1)
+pas_valores = np.random.normal(loc=120, scale=15, size=N).round(1)
+
+# Creación del DataFrame (Base de datos hospitalaria)
+df_hospital = pd.DataFrame({
+    'Paciente_ID': pacientes_id,
+    'PAS_mmHg': pas_valores
+})
+
+# 2. Cálculo de parámetros para Muestreo Sistemático
+k = N // n_muestra  # Intervalo de muestreo [1, 2]
+
+# 3. Selección del punto de arranque aleatorio (m) entre 1 y k
+arranque_aleatorio = random.randint(0, k - 1) # Índice 0 a k-1 en Python
+
+# 4. Extracción sistemática de la muestra
+# Seleccionamos cada k-ésimo paciente partiendo desde el arranque
+indices_seleccionados = np.arange(arranque_aleatorio, N, step=k)
+muestra_sistematica = df_hospital.iloc[indices_seleccionados]
+
+# Visualización de resultados
+print(f"--- Parámetros del Muestreo ---")
+print(f"Población (N): {N}")
+print(f"Muestra deseada (n): {n_muestra}")
+print(f"Intervalo (k): {k}")
+print(f"Punto de arranque aleatorio: {arranque_aleatorio + 1}")
+print(f"\n--- Primeros registros de la muestra ---")
+print(muestra_sistematica.head(10))
+
+# Validación científica: Comparación de medias
+media_poblacional = df_hospital['PAS_mmHg'].mean()
+media_muestral = muestra_sistematica['PAS_mmHg'].mean()
+
+print(f"\nMedia PAS Poblacional: {media_poblacional:.2f} mmHg")
+print(f"Media PAS Muestral: {media_muestral:.2f} mmHg")
+
+# resultados
+--- Parámetros del Muestreo ---
+Población (N): 1000
+Muestra deseada (n): 100
+Intervalo (k): 10
+Punto de arranque aleatorio: 4
+
+--- Primeros registros de la muestra ---
+    Paciente_ID  PAS_mmHg
+3             4     142.8
+13           14      91.3
+23           24      98.6
+33           34     104.1
+43           44     115.5
+53           54     129.2
+63           64     102.1
+73           74     143.5
+83           84     112.2
+93           94     115.1
+
+Media PAS Poblacional: 120.29 mmHg
+Media PAS Muestral: 121.64 mmHg
+```
+</TabItem>
+<TabItem value="ms-r" label="R" default>
 ```r showLineNumbers
+# Implementación en R
 set.seed(2024)
 hospital_data <- data.frame(
   id = 1:1000,
@@ -605,45 +966,12 @@ error_estandar <- sd(muestra_sistematica$pas) / sqrt(n)
 cat("Punto de arranque:", punto_arranque, "\n")
 cat("Media estimada:", media_muestral, "\n")
 ```
-</details>
-
-#### 3. Ventajas y Consideraciones Críticas
-
-La mayor amenaza a la validez del muestreo sistemático es la **periodicidad oculta**. Si la población presenta un ciclo biológico o administrativo que coincide exactamente con el intervalo $k$, la muestra dejaría de ser representativa.
-
-*   **Eficiencia y Simplicidad:** Es más directo y económico que el muestreo aleatorio simple (MAS), ya que solo requiere una selección al azar inicial.
-
-*   **Representatividad:** Cuando el orden de la lista refleja una tendencia (como el aumento de severidad clínica o el tiempo), el muestreo sistemático suele ser más preciso que el MAS al asegurar que todas las secciones de la población queden representadas.
-
-*   **Riesgo de Periodicidad:** Un peligro inherente es la existencia de "periodicidades ocultas" en la lista que coincidan con el intervalo $k$. Si, por ejemplo, se analiza la ocupación hospitalaria cada 7 días y el intervalo cae siempre en domingo, la muestra estará sesgada y no representará la variabilidad real de la semana.
-
-*   **Muestreo Circular:** En casos donde $N/n$ no es un número entero, se puede emplear el "muestreo circular", donde la lista se trata como si el último elemento estuviera conectado al primero, garantizando que todos los elementos tengan la misma probabilidad de ser elegidos.
-
-
-
-<br />
-#### 📝 Programación:
-<Tabs>
-<TabItem value="ms" label="Antecedentes" default>
-<div class="alert alert--primary">
-**Muestreo sistemático:**
-</div>
 </TabItem>
-<TabItem value="ms-python" label="Pyhton" default>
-```python showLineNumbers
-# Implementación en Python
-```
-</TabItem>
-<TabItem value="ms-r" label="R" default>
-```r showLineNumbers
-# Implementación en R
-```
-</TabItem>
-</Tabs><br />
-
+</Tabs>
 <br />
 
-### 🔸Muestreo No Probabilístico
+
+### Muestreo No Probabilístico
 
 En este modelo, la selección de los sujetos no depende del azar, sino del criterio del investigador o la accesibilidad de las unidades. Sus resultados no son generalizables a la población general, independientemente del tamaño de la muestra.
 
@@ -726,7 +1054,7 @@ Suponga que se desea estimar la proporción de registros erróneos en un sistema
 Supongamos que un informático médico desea estimar el promedio de los niveles de hemoglobina en una cohorte específica de N=800 pacientes crónicos. Basado en literatura previa, se asume una desviación estándar (σ) de 1.5 mg/dL, y se busca una precisión (d) de ±0.2 mg/dL con un 95% de confianza
 </div>
 </TabItem>
-<TabItem value="mnp-python" label="Pyhton" default>
+<TabItem value="mnp-python" label="Pyhton">
 Para los valores proporcionados, el cálculo base para una población infinita arrojaría aproximadamente 217 sujetos. Sin embargo, al aplicar la corrección por población finita para una cohorte de 800 pacientes, el tamaño requerido se reduce a 171 sujetos.
 
 Este ajuste es vital en informática médica para optimizar recursos institucionales. El resultado final debe ser siempre un número entero obtenido mediante la función "techo" (ceiling), ya que incluso una fracción mínima (ej. 170.1) obligaría a reclutar al siguiente paciente para cumplir estrictamente con el margen de error del 0.2 mg/dL y la confianza del 95%
@@ -772,7 +1100,7 @@ Tamaño base (población infinita): 217
 Tamaño ajustado (cohorte N=800): 171 pacientes
 ```
 </TabItem>
-<TabItem value="mnp-r" label="R" default>
+<TabItem value="mnp-r" label="R">
 En este script, la función qnorm permite obtener el valor exacto de Z para el nivel de confianza especificado. El uso de ceiling es imperativo en bioestadística, ya que cualquier fracción decimal en el cálculo del tamaño de la muestra debe redondearse al entero superior para garantizar que se cumplan los requisitos mínimos de precisión y potencia estadística del estudio.
 ```r showLineNumbers
 # Implementación en R
@@ -812,7 +1140,7 @@ cat("Tamaño ajustado (finita):", n_final, "\n")
 <Tabs>
 <TabItem value="mpi" label="Antecedentes" default>
 <div class="alert alert--primary">
-**Muestreo en población finita de variable cuantitativa:** <br />
+**Muestreo en población finita de variable cuantitativa** <br />
 Supongamos que un investigador desea estimar la media de una variable con una desviación estándar supuesta de 15 unidades, buscando una precisión de ±2 unidades con un 95% de confianza
 </div>
 </TabItem>
@@ -851,7 +1179,7 @@ Tamaño de muestra calculado (exacto): 216.08
 Tamaño de muestra requerido (n): 217
 ```
 </TabItem>
-<TabItem value="mpi-r" label="R" default>
+<TabItem value="mpi-r" label="R">
 En el entorno de R, se utilizan funciones como qnorm() para obtener el valor preciso de z y ceiling() para el redondeo estadístico correcto hacia el entero superior inmediato.
 ```r showLineNumbers
 # Implementación en R
