@@ -11,3 +11,26 @@ Sitio educativo para aprender **Bioestadística** con R y Python, construido con
 - **R para Bioestadística**: Introducción al lenguaje R con ejemplos biomédicos
 - **Python para Bioestadística**: Introducción a Python con numpy, pandas, scipy y matplotlib
 
+## Despliegue FTP automático
+
+Se incluye un script que sube el contenido de la carpeta `build/` a un servidor FTP después de ejecutar `npm run build`.
+
+- Archivo: `scripts/deploy-ftp.js`
+- Variables de entorno: configura `FTP_HOST`, `FTP_USER`, `FTP_PASSWORD`, opcionalmente `FTP_PORT`, `FTP_SECURE`, `FTP_REMOTE_PATH`. Puedes copiar `.env.example` a `.env`.
+- El script se ejecuta automáticamente porque `package.json` define un `postbuild` que lanza el script.
+
+Uso (local):
+
+```bash
+# Instala la dependencia nueva
+npm install
+
+# Copia y edita credenciales
+cp .env.example .env
+# Rellena .env con tus credenciales FTP
+
+# Construye y sube automáticamente al FTP
+npm run build
+```
+
+

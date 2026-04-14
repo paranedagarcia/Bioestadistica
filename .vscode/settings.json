@@ -1,0 +1,6 @@
+{
+    "r.helpPanel.cacheIndexFiles": "Global",
+    "r.libPaths": [
+        "/usr/bin/R"
+    ]
+}

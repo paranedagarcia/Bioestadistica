@@ -11,7 +11,9 @@ sidebar_position: 1
 
 El lenguaje de programación R representa, en la actualidad, el estándar de facto para la computación estadística y la visualización de datos en la investigación biomédica. R no debe considerarse meramente como un paquete estadístico, sino como un sistema integrado y coherente diseñado para el análisis crítico de datos.
 
-### 1. Evolución Histórica
+Referencia: 
+
+### Evolución Histórica
 
 La génesis de R se encuentra profundamente ligada al lenguaje **S**, desarrollado por John Chambers y sus colaboradores en los Laboratorios Bell de AT&T en 1976.
 
@@ -20,7 +22,7 @@ La génesis de R se encuentra profundamente ligada al lenguaje **S**, desarrolla
 *   **Consolidación:** En 1997 se integró formalmente al proyecto GNU y se estableció el **R Core Team** para administrar el código fuente. La versión 1.0.0, considerada estable para producción, fue liberada el 29 de febrero de 2000.
 *   **S-PLUS y R:** Mientras que S evolucionó comercialmente hacia S-PLUS, R se mantuvo como una alternativa gratuita y abierta que ha terminado por superar a su predecesor en flexibilidad y adopción comunitaria,.
 
-### 2. Características Principales y Paradigmas
+### Características Principales y Paradigmas
 
 R se distingue por ser un lenguaje **interpretado**, lo que permite una interacción fluida y la ejecución de comandos línea a línea en una consola o entorno de desarrollo (IDE) como [RStudio](https://posit.co/download/rstudio-desktop/) o [Positron](https://positron.posit.co).
 
@@ -50,7 +52,7 @@ Si se desea calcular la media aritmética ($\bar{x}$) de un vector de datos clí
 #### D. Extensibilidad: El Ecosistema CRAN
 La funcionalidad de R se expande mediante **paquetes**,. El repositorio oficial, **CRAN** (*Comprehensive R Archive Network*), alberga actualmente más de 20,000 paquetes especializados en áreas que van desde la genómica hasta los ensayos clínicos y el aprendizaje automático,,.
 
-### 3. Estructura de Datos
+### Estructura de Datos
 
 Para la gestión de registros de salud, R utiliza estructuras específicas que permiten manejar la heterogeneidad de la información clínica:
 
@@ -59,7 +61,7 @@ Para la gestión de registros de salud, R utiliza estructuras específicas que p
 3.  **Factores:** Diseñados específicamente para variables categóricas (nominales u ordinales), esenciales para el modelado estadístico,.
 4.  **Listas:** Colecciones de objetos que pueden ser de distinta naturaleza, permitiendo almacenar resultados complejos de análisis estadísticos,.
 
-### 4. Interfaz de Modelado Estadístico
+### Interfaz de Modelado Estadístico
 
 R utiliza una interfaz de fórmulas para especificar modelos estadísticos de manera intuitiva.
 **Estructura de la Fórmula:**
@@ -86,14 +88,14 @@ El IDE Positron es un software de reciente aparición (2024).
 :::
 
 
-### 1. Antecedentes e Historia de Positron
+### Antecedentes e Historia de Positron
 
 Positron es un IDE de próxima generación desarrollado por **Posit PBC** (anteriormente conocida como RStudio PBC). Su desarrollo responde a la evolución de la compañía hacia un enfoque "políglota", superando el paradigma exclusivo de R para integrar de manera nativa otros lenguajes fundamentales en la bioinformática, como **Python**.
 
 *   **Fundación Técnica:** A diferencia de RStudio, que fue construido desde cero con Java y C++, Positron se fundamenta en la arquitectura de **Code OSS (VS Code)**. Esto le permite heredar una vasta ecosistema de extensiones y una infraestructura de edición de texto altamente optimizada.
 *   **Motivación:** La necesidad de un entorno que soporte de forma equitativa a R y Python es evidente en el modelado de salud pública, donde se suelen combinar librerías de R para bioestadística con modelos de *Deep Learning* en Python.
 
-### 2. Características Principales
+### Características Principales
 
 Positron ofrece funcionalidades que optimizan el desarrollo de modelos econométricos y epidemiológicos similares a los descritos en la literatura técnica.
 - Incluye un visor interno de PDF, sin requerir programas adicionales.
@@ -113,7 +115,7 @@ Siguiendo la lógica de paneles de RStudio, Positron incluye:
 Positron mantiene el compromiso con la **Programación Literaria** (*Literate Programming*). Facilita la implementación de documentos dinámicos mediante **Quarto**, la evolución de R Markdown, permitiendo que el código y la narrativa científica coexistan en un solo archivo. 
 
 
-### 3. Comparativa con otros Entornos
+### Comparativa con otros Entornos
 
 Mientras que **RCommander** se describe como un paquete estadístico con interfaz gráfica útil para la estimación de modelos, Positron se orienta a usuarios que requieren mayor flexibilidad y extensibilidad. Su diseño basado en extensiones permite que el especialista personalice el entorno para tareas específicas, como la gestión de bases de datos SQL hospitalarias o el análisis de secuencias genéticas.
 

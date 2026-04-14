@@ -179,6 +179,17 @@ plt.show()
 
 
 ```
+```raw
+==================================================
+Inspección inicial del dataset...
+==================================================
+   mean radius  mean texture  mean perimeter  mean area  mean smoothness  \
+0        17.99         10.38          122.80     1001.0          0.11840   
+1        20.57         17.77          132.90     1326.0          0.08474   
+2        19.69         21.25          130.00     1203.0          0.10960   
+3        11.42         20.38           77.58      386.1          0.14250   
+4        20.29         14.34          135.10     1297.0          0.10030
+```
 
 ![eda](img/python-eda.png)
 
@@ -195,13 +206,12 @@ if(!require(tidyverse)) install.packages("tidyverse")
 if(!require(corrplot)) install.packages("corrplot")
 
 library(mlbench)
-library(tidyverse)
+library(dplyr)
 library(corrplot)
+library(ggplot2)
 
-# Carga del dataset
-data(BreastCancer)
-df <- BreastCancer
-
+# Carga del dataset desde el archivo local 'data/breast_cancer_data.csv'
+df <- read.csv('../data/breast_cancer_data.csv', sep = ',', stringsAsFactors = FALSE)
 
 cat("Dataset cargado exitosamente.\n")
 
@@ -281,5 +291,10 @@ ggplot(df_long, aes(x = Caracteristica, y = Valor, fill = Caracteristica)) +
   theme(legend.position = "none") +
   labs(title = "Detección de Outliers en Características", x = "", y = "Valor (Escala 1-10)")
 ```
+![eda](img/r-eda.png)
+
+![eda](img/r-eda-corr.png)
+![eda](img/r-eda-bivariado.png)
+
 </TabItem>
 </Tabs><br />
