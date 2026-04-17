@@ -100,3 +100,8 @@ h3.anchor.anchorTargetStickyNavbar_Vzrq::before {
 .theme-doc-sidebar-item-link-level-2 .menu__link::before {
   content: "🔹";
 }
+
+.table-of-contents ul:not([class]) a.table-of-contents__link::before {
+  content: "🔸";
+  margin-left: -0.8em !important;
+}
