@@ -41,7 +41,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'es',
-    locales: ['es', 'en'],
+    locales: ['es'],
   },
   //plugins: [
   //  '@docusaurus/plugin-content-pages',
