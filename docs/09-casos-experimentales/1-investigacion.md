@@ -12,22 +12,22 @@ El **diseño de investigación** se define como el **plan o estrategia** concebi
 
 La naturaleza del diseño varía fundamentalmente según el enfoque del estudio científico:
 
-### 🔸En la ruta cuantitativa
+### En la ruta cuantitativa
 En este enfoque, el diseño se utiliza para analizar la certeza de las hipótesis o responder a preguntas exploratorias y descriptivas. Se caracteriza por ser:
 *   **Estructurado y predeterminado:** Es un plan que debe seguirse rigurosamente tal como fue concebido para garantizar la calidad y validez de la investigación.
 
 *   **Clasificación principal:** Se divide en **[diseños experimentales](./2-experimental.md)** (donde se manipulan intencionalmente variables independientes para ver sus efectos) y **[diseños no experimentales](./3-noexprimental.md)** (donde se observan fenómenos tal como se dan en su contexto natural sin intervención directa).
 
-### 🔸En la ruta cualitativa
+### En la ruta cualitativa
 Aquí el diseño adquiere un significado diferente, refiriéndose al **abordaje general** o marco interpretativo que se utilizará. Sus características principales son:
 *   **Flexible y abierto:** No es un plan rígido, sino que surge y se adapta durante el proceso de inmersión inicial y el trabajo de campo según las circunstancias y el contexto.
 
 *   **Tipos comunes:** Incluye abordajes como la **teoría fundamentada**, diseños etnográficos, narrativos, fenomenológicos y de investigación-acción.
 
-### 🔸En los métodos mixtos
+### En los métodos mixtos
 En la investigación mixta, el diseño es una tarea aún más **artesanal** y única para cada estudio. Implica recolectar, analizar e integrar datos cuantitativos y cualitativos de manera simultánea o secuencial para lograr una comprensión integral del fenómeno.
 
-### 🔸Importancia de la elección del diseño
+### Importancia de la elección del diseño
 Ningún diseño es intrínsecamente mejor que otro. Su selección depende de factores críticos como:
 *   El **planteamiento del problema** y los objetivos fijados.
 *   El **alcance del estudio** (exploratorio, descriptivo, correlacional o explicativo).
@@ -35,7 +35,7 @@ Ningún diseño es intrínsecamente mejor que otro. Su selección depende de fac
 *   La disponibilidad de **recursos** y el tiempo disponible.
 
 
-### 🔸Definición de una variable médica
+### Definición de una variable médica
 
 La definición operacional de una variable médica consiste en el **conjunto de procedimientos, técnicas y métodos** que se deben realizar para medir dicha variable en los casos de una investigación. En términos prácticos, es la "traducción" de un concepto teórico o clínico a aspectos que sean directamente **medibles y observables** en la realidad.
 
@@ -71,7 +71,7 @@ Al elegir o crear una definición operacional para una variable médica, se debe
 #### 4. Necesidad en la investigación
 Es importante resaltar que las definiciones operacionales son **indispensables en todos los estudios cuantitativos**, incluso en aquellos que no formulan hipótesis, ya que sin ellas no es posible recolectar datos empíricos de manera científica. Si el investigador dispone de varias formas de operacionalizar una variable, debe elegir la que mejor capte su esencia y sea más válida según la literatura previa.
 
-### 🔸El azar en medicina
+### El azar en medicina
 
 La **asignación al azar**, también conocida como aleatorización o randomización, es una técnica de control fundamental en la investigación médica para asegurar la **equivalencia** de los grupos en un experimento. Su propósito es dar seguridad al investigador de que las variables extrañas, ya sean conocidas o desconocidas, se distribuyan aproximadamente de la misma manera entre los grupos y no afecten em forma sistemática los resultados.
 
@@ -92,7 +92,7 @@ Existen diversos procedimientos prácticos para realizar esta asignación:
 Es importante destacar que en medicina la asignación al azar no solo es una cuestión estadística, sino ética; los protocolos deben ser aprobados por comités de bioética para asegurar que no se dañe a los participantes y que el uso de placebos esté debidamente justificado.
 
 
-### 🔸Validez interna
+### Validez interna
 
 La **validez interna** es el **objetivo metodológico principal** de cualquier experimento y se refiere al grado de confianza que se tiene en que los resultados obtenidos sean válidos y se interpreten adecuadamente.
 
@@ -116,7 +116,7 @@ Existen "explicaciones rivales" denominadas **fuentes de invalidación interna**
 
 En resumen, un experimento tiene validez interna cuando el diseño ha logrado eliminar estas explicaciones alternativas, permitiendo afirmar con rigor científico que **X causó Y**.
 
-### 🔸Validez interna vs Validez externa
+### Validez interna vs Validez externa
 
 La diferencia fundamental entre la **validez interna** y la **validez externa** radica en el enfoque de la investigación: mientras la primera se centra en la **certeza de los resultados dentro del estudio**, la segunda se refiere a la **posibilidad de generalizarlos** a otros contextos o personas.
 
@@ -146,7 +146,7 @@ A continuación se detallan sus principales distinciones:
 En conclusión, la validez interna garantiza que el investigador ha "purificado" la relación causa-efecto, mientras que la validez externa asegura que el conocimiento generado tenga una utilidad amplia más allá de la muestra específica estudiada.
 
 
-### 🔸Fuentes de validación interna
+### Fuentes de validación interna
 
 Estas son factores o "explicaciones rivales" que pueden confundir al investigador, haciendo que no sea posible determinar con certeza si la variable independiente realmente produjo un efecto en la dependiente.
 

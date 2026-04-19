@@ -12,7 +12,7 @@ Los **estudios observacionales** o no experimentales se definen por la **ausenci
 ![experimental](img/noexperimental.webp)
 
 
-### 🔸Estudios de Cohorte
+### Estudios de Cohorte
 *   **Definición y Estructura:** Son un tipo de diseño **longitudinal** que realiza un seguimiento a través del tiempo en **varios momentos** a una subpoblación o grupo específico. 
 *   **Identificación del Grupo:** Este grupo se identifica por compartir una **característica común** o estar vinculado por factores como la edad, la región geográfica o la exposición a un hecho o condición de salud.
 *   **Funcionamiento:** En las ciencias de la salud, es frecuente comparar la evolución de una cohorte que posee una condición vinculante (como una enfermedad o factor de riesgo) con otra que no la posee para evaluar cambios en las variables de interés. 
@@ -20,7 +20,7 @@ Los **estudios observacionales** o no experimentales se definen por la **ausenci
 
 *   **Ejemplo (Panel):** Analizar la evolución física y mental de un grupo específico de niños detectados con síndrome de Down y cardiopatía congénita durante diez años con evaluaciones periódicas.
   
-### 🔸Estudios de Casos y Controles
+### Estudios de Casos y Controles
 *   **Definición y Dirección:** Se enmarcan dentro de los diseños no experimentales de tipo **retrospectivo**. Donde se reconstruye las relaciones causales a partir de la variable dependiente (el efecto o fenómeno ya manifestado), retrocediendo en el tiempo para identificar las posibles causas o variables independientes.
 
 Este diseño se caracteriza por los siguientes aspectos:
@@ -33,7 +33,7 @@ Este diseño se caracteriza por los siguientes aspectos:
 
 En resumen, mientras que un experimento "provoca" una causa para ver su efecto, el diseño retrospectivo analiza un efecto ya existente para **descubrir su causa**.
 
-### 🔸Diferencias y Aplicación
+### Diferencias y Aplicación
 *   **Causalidad:** Mientras que en los experimentos la causalidad es provocada, en los diseños observacionales la causalidad **ya existe** y es el investigador quien determina su dirección y verosimilitud basándose en la literatura.
 
 *   **Ética y Viabilidad:** Estos estudios son la herramienta principal cuando la manipulación de variables independientes no es ética o posible, como en casos de consumo de alcohol, impedimentos físicos o enfermedades irreversibles.
@@ -55,7 +55,7 @@ A continuación, se detallan los casos específicos en los que es mejor optar po
 En resumen, este diseño es la herramienta fundamental cuando el investigador desea responder a un planteamiento del problema actuando como un "observador" de una realidad preexistente, reconstruyendo la secuencia de eventos desde la consecuencia hacia la causa.
 
 
-### 🔸Transeccionales o Transversales 
+### Transeccionales o Transversales 
 Recolectan datos en un **momento único** en el tiempo.
     *   *Ejemplo 1:* Estimar la prevalencia de diabetes mellitus en adultos mayores de 60 años en una ciudad específica durante el último año.
 
@@ -63,7 +63,7 @@ Recolectan datos en un **momento único** en el tiempo.
 
 
 
-### 🔸El Framingham Heart Study
+### El Framingham Heart Study
 El Framingham Heart Study (FHS) es un estudio epidemiológico pionero y de largo plazo, considerado el "estándar de oro" en la investigación de enfermedades cardiovasculares. Iniciado en 1948 bajo la dirección del National Heart, Lung, and Blood Institute ([**NHLBI**](https://www.nhlbi.nih.gov/science/framingham-heart-study-fhs)) y en colaboración con la [Universidad de Boston](https://www.bu.edu/articles/2026/heart-healthcare-framingham-heart-study/), su objetivo original era identificar los factores comunes que contribuyen a las enfermedades del corazón. 
 
 #### Aspectos Clave y Evolución
