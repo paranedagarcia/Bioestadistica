@@ -41,7 +41,7 @@ async function uploadDir(client, localDir, remoteDir) {
     } else if (item.isFile()) {
       await client.uploadFrom(localPath, remotePath)
       //console.log('Uploaded', localPath, '->', remotePath)
-      console.log('Uploaded', localPath)
+      console.log('Uploaded', remotePath)
     }
   }
 }
