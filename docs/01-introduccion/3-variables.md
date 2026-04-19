@@ -11,7 +11,7 @@ La taxonomía de las variables es crítica, ya que determina el tipo de análisi
 
 ![](img/variables.webp)
 
-## 1. Variables Cualitativas (Categóricas)
+## Variables Cualitativas (Categóricas)
 Miden una cualidad o atributo no numérico en cada unidad experimental. Los datos resultantes se clasifican según similitudes o diferencias de clase.
 
 ### **Nominales** 
@@ -28,7 +28,7 @@ Consisten en categorías que sirven como etiquetas e identificadores, sin que ex
 Poseen un orden o jerarquía significativa entre sus categorías, aunque no existe una distancia constante o cuantificable entre un nivel y otro.
 * *Ejemplo:* Etapas de un cáncer (I, II, III, IV), escalas de dolor (leve, moderado, severo), nivel de satisfacción (muy pobre a muy bueno).
 
-## 2. Variables Cuantitativas (Numéricas)
+## Variables Cuantitativas (Numéricas)
 Miden una cantidad numérica y permiten señalar cuán grandes son las diferencias observadas entre individuos.
 
 **Discretas:** Toman valores aislados, generalmente números enteros, y resultan de un proceso de conteo. Poseen "brechas" entre los posibles valores.
@@ -37,7 +37,7 @@ Miden una cantidad numérica y permiten señalar cuán grandes son las diferenci
 **Continuas:** Pueden adoptar cualquier valor dentro de un intervalo real, permitiendo una cantidad infinita de fracciones o decimales. Surgen típicamente de procesos de medición.
 *   *Ejemplo:* Peso de un recién nacido, estatura, presión arterial, niveles de glucosa en plasma, tiempo de reacción.
 
-## 3. Escalas de Medición Cuantitativa
+## Escalas de Medición Cuantitativa
 Es vital distinguir entre la naturaleza de los datos según su origen (cero absoluto):
 
 **Escala de Intervalo:** Los datos tienen un orden y distancias significativas, pero el valor "cero" es arbitrario y no indica ausencia de la característica.
@@ -46,7 +46,7 @@ Es vital distinguir entre la naturaleza de los datos según su origen (cero abso
 **Escala de Razón:** Posee todas las propiedades de la escala de intervalo más un cero absoluto o natural, lo que permite realizar comparaciones de proporcionalidad (ej. $x$ es el doble que $y$).
 *   *Ejemplo:* Peso en kilogramos, edad en años, temperatura en grados Kelvin (donde 0 K es el cero absoluto).
 
-## 4. Otras Clasificaciones Especiales
+## Otras Clasificaciones Especiales
 **Variables Latentes y Observables:** Una variable latente es un atributo no directamente medible (como la inteligencia o calidad de vida), mientras que las variables observables son las que se utilizan para cuantificar dicho concepto (como el puntaje de un test de CI).
 
 **Variables Indicadoras (Dummy):** Recodificación binaria (0 y 1) de variables cualitativas para que puedan ser incluidas en modelos de regresión matemática.
