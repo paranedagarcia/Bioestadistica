@@ -43,9 +43,9 @@ const config = {
     defaultLocale: 'es',
     locales: ['es', 'en'],
   },
-  plugins: [
-    '@docusaurus/plugin-content-pages',
-  ],
+  //plugins: [
+  //  '@docusaurus/plugin-content-pages',
+  //],
   presets: [
     [
       'classic',

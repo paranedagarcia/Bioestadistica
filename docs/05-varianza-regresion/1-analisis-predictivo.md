@@ -26,11 +26,25 @@ donde:
 
 ## Regresión Lineal
 
-Mientras que la correlación describe una relación existente, la **regresión lineal** va un paso más allá y permite modelar y predecir. La regresión lineal simple se utiliza para modelar la relación entre una variable dependiente (o respuesta, *y*) y una única variable independiente (o predictor, *x*) suponiendo que esa relación es lineal. El objetivo es encontrar la línea recta "mejor ajustada" que pasa a través de los puntos de datos en un gráfico de dispersión. Esta línea se describe mediante la ecuación `y = mx + b`, donde `m` es la pendiente (indica cómo cambia *y* por cada unidad de cambio en *x*) y `b` es la intersección en el eje *y*. En el contexto de la inferencia estadística, se construyen intervalos de confianza para la pendiente para determinar si es estadísticamente significativa (es decir, si difiere de cero).
+Mientras que la correlación describe una relación existente, la **regresión lineal** va un paso más allá y permite modelar y predecir. La regresión lineal simple se utiliza para modelar la relación entre una variable dependiente (o respuesta, *y*) y una única variable independiente (o predictor, *x*) suponiendo que esa relación es lineal. El objetivo es encontrar la línea recta "mejor ajustada" que pasa a través de los puntos de datos en un gráfico de dispersión. Esta línea se describe mediante la ecuación
 
-La regresión lineal múltiple extiende este concepto para incorporar más de un predictor. Por ejemplo, podríamos querer predecir el precio de una casa (`price`) basándonos en su tamaño (`square_feet`), el número de habitaciones (`bedrooms`) y su antigüedad (`age`). La ecuación se generaliza a `y = b0 + b1*x1 + b2*x2 + ... + bn*xn`. La regresión lineal es un modelo paramétrico que a menudo asume que los residuos (las diferencias entre los valores observados y los predichos por el modelo) se distribuyen normalmente y tienen una varianza constante. Validar estas suposiciones es una parte crítica del proceso de modelado.
+```math
+y = mx + b
+```
 
-Estos métodos son la base de muchas aplicaciones en la ciencia de datos. El comercio electrónico utiliza la regresión para analizar la relación entre el tiempo de permanencia en una página y las ventas. Los fabricantes usan el análisis de correlación para identificar factores que influyen en la calidad de un producto. Los economistas utilizan la regresión para modelar la relación entre el gasto en publicidad y las ventas de un producto. El aprendizaje automático y la inteligencia artificial se basan enormemente en estas bases estadísticas para crear modelos predictivos que impulsan sistemas de recomendación, detección de fraudes, diagnóstico médico y mucho más. Entender cómo funcionan la covarianza y la regresión no solo ayuda a analizar datos, sino que también proporciona una comprensión profunda de cómo se construyen muchos de los modelos que impulsan la tecnología moderna.
+donde $m$ es la pendiente (indica cómo cambia $y$ por cada unidad de cambio en $x$) y $b$ es la intersección en el eje $y$. En el contexto de la inferencia estadística, se construyen intervalos de confianza para la pendiente para determinar si es estadísticamente significativa (es decir, si difiere de cero).
+
+La regresión lineal múltiple extiende este concepto para incorporar más de un predictor. Por ejemplo, podríamos querer predecir el precio de una casa ($\text{price}$) basándonos en su tamaño ($\text{square\_feet}$), el número de habitaciones ($\text{bedrooms}$) y su antigüedad ($\text{age}$). La ecuación se generaliza a
+
+```math
+y = b0 + b1*x1 + b2*x2 + ... + bn*xn
+```
+
+La regresión lineal es un modelo paramétrico que a menudo asume que los residuos (las diferencias entre los valores observados y los predichos por el modelo) se distribuyen normalmente y tienen una varianza constante. Validar estas suposiciones es una parte crítica del proceso de modelado.
+
+Estos métodos son la base de muchas aplicaciones en la ciencia de datos. El comercio electrónico utiliza la regresión para analizar la relación entre el tiempo de permanencia en una página y las ventas. Los fabricantes usan el análisis de correlación para identificar factores que influyen en la calidad de un producto. Los economistas utilizan la regresión para modelar la relación entre el gasto en publicidad y las ventas de un producto. 
+
+El aprendizaje automático y la inteligencia artificial se basan enormemente en estas bases estadísticas para crear modelos predictivos que impulsan sistemas de recomendación, detección de fraudes, diagnóstico médico y mucho más. Entender cómo funcionan la covarianza y la regresión no solo ayuda a analizar datos, sino que también proporciona una comprensión profunda de cómo se construyen muchos de los modelos que impulsan la tecnología moderna.
 
 
 ## El Concepto Básico del Modelo
@@ -99,7 +113,7 @@ La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si s
 </TabItem>
 </Tabs><br />
 
-## Modelos de Regresión No Lineal (MRNL)
+## Regresión No Lineal (MRNL)
 
 Un modelo es considerado verdaderamente **No Lineal** si es no lineal en los parámetros ($\beta$s). En el ámbito de la bioestadística, el **Modelo de Regresión No Lineal (MRNL)** constituye una herramienta analítica avanzada para describir procesos biológicos cuya complejidad no puede ser capturada por combinaciones lineales de parámetros. A diferencia de los modelos lineales (que incluyen a la regresión polinómica), en un MRNL la variable dependiente se define como una función no lineal respecto a sus **parámetros**.
 
@@ -131,7 +145,7 @@ Aquí, el parámetro $\beta_2$ se encuentra en el denominador de un exponente, l
 
 La validación es esencial para determinar si se cumplen los supuestos del modelo antes de realizar inferencias. El procedimiento principal de validación es el **Análisis de Residuales**.
 
-### Definición de Residual
+#### Definición de Residual
 El residual ($\hat{e}_i$) es la diferencia entre el valor observado de Y ($y_i$) y el valor predicho ($\hat{y}_i$) por el modelo:
 
 ```math
@@ -139,7 +153,7 @@ El residual ($\hat{e}_i$) es la diferencia entre el valor observado de Y ($y_i$)
 ```
 
 
-### Métodos de Estimación: El Proceso Iterativo
+#### Métodos de Estimación: El Proceso Iterativo
 
 A diferencia de la regresión lineal, que posee una solución algebraica cerrada (ecuaciones normales de mínimos cuadrados), el MRNL requiere métodos **computacionalmente intensivos e iterativos**.
 
@@ -203,7 +217,7 @@ Aunque el modelo de Cox es común, los modelos no lineales exponenciales o de We
 </TabItem>
 </Tabs><br />
 
-## Modelos de Regresión Polinómica (MRP)
+## Regresión Polinómica (MRP)
 
 El **Modelo de Regresión Polinómica (MRP)** representa una extensión del modelo lineal general, diseñada para capturar relaciones no lineales entre una variable dependiente y uno o más predictores,. En la informática médica y la investigación clínica, este modelo es fundamental cuando la respuesta biológica no sigue una tendencia de línea recta, sino que presenta curvaturas, picos o valles debidos a procesos fisiológicos complejos,.
 
@@ -250,12 +264,11 @@ Y = \beta_0^* + \beta_1^*(x - \bar{x}) + \beta_2^*(x - \bar{x})^2 + \epsilon
 
 4.  **Relación Peso-Talla**: Aunque a menudo se modela linealmente, en poblaciones pediátricas o estudios de crecimiento, los modelos de segundo o tercer orden (cúbicos) suelen proporcionar un mejor ajuste a la realidad biológica del desarrollo óseo y muscular.
 
-### Implementación en el Entorno R
+#### Implementación en el Entorno R
 
 Para ajustar estos modelos en R, se utiliza la función `lm()`. Existen dos métodos principales:
 *   **Uso de `I()`**: Para proteger los términos aritméticos dentro de la fórmula: `lm(y ~ x + I(x^2))`.
 *   **Función `poly()`**: Genera polinomios ortogonales, lo cual es preferible para evitar la multicolinealidad estructural: `lm(y ~ poly(x, grado))`.
-
 
 
 
@@ -270,6 +283,7 @@ Usaremos el ejemplo de los niveles de triglicéridos ($Y$) explicados por la eda
 Desde el punto de vista estadístico, aunque el modelo sea cuadrático en la variable X, sigue siendo un modelo lineal porque es lineal en relación con sus parámetros (β).
 
 En la salida, se debe prestar atención al valor `p` asociado al término I($edad^2$). Un valor $p < 0.05$ indica que la curvatura es estadísticamente significativa y que un modelo de línea recta sería inadecuado para describir el fenómeno biológico.
+
 </div>
 </TabItem>
 <TabItem value="rpc-python" label="Pyhton" default>
