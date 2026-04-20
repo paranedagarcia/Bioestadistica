@@ -1,0 +1,108 @@
+# EDA
+
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_breast_cancer
+
+# Carga del dataset
+#cancer_data = load_breast_cancer()
+cancer_data = pd.read_csv('https://patricioaraneda.cl/public/breast_cancer_data.csv')  # Carga desde el archivo CSV previamente guardado
+df = pd.DataFrame(data =cancer_data, columns=cancer_data.columns)
+df['target'] = cancer_data['target']  # 0: Maligno, 1: Benigno
+
+print("Dataset cargado exitosamente.")
+
+#------------------------------------------------------------
+# Etapa 2: Inspección Inicial y Estructura
+#------------------------------------------------------------
+print("=" * 50)
+print("Inspección inicial del dataset...")
+print("=" * 50)
+# Visualización de las primeras filas
+print(df.head())
+
+# Información general (tipos de datos y memoria)
+print(df.info())
+
+# Resumen estadístico descriptivo
+print(df.describe().T)
+
+#------------------------------------------------------------
+#Etapa 3: Limpieza de Datos
+#------------------------------------------------------------
+# Verificación de valores faltantes
+print("=" * 50)
+print("Verificando valores nulos en el dataset...")
+print("=" * 50)
+
+print(f"Valores nulos por columna:\n{df.isnull().sum().sum()}")
+
+# Verificación de duplicados
+print(f"Número de registros duplicados: {df.duplicated().sum()}")
+
+#descarga el df a un archivo -csv para su posterior análisis
+df.to_csv('breast_cancer_data.csv', index=False)
+
+#------------------------------------------------------------
+# Etapa 4: Análisis Univariado (Distribuciones)
+#------------------------------------------------------------
+print("=" * 50)
+print("Análisis Univariado: Distribuciones de Variables")
+print("=" * 50)
+
+# Distribuciones en dos columnas
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Distribución de la variable objetivo
+sns.countplot(x='target', data=df, hue='target', palette='viridis', ax=axes[0], legend=False)
+axes[0].set_title('Distribución de Diagnósticos (0: Maligno, 1: Benigno)')
+axes[0].set_xlabel('target')
+axes[0].set_ylabel('Frecuencia')
+
+# Histograma de una característica clave
+sns.histplot(df['mean radius'], kde=True, color='blue', ax=axes[1])
+axes[1].set_title('Distribución del Radio Medio')
+axes[1].set_xlabel('mean radius')
+axes[1].set_ylabel('Frecuencia')
+
+plt.tight_layout()
+plt.show()
+
+#------------------------------------------------------------
+# Etapa 5: Análisis Bivariado y Correlaciones
+#------------------------------------------------------------
+# Matriz de correlación
+print("=" * 50)
+print("Calculando matriz de correlación...")
+print("=" * 50)
+plt.figure(figsize=(12, 10))
+correlation_matrix = df.corr()
+sns.heatmap(correlation_matrix, annot=False, cmap='coolwarm')
+plt.title('Mapa de Calor de Correlaciones')
+plt.show()
+
+# Relación entre dos variables específicas respecto al objetivo
+sns.scatterplot(x='mean radius', y='mean texture', hue='target', data=df, alpha=0.7)
+plt.title('Radio Medio vs Textura Media por Diagnóstico')
+plt.show()
+
+#------------------------------------------------------------
+# Etapa 6: Identificación de Valores Atípicos (Outliers)
+#------------------------------------------------------------
+# Boxplot para detectar outliers en características seleccionadas
+# imprime "=" 50 veces para separar visualmente las secciones
+print("=" * 50)
+print("Detectando outliers en características principales...")
+print("=" * 50)
+features_to_plot = ['mean radius', 'mean texture', 'mean perimeter', 'mean area']
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=df[features_to_plot])
+plt.title('Detección de Outliers en Características Principales')
+plt.xticks(rotation=45)
+plt.show()
+
+```
