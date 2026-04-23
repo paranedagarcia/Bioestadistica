@@ -58,3 +58,7 @@ https://infima.dev/
 </TabItem>
 </Tabs>
 <br />
+
+referencias
+
+https://es.r4ds.hadley.nz/
