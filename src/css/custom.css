@@ -105,3 +105,7 @@ h3.anchor.anchorTargetStickyNavbar_Vzrq::before {
   content: "🔸";
   margin-left: -0.8em !important;
 }
+
+.cardTitle_rnsV {
+  font-size: 1.6rem !important;
+}
