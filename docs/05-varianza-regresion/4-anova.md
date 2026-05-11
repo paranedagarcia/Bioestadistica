@@ -59,6 +59,50 @@ El ANOVA se adapta a diversas estructuras de investigación en biomedicina:
 
 *   **ANOVA de Medidas Repetidas:** Se utiliza cuando los mismos sujetos pasan por todos los tratamientos (estudios longitudinales o cruzados). *Ejemplo:* Medir los niveles de glucosa en un mismo grupo de pacientes antes del tratamiento, al mes y a los tres meses.
 
+
+
+## Análisis Post Hoc
+
+El **análisis post-hoc** (del latín "después de esto") se refiere a un conjunto de procedimientos estadísticos de comparación múltiple que se ejecutan únicamente tras haber obtenido un resultado estadísticamente significativo en una prueba global u "ómnibus", como el Análisis de Varianza (ANOVA).
+
+Su función primordial es discernir cuáles son las diferencias específicas entre los pares de grupos, una vez que la prueba global ha rechazado la hipótesis nula de igualdad de todas las medias.
+
+### Justificación
+
+Cuando un investigador evalúa, por ejemplo, tres tipos de fármacos contra un placebo, el ANOVA determina si existe alguna diferencia en el conjunto. Sin embargo, el ANOVA por sí solo no identifica qué tratamiento es superior a otro. 
+
+Surge entonces la tentación de realizar múltiples pruebas *t* de Student independientes. No obstante, esto conlleva el problema de la **inflación del error de Tipo I** (falsos positivos). Si se realizan $c$ comparaciones independientes con un nivel de significancia $\alpha = 0.05$, la probabilidad global de cometer al menos un error de Tipo I aumenta según la fórmula:
+
+$$1 - (1 - \alpha)^c$$
+
+Por ejemplo, al comparar 5 grupos se requieren 10 comparaciones de pares; sin un ajuste post-hoc, la probabilidad de encontrar al menos una diferencia "significativa" por puro azar asciende a aproximadamente un 40%. Los métodos post-hoc corrigen este umbral de significancia para mantener el error de Tipo I bajo control en todo el experimento.
+
+### Principales Métodos Post-hoc
+
+Existen diversos algoritmos dependiendo de la rigurosidad y el diseño del estudio:
+
+*   **Test de Tukey (HSD - Honestly Significant Difference):** Es uno de los más utilizados en bioestadística clínica debido a su equilibrio entre potencia y control del error. Se basa en la **distribución de rango estudentizado ($q$)** y utiliza la siguiente medida para determinar diferencias significativas:
+
+    $$\omega = q_{\alpha}(k, df) \sqrt{\frac{MSE}{n_t}}$$
+    *Donde:*
+    *   $k$: Número de tratamientos comparados.
+    *   $df$: Grados de libertad del error.
+    *   $MSE$: Media de los cuadrados del error del ANOVA global.
+    *   $n_t$: Tamaño de la muestra por grupo.
+
+
+*   **Corrección de Bonferroni:** Es un método conservador donde el nivel $\alpha$ global se divide por el número de comparaciones ($c$). Por ejemplo, para tres comparaciones, el nuevo nivel de significación para cada par sería $0.05 / 3 = 0.0167$.
+
+*   **Test de Dunnett:** Específicamente diseñado para situaciones donde se comparan varios tratamientos nuevos exclusivamente contra un grupo control, evitando comparaciones innecesarias entre los tratamientos nuevos.
+
+*   **Método de Scheffé:** Es el más conservador de todos, permitiendo cualquier tipo de comparación (no solo por pares), pero con una pérdida significativa de potencia estadística.
+
+### 3. Aplicación
+
+En el desarrollo de **Sistemas de Soporte a la Decisión Clínica (CDSS)**, la automatización del análisis post-hoc permite que el sistema no solo alerte sobre la existencia de variabilidad en la respuesta del paciente, sino que identifique con rigor científico qué esquema terapéutico específico está generando el beneficio clínico observado. 
+
+Es imperativo verificar que se cumplan los supuestos del ANOVA (normalidad y homocedasticidad) antes de interpretar estos tests, pues su validez depende de la estimación de la varianza residual agrupada del modelo original.
+
 <br />
 #### 📝 Programación:
 <Tabs>

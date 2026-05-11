@@ -1,7 +1,7 @@
 ---
 id: lenguajes
 title: R vs Python
-sidebar_label: "R vs Python"
+sidebar_label: "R vs Python3"
 sidebar_position: 4
 ---
 
