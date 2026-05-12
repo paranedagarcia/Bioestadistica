@@ -94,11 +94,56 @@ La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si s
     ```
 
 <br />
+El método de **Mínimos Cuadrados Ordinarios** (conocido frecuentemente por sus siglas en inglés **OLS**, *Ordinary Least Squares*) representa el estándar de oro en el análisis de regresión para estimar los parámetros de un modelo lineal. En el marco de la informática médica y la bioestadística, este procedimiento se utiliza para encontrar la "línea de mejor ajuste" que describa la relación entre una variable dependiente (por ejemplo, el nivel de glucosa) y una o más variables independientes o predictores (como el índice de masa corporal o la edad).
+
+### 1. Concepto y Fundamentación Matemática
+
+Desde una perspectiva geométrica, el OLS busca minimizar la suma de las distancias verticales (desviaciones) al cuadrado entre los puntos de datos observados en una muestra y la línea o hiperplano de regresión calculada.
+
+La función sistemática que el OLS intenta optimizar es la **Suma de los Cuadrados de los Errores (SSE)** o Suma de Cuadrados Residuales (RSS). Matemáticamente, para un modelo de regresión lineal simple, el objetivo es minimizar:
+
+$$S(\beta_0, \beta_1) = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = \sum_{i=1}^{n} [y_i - (\beta_0 + \beta_1 x_i)]^2$$
+
+**Significado de sus componentes:**
+*   **$y_i$**: El valor observado de la variable dependiente para el individuo $i$.
+*   **$\hat{y}_i$**: El valor estimado o predicho por el modelo para ese mismo individuo.
+*   **$\beta_0$**: El intercepto o término constante; representa el valor esperado de $Y$ cuando el predictor $X$ es cero.
+*   **$\beta_1$**: La pendiente de la recta, que cuantifica el cambio esperado en $Y$ por cada unidad de cambio en $X$.
+*   **$n$**: El tamaño de la muestra o número total de observaciones.
+*   **$y_i - \hat{y}_i$**: Conocido como **residuo** ($e_i$), es la diferencia entre lo observado y lo predicho.
+
+### 2. Estimación de Parámetros
+
+Para obtener los valores óptimos de los coeficientes ($\hat{\beta}_0$ y $\hat{\beta}_1$), se resuelven las denominadas **ecuaciones normales**, derivadas al igualar a cero las derivadas parciales de la función de error respecto a cada parámetro.
+
+*   **Pendiente ($\hat{\beta}_1$):** Se calcula como el cociente entre la covarianza de $X$ e $Y$ y la varianza de $X$:
+    $$\hat{\beta}_1 = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}$$
+*   **Intercepto ($\hat{\beta}_0$):** Se obtiene asegurando que la recta pase por el punto de los promedios $(\bar{x}, \bar{y})$:
+    $$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$$
+
+En contextos de informática médica avanzada, donde se manejan múltiples predictores simultáneamente, se recurre a la **notación matricial** para una solución más compacta:
+$$\hat{\beta} = (X'X)^{-1}X'y$$
+
+### 3. Supuestos Críticos (Teorema de Gauss-Markov)
+
+Para que las estimaciones de OLS posean propiedades estadísticas deseables, deben satisfacerse ciertos requisitos estructurales conocidos como supuestos de Gauss-Markov:
+1.  **Linealidad:** La relación entre las variables y los parámetros debe ser lineal.
+2.  **Independencia:** Las observaciones deben ser independientes entre sí (los residuos no deben estar correlacionados).
+3.  **Homocedasticidad:** La varianza de los términos de error debe ser constante para todos los valores de los predictores.
+4.  **Normalidad:** Para realizar pruebas de hipótesis e intervalos de confianza, se asume que los errores siguen una distribución normal $N(0, \sigma^2)$.
+
+Bajo el cumplimiento de estos supuestos, el OLS proporciona los **mejores estimadores lineales e insesgados** (MELI o BLUE), lo que significa que poseen la varianza mínima entre todos los estimadores posibles.
+
+
+
+<br />
 #### 📝 Programación:
+
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">
 **Modelo de regresión lineal simple**<br />
+Considere un estudio para predecir el **peso al nacer de un neonato** ($Y$) basado en el **peso de la madre** antes del embarazo ($X$). Al aplicar OLS, el investigador obtiene una ecuación de regresión donde el coeficiente de la pendiente indica cuántos gramos adicionales de peso fetal se esperan por cada libra adicional de peso materno. La precisión de este ajuste se evalúa mediante el **coeficiente de determinación ($R^2$)**, que representa la proporción de la variabilidad del peso neonatal explicada por el peso de la madre.
 </div>
 </TabItem>
 <TabItem value="mnp-python" label="Pyhton" default>
@@ -109,6 +154,38 @@ La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si s
 <TabItem value="mnp-r" label="R" default>
 ```r showLineNumbers
 # Implementación en R
+# Utilizaremos el dataset real **birthwt** del paquete MASS, el cual contiene datos de 189 nacimientos.
+
+# 1. Carga de librerías y datos
+library(MASS)
+library(ggplot2)
+data("birthwt")
+
+# 2. Análisis Exploratorio de Datos (EDA)
+# lwt: peso materno en la última menstruación (libras)
+# bwt: peso al nacer (gramos)
+summary(birthwt[, c("lwt", "bwt")])
+
+# Visualización inicial de la dispersión
+ggplot(birthwt, aes(x = lwt, y = bwt)) +
+  geom_point(alpha = 0.6, color = "darkblue") +
+  geom_smooth(method = "lm", color = "red", se = TRUE) +
+  labs(title = "Relación entre Peso Materno y Peso al Nacer",
+       x = "Peso Materno Pre-embarazo (lbs)",
+       y = "Peso del Neonato (g)") +
+  theme_minimal()
+
+# 3. Ajuste del Modelo OLS
+modelo_natal <- lm(bwt ~ lwt, data = birthwt)
+summary(modelo_natal)
+
+#Análisis de Resultados y Diagnóstico
+#Al ejecutar el modelo, obtendremos una tabla de coeficientes. Supongamos que el resultado arroja un #$\beta_1 \approx 4.43$. Esto significa que, por cada libra adicional en el peso de la madre, se espera un #incremento promedio de 4.43 gramos en el peso del recién nacido.Para garantizar el rigor científico, #debemos validar los supuestos del modelo:
+
+# Diagnóstico gráfico de residuos
+par(mfrow = c(2, 2))
+plot(modelo_natal)
+
 ```
 </TabItem>
 </Tabs><br />
@@ -269,7 +346,6 @@ Y = \beta_0^* + \beta_1^*(x - \bar{x}) + \beta_2^*(x - \bar{x})^2 + \epsilon
 Para ajustar estos modelos en R, se utiliza la función `lm()`. Existen dos métodos principales:
 *   **Uso de `I()`**: Para proteger los términos aritméticos dentro de la fórmula: `lm(y ~ x + I(x^2))`.
 *   **Función `poly()`**: Genera polinomios ortogonales, lo cual es preferible para evitar la multicolinealidad estructural: `lm(y ~ poly(x, grado))`.
-
 
 
 <br />

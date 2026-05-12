@@ -61,7 +61,7 @@ El ANOVA se adapta a diversas estructuras de investigación en biomedicina:
 
 
 
-## Análisis Post Hoc
+## Análisis Post-Hoc
 
 El **análisis post-hoc** (del latín "después de esto") se refiere a un conjunto de procedimientos estadísticos de comparación múltiple que se ejecutan únicamente tras haber obtenido un resultado estadísticamente significativo en una prueba global u "ómnibus", como el Análisis de Varianza (ANOVA).
 

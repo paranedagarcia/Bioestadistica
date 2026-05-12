@@ -31,17 +31,17 @@ Un protocolo riguroso debe incluir:
 
 ## Formas de Abordaje
 
-### 🔹Métodos de Eliminación
+### Métodos de Eliminación
 *   **Análisis de Casos Completos (*Listwise deletion*):** Excluye cualquier unidad que tenga al menos un valor faltante. Solo produce estimadores insesgados si los datos son MCAR. Es ineficiente en modelos multivariados complejos, donde puede descartar la mayor parte de la base de datos.
 *   **Análisis de Casos Disponibles:** Utiliza diferentes subconjuntos de datos para diferentes análisis (ej. correlaciones por pares), lo que genera inconsistencias entre los resultados del mismo estudio.
 
-### 🔹Imputación Simple
+### Imputación Simple
 Sustituye el valor faltante por una estimación única (media, mediana o el valor de un vecino cercano).
 *   **Crítica Científica:** Estos métodos subestiman la varianza total y distorsionan las relaciones entre variables, ya que actúan como si el valor imputado fuera una medición cierta, ignorando la incertidumbre del error de predicción.
 
 *   **LOCF (*Last Observation Carried Forward*):** Común en estudios longitudinales; asume que el estado del paciente permanece constante tras el abandono. Es un método obsoleto que introduce sesgos impredecibles en las tendencias temporales.
 
-### 🔹Imputación Múltiple
+### Imputación Múltiple
 La imputación multiple  MI y MICE, es el estándar de oro actual para problemas complejos bajo el supuesto MAR. Consiste en tres fases:
 1.  **Imputación:** Se crean $m$ datasets (típicamente entre 5 y 50) donde los valores faltantes se reemplazan por sorteos aleatorios de una distribución predictiva.
 2.  **Análisis:** Se aplica el modelo estadístico deseado a cada uno de los $m$ datasets de forma independiente.
@@ -66,7 +66,7 @@ Donde:
 
 El método **MICE** (*Multivariate Imputation by Chained Equations*) o Especificación Condicional Completa (FCS) es una implementación flexible de la MI que utiliza una serie de ecuaciones de regresión univariadas (lineal para continuas, logística para binarias) para imputar variables de distinta naturaleza simultáneamente.
 
-### 🔹Métodos Basados en Verosimilitud
+### Métodos Basados en Verosimilitud
 Utilizan el algoritmo de **Esperanza-Maximización (EM)** para estimar parámetros poblacionales maximizando la función de verosimilitud de los datos observados, integrando los datos faltantes como parte del proceso de optimización.
 
 El algoritmo **Esperanza-Maximización (EM)** representa el estándar de oro para obtener estimadores de máxima verosimilitud (MLE) en presencia de datos faltantes o variables latentes. Fue formalizado en 1977 por Dempster, Laird y Rubin, transformando problemas de optimización numéricamente complejos en procesos iterativos manejables.
@@ -102,7 +102,7 @@ En esta fase, se determinan los nuevos valores de los parámetros $\hat{\theta}^
 
 Este nuevo estimador se convierte en el punto de partida para la siguiente iteración. El proceso se repite hasta que la diferencia entre $\hat{\theta}^{(t)}$ y $\hat{\theta}^{(t+1)}$ es menor que un umbral de convergencia predefinido (ej. $1.0 \times 10^{-5}$).
 
-### 🔹Implementación en el Ámbito Médico
+### Implementación en el Ámbito Médico
 La implementación del algoritmo EM es ubicua en diversas subdisciplinas de la salud:
 
 1.  **Genética Médica y Bioinformática (Estimación de Haplotipos):** Dado que los genotipos observados son a menudo ambiguos respecto a la fase cromosómica, el EM se utiliza para estimar las frecuencias de los haplotipos en la población. Aquí, los genotipos son $X^{obs}$ y la alineación de nucleótidos en los cromosomas (haplotipos) son $X^{mis}$. El algoritmo promedia todas las resoluciones posibles de los datos faltantes ponderándolas por su probabilidad posterior.
@@ -111,11 +111,12 @@ La implementación del algoritmo EM es ubicua en diversas subdisciplinas de la s
 
 3.  **Investigación Clínica (EHR):** Se utiliza para estimar medias y matrices de covarianza en bases de datos hospitalarias con valores ausentes bajo el supuesto de que los datos son *Missing at Random* (MAR).
 
-### 🔹Relación con Otras Metodologías
+### Relación con Otras Metodologías
 Es vital distinguir el EM de la **Imputación Múltiple (MI)**. Mientras que el EM proporciona una estimación puntual única (el MLE) y a menudo requiere métodos adicionales (como el de Louis) para calcular la varianza, la MI reconoce explícitamente la incertidumbre mediante la creación de múltiples datasets simulados. No obstante, algoritmos como el de **Aumentación de Datos (DA)** son versiones estocásticas de MCMC que actúan como un análogo bayesiano del EM.
 
 <br />
-#### 📝 Programación:
+
+#### Programación:
 <Tabs>
 <TabItem value="python" label="Pyhton" default>
 ```python showLineNumbers
@@ -180,10 +181,11 @@ dataset_completo = imputador_mice.fit_transform(data)
 # ----------------------------------------------------------
 # 5. Imputación por Vecinos Más Cercanos (KNN)
 # ----------------------------------------------------------
-# Este método utiliza métricas de distancia (como la distancia Euclídea) 
-# para encontrar las k unidades de observación más similares ("donantes") 
-# a la unidad con el valor faltante, promediando sus valores observados 
-# para realizar la imputación
+""" Este método utiliza métricas de distancia (como la distancia Euclídea) 
+para encontrar las k unidades de observación más similares ("donantes") 
+a la unidad con el valor faltante, promediando sus valores observados 
+para realizar la imputación
+"""
 
 from sklearn.impute import KNNImputer
 
@@ -201,11 +203,11 @@ dataset_knn = imputador_knn.fit_transform(data)
 # ----------------------------------------------------------
 #1. Análisis de Casos Completos (Listwise Deletion)
 # ----------------------------------------------------------
-# Procedimiento por defecto en muchas funciones de modelado (como lm()), 
-# donde se excluyen todas las unidades que presentan al menos un valor ausente 
-# en cualquiera de sus variables. Es válido únicamente bajo el supuesto de que los 
-# datos faltan de forma completamente aleatoria (MCAR)
-#
+""" Procedimiento por defecto en muchas funciones de modelado (como lm()), 
+ donde se excluyen todas las unidades que presentan al menos un valor ausente 
+ en cualquiera de sus variables. Es válido únicamente bajo el supuesto de que los 
+ datos faltan de forma completamente aleatoria (MCAR)"""
+
 # Creación de un dataset clínico hipotético
 pacientes <- data.frame(
   id = 1:5,
@@ -233,8 +235,8 @@ pacientes_imputados <- na.roughfix(pacientes)
 # ----------------------------------------------------------
 # Imputación por Regresión (Simple)
 # ----------------------------------------------------------
-# Se basa en la premisa de que los valores ausentes pueden ser predichos 
-# a partir de otras variables observadas mediante un modelo lineal
+""" Se basa en la premisa de que los valores ausentes pueden ser predichos 
+ a partir de otras variables observadas mediante un modelo lineal"""
 
 # Estimación de edad basada en glucosa para el caso ausente
 modelo_reg <- lm(edad ~ glucosa, data = pacientes, subset = !is.na(edad)) 
@@ -246,9 +248,9 @@ pacientes$edad[is.na(pacientes$edad)] <- prediccion
 # ----------------------------------------------------------
 # ILast Observation Carried Forward (LOCF)
 # ----------------------------------------------------------
-# Consiste en reemplazar un dato faltante con la última observación 
-# válida registrada para ese mismo paciente
-# El LOCF no se basa en principios estadísticos sólidos y puede sesgar los resultados de eficacia
+""" Consiste en reemplazar un dato faltante con la última observación 
+ válida registrada para ese mismo paciente
+ El LOCF no se basa en principios estadísticos sólidos y puede sesgar los resultados de eficacia"""
 
 # Ejemplo conceptual usando la lógica de seguimiento longitudinal
 # Se asume que el valor de la visita anterior se proyecta a la actual
