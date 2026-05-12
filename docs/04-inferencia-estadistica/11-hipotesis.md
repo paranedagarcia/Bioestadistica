@@ -7,13 +7,12 @@ sidebar_position: 11
 
 
 
-# 📌 Pruebas de Hipótesis
+# Pruebas de Hipótesis
 
-### Hipótesis, Hipótesis Nula y p-value
 
 Las hipótesis y sus pruebas son características del método cientifico con que se han desarrollado los nuevos conocimientos a lo largo de la historia. Iniciando con la observación de los fenomenos que nos rodean, estos han planteado problemas a resolver, que generan una pregunta o problema de investigación.
 
-~~~~
+
 ## Hipótesis
 
 Una **hipótesis estadística** es una afirmación o suposición formal sobre una característica de la población que queremos evaluar a partir de datos muestrales.
@@ -148,8 +147,6 @@ La hipótesis alternativa se aplica de forma ubícua en la investigación biomé
 
 4.  **Estudios de Asociación Genómica:** Para identificar variantes alélicas que se presentan con una frecuencia distinta en pacientes con enfermedades específicas en comparación con controles sanos.
 
-
-
 <br />
 
 ## p-value (valor-p)
@@ -175,9 +172,9 @@ Interpretación correcta:
 * No mide tamaño del efecto.
 * No reemplaza el razonamiento científico.
 
-<br />
 
-## 🔗 Relación entre los tres conceptos
+
+## Relación entre los tres conceptos
 
 1. **Planteamos una hipótesis (científica):** queremos evaluar un supuesto sobre la población.
 
@@ -193,7 +190,7 @@ Interpretación correcta:
 
 <br />
 
-## 💡 Ejemplo sencillo aplicado (A/B Testing)
+## Ejemplo sencillo aplicado (A/B Testing)
 
 Supongamos que queremos saber si la nueva campaña (B) tiene mayor tasa de clics que la versión anterior (A).
 
@@ -233,7 +230,7 @@ Si el p-value es pequeño, concluimos que la diferencia entre A y B es estadíst
 
 <br />
 
-## 📘 Cuándo se usan en Ciencia de Datos
+## Cuándo se usan en Ciencia de Datos
 
 * Validación de modelos (supuestos de normalidad, independencia, homocedasticidad).
 * Pruebas A/B para productos digitales.
