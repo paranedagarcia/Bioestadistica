@@ -9,7 +9,7 @@ sidebar_position: 5
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="roc" label="Antecedentes" default>
 ## Evaluación de la Capacidad Discriminatoria (Análisis de Curvas ROC)

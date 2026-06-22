@@ -92,7 +92,7 @@ Es un error común interpretar un IC del 95% como que hay un "95% de probabilida
 La interpretación correcta es que **el nivel de confianza es una propiedad del método**: si se repitiera el experimento infinitas veces bajo las mismas condiciones y se calculara un IC para cada muestra, el 95% de esos intervalos incluirían el verdadero parámetro poblacional.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="me" label="Antecedentes" default>
 <div class="alert alert--primary">

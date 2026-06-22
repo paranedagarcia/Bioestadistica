@@ -94,7 +94,7 @@ La RLS es un caso de Modelo de Regresión Lineal [5]. Un modelo es "lineal" si s
     ```
 
 <br />
-El método de **Mínimos Cuadrados Ordinarios** (conocido frecuentemente por sus siglas en inglés **OLS**, *Ordinary Least Squares*) representa el estándar de oro en el análisis de regresión para estimar los parámetros de un modelo lineal. En el marco de la informática médica y la bioestadística, este procedimiento se utiliza para encontrar la "línea de mejor ajuste" que describa la relación entre una variable dependiente (por ejemplo, el nivel de glucosa) y una o más variables independientes o predictores (como el índice de masa corporal o la edad).
+El método de **Mínimos Cuadrados Ordinarios** (conocido frecuentemente por sus siglas en inglés **OLS**, *Ordinary Least Squares*) representa el estándar de oro en el análisis de regresión para estimar los parámetros de un modelo lineal.  el cual busca minimizar la Suma de los Cuadrados de los Errores (SSE), garantizando que la recta calculada sea la de mejor ajuste para los puntos observados. En el marco de la bioestadística, este procedimiento se utiliza para encontrar la "línea de mejor ajuste" que describa la relación entre una variable dependiente (por ejemplo, el nivel de glucosa) y una o más variables independientes o predictores (como el índice de masa corporal o la edad).
 
 ### 1. Concepto y Fundamentación Matemática
 
@@ -134,10 +134,184 @@ Para que las estimaciones de OLS posean propiedades estadísticas deseables, deb
 
 Bajo el cumplimiento de estos supuestos, el OLS proporciona los **mejores estimadores lineales e insesgados** (MELI o BLUE), lo que significa que poseen la varianza mínima entre todos los estimadores posibles.
 
+Para que las inferencias derivadas de un modelo de regresión lineal posean validez científica y los estimadores obtenidos mediante **Mínimos Cuadrados Ordinarios (MCO)** gocen de propiedades estadísticas óptimas, es imperativo que los datos y los residuos del modelo satisfagan un conjunto de requisitos conocidos como los **supuestos del modelo lineal clásico**.
+
+A continuación, se detallan estos supuestos con el rigor académico requerido:
+
+### 1. Linealidad en los Parámetros
+La relación entre la variable dependiente ($Y$) y las variables independientes ($X_j$) debe ser lineal respecto a sus parámetros ($\beta_j$). Formalmente, el modelo se expresa como:
+$$Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \dots + \beta_k X_{ki} + \epsilon_i$$
+Esto implica que el cambio esperado en $Y$ ante un incremento unitario en un predictor es constante, independientemente del valor de dicho predictor.
+
+### 2. Independencia de los Errores (No Autocorrelación)
+Las perturbaciones aleatorias o errores ($\epsilon_i$) deben ser estadísticamente independientes entre sí. Esto significa que el valor del error de una observación no debe influir ni estar correlacionado con el error de otra:
+$$Cov(\epsilon_i, \epsilon_j) = 0 \quad \text{para todo } i \neq j$$
+La violación de este supuesto es común en datos de series de tiempo o muestras con estructura de conglomerados.
+
+### 3. Homocedasticidad (Varianza Constante)
+La varianza del término de error debe ser constante para todos los niveles de las variables independientes. En términos matemáticos:
+$$Var(\epsilon_i | \mathbf{X}) = \sigma^2$$
+Si la dispersión de los residuos varía (por ejemplo, aumenta a medida que aumenta el valor predicho), nos enfrentamos a un problema de **heterocedasticidad**, lo que invalida los errores estándar y las pruebas de significancia ($t$ y $F$).
+
+### 4. Normalidad de los Residuos
+Para propósitos de inferencia en muestras finitas (construcción de intervalos de confianza y cálculo de valores $p$), se asume que los errores siguen una distribución normal con media cero:
+$$\epsilon_i \sim N(0, \sigma^2)$$
+Visualmente, esto se verifica mediante gráficos **Normal Q-Q**, donde los residuos deben alinearse sobre la diagonal ideal.
+
+### 5. Esperanza Matemática del Error Igual a Cero
+Se asume que, en promedio, el error del modelo es nulo para cualquier valor de los predictores:
+$$E(\epsilon_i | X) = 0$$
+Este supuesto garantiza que el intercepto ($\beta_0$) capture correctamente el punto de anclaje del modelo y que los estimadores no estén sesgados.
+
+### 6. Ausencia de Multicolinealidad Perfecta (en RLM)
+En modelos de regresión múltiple, no debe existir una relación lineal exacta entre los predictores. La presencia de **multicolinealidad** infla artificialmente los errores estándar, dificultando la identificación del efecto individual de cada variable. Se evalúa comúnmente mediante el **Factor de Inflación de la Varianza (VIF)**, donde valores superiores a 5 o 10 sugieren problemas de colinealidad.
+
+### Implicación: El Teorema de Gauss-Markov
+Si se cumplen los primeros cinco supuestos (excluyendo la normalidad, necesaria solo para inferencia), el Teorema de Gauss-Markov establece que los estimadores de MCO son los **Mejores Estimadores Lineales Insesgados** (MELI o BLUE), lo que significa que poseen la varianza mínima entre todos los estimadores lineales posibles.
+
+
+### Coeficiente de Determinación ($R^2$)
+
+El **Coeficiente de Determinación ($R^2$)** es una métrica fundamental de bondad de ajuste que cuantifica la capacidad predictiva de un modelo lineal. Formalmente, representa la proporción de la varianza total de la variable dependiente ($Y$) que es explicada o "capturada" por el predictor o conjunto de predictores ($X$) incluidos en el modelo.
+
+#### Fundamentación Matemática
+
+El cálculo del $R^2$ se basa en la partición de la variabilidad total de los datos, conocida como la **Suma Total de Cuadrados ($SS_{Total}$)**, la cual se descompone en dos elementos excluyentes: la variabilidad explicada por la regresión (**$SS_{Regression}$**) y la variabilidad residual o no explicada (**$SS_{Residual}$**).
+
+La expresión matemática general es:
+
+$$R^2 = \frac{SS_{Regression}}{SS_{Total}} = 1 - \frac{SS_{Residual}}{SS_{Total}}$$
+
+**Significado de sus componentes:**
+*   **$SS_{Total}$**: Representa la dispersión total de las observaciones respecto a su media aritmética ($\sum (y_i - \bar{y})^2$).
+*   **$SS_{Regression}$**: Mide la variación que el modelo logra predecir basándose en la relación lineal establecida.
+*   **$SS_{Residual}$ (o $SSE$)**: Corresponde a la suma de los errores al cuadrado (residuales), es decir, la diferencia entre los valores observados y los valores predichos por el modelo que queda sin explicación.
+
+#### Interpretación
+
+El valor de $R^2$ oscila estrictamente en un rango de **0 a 1** (o de 0% a 100% si se expresa porcentualmente):
+
+*   **$R^2 = 1$**: Indica un ajuste perfecto, donde todos los puntos observados se sitúan exactamente sobre la línea de regresión y el modelo explica el 100% de la variabilidad.
+*   **$R^2 = 0$**: Significa que el modelo no explica ninguna proporción de la varianza de la respuesta, comportándose de manera equivalente a una línea horizontal en la media de $Y$.
+*   **Relación con la Correlación**: En modelos de regresión lineal simple (un solo predictor), el $R^2$ equivale exactamente al cuadrado del coeficiente de correlación de Pearson ($r^2$), representando la varianza compartida entre ambas variables.
+
+Es imperativo considerar que valores de $R^2$ moderados (entre 0.05 y 0.20) son comunes y aceptables debido a la alta variabilidad biológica intrínseca y a la presencia de múltiples factores (genéticos, ambientales o clínicos) que influyen en los desenlaces de salud y que a menudo no están capturados en un solo modelo lineal.
+
+#### Coeficiente de Determinación Ajustado ($R^2_{adj}$)
+
+Una limitación crítica del $R^2$ convencional es que su valor nunca disminuye al añadir predictores adicionales al modelo, lo que puede inducir a un sobreajuste (*overfitting*) artificial. Para corregir este sesgo, se utiliza el **$R^2$ ajustado**, que penaliza la inclusión de variables que no aportan una mejora significativa a la explicación de la varianza.
+
+Su fórmula incorpora los grados de libertad:
+
+$$R_{adj}^2 = 1 - \left[ \frac{SS_{Residual} / (n - k - 1)}{SS_{Total} / (n - 1)} \right]$$
+
+Donde **$n$** es el tamaño de la muestra y **$k$** es el número de predictores.
+
+#### Implementación e Identificación en R
+
+Al ejecutar un modelo lineal en R mediante la función `lm()`, el valor del coeficiente se extrae utilizando la función `summary()`.
+
+```R
+modelo <- lm(Variable_Respuesta ~ Predictor, data = mi_dataset)
+summary(modelo)
+```
+
+En la salida de la consola (*output*), el investigador debe identificar dos campos específicos:
+1.  **Multiple R-squared**: El coeficiente de determinación estándar.
+2.  **Adjusted R-squared**: El valor corregido por el número de parámetros, el cual es preferible para comparar modelos con distinto número de variables.
+
+***
+### Qué es el R2 ajustado y cuándo usarlo?
+
+En el análisis de regresión avanzado, particularmente en contextos de investigación clínica, el **Coeficiente de Determinación Ajustado ($R^2_{adj}$)** es una métrica de bondad de ajuste que corrige las limitaciones del $R^2$ convencional al considerar la complejidad del modelo estadístico. Mientras que el $R^2$ estándar siempre aumenta o permanece igual al añadir nuevos predictores, el $R^2$ ajustado penaliza la inclusión de variables que no aportan una mejora significativa a la explicación de la varianza, permitiendo así una evaluación más honesta y rigurosa del modelo.
+
+#### Fundamentación Matemática
+
+El $R^2$ ajustado se deriva de la relación entre las medias cuadráticas del error y el total, incorporando los grados de libertad asociados al tamaño de la muestra y al número de variables independientes. Su expresión matemática es:
+
+$$R_{A}^{2} = 1 - \frac{SSE / (n - k - 1)}{SST / (n - 1)} = 1 - \frac{n - 1}{n - (k + 1)} (1 - R^2)$$
+
+**Significado de sus componentes:**
+*   **$R^2$**: Coeficiente de determinación estándar.
+*   **$n$**: Tamaño total de la muestra o número de observaciones.
+*   **$k$** (o **$d$**): Número de variables independientes o predictores en el modelo.
+*   **$SSE$**: Suma de los Cuadrados del Error (variación no explicada).
+*   **$SST$**: Suma Total de Cuadrados (variación total de la respuesta).
+*   **$n - k - 1$**: Grados de libertad del error.
+
+A diferencia del $R^2$ estándar, el $R^2$ ajustado puede disminuir si la reducción en la suma de cuadrados del error ($SSE$) no es suficiente para compensar la pérdida de grados de libertad al añadir un nuevo parámetro.
+
+#### ¿Cuándo debe utilizarse el $R^2$ ajustado?
+
+El uso del $R^2$ ajustado es imperativo en los siguientes escenarios técnicos:
+
+1.  **Comparación de Modelos con Distinto Número de Predictores:** Es la herramienta de elección para decidir entre modelos competitivos. Si un modelo con cinco variables tiene un $R^2$ ligeramente mayor que uno de tres variables, pero su $R^2$ ajustado es menor, el principio de parsimonia dicta que el modelo con menos variables es preferible.
+2.  **Prevención del Sobreajuste (*Overfitting*):** En estudios con muestras pequeñas y múltiples variables (común en genómica o medicina de precisión), el $R^2$ estándar puede estar artificialmente inflado. El $R^2$ ajustado actúa como una salvaguarda al "castigar" la complejidad innecesaria.
+3.  **Selección de Variables en Regresión Múltiple:** Se utiliza como criterio en algoritmos de selección (como *stepwise regression*) para identificar el subconjunto óptimo de predictores. El modelo que maximiza el $R^2$ ajustado es generalmente el que minimiza el error cuadrático medio ($CME$).
+4.  **Estimación Insesgada en la Población:** Mientras que el $R^2$ muestral suele ser una estimación optimista (sesgada) del ajuste en la población, el $R^2$ ajustado proporciona una estimación más cercana a la realidad biológica poblacional.
+
+#### Ejemplo Práctico e Interpretación
+
+Considere un modelo para predecir la **resistencia de fijación ósea** basado en el momento de torsión. Si se añade la **edad del paciente** como un segundo predictor:
+*   Si la edad es un factor biológicamente irrelevante ("ruido"), el $R^2$ aumentará levemente, pero el $R^2$ ajustado **disminuirá**, indicando que la variable no debe incluirse.
+*   Si la adición de la edad reduce significativamente la varianza no explicada, el $R^2$ ajustado **aumentará**, validando científicamente su inclusión en el modelo clínico.
+
+Es frecuente observar valores de $R^2$ ajustado moderados (ej. 0.15 o 15%), lo cual no implica necesariamente un "mal" modelo, sino que refleja la alta variabilidad biológica intrínseca y la influencia de factores no medidos en el desenlace de salud.
+
+### la diferencia entre el R2 y el R2 ajustado
+
+Es fundamental para el análisis avanzado de datos clínicos comprender las métricas de bondad de ajuste que validan nuestros modelos predictivos. En el ámbito de la bioestadística, el **Coeficiente de Determinación ($R^2$)** y su variante, el **$R^2$ Ajustado**, son herramientas esenciales para cuantificar la capacidad explicativa de una regresión, aunque poseen diferencias estructurales y operativas críticas.
+
+#### El Coeficiente de Determinación ($R^2$)
+
+El $R^2$ representa la proporción de la variabilidad total de la variable dependiente ($Y$) que es explicada o capturada por el modelo de regresión. En términos matemáticos, se basa en la partición de la varianza mediante la **Identidad de la Suma de Cuadrados**:
+
+$$R^2 = \frac{SS_{Regression}}{SS_{Total}} = 1 - \frac{SS_{Residual}}{SS_{Total}}$$
+
+**Significado de sus componentes:**
+*   **$SS_{Total}$ (Suma Total de Cuadrados):** Representa la dispersión total de los datos observados respecto a su media aritmética ($\sum (y_i - \bar{y})^2$).
+*   **$SS_{Regression}$ (Suma de Cuadrados de la Regresión):** Mide la variación explicada por la relación lineal establecida en el modelo ($\sum (\hat{y}_i - \bar{y})^2$).
+*   **$SS_{Residual}$ o $SSE$ (Suma de Cuadrados del Error):** Cuantifica la variabilidad "residual" o no explicada, es decir, la diferencia entre los valores reales y las predicciones del modelo ($\sum (y_i - \hat{y}_i)^2$).
+
+El valor de $R^2$ oscila estrictamente entre **0 y 1**. Un valor cercano a 1 indica que el modelo explica una gran parte de la varianza, mientras que un valor cercano a 0 sugiere que el modelo no aporta información relevante sobre la respuesta. En informática médica, es común observar valores de $R^2$ moderados (ej. 0.20) debido a la alta variabilidad biológica intrínseca.
+
+#### El Coeficiente de Determinación Ajustado ($R^2_{adj}$)
+
+La limitación principal del $R^2$ convencional es que su valor **nunca disminuye** al añadir nuevos predictores al modelo, sin importar si estos son biológicamente relevantes o simple "ruido". Esto puede conducir al **sobreajuste (*overfitting*)**, donde el modelo parece muy preciso en la muestra de entrenamiento pero falla en predecir nuevos datos clínicos.
+
+El $R^2$ Ajustado corrige este sesgo al incorporar los **grados de libertad**, penalizando la inclusión de variables innecesarias. Su fórmula es:
+
+$$R_{adj}^2 = 1 - \left[ \frac{SS_{Residual} / (n - k - 1)}{SS_{Total} / (n - 1)} \right]$$
+
+O bien, expresado en función del $R^2$ estándar:
+
+$$R_{adj}^2 = 1 - \frac{n - 1}{n - (k + 1)} (1 - R^2)$$
+
+**Significado de sus componentes:**
+*   **$n$**: Tamaño total de la muestra o número de observaciones.
+*   **$k$**: Número de variables independientes o predictores en el modelo.
+*   **$n - k - 1$**: Grados de libertad del error.
+
+#### Diferencias Clave y Cuándo Usarlos
+
+Para un investigador, la elección entre ambas métricas depende del objetivo del análisis:
+
+| Característica | $R^2$ Estándar | $R^2$ Ajustado |
+| :--- | :--- | :--- |
+| **Dependencia de variables** | Aumenta siempre que se añade un predictor. | Aumenta solo si el nuevo predictor reduce el error más de lo esperado por azar. |
+| **Propósito principal** | Describir la bondad de ajuste en la muestra actual. | Comparar modelos con diferente número de predictores y evitar el sobreajuste. |
+| **Relación de magnitud** | Siempre es mayor o igual al $R^2$ ajustado. | Suele ser menor; puede ser negativo si el ajuste es extremadamente pobre. |
+| **Inferencia** | Proporciona una estimación optimista del ajuste poblacional. | Proporciona una estimación más honesta de la capacidad predictiva del modelo. |
+
+**Ejemplo Clínico:** Si intentamos predecir el nivel de glucosa basándonos en el IMC y la edad, el $R^2$ nos dirá cuánto explican estas dos variables. Si añadimos una tercera variable irrelevante (ej. el color de ojos), el $R^2$ subirá levemente, pero el $R^2$ Ajustado disminuirá, indicando científicamente que esa variable no debe formar parte del modelo clínico.
+
+En el entorno de programación **R**, ambos valores se obtienen fácilmente ejecutando la función `summary(lm())` sobre el objeto del modelo.
+
+***
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
@@ -275,7 +449,7 @@ Aunque el modelo de Cox es común, los modelos no lineales exponenciales o de We
 | **Detección de Valores Influyentes** | Estadísticas de diagnóstico (e.g., Cook's Distance, DFFITS). | Valores extremadamente altos en estas estadísticas sugieren que ciertas observaciones tienen un impacto fuerte en los resultados de la regresión y deben ser revisadas. |
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -349,7 +523,7 @@ Para ajustar estos modelos en R, se utiliza la función `lm()`. Existen dos mét
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="rpc" label="Antecedentes" default>
 <div class="alert alert--primary">

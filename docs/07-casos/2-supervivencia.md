@@ -6,7 +6,7 @@ sidebar_position: 2
 ---
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="supervivencia" label="Antecedentes" default>
 ## Estimación de Probabilidad de Supervivencia (Método de Kaplan-Meier)

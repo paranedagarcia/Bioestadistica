@@ -10,7 +10,7 @@ sidebar_position: 3
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="diabetes" label="Antecedentes" default>
 ## Modelado de Probabilidad de Eventos Dicotómicos (Regresión Logística)

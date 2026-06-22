@@ -74,7 +74,7 @@ Este valor $Z$ (puntaje típico) representa la distancia de una observación res
 Para validar si un conjunto de datos médicos se ajusta a este modelo, se utilizan herramientas como el **Histograma**, el **Gráfico de Probabilidad Normal (Q-Q Plot)** —donde la normalidad se visualiza como una línea recta— y pruebas analíticas como el test de **Shapiro-Wilk**.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="dn" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -133,10 +133,10 @@ La distribución t se fundamenta en la necesidad de corregir la incertidumbre ad
 
 *   **Colas Pesadas ("Heavy Tails"):** Una propiedad crítica en medicina es que la curva t es más aplanada y posee colas más gruesas que la normal. Esto implica que, en muestras pequeñas, existe una mayor probabilidad de observar valores extremos alejados de la media, lo cual es vital para no subestimar riesgos clínicos.
 
-*   **Convergencia:** A medida que el tamaño de la muestra $n$ aumenta (y por ende los grados de libertad), la estimación de $S$ se vuelve más precisa y la distribución t converge hacia la distribución normal estándar $N(0,1)$. En la práctica de postgrado, suele considerarse que para $n > 30$ la aproximación a la normal es aceptable, aunque el rigor exige el uso de t en cualquier caso donde la varianza poblacional sea desconocida.
+*   **Convergencia:** A medida que el tamaño de la muestra $n$ aumenta (y por ende los grados de libertad), la estimación de $S$ se vuelve más precisa y la distribución t converge hacia la distribución normal estándar $N(0,1)$. En la práctica, suele considerarse que para $n > 30$ la aproximación a la normal es aceptable, aunque el rigor exige el uso de t en cualquier caso donde la varianza poblacional sea desconocida.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">

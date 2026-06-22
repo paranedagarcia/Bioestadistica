@@ -57,7 +57,7 @@ Es vital distinguir entre la naturaleza de los datos según su origen (cero abso
 **Independientes (Explicativas) vs. Dependientes (Respuesta):** En modelos predictivos, la variable dependiente ($Y$) es el resultado de interés, mientras que la independiente ($X$) es la que se utiliza para explicar o predecir dicho resultado.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="var" label="Antecedentes" default>
 <div class="alert alert--primary">

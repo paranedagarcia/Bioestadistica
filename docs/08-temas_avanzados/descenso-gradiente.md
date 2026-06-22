@@ -214,7 +214,7 @@ La imagen generada arriba ilustra el descenso de gradiente en un espacio de par�
 > 💡 **Nota**: Aunque la imagen es estática, imagina que la pelota roja "rueda" paso a paso siguiendo la pendiente más pronunciada hacia abajo, ajustando su dirección en cada iteración según el gradiente local.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="dg" label="Antecedentes" default>
 <div class="alert alert--primary">

@@ -82,7 +82,7 @@ y se utiliza para construir intervalos de confianza y estimar la incertidumbre d
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="apple" label="Python" default>
 ```python showLineNumbers

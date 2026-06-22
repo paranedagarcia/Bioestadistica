@@ -7,7 +7,7 @@ sidebar_position: 8
 
 El **Filtro de Kalman** es un tema fascinante y la aplicación más común del pensamiento bayesiano en ingeniería.
 
-## 🤖 Filtro de Kalman
+## Filtro de Kalman
 
 El Filtro de Kalman es un **algoritmo recursivo** que utiliza una serie de mediciones observadas a lo largo del tiempo (a menudo ruidosas o con errores) para producir una **estimación óptima** de un estado desconocido. Es esencialmente un "promediador inteligente" que da más peso a las estimaciones más precisas.
 
@@ -18,7 +18,7 @@ Se utiliza masivamente en:
 
 * **Robótica:** Para localizar robots en un mapa (localización simultánea y mapeo o SLAM).
 
-### 🔄 El Ciclo Bayesiano en Acción
+### El Ciclo Bayesiano en Acción
 
 El poder del Filtro de Kalman radica en su naturaleza **recursiva**, que sigue el mismo patrón de la inferencia bayesiana que acabamos de estudiar:
 
@@ -51,14 +51,14 @@ $$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}$$
 
 El término de la fórmula de Bayes que representa la predicción que el filtro genera *antes* de que llegue la nueva evidencia ($E$) es la **Probabilidad Previa** $P(H)$.
 
-### 🧠 ¿Por qué $P(H)$ es la Predicción?
+### ¿Por qué $P(H)$ es la Predicción?
 
 * La **Predicción** se basa únicamente en la estimación anterior y en las leyes de movimiento del sistema. No ha visto la nueva medición del sensor.
 * En la fórmula de Bayes, $P(H)$ es la probabilidad de la hipótesis **antes** de considerar la nueva evidencia $E$.
 
 Por lo tanto, el ciclo del Filtro de Kalman se puede mapear directamente a los componentes de la inferencia bayesiana:
 
-| 🔄 Ciclo del Filtro de Kalman | Término de Bayes | Nombre en Bayes |
+| Ciclo del Filtro de Kalman | Término de Bayes | Nombre en Bayes |
 | :--- | :--- | :--- |
 | **Predicción** | $P(H)$ | **Probabilidad Previa** (Prior) |
 | **Actualización** | $P(H|E)$ | **Probabilidad Posterior** (Posterior) |

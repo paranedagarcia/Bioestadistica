@@ -129,7 +129,7 @@ La fórmula de Bayes ayuda a los expertos a determinar la probabilidad de que la
 
 <br />
 
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="tb" label="Antecedentes" default>
 <div class="alert alert--primary">

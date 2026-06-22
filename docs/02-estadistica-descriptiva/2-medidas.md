@@ -55,7 +55,7 @@ Un marco de referencia rápido para encontrar el estadístico adecuado según el
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="python" label="Python" default>
     ```python showLineNumbers

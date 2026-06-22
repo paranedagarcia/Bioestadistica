@@ -88,7 +88,7 @@ Factores Identificados: Confirmó que el tabaquismo, la hipertensión, el colest
 A partir de sus datos se creó el Framingham Risk Score, un algoritmo utilizado mundialmente por médicos para estimar la probabilidad de que una persona sufra un evento cardiovascular en los próximos 10 o 30 años.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">

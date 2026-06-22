@@ -143,7 +143,7 @@ En la práctica clínica y epidemiológica, el MAS se aplica en escenarios diver
 Es imperativo distinguir entre el muestreo **con reemplazo** y **sin reemplazo**. El muestreo con reemplazo se modela mediante una distribución binomial, permitiendo que un mismo individuo sea seleccionado múltiples veces; sin embargo, en biomedicina es estándar el muestreo sin reemplazo (hipergeométrico), ya que carece de sentido clínico evaluar el mismo sujeto dos veces como si fueran entidades independientes.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mas" label="Antecedente" default>
 <div class="alert alert--primary">
@@ -271,7 +271,7 @@ El muestreo estratificado es la herramienta de elección en la investigación cl
 *   **Eficiencia en Costos:** En poblaciones muy dispersas, estratificar geográficamente puede reducir los gastos de recolección de datos.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="me" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -672,7 +672,7 @@ Este muestreo es la herramienta de elección en:
 
 <br />
 
-#### 📝 Programación:
+#### 💻 Código:
 
 <Tabs>
 <TabItem value="mc" label="Antecedentes" default>
@@ -852,7 +852,7 @@ La mayor amenaza a la validez del muestreo sistemático es la **periodicidad ocu
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="ms" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -1046,7 +1046,7 @@ Suponga que se desea estimar la proporción de registros erróneos en un sistema
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -1135,7 +1135,7 @@ cat("Tamaño ajustado (finita):", n_final, "\n")
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 
 <Tabs>
 <TabItem value="mpi" label="Antecedentes" default>

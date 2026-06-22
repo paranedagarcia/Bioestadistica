@@ -10,7 +10,7 @@ sidebar_position: 4
 El **Análisis de Varianza (ANOVA)** es un conjunto de modelos estadísticos y sus procedimientos asociados en los cuales la varianza observada en una variable particular se particiona en componentes atribuibles a diferentes fuentes de variación. Se utiliza primordialmente para determinar si existen diferencias significativas entre las medias de tres o más grupos independientes, generalizando la prueba *t* de Student.
 
 ### Contexto Histórico
-El desarrollo del ANOVA es obra del eminente estadístico y genetista británico **Sir Ronald A. Fisher**, quien introdujo formalmente el método en la década de 1920. Fisher comenzó su trabajo en la Estación Experimental Agrícola de Rothamsted en 1919, donde ideó métodos de aleatorización y análisis de varianza para evaluar la eficacia de diferentes tratamientos en cultivos. 
+El desarrollo del ANOVA es obra del estadístico y genetista británico **Sir Ronald A. Fisher**, quien introdujo formalmente el método en la década de 1920. Fisher comenzó su trabajo en la Estación Experimental Agrícola de Rothamsted en 1919, donde ideó métodos de aleatorización y análisis de varianza para evaluar la eficacia de diferentes tratamientos en cultivos. 
 
 Aunque el ANOVA nació en la agricultura, Fisher extendió sus aplicaciones a la medicina y la biología. El nombre del estadístico de prueba principal, **F**, se otorgó en su honor (distribución F de Fisher-Snedecor). El método se consolidó como una herramienta para el diseño de experimentos controlados, permitiendo a los investigadores separar el "ruido" o error experimental de los efectos reales de los tratamientos.
 
@@ -59,6 +59,114 @@ El ANOVA se adapta a diversas estructuras de investigación en biomedicina:
 
 *   **ANOVA de Medidas Repetidas:** Se utiliza cuando los mismos sujetos pasan por todos los tratamientos (estudios longitudinales o cruzados). *Ejemplo:* Medir los niveles de glucosa en un mismo grupo de pacientes antes del tratamiento, al mes y a los tres meses.
 
+<br />
+#### 💻 Código:
+<Tabs>
+<TabItem value="cm" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Análisis de ANOVA unifactorial**<br />
+Impacto del Tratamiento en la Artritis Reumatoide
+
+Se utilizará el conjunto de datos real Arthritis proveniente de un ensayo clínico aleatorizado de doble ciego que investigó la efectividad de una nueva terapia médica (Koch & Edwards, 1988). Este dataset se encuentra integrado en el paquete analítico de R vcd.
+
+Modelaremos el efecto de la asignación del tratamiento (Factor independiente: Tratado vs. Placebo) sobre el estado general del paciente, mapeado aquí mediante puntuaciones clínicas estandarizadas de mejora biológica (simuladas formalmente sobre la escala de respuesta continua continua para el propósito analítico de evaluar la técnica paramétrica).
+</div>
+</TabItem>
+<TabItem value="cm-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="cm-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+# ==============================================================================
+# PASO 1: INSTALACIÓN Y CARGA DE LIBRERÍAS CIENTÍFICAS
+# ==============================================================================
+if (!require("vcd")) install.packages("vcd")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("car")) install.packages("car")
+
+library(vcd)      # Contiene el dataset real 'Arthritis'
+library(ggplot2)  # Generación de gráficos avanzados de grado de publicación
+library(car)      # Pruebas estadísticas avanzadas para supuestos
+
+# ==============================================================================
+# PASO 2: PREPARACIÓN Y EXPLORACIÓN INICIAL DE LOS DATOS (EDA)
+# ==============================================================================
+data("Arthritis")
+# Para fines estrictamente pedagógicos de un ANOVA continuo, extraeremos una métrica 
+# continua o utilizaremos una variable numérica derivada de los marcadores analíticos del estudio
+set.seed(42)
+# Supongamos una variable clínica continua: 'Reducción del Índice de Dolor' (Escala Continua)
+Arthritis$ScoreDolor <- ifelse(Arthritis$Treatment == "Treated", 
+                               rnorm(nrow(Arthritis), mean = 15, sd = 3.2), 
+                               rnorm(nrow(Arthritis), mean = 9, sd = 3.5))
+
+# Visualizar la estructura matemática del dataframe
+str(Arthritis)
+
+# Análisis descriptivo por grupo de intervención médica
+Descriptivos <- aggregate(ScoreDolor ~ Treatment, data = Arthritis, 
+                          FUN = function(x) c(Media = mean(x), DE = sd(x), N = length(x)))
+print(Descriptivos)
+
+# ==============================================================================
+# PASO 3: VISUALIZACIÓN ANALÍTICA DE LAS DISTRIBUCIONES
+# ==============================================================================
+# Boxplot estructural para comparar la dispersión y la tendencia central
+ggplot(Arthritis, aes(x = Treatment, y = ScoreDolor, fill = Treatment)) +
+  geom_boxplot(alpha = 0.7, outlier.shape = 16, outlier.size = 2) +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "black") +
+  labs(title = "Distribución de la Reducción del Dolor según Grupo de Tratamiento",
+       subtitle = "Ensayo Clínico de Artritis Reumatoide",
+       x = "Línea de Intervención (Factor)",
+       y = "Reducción del Dolor (Métrica Continua)") +
+  theme_classic() +
+  scale_fill_brewer(palette = "Set2")
+
+# ==============================================================================
+# PASO 4: EVALUACIÓN DE LOS SUPUESTOS DEL MODELO
+# ==============================================================================
+# Ajuste inicial del modelo lineal para la extracción formal de residuos
+modelo_lineal <- lm(ScoreDolor ~ Treatment, data = Arthritis)
+
+# A. Evaluación del Supuesto de Normalidad (Prueba de Shapiro-Wilk sobre los residuos)
+shapiro_residuos <- shapiro.test(residuals(modelo_lineal))
+print(shapiro_residuos)
+
+# Gráfico de Normalidad Q-Q
+qqPlot(modelo_lineal, main = "Gráfico Q-Q de Residuos", id = FALSE)
+
+# B. Evaluación de Homocedasticidad (Prueba de Levene)
+prueba_levene <- leveneTest(ScoreDolor ~ Treatment, data = Arthritis)
+print(prueba_levene)
+
+# ==============================================================================
+# PASO 5: EJECUCIÓN FORMAL DEL ANOVA UNIFACTORIAL
+# ==============================================================================
+anova_resultado <- aov(ScoreDolor ~ Treatment, data = Arthritis)
+summary(anova_resultado)
+```
+```raw
+# resultado:
+Df Sum Sq Mean Sq F value Pr(>F)    
+Treatment    1  744.1   744.1   66.19 1.4e-12 ***
+Residuals   82  921.9    11.2                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+```
+Análisis de la Tabla ANOVA
+- Grados de Libertad ($Df$): Para la fila del tratamiento, $df = k - 1 = 2 - 1 = 1$. Para los residuos, $df = N - k = 84 - 2 = 82$.
+- Estadístico F de Fisher: El valor calculado de $F = 66.19$ indica de forma inequívoca que la varianza explicada entre los grupos bajo el efecto terapéutico supera drásticamente la varianza atribuible al error puramente intragrupo.
+- Valor p ($Pr(>F)$): El valor de probabilidad obtenido ($1.4 \times 10^{-12}$) se sitúa muy por debajo de cualquier umbral crítico estandarizado ($\alpha = 0.05$, $\alpha = 0.01$).
+
+Conclusión Clínica Basada en la Evidencia
+
+Dado que el valor p es significativamente menor que nuestro nivel de significancia establecido, se rechaza la hipótesis nula ($H_0$). Se concluye con rigurosidad estadística que existen diferencias significativas en la reducción promedio del dolor entre los pacientes asignados a la terapia biológica activa en comparación con aquellos que recibieron el placebo.
+
+</TabItem>
+</Tabs><br />
 
 
 ## Análisis Post-Hoc
@@ -104,7 +212,7 @@ En el desarrollo de **Sistemas de Soporte a la Decisión Clínica (CDSS)**, la a
 Es imperativo verificar que se cumplan los supuestos del ANOVA (normalidad y homocedasticidad) antes de interpretar estos tests, pues su validez depende de la estimación de la varianza residual agrupada del modelo original.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="cm" label="Antecedentes" default>
 <div class="alert alert--primary">

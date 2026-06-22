@@ -65,7 +65,7 @@ La representación gráfica es el núcleo del EDA, pues permite procesar visualm
 La etapa final del EDA implica refinar las preguntas iniciales y evaluar la colinealidad (correlación excesiva entre predictores), lo que determina la selección eficiente de variables para el modelado multivariado posterior.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">

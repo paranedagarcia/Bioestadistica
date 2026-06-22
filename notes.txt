@@ -39,7 +39,7 @@ https://infima.dev/
 
 ​
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="mnp" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -62,3 +62,7 @@ https://infima.dev/
 referencias
 
 https://es.r4ds.hadley.nz/
+
+ejemplo de programacion
+
+crea un ejemplo completo para detallar y analizar un caso de análisis de supervivencia. utiliza datos reales (realiza una busqueda en internet). Desarrolla la solución del caso ejemplo en Python, y el mismo ejemplo en R.

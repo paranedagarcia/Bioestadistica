@@ -160,7 +160,7 @@ print(q1_filas)
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="python3" label="Python" default>
 ```python showLineNumbers

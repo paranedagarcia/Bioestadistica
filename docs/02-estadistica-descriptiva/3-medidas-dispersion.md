@@ -157,7 +157,7 @@ Aunque los umbrales pueden variar según la disciplina, un marco referencial com
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="python" label="Python" default>
     ```python showLineNumbers

@@ -1,7 +1,7 @@
 ---
 id: autor
 title:  Autor
-sidebar_label: "👤 Autor"
+sidebar_label: "🎓 Autor"
 sidebar_position: 11
 ---
 
@@ -24,9 +24,7 @@ sidebar_position: 11
 <div class="row">
 <div class="col col--8">
 
-Profesional senior con +20 años de experiencia en informática y software, especializado en Data Science, gobierno de datos y transformación digital. Líder de equipos multidisciplinarios y gestión de programas
-end-to-end (Agile/Waterfall) integrando analítica avanzada y soluciones en nube (Azure). Experiencia
-transversal como CTO/CIO/PO/Program Manager.
+Profesional senior con +20 años de experiencia en informática y software, especializado en data science, gobierno de datos y transformación digital. Líder de equipos multidisciplinarios y gestión de programas end-to-end (Agile/Waterfall) integrando analítica avanzada y soluciones en nube (Azure). Con experiencia transversal como CTO/CIO/PO/Program Manager.
 
 
 </div>
@@ -44,10 +42,12 @@ transversal como CTO/CIO/PO/Program Manager.
 
 **UBO**: Inteligencia de Negocios | Ciencia de Datos para los negocios
 
+**UCHILE**: Bioestadística
+
 ### Contacto
 
 * **Web**: https://patricioaraneda.cl
-* **Email**: paranedagarcia@gmail.com
+* **Email**: [paraneda@ug.uchile.cl](mailto:paraneda@ug.uchile.cl)
 * **LinkedIn**: https://www.linkedin.com/in/patricioaraneda/
 * **GitHub**: https://github.com/paranedagarcia
 

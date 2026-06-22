@@ -54,7 +54,7 @@ A continuación, se muestra una tabla con la interpretación de los valores del 
 | igual a -1           | relación lineal negativa perfecta                             |
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="cp" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -88,7 +88,7 @@ Donde:
 
 El coeficiente de Spearman también oscila entre -1 y 1, con interpretaciones similares a las del coeficiente de Pearson. Un valor de 1 indica una correlación monótona positiva perfecta, -1 indica una correlación monótona negativa perfecta y 0 indica que no hay correlación monótona.
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="cs" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -127,7 +127,7 @@ El coeficiente de Kendall también oscila entre -1 y 1, con interpretaciones sim
 * 0 indica que no hay concordancia.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="ck" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -187,7 +187,7 @@ Desde el dataset **Breast Cancer Wisconsin (Diagnostic) (WBCD)**, se pueden obse
 - Wolberg, W., Mangasarian, O., Street, N., & Street, W. (1993). Breast Cancer Wisconsin (Diagnostic) [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5DW2B.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="cm" label="Antecedentes" default>
 <div class="alert alert--primary">

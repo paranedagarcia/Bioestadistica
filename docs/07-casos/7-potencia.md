@@ -7,7 +7,7 @@ sidebar_position: 7
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="potencia" label="Antecedentes" default>
 ## 6. Diseño de Estudios y Cálculo de Potencia (Power Analysis)

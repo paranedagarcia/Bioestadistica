@@ -81,7 +81,7 @@ El informático médico detecta la necesidad de este modelo cuando diseña siste
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="db" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -194,7 +194,7 @@ La distribución binomial es la piedra angular para el análisis de variables cu
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="db" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -871,10 +871,13 @@ La **Distribución de Poisson** constituye uno de los pilares de la probabilidad
 ### Contexto Histórico
 Esta distribución debe su nombre al matemático y físico francés **Siméon-Denis Poisson** (1781-1840), quien desarrolló el concepto a partir de sus investigaciones en mecánica celeste y teoría de números. Fue formalmente introducida en su obra de 1837 como una forma límite de la distribución binomial para casos donde el número de ensayos es muy grande y la probabilidad de éxito es sumamente pequeña. Históricamente, también se le ha denominado la "ley de los sucesos raros".
 
+La distribución de Poisson representa un modelo probabilístico fundamental en la bioestadística para analizar variables aleatorias discretas que consisten en el recuento de eventos raros que ocurren de forma independiente en un intervalo continuo, ya sea de tiempo, área o volumen. En el ámbito de la investigación, este concepto se conceptualiza como el límite de una distribución binomial cuando el número de ensayos (n) tiende al infinito y la probabilidad de éxito (p) es sumamente pequeña, manteniendo un valor esperado (λ) constante.
+
 ### Definición y Formulación Matemática
 La distribución de Poisson describe la probabilidad de observar exactamente $k$ eventos en un intervalo determinado, dado que se conoce el número promedio de ocurrencias.
 
 La **Función de Masa de Probabilidad (PMF)** se define como:
+
 ```math
 P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}
 ```
@@ -892,7 +895,7 @@ En el marco de los modelos estadísticos avanzados, la distribución de Poisson 
 Para que un fenómeno se considere un experimento o **proceso de Poisson**, deben satisfacerse las siguientes condiciones de rigor científico:
 - **Independencia**: La ocurrencia de un evento en un intervalo no influye en la probabilidad de que ocurra en otro intervalo distinto.
 - **Proporcionalidad**: La probabilidad de que ocurra un solo evento en un subintervalo muy pequeño es proporcional a la longitud de dicho intervalo ($\lambda \Delta t$).
-- **Exclusividad**: La probabilidad de que ocurra más de un evento en un subintervalo infinitesimal tiende a cero.
+- **Exclusividad (No simultaneidad)**: La probabilidad de que ocurra más de un evento en un subintervalo infinitesimal tiende a cero.
 - **Tasa Constante**: El promedio de ocurrencias ($\lambda$) permanece invariable durante todo el periodo de observación.
 
 #### Propiedades Críticas
@@ -901,12 +904,15 @@ Para que un fenómeno se considere un experimento o **proceso de Poisson**, debe
 *   **Convergencia**: A medida que $\lambda$ aumenta (típicamente $\lambda \ge 10$ o $\ge 100$ para mayor rigor), la distribución de Poisson se vuelve simétrica y puede ser aproximada satisfactoriamente por la **distribución normal**.
 
 ### Aplicaciones en Salud
-En la práctica clínica y la gestión sanitaria, la distribución de Poisson es indispensable para:
+En la práctica clínica y la gestión sanitaria, la distribución de Poisson es indispensable para modelar fenómenos donde no es práctico o posible determinar el número total de "ensayos" fallidos, centrándose únicamente en los éxitos observados
+. Algunos ejemplos notables incluyen:
 *   **Análisis de Datos Clínicos**: Modelado del conteo de glóbulos blancos en una muestra de sangre, eosinófilos en un campo microscópico o desintegraciones radiactivas en medicina nuclear.
 *   **Epidemiología**: Estimación de la incidencia de enfermedades raras, como casos de cáncer en una comunidad específica o mortalidad materna.
-*   **Gestión Hospitalaria**: Predicción de la llegada de pacientes a servicios de urgencias o admisiones diarias para optimizar el personal de turno.
+*   **Gestión Hospitalaria**: Predicción de la llegada de pacientes a servicios de urgencias o admisiones diarias para optimizar el personal de turno, o el número de camas ocupadas diariamente.
+* **Microbiología y Genética**: Conteo de colonias bacterianas en un cultivo o el número de mutaciones cromosómicas resultantes de la exposición a radiación
 *   **Informática y Bioinformática**: Análisis del flujo de paquetes en redes de telemedicina, número de solicitudes a servidores web de salud o errores en secuencias genéticas.
 *   **Seguridad del Paciente**: Registro de accidentes laborales, fallas de equipos médicos por unidad de tiempo o errores de medicación en farmacia hospitalaria.
+* **Modelamiento GLM**: En los Modelos Lineales Generalizados, la regresión de Poisson utiliza una función de enlace logarítmica (ln(λ)) para predecir tasas de incidencia ajustadas por múltiples covariables clínicas
 
 **Validación de supuestos**: Al trabajar con grandes bases de datos (como el ACL o registros hospitalarios), es común realizar pruebas de bondad de ajuste para verificar si los conteos clínicos siguen realmente una distribución de Poisson o si presentan sobre-dispersión (donde la varianza supera a la media), caso en el cual se preferiría una distribución binomial negativa.
 
@@ -914,7 +920,8 @@ En la práctica clínica y la gestión sanitaria, la distribución de Poisson es
 
 **Análisis de Tasas**: En epidemiología, el modelo de Poisson es la base para la Regresión de Poisson, la cual permite modelar la densidad de incidencia (casos por persona-tiempo) ajustando por covariables como edad, sexo o exposición a factores de riesgo.
 <br />
-#### 📝 Programación:
+
+#### 💻 Código:
 <Tabs>
 <TabItem value="dpa" label="Antecedentes" default>
 <div class="alert alert--primary">
@@ -968,9 +975,129 @@ cat("Media de la simulación anual:", mean(simulacion_anual), "\n")
 Probabilidad de recibir exactamente 3 pacientes: 0.2240418 
 Probabilidad de recibir 2 o menos pacientes: 0.4231901 
 Media de la simulación anual: 2.983562 
+
 ```
+
 ![poisson](img/poisson.png)
 
 </TabItem>
 </Tabs><br />
 <br />
+
+## Residuos en Poisson
+
+En el ámbito de los **Modelos Lineales Generalizados (GLM)**, y específicamente en la regresión de Poisson, el concepto de "residuo" trasciende la simple diferencia entre el valor observado y el predicho ($y - \hat{y}$) propia de la regresión lineal clásica. Debido a que la varianza en una distribución de Poisson no es constante, sino que es teóricamente igual a la media ($\lambda = E(Y) = Var(Y)$), se requieren métricas de error estandarizadas para realizar diagnósticos precisos.
+
+El cálculo de los residuos en un modelo de Poisson se desglosa principalmente en tres tipologías, cada una con una utilidad analítica específica:
+
+### 1. Residuos de Respuesta (Raw Residuals)
+Es la forma más elemental y representa la diferencia directa en la escala de los conteos observados.
+```math
+e_i = y_i - \hat{\mu}_i
+```
+
+**Componentes:**
+*   $y_i$: El conteo observado para el individuo o unidad $i$.
+*   $\hat{\mu}_i$: El valor esperado (media) predicho por el modelo para esa observación, donde $\hat{\mu}_i = e^{\mathbf{X}_i\hat{\beta}}$.
+
+Aunque intuitivos, estos residuos son limitados para el diagnóstico ya que presentan **heterocedasticidad intrínseca**: las observaciones con medias más altas tendrán necesariamente residuos con mayor dispersión.
+
+### 2. Residuos de Pearson
+Para corregir la dependencia de la varianza respecto a la media, se dividen los residuos de respuesta por la desviación estándar teórica de la distribución de Poisson.
+```math
+r_{P,i} = \frac{y_i - \hat{\mu}_i}{\sqrt{\hat{\mu}_i}}
+```
+**Componentes:**
+*   $\sqrt{\hat{\mu}_i}$: Es la desviación estándar estimada, dado que en Poisson $Var(Y) = \mu$.
+
+**Utilidad técnica:** Si el modelo está correctamente especificado y no existe sobredispersión, estos residuos deberían tener una varianza cercana a 1. Son fundamentales para calcular el estadístico $\chi^2$ de Pearson y detectar valores atípicos.
+
+### 3. Residuos de la Devianza (Deviance Residuals)
+Son los más utilizados en la práctica avanzada (y los que R reporta por defecto en el comando `summary(glm)`). Se basan en la contribución individual de cada observación a la **devianza total** del modelo, la cual mide cuánto se aleja el modelo ajustado de un "modelo saturado" (un modelo perfecto que ajusta los datos exactamente).
+
+El residuo de la devianza para una observación $i$ se calcula como:
+```math
+d_i = \text{sign}(y_i - \hat{\mu}_i) \sqrt{2 \left[ y_i \ln\left(\frac{y_i}{\hat{\mu}_i}\right) - (y_i - \hat{\mu}_i) \right]}
+```
+**Componentes:**
+*   $\text{sign}(y_i - \hat{\mu}_i)$: Asegura que el residuo tenga el mismo signo que la diferencia original (positivo si el valor observado supera al predicho).
+*   $y_i \ln(y_i/\hat{\mu}_i)$: Término de verosimilitud que compara la observación con la predicción.
+*   $(y_i - \hat{\mu}_i)$: Término de ajuste para la escala de Poisson.
+
+**Interpretación:** Una suma de los cuadrados de estos residuos resulta en la **Devianza Residual** del modelo. En diagnósticos gráficos (como *Residuals vs Fitted*), se busca que estos se distribuyan aleatoriamente sin patrones sistemáticos.
+
+### Consideraciones
+
+Al trabajar con datos clínicos, el investigador debe tener en cuenta dos fenómenos que afectan estos cálculos:
+**Sobredispersión:** Si la varianza observada es mucho mayor que la media, los residuos serán inusualmente grandes. En R, esto se detecta si la razón `Residual deviance / Residual df` es significativamente mayor a 1.
+
+**Conteos Pequeños:** En eventos raros (ej. incidencia de una enfermedad muy poco frecuente), los residuos pueden mostrar patrones artificiales que no indican necesariamente una falla del modelo, sino la naturaleza discreta de los datos.
+
+
+<br />
+#### 💻 Código:
+<Tabs>
+<TabItem value="db" label="Antecedentes" default>
+<div class="alert alert--primary">
+**Distribución de Poisson**<br />
+</div>
+</TabItem>
+<TabItem value="db-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="db-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+# ==============================================================================
+# Montreal Bike Lanes - Ridership Prediction using Poisson Regression
+# ==============================================================================
+
+# 1. Load the dataset
+# Note: read.csv() automatically converts column names with spaces or special 
+# characters into syntactically valid names by replacing them with dots.
+file_path <- "comptagesvelo2015.csv"
+bike_data <- read.csv(file_path, header = TRUE, check.names = TRUE)
+
+# Display the formatted column names to ensure accuracy
+cat("--- Formatted Column Names in R ---\n")
+print(names(bike_data))
+cat("\n")
+
+# 2. Assess the linear relationship using correlation
+# We use use = "complete.obs" to handle any potential missing values gracefully
+correlation_value <- cor(bike_data$Berri1, bike_data$Boyer, use = "complete.obs")
+cat(sprintf("Pearson correlation coefficient between Berri1 and Boyer: %.4f\n\n", correlation_value))
+
+# 3. Fit the Poisson Regression Model
+# Target Variable (y): Boyer
+# Predictor Variable (x): Berri1
+poisson_model <- glm(Boyer ~ Berri1, data = bike_data, family = poisson(link = "log"))
+
+# Display the complete statistical summary of the model
+cat("--- Poisson Regression Model Summary ---\n")
+summary(poisson_model)
+cat("\n")
+
+# 4. Predict ridership using the fitted model
+# Scenario: Suppose we observe 3,000 riders on the Berri1 path today.
+new_observation <- data.frame(Berri1 = 3000)
+
+# We specify type = "response" to get the count directly instead of the log-count
+predicted_riders <- predict(poisson_model, newdata = new_observation, type = "response")
+
+cat("--- Prediction Example ---\n")
+cat(sprintf("When Berri1 has 3,000 riders, the predicted ridership on Boyer is: %.2f (~%d riders)\n", 
+            predicted_riders, round(predicted_riders)))
+```
+```raw
+Pearson correlation coefficient between Berri1 and Boyer: 0.9657
+
+--- Poisson Regression Model Summary ---
+
+--- Prediction Example ---
+When Berri1 has 3,000 riders, the predicted ridership on Boyer is: 1584.85 (~1585 riders)
+```
+</TabItem>
+</Tabs><br />

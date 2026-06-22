@@ -7,7 +7,7 @@ sidebar_position: 4
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="riesgo" label="Antecedente" default>
 ## Análisis de Riesgos Proporcionales (Modelo de Cox)

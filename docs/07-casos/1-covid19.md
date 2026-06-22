@@ -7,7 +7,7 @@ sidebar_position: 1
 
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
 <TabItem value="covid" label="Antecedentes" default>
 ## Contexto General

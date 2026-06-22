@@ -12,7 +12,7 @@ Además de estas medidas, la estadística descriptiva utiliza diversas herramien
 Un histograma es una representación gráfica que organiza un conjunto de datos numéricos en intervalos (o "bins") y muestra la frecuencia de datos dentro de cada intervalo mediante barras. A diferencia de un gráfico de barras tradicional, que se utiliza para datos categóricos, un histograma es ideal para datos continuos y ayuda a visualizar la distribución de los datos.
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="python1" label="Python" default>
 ```python showLineNumbers
@@ -68,7 +68,7 @@ El box plot muestra la mediana como una línea dentro de la caja, que representa
 El boxplot muestra visualmente la mediana, cuartiles y valores atípicos:
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="python2" label="Python" default>
 ```python showLineNumbers
@@ -122,7 +122,7 @@ El conjunto de datos Iris es un conjunto de datos clásico en el campo del apren
 ![Iris Dataset Image](./img/iris-sepal.png)
 
 <br />
-#### 📝 Programación:
+#### 💻 Código:
 <Tabs>
   <TabItem value="python3" label="Python" default>
 ```python showLineNumbers

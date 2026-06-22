@@ -55,7 +55,7 @@ ajuste_clinico(100, 1.2) # Resultado: 120
 ```
 
 ### Ámbito de las Variables (Scope)
-Un concepto crítico para el alumno de postgrado es el **alcance léxico**. Las variables creadas dentro de una función se denominan **locales**. Esto significa que existen únicamente mientras la función se está ejecutando y no alteran ni "ensucian" el espacio de trabajo global (Workspace) del usuario. Esta encapsulación garantiza que los cálculos internos no interfieran con otras partes del sistema.
+Un concepto crítico es el **alcance léxico**. Las variables creadas dentro de una función se denominan **locales**. Esto significa que existen únicamente mientras la función se está ejecutando y no alteran ni "ensucian" el espacio de trabajo global (Workspace) del usuario. Esta encapsulación garantiza que los cálculos internos no interfieran con otras partes del sistema.
 
 ### Ejemplo Clínico Detallado: Índice de Masa Corporal (IMC)
 El IMC es un indicador antropométrico común definido por la relación entre el peso y el cuadrado de la talla.
