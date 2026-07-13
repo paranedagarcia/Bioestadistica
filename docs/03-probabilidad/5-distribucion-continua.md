@@ -2,7 +2,7 @@
 id: distribucion-continua
 title: "Distribuciones continua"
 sidebar_label: "Distribución continua"
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 ## Distribución normal

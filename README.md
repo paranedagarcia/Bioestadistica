@@ -29,6 +29,8 @@ npm install
 cp .env.example .env
 # Rellena .env con tus credenciales FTP
 
+# compila localmente
+npm run start
 # Construye y sube automáticamente al FTP
 npm run build
 ```

@@ -9,20 +9,25 @@ El **Modelo Lineal Generalizado** (conocido por sus siglas en inglés **GLM**, *
 
 Formalizado originalmente por **Nelder y Wedderburn** en 1972, el GLM subsume modelos clásicos como la regresión lineal, la regresión logística y la regresión de Poisson bajo una misma estructura matemática.
 
-### 1. Los Tres Componentes del GLM
+### Los Tres Componentes del GLM
 
 Para un investigador, la arquitectura de un GLM se define rigurosamente mediante tres pilares fundamentales:
 
 1.  **El Componente Aleatorio:** Se refiere a la variable dependiente $y$. A diferencia del modelo lineal estándar, el GLM asume que $y$ proviene de una distribución de probabilidad perteneciente a la **familia exponencial** (que incluye la Normal, Binomial, Poisson, Gamma e Inversa Gaussiana).
 2.  **El Componente Sistemático (Predictor Lineal):** Es la combinación lineal de las variables independientes o predictores ($X$) ponderados por sus respectivos coeficientes de regresión ($\beta$). Se denota comúnmente con la letra griega eta ($\eta$):
-    $$\eta = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_k X_k = X\beta$$.
+
+    ```math
+    \eta = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_k X_k = X\beta
+    ```
 3.  **La Función de Enlace ($Link$):** Es el componente más innovador. Se trata de una función monótona y diferenciable, $g(\cdot)$, que conecta la media esperada de la variable de respuesta ($\mu = E(y)$) con el predictor lineal ($\eta$).
 
-### 2. Fundamentación Matemática
+### Fundamentación Matemática
 
 La ecuación general que gobierna un modelo lineal generalizado se expresa como:
 
-$$g(E[y]) = X\beta$$
+```math
+g(E[y]) = X\beta
+```
 
 Donde:
 *   **$E[y] = \mu$:** Es el valor esperado de la variable de respuesta (siempre en la escala original de los datos).
@@ -30,9 +35,11 @@ Donde:
 *   **$X\beta$:** Es la estructura lineal del modelo.
 
 A la inversa, para obtener las predicciones en la escala original del fenómeno biológico, se utiliza la **función de enlace inversa** ($g^{-1}$):
-$$E(y) = \mu = g^{-1}(X\beta)$$.
+```math
+E(y) = \mu = g^{-1}(X\beta)
+```
 
-### 3. Principales Modelos y sus Funciones de Enlace
+### Principales Modelos y sus Funciones de Enlace
 
 La elección de la función de enlace y la familia de distribución depende exclusivamente de la naturaleza de los datos clínicos:
 
@@ -43,7 +50,7 @@ La elección de la función de enlace y la familia de distribución depende excl
 | Conteos (ej. # de convulsiones) | Poisson | **Logarítmica:** $g(\mu) = \ln(\mu)$ | Regresión de Poisson |
 | Concentraciones (ej. hormonas) | Gamma | **Recíproca:** $g(\mu) = 1/\mu$ | Regresión Gamma |
 
-### 4. Importancia en Bioestadística
+### Importancia en Bioestadística
 
 La ventaja del GLM radica en que permite manejar situaciones donde el supuesto de varianza constante y normalidad de los residuos es violado. Por ejemplo:
 *   En **epidemiología**, permite modelar tasas de incidencia mediante el uso de *offsets* en modelos de Poisson.
@@ -54,3 +61,22 @@ En el lenguaje de programación R, estos modelos se implementan principalmente m
 
 ***
 
+#### 💻 Código:
+<Tabs>
+<TabItem value="mnp" label="Antecedentes" default>
+<div class="alert alert--primary">
+****<br />
+</div>
+</TabItem>
+<TabItem value="mnp-python" label="Pyhton" default>
+```python showLineNumbers
+# Implementación en Python
+```
+</TabItem>
+<TabItem value="mnp-r" label="R" default>
+```r showLineNumbers
+# Implementación en R
+```
+</TabItem>
+</Tabs>
+<br />

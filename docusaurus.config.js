@@ -96,7 +96,7 @@ const config = {
         title: 'Bioestadística',
         logo: {
           alt: 'Bioestadística Médica Logo',
-          src: 'img/logo.svg',
+          src: 'img/ODC-isotipo.svg',
         },
         items: [
           {
@@ -117,15 +117,23 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Otros cursos de la serie',
             items: [
               {
-                label: 'Curso',
-                to: '/docs/intro',
+                label: 'Programación en Python',
+                href: 'https://patricioaraneda.cl/python/',
               },
               {
-                label: 'Autor',
-                to: '/docs/autor',
+                label: 'Bioestadística',
+                href: 'https://patricioaraneda.cl/bioestadistica/',
+              },
+              {
+                label: 'Ciencia de Datos',
+                href: 'https://patricioaraneda.cl/ciencia-de-datos/',
+              },
+              {
+                label: 'Inteligencia Artificial',
+                href: 'https://patricioaraneda.cl/inteligencia-artificial/',
               },
             ],
           },
