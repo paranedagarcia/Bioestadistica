@@ -88,6 +88,10 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        gtag: {
+          trackingID: 'G-3V2QKLCVQR',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
@@ -95,6 +99,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {name: 'description', content: 'Manual de Bioestadística Médica para la investigación biomédica y la gestión de datos clínicos. Incluye análisis estadístico, visualización de datos y estrategias de investigación.'},
+        {name: 'keywords', content: 'bioestadística, estadística descriptiva, probabilidades, manual, investigación biomédica, análisis de datos, visualización de datos, estrategias de investigación'},
+        {name: 'author', content: 'Patricio Araneda'},
+        {property: 'og:type', content: 'website' },
+        {property: 'og:image', content: 'https://patricioaraneda.cl/bioestadistica/img/bioestadistica.jpg' },
+      ],
       // Replace with your project's social card
       image: 'img/bioestadistica.jpg',
       colorMode: {
