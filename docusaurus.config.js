@@ -96,7 +96,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/bioestadistica-card.png',
+      image: 'img/bioestadistica.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -128,7 +128,7 @@ const config = {
       footer: {
         style: 'dark',
         links: footerLinks,
-        copyright: `Copyright © ${new Date().getFullYear()} Patricio Araneda G. | Inteligencia Artificial para la Gestión Pública, Built with <a href="https://docusaurus.io/">Docusaurus</a>. <br /><img src="img/cc-by-nc-sa.png" alt="CC-BY-SA 4.0" width="120" />`,
+        copyright: `Copyright © ${new Date().getFullYear()} Patricio Araneda G. | Inteligencia Artificial para la Gestión Pública, Built with <a href="https://docusaurus.io/">Docusaurus</a>. <br /><img src="https://patricioaraneda.cl/public/images/cc-by-nc-sa.png" alt="CC-BY-SA 4.0" width="120" />`,
       },
       prism: {
         theme: prismThemes.github,
