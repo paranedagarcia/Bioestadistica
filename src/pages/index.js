@@ -32,8 +32,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Bienvenido a ${siteConfig.title}`}
-      description="Bioestadistica orientadaa a la investigación médica <head />">
+      title={`Bienvenido`}
+      description="Estadística orientada a la investigación médica <head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
